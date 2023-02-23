@@ -1,0 +1,17 @@
+additionalProperties:
+  artifactId: artemis-client-sdk
+  artifactDescription: ""
+  groupId: de.tum.cit.ase.artemis
+  invokerPackage: de.tum.cit.ase.artemis.sdk
+  apiPackage: de.tum.cit.ase.artemis.sdk.api
+  modelPackage: de.tum.cit.ase.artemis.sdk.model
+  artifactUrl: https://github.com/ls1intum/artemis-sdk
+  developerEmail: artemis.in@tum.de
+  developerName: "Artemis Contributors"
+  developerOrganization: Artemis
+  developerOrganizationUrl: https://github.com/ls1intum/Artemis
+  library: jersey3
+  useRuntimeException: true
+  licenseName: MIT
+  licenseUrl: https://github.com/ls1intum/Artemis/blob/develop/LICENSE
+
