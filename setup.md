@@ -6,4 +6,4 @@
    -i /local/openapi.fixed.json \
    -g java \
    -o /local \
-   -c /local/openapi-generator-config.yml
+   -c /local/openapi-generator-config.yaml
