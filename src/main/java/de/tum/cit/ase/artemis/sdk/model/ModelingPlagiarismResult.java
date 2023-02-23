@@ -52,17 +52,17 @@ import de.tum.cit.ase.artemis.sdk.JSON;
 
 public class ModelingPlagiarismResult extends PlagiarismResultObject {
   public static final String JSON_PROPERTY_COMPARISONS = "comparisons";
-  private Set<PlagiarismComparisonModelingSubmissionElement> comparisons = new LinkedHashSet<>();
+  private Set<PlagiarismComparisonObject> comparisons = new LinkedHashSet<>();
 
   public ModelingPlagiarismResult() { 
   }
 
-  public ModelingPlagiarismResult comparisons(Set<PlagiarismComparisonModelingSubmissionElement> comparisons) {
+  public ModelingPlagiarismResult comparisons(Set<PlagiarismComparisonObject> comparisons) {
     this.comparisons = comparisons;
     return this;
   }
 
-  public ModelingPlagiarismResult addComparisonsItem(PlagiarismComparisonModelingSubmissionElement comparisonsItem) {
+  public ModelingPlagiarismResult addComparisonsItem(PlagiarismComparisonObject comparisonsItem) {
     if (this.comparisons == null) {
       this.comparisons = new LinkedHashSet<>();
     }
@@ -78,7 +78,7 @@ public class ModelingPlagiarismResult extends PlagiarismResultObject {
   @JsonProperty(JSON_PROPERTY_COMPARISONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Set<PlagiarismComparisonModelingSubmissionElement> getComparisons() {
+  public Set<PlagiarismComparisonObject> getComparisons() {
     return comparisons;
   }
 
@@ -86,7 +86,7 @@ public class ModelingPlagiarismResult extends PlagiarismResultObject {
   @JsonDeserialize(as = LinkedHashSet.class)
   @JsonProperty(JSON_PROPERTY_COMPARISONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setComparisons(Set<PlagiarismComparisonModelingSubmissionElement> comparisons) {
+  public void setComparisons(Set<PlagiarismComparisonObject> comparisons) {
     this.comparisons = comparisons;
   }
 
