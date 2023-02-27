@@ -757,7 +757,8 @@ public class ApiClient extends JavaTimeFormatter {
           multiPart.bodyPart(new FormDataBodyPart(contentDisp, file, MediaType.APPLICATION_OCTET_STREAM_TYPE));
         } else {
           FormDataContentDisposition contentDisp = FormDataContentDisposition.name(param.getKey()).build();
-          multiPart.bodyPart(new FormDataBodyPart(contentDisp, parameterToString(param.getValue())));
+          //TODO: check if a condition is necessary if object -> JSON else just pass a String?
+          multiPart.bodyPart(new FormDataBodyPart(contentDisp, param.getValue(), MediaType.APPLICATION_JSON_TYPE));
         }
       }
       entity = Entity.entity(multiPart, MediaType.MULTIPART_FORM_DATA_TYPE);
