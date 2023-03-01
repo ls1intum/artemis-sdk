@@ -115,12 +115,13 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   allowSetters = true // allows the type to be set during deserialization
 )
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = true)
+//TODO: check why JsonSubType names weren't correctly generated. Missing Annotation for the OpenAPI generator?
 @JsonSubTypes({
-  @JsonSubTypes.Type(value = FileUploadExercise.class, name = "FileUploadExercise"),
-  @JsonSubTypes.Type(value = ModelingExercise.class, name = "ModelingExercise"),
-  @JsonSubTypes.Type(value = ProgrammingExercise.class, name = "ProgrammingExercise"),
-  @JsonSubTypes.Type(value = QuizExercise.class, name = "QuizExercise"),
-  @JsonSubTypes.Type(value = TextExercise.class, name = "TextExercise"),
+  @JsonSubTypes.Type(value = FileUploadExercise.class, name = "file-upload"),
+  @JsonSubTypes.Type(value = ModelingExercise.class, name = "modeling"),
+  @JsonSubTypes.Type(value = ProgrammingExercise.class, name = "programming"),
+  @JsonSubTypes.Type(value = QuizExercise.class, name = "quiz"),
+  @JsonSubTypes.Type(value = TextExercise.class, name = "text"),
 })
 
 public class Exercise {
