@@ -103,3 +103,6 @@ hs_err_pid*
 target
 .gradle
 build
+
+# opanapi.json which is used as input for generation
+openapi.json
