@@ -36,7 +36,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   StudentDTO.JSON_PROPERTY_REGISTRATION_NUMBER,
   StudentDTO.JSON_PROPERTY_EMAIL
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-23T10:41:24.492016Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
 public class StudentDTO {
   public static final String JSON_PROPERTY_LOGIN = "login";
   private String login;

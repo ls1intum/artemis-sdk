@@ -36,7 +36,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   CreateAttachmentUnitsRequest.JSON_PROPERTY_FILE
 })
 @JsonTypeName("createAttachmentUnits_request")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-23T10:41:24.492016Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
 public class CreateAttachmentUnitsRequest {
   public static final String JSON_PROPERTY_LECTURE_UNIT_INFORMATION_D_T_O = "lectureUnitInformationDTO";
   private LectureUnitInformationDTO lectureUnitInformationDTO;

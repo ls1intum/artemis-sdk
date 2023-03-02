@@ -41,7 +41,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ProgrammingExerciseSolutionEntry.JSON_PROPERTY_CODE_HINT,
   ProgrammingExerciseSolutionEntry.JSON_PROPERTY_TEST_CASE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-23T10:41:24.492016Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
 public class ProgrammingExerciseSolutionEntry {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;

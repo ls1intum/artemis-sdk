@@ -36,7 +36,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   SearchResultPageDTOTextExercise.JSON_PROPERTY_RESULTS_ON_PAGE,
   SearchResultPageDTOTextExercise.JSON_PROPERTY_NUMBER_OF_PAGES
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-23T10:41:24.492016Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
 public class SearchResultPageDTOTextExercise {
   public static final String JSON_PROPERTY_RESULTS_ON_PAGE = "resultsOnPage";
   private List<TextExercise> resultsOnPage = new ArrayList<>();

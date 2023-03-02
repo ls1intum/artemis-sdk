@@ -39,7 +39,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ExerciseScoresDTO.JSON_PROPERTY_AVERAGE_SCORE_ACHIEVED,
   ExerciseScoresDTO.JSON_PROPERTY_MAX_SCORE_ACHIEVED
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-23T10:41:24.492016Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
 public class ExerciseScoresDTO {
   public static final String JSON_PROPERTY_EXERCISE_ID = "exerciseId";
   private Long exerciseId;

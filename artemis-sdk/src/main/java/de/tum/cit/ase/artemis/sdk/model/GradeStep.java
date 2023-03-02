@@ -41,7 +41,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   GradeStep.JSON_PROPERTY_IS_PASSING_GRADE,
   GradeStep.JSON_PROPERTY_NUMERIC_VALUE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-23T10:41:24.492016Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
 public class GradeStep {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;

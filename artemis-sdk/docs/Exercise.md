@@ -39,6 +39,7 @@
 |**attachments** | [**Set&lt;Attachment&gt;**](Attachment.md) |  |  [optional] |
 |**posts** | [**Set&lt;Post&gt;**](Post.md) |  |  [optional] |
 |**plagiarismCases** | [**Set&lt;PlagiarismCase&gt;**](PlagiarismCase.md) |  |  [optional] |
+|**exerciseType** | [**ExerciseTypeEnum**](#ExerciseTypeEnum) |  |  |
 |**numberOfAssessmentsOfCorrectionRounds** | [**List&lt;DueDateStat&gt;**](DueDateStat.md) |  |  [optional] |
 |**totalNumberOfAssessments** | [**DueDateStat**](DueDateStat.md) |  |  [optional] |
 |**averageRating** | **Double** |  |  [optional] |
@@ -48,7 +49,6 @@
 |**numberOfComplaints** | **Long** |  |  [optional] |
 |**numberOfOpenMoreFeedbackRequests** | **Long** |  |  [optional] |
 |**numberOfMoreFeedbackRequests** | **Long** |  |  [optional] |
-|**exerciseType** | [**ExerciseTypeEnum**](#ExerciseTypeEnum) |  |  [optional] |
 |**studentAssignedTeamId** | **Long** |  |  [optional] |
 |**studentAssignedTeamIdComputed** | **Boolean** |  |  [optional] |
 |**gradingInstructionFeedbackUsed** | **Boolean** |  |  [optional] |

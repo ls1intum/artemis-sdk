@@ -38,6 +38,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
  * QuizExerciseAllOf
  */
 @JsonPropertyOrder({
+  QuizExerciseAllOf.JSON_PROPERTY_TYPE,
   QuizExerciseAllOf.JSON_PROPERTY_RANDOMIZE_QUESTION_ORDER,
   QuizExerciseAllOf.JSON_PROPERTY_ALLOWED_NUMBER_OF_ATTEMPTS,
   QuizExerciseAllOf.JSON_PROPERTY_REMAINING_NUMBER_OF_ATTEMPTS,
@@ -47,13 +48,15 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   QuizExerciseAllOf.JSON_PROPERTY_QUIZ_POINT_STATISTIC,
   QuizExerciseAllOf.JSON_PROPERTY_QUIZ_QUESTIONS,
   QuizExerciseAllOf.JSON_PROPERTY_QUIZ_BATCHES,
-  QuizExerciseAllOf.JSON_PROPERTY_TYPE,
   QuizExerciseAllOf.JSON_PROPERTY_QUIZ_STARTED,
   QuizExerciseAllOf.JSON_PROPERTY_QUIZ_ENDED
 })
 @JsonTypeName("QuizExercise_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-23T10:41:24.492016Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
 public class QuizExerciseAllOf {
+  public static final String JSON_PROPERTY_TYPE = "type";
+  private String type;
+
   public static final String JSON_PROPERTY_RANDOMIZE_QUESTION_ORDER = "randomizeQuestionOrder";
   private Boolean randomizeQuestionOrder;
 
@@ -118,9 +121,6 @@ public class QuizExerciseAllOf {
   public static final String JSON_PROPERTY_QUIZ_BATCHES = "quizBatches";
   private Set<QuizBatch> quizBatches = new LinkedHashSet<>();
 
-  public static final String JSON_PROPERTY_TYPE = "type";
-  private String type;
-
   public static final String JSON_PROPERTY_QUIZ_STARTED = "quizStarted";
   private Boolean quizStarted;
 
@@ -129,6 +129,31 @@ public class QuizExerciseAllOf {
 
   public QuizExerciseAllOf() { 
   }
+
+  public QuizExerciseAllOf type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Get type
+   * @return type
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getType() {
+    return type;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setType(String type) {
+    this.type = type;
+  }
+
 
   public QuizExerciseAllOf randomizeQuestionOrder(Boolean randomizeQuestionOrder) {
     this.randomizeQuestionOrder = randomizeQuestionOrder;
@@ -372,31 +397,6 @@ public class QuizExerciseAllOf {
   }
 
 
-  public QuizExerciseAllOf type(String type) {
-    this.type = type;
-    return this;
-  }
-
-   /**
-   * Get type
-   * @return type
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getType() {
-    return type;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setType(String type) {
-    this.type = type;
-  }
-
-
   public QuizExerciseAllOf quizStarted(Boolean quizStarted) {
     this.quizStarted = quizStarted;
     return this;
@@ -459,7 +459,8 @@ public class QuizExerciseAllOf {
       return false;
     }
     QuizExerciseAllOf quizExerciseAllOf = (QuizExerciseAllOf) o;
-    return Objects.equals(this.randomizeQuestionOrder, quizExerciseAllOf.randomizeQuestionOrder) &&
+    return Objects.equals(this.type, quizExerciseAllOf.type) &&
+        Objects.equals(this.randomizeQuestionOrder, quizExerciseAllOf.randomizeQuestionOrder) &&
         Objects.equals(this.allowedNumberOfAttempts, quizExerciseAllOf.allowedNumberOfAttempts) &&
         Objects.equals(this.remainingNumberOfAttempts, quizExerciseAllOf.remainingNumberOfAttempts) &&
         Objects.equals(this.isOpenForPractice, quizExerciseAllOf.isOpenForPractice) &&
@@ -468,20 +469,20 @@ public class QuizExerciseAllOf {
         Objects.equals(this.quizPointStatistic, quizExerciseAllOf.quizPointStatistic) &&
         Objects.equals(this.quizQuestions, quizExerciseAllOf.quizQuestions) &&
         Objects.equals(this.quizBatches, quizExerciseAllOf.quizBatches) &&
-        Objects.equals(this.type, quizExerciseAllOf.type) &&
         Objects.equals(this.quizStarted, quizExerciseAllOf.quizStarted) &&
         Objects.equals(this.quizEnded, quizExerciseAllOf.quizEnded);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(randomizeQuestionOrder, allowedNumberOfAttempts, remainingNumberOfAttempts, isOpenForPractice, quizMode, duration, quizPointStatistic, quizQuestions, quizBatches, type, quizStarted, quizEnded);
+    return Objects.hash(type, randomizeQuestionOrder, allowedNumberOfAttempts, remainingNumberOfAttempts, isOpenForPractice, quizMode, duration, quizPointStatistic, quizQuestions, quizBatches, quizStarted, quizEnded);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class QuizExerciseAllOf {\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    randomizeQuestionOrder: ").append(toIndentedString(randomizeQuestionOrder)).append("\n");
     sb.append("    allowedNumberOfAttempts: ").append(toIndentedString(allowedNumberOfAttempts)).append("\n");
     sb.append("    remainingNumberOfAttempts: ").append(toIndentedString(remainingNumberOfAttempts)).append("\n");
@@ -491,7 +492,6 @@ public class QuizExerciseAllOf {
     sb.append("    quizPointStatistic: ").append(toIndentedString(quizPointStatistic)).append("\n");
     sb.append("    quizQuestions: ").append(toIndentedString(quizQuestions)).append("\n");
     sb.append("    quizBatches: ").append(toIndentedString(quizBatches)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    quizStarted: ").append(toIndentedString(quizStarted)).append("\n");
     sb.append("    quizEnded: ").append(toIndentedString(quizEnded)).append("\n");
     sb.append("}");

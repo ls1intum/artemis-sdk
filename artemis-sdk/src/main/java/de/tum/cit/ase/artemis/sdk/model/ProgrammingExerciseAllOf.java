@@ -74,7 +74,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ProgrammingExerciseAllOf.JSON_PROPERTY_CHECKOUT_SOLUTION_REPOSITORY
 })
 @JsonTypeName("ProgrammingExercise_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-23T10:41:24.492016Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
 public class ProgrammingExerciseAllOf {
   public static final String JSON_PROPERTY_TEST_REPOSITORY_URL = "testRepositoryUrl";
   private String testRepositoryUrl;

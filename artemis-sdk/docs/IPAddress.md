@@ -13,8 +13,8 @@
 |**upper** | [**IPAddress**](IPAddress.md) |  |  [optional] |
 |**local** | **Boolean** |  |  [optional] |
 |**ipv4** | **Boolean** |  |  [optional] |
-|**section** | [**IPAddressSection**](IPAddressSection.md) |  |  [optional] |
 |**network** | [**IPAddressNetworkObjectObjectObjectObjectObject**](IPAddressNetworkObjectObjectObjectObjectObject.md) |  |  [optional] |
+|**section** | [**IPAddressSection**](IPAddressSection.md) |  |  [optional] |
 |**maxSegmentValue** | **Integer** |  |  [optional] |
 |**nonZeroHostCount** | **Integer** |  |  [optional] |
 |**bytesPerSegment** | **Integer** |  |  [optional] |

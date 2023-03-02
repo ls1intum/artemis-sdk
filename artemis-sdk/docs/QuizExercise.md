@@ -7,6 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**type** | **String** |  |  |
 |**randomizeQuestionOrder** | **Boolean** |  |  [optional] |
 |**allowedNumberOfAttempts** | **Integer** |  |  [optional] |
 |**remainingNumberOfAttempts** | **Integer** |  |  [optional] |
@@ -16,7 +17,6 @@
 |**quizPointStatistic** | [**QuizPointStatistic**](QuizPointStatistic.md) |  |  [optional] |
 |**quizQuestions** | [**List&lt;QuizQuestion&gt;**](QuizQuestion.md) |  |  [optional] |
 |**quizBatches** | [**Set&lt;QuizBatch&gt;**](QuizBatch.md) |  |  [optional] |
-|**type** | **String** |  |  [optional] |
 |**quizStarted** | **Boolean** |  |  [optional] |
 |**quizEnded** | **Boolean** |  |  [optional] |
 

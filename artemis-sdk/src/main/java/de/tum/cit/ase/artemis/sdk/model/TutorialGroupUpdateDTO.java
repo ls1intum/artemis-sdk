@@ -34,7 +34,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   TutorialGroupUpdateDTO.JSON_PROPERTY_TUTORIAL_GROUP,
   TutorialGroupUpdateDTO.JSON_PROPERTY_NOTIFICATION_TEXT
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-23T10:41:24.492016Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
 public class TutorialGroupUpdateDTO {
   public static final String JSON_PROPERTY_TUTORIAL_GROUP = "tutorialGroup";
   private TutorialGroup tutorialGroup;

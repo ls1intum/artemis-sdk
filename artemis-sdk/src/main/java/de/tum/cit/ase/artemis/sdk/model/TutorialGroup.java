@@ -55,7 +55,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   TutorialGroup.JSON_PROPERTY_TUTORIAL_GROUP_SCHEDULE,
   TutorialGroup.JSON_PROPERTY_TUTORIAL_GROUP_SESSIONS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-23T10:41:24.492016Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
 public class TutorialGroup {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;

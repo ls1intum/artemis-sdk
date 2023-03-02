@@ -37,7 +37,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   LectureUnitInformationDTO.JSON_PROPERTY_NUMBER_OF_PAGES,
   LectureUnitInformationDTO.JSON_PROPERTY_REMOVE_BREAK_SLIDES
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-23T10:41:24.492016Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
 public class LectureUnitInformationDTO {
   public static final String JSON_PROPERTY_UNITS = "units";
   private List<LectureUnitSplitDTO> units = new ArrayList<>();

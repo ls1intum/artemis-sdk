@@ -35,7 +35,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   GuidedTourSetting.JSON_PROPERTY_GUIDED_TOUR_STEP,
   GuidedTourSetting.JSON_PROPERTY_GUIDED_TOUR_STATE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-23T10:41:24.492016Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
 public class GuidedTourSetting {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;

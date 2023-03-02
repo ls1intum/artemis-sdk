@@ -41,7 +41,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   FeedbackConflict.JSON_PROPERTY_SECOND_FEEDBACK,
   FeedbackConflict.JSON_PROPERTY_DISCARD
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-23T10:41:24.492016Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
 public class FeedbackConflict {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;

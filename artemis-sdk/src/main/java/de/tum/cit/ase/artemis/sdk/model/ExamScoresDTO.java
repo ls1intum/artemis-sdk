@@ -42,7 +42,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ExamScoresDTO.JSON_PROPERTY_EXERCISE_GROUPS,
   ExamScoresDTO.JSON_PROPERTY_STUDENT_RESULTS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-23T10:41:24.492016Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
 public class ExamScoresDTO {
   public static final String JSON_PROPERTY_EXAM_ID = "examId";
   private Long examId;

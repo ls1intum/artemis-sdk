@@ -43,7 +43,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   PostContextFilter.JSON_PROPERTY_POST_SORT_CRITERION,
   PostContextFilter.JSON_PROPERTY_SORTING_ORDER
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-23T10:41:24.492016Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
 public class PostContextFilter {
   public static final String JSON_PROPERTY_COURSE_ID = "courseId";
   private Long courseId;

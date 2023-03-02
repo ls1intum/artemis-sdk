@@ -19,13 +19,13 @@
 |**valueCount** | **Integer** |  |  [optional] |
 |**prefixValueCount** | **Integer** |  |  [optional] |
 |**ipv4** | **Boolean** |  |  [optional] |
+|**segmentValue** | **Integer** |  |  [optional] |
 |**network** | [**IPAddressNetworkObjectObjectObjectObjectObject**](IPAddressNetworkObjectObjectObjectObjectObject.md) |  |  [optional] |
 |**iterable** | **Object** |  |  [optional] |
 |**ipversion** | [**IpversionEnum**](#IpversionEnum) |  |  [optional] |
 |**prefixBlock** | **Boolean** |  |  [optional] |
 |**segmentPrefixLength** | **Integer** |  |  [optional] |
 |**minPrefixLengthForBlock** | **Integer** |  |  [optional] |
-|**segmentValue** | **Integer** |  |  [optional] |
 |**ipv6** | **Boolean** |  |  [optional] |
 |**maxValue** | **Long** |  |  [optional] |
 |**multiple** | **Boolean** |  |  [optional] |

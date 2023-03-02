@@ -32,7 +32,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
 @JsonPropertyOrder({
   RepositoryStatusDTO.JSON_PROPERTY_REPOSITORY_STATUS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-23T10:41:24.492016Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
 public class RepositoryStatusDTO {
   /**
    * Gets or Sets repositoryStatus

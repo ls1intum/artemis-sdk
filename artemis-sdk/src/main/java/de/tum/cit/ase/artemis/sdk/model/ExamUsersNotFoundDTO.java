@@ -36,7 +36,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ExamUsersNotFoundDTO.JSON_PROPERTY_NUMBER_OF_IMAGES_SAVED,
   ExamUsersNotFoundDTO.JSON_PROPERTY_LIST_OF_EXAM_USER_REGISTRATION_NUMBERS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-23T10:41:24.492016Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
 public class ExamUsersNotFoundDTO {
   public static final String JSON_PROPERTY_NUMBER_OF_USERS_NOT_FOUND = "numberOfUsersNotFound";
   private Integer numberOfUsersNotFound;

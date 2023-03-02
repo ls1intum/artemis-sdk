@@ -41,8 +41,8 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   IPAddress.JSON_PROPERTY_UPPER,
   IPAddress.JSON_PROPERTY_LOCAL,
   IPAddress.JSON_PROPERTY_IPV4,
-  IPAddress.JSON_PROPERTY_SECTION,
   IPAddress.JSON_PROPERTY_NETWORK,
+  IPAddress.JSON_PROPERTY_SECTION,
   IPAddress.JSON_PROPERTY_MAX_SEGMENT_VALUE,
   IPAddress.JSON_PROPERTY_NON_ZERO_HOST_COUNT,
   IPAddress.JSON_PROPERTY_BYTES_PER_SEGMENT,
@@ -92,7 +92,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   IPAddress.JSON_PROPERTY_MACADDRESS,
   IPAddress.JSON_PROPERTY_MULTICAST
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-23T10:41:24.492016Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
 public class IPAddress {
   public static final String JSON_PROPERTY_LOOPBACK = "loopback";
   private Boolean loopback;
@@ -112,11 +112,11 @@ public class IPAddress {
   public static final String JSON_PROPERTY_IPV4 = "ipv4";
   private Boolean ipv4;
 
-  public static final String JSON_PROPERTY_SECTION = "section";
-  private IPAddressSection section;
-
   public static final String JSON_PROPERTY_NETWORK = "network";
   private IPAddressNetworkObjectObjectObjectObjectObject network;
+
+  public static final String JSON_PROPERTY_SECTION = "section";
+  private IPAddressSection section;
 
   public static final String JSON_PROPERTY_MAX_SEGMENT_VALUE = "maxSegmentValue";
   private Integer maxSegmentValue;
@@ -450,31 +450,6 @@ public class IPAddress {
   }
 
 
-  public IPAddress section(IPAddressSection section) {
-    this.section = section;
-    return this;
-  }
-
-   /**
-   * Get section
-   * @return section
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SECTION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public IPAddressSection getSection() {
-    return section;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_SECTION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSection(IPAddressSection section) {
-    this.section = section;
-  }
-
-
   public IPAddress network(IPAddressNetworkObjectObjectObjectObjectObject network) {
     this.network = network;
     return this;
@@ -497,6 +472,31 @@ public class IPAddress {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNetwork(IPAddressNetworkObjectObjectObjectObjectObject network) {
     this.network = network;
+  }
+
+
+  public IPAddress section(IPAddressSection section) {
+    this.section = section;
+    return this;
+  }
+
+   /**
+   * Get section
+   * @return section
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_SECTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public IPAddressSection getSection() {
+    return section;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SECTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSection(IPAddressSection section) {
+    this.section = section;
   }
 
 
@@ -1758,8 +1758,8 @@ public class IPAddress {
         Objects.equals(this.upper, ipAddress.upper) &&
         Objects.equals(this.local, ipAddress.local) &&
         Objects.equals(this.ipv4, ipAddress.ipv4) &&
-        Objects.equals(this.section, ipAddress.section) &&
         Objects.equals(this.network, ipAddress.network) &&
+        Objects.equals(this.section, ipAddress.section) &&
         Objects.equals(this.maxSegmentValue, ipAddress.maxSegmentValue) &&
         Objects.equals(this.nonZeroHostCount, ipAddress.nonZeroHostCount) &&
         Objects.equals(this.bytesPerSegment, ipAddress.bytesPerSegment) &&
@@ -1812,7 +1812,7 @@ public class IPAddress {
 
   @Override
   public int hashCode() {
-    return Objects.hash(loopback, networkPrefixLength, lower, upper, local, ipv4, section, network, maxSegmentValue, nonZeroHostCount, bytesPerSegment, bitsPerSegment, byteCount, lowerNonZeroHost, sequentialBlockCount, iterable, ipaddress, ipversion, ipv4Convertible, ipv6Convertible, linkLocal, unspecified, anyLocal, zeroHost, hostMask, networkMask, singleNetwork, prefixLength, ipv6, hostSection, networkSection, segments, count, bitCount, prefixed, prefixBlock, sequentialBlockIndex, sequential, singlePrefixBlock, divisionStrings, prefixCount, bytes, value, zero, prefixLengthForSingleBlock, minPrefixLengthForBlock, fullRange, upperBytes, upperValue, max, multiple, divisionCount, segmentCount, segmentStrings, macaddress, multicast);
+    return Objects.hash(loopback, networkPrefixLength, lower, upper, local, ipv4, network, section, maxSegmentValue, nonZeroHostCount, bytesPerSegment, bitsPerSegment, byteCount, lowerNonZeroHost, sequentialBlockCount, iterable, ipaddress, ipversion, ipv4Convertible, ipv6Convertible, linkLocal, unspecified, anyLocal, zeroHost, hostMask, networkMask, singleNetwork, prefixLength, ipv6, hostSection, networkSection, segments, count, bitCount, prefixed, prefixBlock, sequentialBlockIndex, sequential, singlePrefixBlock, divisionStrings, prefixCount, bytes, value, zero, prefixLengthForSingleBlock, minPrefixLengthForBlock, fullRange, upperBytes, upperValue, max, multiple, divisionCount, segmentCount, segmentStrings, macaddress, multicast);
   }
 
   @Override
@@ -1825,8 +1825,8 @@ public class IPAddress {
     sb.append("    upper: ").append(toIndentedString(upper)).append("\n");
     sb.append("    local: ").append(toIndentedString(local)).append("\n");
     sb.append("    ipv4: ").append(toIndentedString(ipv4)).append("\n");
-    sb.append("    section: ").append(toIndentedString(section)).append("\n");
     sb.append("    network: ").append(toIndentedString(network)).append("\n");
+    sb.append("    section: ").append(toIndentedString(section)).append("\n");
     sb.append("    maxSegmentValue: ").append(toIndentedString(maxSegmentValue)).append("\n");
     sb.append("    nonZeroHostCount: ").append(toIndentedString(nonZeroHostCount)).append("\n");
     sb.append("    bytesPerSegment: ").append(toIndentedString(bytesPerSegment)).append("\n");
