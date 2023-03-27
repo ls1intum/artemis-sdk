@@ -25,7 +25,7 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import de.tum.cit.ase.artemis.sdk.model.CleanupBuildPlan200Response;
+import de.tum.cit.ase.artemis.sdk.model.Participation;
 import de.tum.cit.ase.artemis.sdk.model.FileUploadSubmission;
 import de.tum.cit.ase.artemis.sdk.model.ModelingSubmission;
 import de.tum.cit.ase.artemis.sdk.model.ProgrammingSubmission;
@@ -127,7 +127,7 @@ public class Submission {
   private Boolean exampleSubmission;
 
   public static final String JSON_PROPERTY_PARTICIPATION = "participation";
-  private CleanupBuildPlan200Response participation;
+  private Participation participation;
 
   public static final String JSON_PROPERTY_SUBMISSION_DATE = "submissionDate";
   private OffsetDateTime submissionDate;
@@ -136,7 +136,7 @@ public class Submission {
   private Boolean empty;
 
   public static final String JSON_PROPERTY_DURATION_IN_MINUTES = "durationInMinutes";
-  private Long durationInMinutes;
+  Long durationInMinutes;
 
   public static final String JSON_PROPERTY_RESULTS = "results";
   private List<Result> results = new ArrayList<>();
@@ -257,7 +257,7 @@ public class Submission {
   }
 
 
-  public Submission participation(CleanupBuildPlan200Response participation) {
+  public Submission participation(Participation participation) {
     this.participation = participation;
     return this;
   }
@@ -270,14 +270,14 @@ public class Submission {
   @JsonProperty(JSON_PROPERTY_PARTICIPATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public CleanupBuildPlan200Response getParticipation() {
+  public Participation getParticipation() {
     return participation;
   }
 
 
   @JsonProperty(JSON_PROPERTY_PARTICIPATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setParticipation(CleanupBuildPlan200Response participation) {
+  public void setParticipation(Participation participation) {
     this.participation = participation;
   }
 
