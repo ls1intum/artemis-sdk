@@ -27,7 +27,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import de.tum.cit.ase.artemis.sdk.model.Exercise;
-import de.tum.cit.ase.artemis.sdk.model.PlagiarismComparisonModelingSubmissionElement;
+import de.tum.cit.ase.artemis.sdk.model.PlagiarismComparisonObject;
 import de.tum.cit.ase.artemis.sdk.model.PlagiarismResultObject;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -53,17 +53,17 @@ import de.tum.cit.ase.artemis.sdk.JSON;
 
 public class ModelingPlagiarismResult extends PlagiarismResultObject {
   public static final String JSON_PROPERTY_COMPARISONS = "comparisons";
-  private Set<PlagiarismComparisonModelingSubmissionElement> comparisons;
+  private Set<PlagiarismComparisonObject> comparisons;
 
   public ModelingPlagiarismResult() { 
   }
 
-  public ModelingPlagiarismResult comparisons(Set<PlagiarismComparisonModelingSubmissionElement> comparisons) {
+  public ModelingPlagiarismResult comparisons(Set<PlagiarismComparisonObject> comparisons) {
     this.comparisons = comparisons;
     return this;
   }
 
-  public ModelingPlagiarismResult addComparisonsItem(PlagiarismComparisonModelingSubmissionElement comparisonsItem) {
+  public ModelingPlagiarismResult addComparisonsItem(PlagiarismComparisonObject comparisonsItem) {
     if (this.comparisons == null) {
       this.comparisons = new LinkedHashSet<>();
     }
@@ -79,7 +79,7 @@ public class ModelingPlagiarismResult extends PlagiarismResultObject {
   @JsonProperty(JSON_PROPERTY_COMPARISONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Set<PlagiarismComparisonModelingSubmissionElement> getComparisons() {
+  public Set<PlagiarismComparisonObject> getComparisons() {
     return comparisons;
   }
 
@@ -87,7 +87,7 @@ public class ModelingPlagiarismResult extends PlagiarismResultObject {
   @JsonDeserialize(as = LinkedHashSet.class)
   @JsonProperty(JSON_PROPERTY_COMPARISONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setComparisons(Set<PlagiarismComparisonModelingSubmissionElement> comparisons) {
+  public void setComparisons(Set<PlagiarismComparisonObject> comparisons) {
     this.comparisons = comparisons;
   }
 
