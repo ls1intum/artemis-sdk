@@ -7,7 +7,8 @@
    -o /local \
    -c /local/openapi-generator-config.yaml
 
-3) manually check the following files for changes (TODO: think about using mustache template but not sure how to update them?)
+3) manually check the following files for changes
+(TODO: think about using mustache template but not sure how to update them? for now use the patch and keep it updated!)
 * pom.xml: jakarta.annotation no scope provided necessary
 * ApiClient.java: MediaType JSON for MultiPart document
 * ApiClient.java: allow selfsigned certificates in customizeClientBuilder
