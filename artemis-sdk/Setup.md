@@ -11,5 +11,6 @@
 3) manually check the following files for changes (TODO: think about using mustache template but not sure how to update them?)
 * pom.xml: jakarta.annotation no scope provided necessary
 * ApiClient.java: MediaType JSON for MultiPart document
+* ApiClient.java: allow selfsigned certificates in customizeClientBuilder
 * model/ModelingPlagiarismResult.java: PlagiarismComparisonObject instead of PlagiarismComparisonModelingSubmissionElement otherwise Error during Compilation
 * model/Submisson.java: Participation instead of CleanupBuildPlan200Response and durationInMinutes not private otherwise Error during Compilation

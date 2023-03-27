@@ -1143,6 +1143,14 @@ public class ApiClient extends JavaTimeFormatter {
    */
   protected void customizeClientBuilder(ClientBuilder clientBuilder) {
     // No-op extension point
+    try {
+      // TODO: make this configurable via command argument in artemis-zeuszs?!
+      disableCertificateValidation(clientBuilder);
+    } catch (KeyManagementException e) {
+      throw new RuntimeException(e);
+    } catch (NoSuchAlgorithmException e) {
+      throw new RuntimeException(e);
+    }
   }
 
   /**
