@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class ResultResourceApi {
   private ApiClient apiClient;
 
@@ -441,79 +441,6 @@ public class ResultResourceApi {
     GenericType<List<Feedback>> localVarReturnType = new GenericType<List<Feedback>>() {};
 
     return apiClient.invokeAPI("ResultResourceApi.getResultDetails", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
-  }
-  /**
-   * 
-   * 
-   * @param exerciseId  (required)
-   * @param withSubmissions  (optional, default to true)
-   * @return List&lt;Result&gt;
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
-       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-   */
-  public List<Result> getResultsForExercise(Long exerciseId, Boolean withSubmissions) throws ApiException {
-    return getResultsForExerciseWithHttpInfo(exerciseId, withSubmissions).getData();
-  }
-
-  /**
-   * 
-   * 
-   * @param exerciseId  (required)
-   * @param withSubmissions  (optional, default to true)
-   * @return ApiResponse&lt;List&lt;Result&gt;&gt;
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
-       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-   */
-  public ApiResponse<List<Result>> getResultsForExerciseWithHttpInfo(Long exerciseId, Boolean withSubmissions) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
-    if (exerciseId == null) {
-      throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling getResultsForExercise");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/api/exercises/{exerciseId}/results"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "withSubmissions", withSubmissions));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    GenericType<List<Result>> localVarReturnType = new GenericType<List<Result>>() {};
-
-    return apiClient.invokeAPI("ResultResourceApi.getResultsForExercise", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }

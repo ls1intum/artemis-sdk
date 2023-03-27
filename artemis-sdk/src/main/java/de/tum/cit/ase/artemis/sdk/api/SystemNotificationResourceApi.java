@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class SystemNotificationResourceApi {
   private ApiClient apiClient;
 
@@ -181,7 +181,7 @@ public class SystemNotificationResourceApi {
   /**
    * 
    * 
-   * @param id  (required)
+   * @param notificationId  (required)
    * @return SystemNotification
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -191,14 +191,14 @@ public class SystemNotificationResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public SystemNotification getSystemNotification(Long id) throws ApiException {
-    return getSystemNotificationWithHttpInfo(id).getData();
+  public SystemNotification getSystemNotification(Long notificationId) throws ApiException {
+    return getSystemNotificationWithHttpInfo(notificationId).getData();
   }
 
   /**
    * 
    * 
-   * @param id  (required)
+   * @param notificationId  (required)
    * @return ApiResponse&lt;SystemNotification&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -208,17 +208,17 @@ public class SystemNotificationResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<SystemNotification> getSystemNotificationWithHttpInfo(Long id) throws ApiException {
+  public ApiResponse<SystemNotification> getSystemNotificationWithHttpInfo(Long notificationId) throws ApiException {
     Object localVarPostBody = null;
     
-    // verify the required parameter 'id' is set
-    if (id == null) {
-      throw new ApiException(400, "Missing the required parameter 'id' when calling getSystemNotification");
+    // verify the required parameter 'notificationId' is set
+    if (notificationId == null) {
+      throw new ApiException(400, "Missing the required parameter 'notificationId' when calling getSystemNotification");
     }
     
     // create path and map variables
-    String localVarPath = "/api/system-notifications/{id}"
-      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+    String localVarPath = "/api/system-notifications/{notificationId}"
+      .replaceAll("\\{" + "notificationId" + "\\}", apiClient.escapeString(notificationId.toString()));
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();

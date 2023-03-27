@@ -5,7 +5,7 @@ All URIs are relative to *http://localhost:8080*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**createLecture**](LectureResourceApi.md#createLecture) | **POST** /api/lectures |  |
-| [**deleteLecture**](LectureResourceApi.md#deleteLecture) | **DELETE** /api/lectures/{id} |  |
+| [**deleteLecture**](LectureResourceApi.md#deleteLecture) | **DELETE** /api/lectures/{lectureId} |  |
 | [**getAllLecturesOnPage**](LectureResourceApi.md#getAllLecturesOnPage) | **GET** /api/lectures |  |
 | [**getLecture**](LectureResourceApi.md#getLecture) | **GET** /api/lectures/{lectureId} |  |
 | [**getLectureTitle**](LectureResourceApi.md#getLectureTitle) | **GET** /api/lectures/{lectureId}/title |  |
@@ -82,7 +82,7 @@ No authorization required
 
 ## deleteLecture
 
-> deleteLecture(id)
+> deleteLecture(lectureId)
 
 
 
@@ -102,9 +102,9 @@ public class Example {
         defaultClient.setBasePath("http://localhost:8080");
 
         LectureResourceApi apiInstance = new LectureResourceApi(defaultClient);
-        Long id = 56L; // Long | 
+        Long lectureId = 56L; // Long | 
         try {
-            apiInstance.deleteLecture(id);
+            apiInstance.deleteLecture(lectureId);
         } catch (ApiException e) {
             System.err.println("Exception when calling LectureResourceApi#deleteLecture");
             System.err.println("Status code: " + e.getCode());
@@ -121,7 +121,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **Long**|  | |
+| **lectureId** | **Long**|  | |
 
 ### Return type
 

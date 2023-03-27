@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class LectureResourceApi {
   private ApiClient apiClient;
 
@@ -120,7 +120,7 @@ public class LectureResourceApi {
   /**
    * 
    * 
-   * @param id  (required)
+   * @param lectureId  (required)
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -129,14 +129,14 @@ public class LectureResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public void deleteLecture(Long id) throws ApiException {
-    deleteLectureWithHttpInfo(id);
+  public void deleteLecture(Long lectureId) throws ApiException {
+    deleteLectureWithHttpInfo(lectureId);
   }
 
   /**
    * 
    * 
-   * @param id  (required)
+   * @param lectureId  (required)
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -146,17 +146,17 @@ public class LectureResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<Void> deleteLectureWithHttpInfo(Long id) throws ApiException {
+  public ApiResponse<Void> deleteLectureWithHttpInfo(Long lectureId) throws ApiException {
     Object localVarPostBody = null;
     
-    // verify the required parameter 'id' is set
-    if (id == null) {
-      throw new ApiException(400, "Missing the required parameter 'id' when calling deleteLecture");
+    // verify the required parameter 'lectureId' is set
+    if (lectureId == null) {
+      throw new ApiException(400, "Missing the required parameter 'lectureId' when calling deleteLecture");
     }
     
     // create path and map variables
-    String localVarPath = "/api/lectures/{id}"
-      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+    String localVarPath = "/api/lectures/{lectureId}"
+      .replaceAll("\\{" + "lectureId" + "\\}", apiClient.escapeString(lectureId.toString()));
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();

@@ -39,6 +39,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
  */
 @JsonPropertyOrder({
   User.JSON_PROPERTY_ID,
+  User.JSON_PROPERTY_CREATED_DATE,
   User.JSON_PROPERTY_LOGIN,
   User.JSON_PROPERTY_FIRST_NAME,
   User.JSON_PROPERTY_LAST_NAME,
@@ -49,7 +50,6 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   User.JSON_PROPERTY_RESET_DATE,
   User.JSON_PROPERTY_LAST_NOTIFICATION_READ,
   User.JSON_PROPERTY_HIDE_NOTIFICATIONS_UNTIL,
-  User.JSON_PROPERTY_VCS_ACCESS_TOKEN,
   User.JSON_PROPERTY_GROUPS,
   User.JSON_PROPERTY_GUIDED_TOUR_SETTINGS,
   User.JSON_PROPERTY_AUTHORITIES,
@@ -60,10 +60,13 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   User.JSON_PROPERTY_PARTICIPANT_IDENTIFIER,
   User.JSON_PROPERTY_VISIBLE_REGISTRATION_NUMBER
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class User {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
+
+  public static final String JSON_PROPERTY_CREATED_DATE = "createdDate";
+  private OffsetDateTime createdDate;
 
   public static final String JSON_PROPERTY_LOGIN = "login";
   private String login;
@@ -94,9 +97,6 @@ public class User {
 
   public static final String JSON_PROPERTY_HIDE_NOTIFICATIONS_UNTIL = "hideNotificationsUntil";
   private OffsetDateTime hideNotificationsUntil;
-
-  public static final String JSON_PROPERTY_VCS_ACCESS_TOKEN = "vcsAccessToken";
-  private String vcsAccessToken;
 
   public static final String JSON_PROPERTY_GROUPS = "groups";
   private Set<String> groups = new LinkedHashSet<>();
@@ -150,6 +150,31 @@ public class User {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(Long id) {
     this.id = id;
+  }
+
+
+  public User createdDate(OffsetDateTime createdDate) {
+    this.createdDate = createdDate;
+    return this;
+  }
+
+   /**
+   * Get createdDate
+   * @return createdDate
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CREATED_DATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public OffsetDateTime getCreatedDate() {
+    return createdDate;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CREATED_DATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCreatedDate(OffsetDateTime createdDate) {
+    this.createdDate = createdDate;
   }
 
 
@@ -400,31 +425,6 @@ public class User {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setHideNotificationsUntil(OffsetDateTime hideNotificationsUntil) {
     this.hideNotificationsUntil = hideNotificationsUntil;
-  }
-
-
-  public User vcsAccessToken(String vcsAccessToken) {
-    this.vcsAccessToken = vcsAccessToken;
-    return this;
-  }
-
-   /**
-   * Get vcsAccessToken
-   * @return vcsAccessToken
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_VCS_ACCESS_TOKEN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getVcsAccessToken() {
-    return vcsAccessToken;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_VCS_ACCESS_TOKEN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setVcsAccessToken(String vcsAccessToken) {
-    this.vcsAccessToken = vcsAccessToken;
   }
 
 
@@ -711,6 +711,7 @@ public class User {
     }
     User user = (User) o;
     return Objects.equals(this.id, user.id) &&
+        Objects.equals(this.createdDate, user.createdDate) &&
         Objects.equals(this.login, user.login) &&
         Objects.equals(this.firstName, user.firstName) &&
         Objects.equals(this.lastName, user.lastName) &&
@@ -721,7 +722,6 @@ public class User {
         Objects.equals(this.resetDate, user.resetDate) &&
         Objects.equals(this.lastNotificationRead, user.lastNotificationRead) &&
         Objects.equals(this.hideNotificationsUntil, user.hideNotificationsUntil) &&
-        Objects.equals(this.vcsAccessToken, user.vcsAccessToken) &&
         Objects.equals(this.groups, user.groups) &&
         Objects.equals(this.guidedTourSettings, user.guidedTourSettings) &&
         Objects.equals(this.authorities, user.authorities) &&
@@ -735,7 +735,7 @@ public class User {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, login, firstName, lastName, email, activated, langKey, imageUrl, resetDate, lastNotificationRead, hideNotificationsUntil, vcsAccessToken, groups, guidedTourSettings, authorities, organizations, tutorialGroupRegistrations, name, internal, participantIdentifier, visibleRegistrationNumber);
+    return Objects.hash(id, createdDate, login, firstName, lastName, email, activated, langKey, imageUrl, resetDate, lastNotificationRead, hideNotificationsUntil, groups, guidedTourSettings, authorities, organizations, tutorialGroupRegistrations, name, internal, participantIdentifier, visibleRegistrationNumber);
   }
 
   @Override
@@ -743,6 +743,7 @@ public class User {
     StringBuilder sb = new StringBuilder();
     sb.append("class User {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     sb.append("    login: ").append(toIndentedString(login)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
@@ -753,7 +754,6 @@ public class User {
     sb.append("    resetDate: ").append(toIndentedString(resetDate)).append("\n");
     sb.append("    lastNotificationRead: ").append(toIndentedString(lastNotificationRead)).append("\n");
     sb.append("    hideNotificationsUntil: ").append(toIndentedString(hideNotificationsUntil)).append("\n");
-    sb.append("    vcsAccessToken: ").append(toIndentedString(vcsAccessToken)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
     sb.append("    guidedTourSettings: ").append(toIndentedString(guidedTourSettings)).append("\n");
     sb.append("    authorities: ").append(toIndentedString(authorities)).append("\n");

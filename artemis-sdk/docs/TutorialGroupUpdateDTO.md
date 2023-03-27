@@ -9,6 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**tutorialGroup** | [**TutorialGroup**](TutorialGroup.md) |  |  |
 |**notificationText** | **String** |  |  [optional] |
+|**updateTutorialGroupChannelName** | **Boolean** |  |  [optional] |
 
 
 

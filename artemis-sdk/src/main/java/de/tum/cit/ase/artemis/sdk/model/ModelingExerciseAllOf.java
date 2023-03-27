@@ -37,7 +37,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ModelingExerciseAllOf.JSON_PROPERTY_CLUSTER_BUILD_DATE
 })
 @JsonTypeName("ModelingExercise_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class ModelingExerciseAllOf {
   /**
    * Gets or Sets diagramType

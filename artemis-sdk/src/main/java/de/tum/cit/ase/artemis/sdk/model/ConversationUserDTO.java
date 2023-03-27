@@ -42,7 +42,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ConversationUserDTO.JSON_PROPERTY_IS_CHANNEL_MODERATOR,
   ConversationUserDTO.JSON_PROPERTY_IS_REQUESTING_USER
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class ConversationUserDTO {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;

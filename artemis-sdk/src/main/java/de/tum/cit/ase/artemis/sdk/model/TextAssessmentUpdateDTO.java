@@ -42,7 +42,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   TextAssessmentUpdateDTO.JSON_PROPERTY_COMPLAINT_RESPONSE,
   TextAssessmentUpdateDTO.JSON_PROPERTY_TEXT_BLOCKS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class TextAssessmentUpdateDTO {
   public static final String JSON_PROPERTY_FEEDBACKS = "feedbacks";
   private List<Feedback> feedbacks = new ArrayList<>();

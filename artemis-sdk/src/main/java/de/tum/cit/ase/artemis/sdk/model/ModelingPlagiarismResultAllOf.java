@@ -37,7 +37,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ModelingPlagiarismResultAllOf.JSON_PROPERTY_COMPARISONS
 })
 @JsonTypeName("ModelingPlagiarismResult_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class ModelingPlagiarismResultAllOf {
   public static final String JSON_PROPERTY_COMPARISONS = "comparisons";
   private Set<PlagiarismComparisonModelingSubmissionElement> comparisons = new LinkedHashSet<>();

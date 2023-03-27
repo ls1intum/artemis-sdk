@@ -10,6 +10,7 @@
 |**id** | **Long** |  |  [optional] |
 |**text** | **String** |  |  [optional] |
 |**detailText** | **String** |  |  [optional] |
+|**hasLongFeedbackText** | **Boolean** |  |  [optional] |
 |**reference** | **String** |  |  [optional] |
 |**credits** | **Double** |  |  [optional] |
 |**positive** | **Boolean** |  |  [optional] |

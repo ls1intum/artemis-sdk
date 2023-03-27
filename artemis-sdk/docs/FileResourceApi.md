@@ -749,7 +749,7 @@ No authorization required
 
 ## getTemplateFile1
 
-> List&lt;byte[]&gt; getTemplateFile1(language, projectType, filename)
+> List&lt;byte[]&gt; getTemplateFile1(language, filename)
 
 
 
@@ -770,10 +770,9 @@ public class Example {
 
         FileResourceApi apiInstance = new FileResourceApi(defaultClient);
         String language = "JAVA"; // String | 
-        String projectType = "MAVEN_MAVEN"; // String | 
         String filename = "filename_example"; // String | 
         try {
-            List<byte[]> result = apiInstance.getTemplateFile1(language, projectType, filename);
+            List<byte[]> result = apiInstance.getTemplateFile1(language, filename);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling FileResourceApi#getTemplateFile1");
@@ -792,7 +791,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **language** | **String**|  | [enum: JAVA, PYTHON, C, HASKELL, KOTLIN, VHDL, ASSEMBLER, SWIFT, OCAML, EMPTY] |
-| **projectType** | **String**|  | [enum: MAVEN_MAVEN, PLAIN_MAVEN, PLAIN, XCODE, FACT, GCC, PLAIN_GRADLE, GRADLE_GRADLE] |
 | **filename** | **String**|  | |
 
 ### Return type
@@ -817,7 +815,7 @@ No authorization required
 
 ## getTemplateFile2
 
-> List&lt;byte[]&gt; getTemplateFile2(language, projectType, filename)
+> List&lt;byte[]&gt; getTemplateFile2(filename)
 
 
 
@@ -837,11 +835,9 @@ public class Example {
         defaultClient.setBasePath("http://localhost:8080");
 
         FileResourceApi apiInstance = new FileResourceApi(defaultClient);
-        String language = "JAVA"; // String | 
-        String projectType = "MAVEN_MAVEN"; // String | 
         String filename = "filename_example"; // String | 
         try {
-            List<byte[]> result = apiInstance.getTemplateFile2(language, projectType, filename);
+            List<byte[]> result = apiInstance.getTemplateFile2(filename);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling FileResourceApi#getTemplateFile2");
@@ -859,8 +855,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **language** | **String**|  | [enum: JAVA, PYTHON, C, HASKELL, KOTLIN, VHDL, ASSEMBLER, SWIFT, OCAML, EMPTY] |
-| **projectType** | **String**|  | [enum: MAVEN_MAVEN, PLAIN_MAVEN, PLAIN, XCODE, FACT, GCC, PLAIN_GRADLE, GRADLE_GRADLE] |
 | **filename** | **String**|  | |
 
 ### Return type

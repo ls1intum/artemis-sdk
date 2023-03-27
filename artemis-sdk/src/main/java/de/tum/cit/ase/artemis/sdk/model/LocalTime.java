@@ -35,7 +35,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   LocalTime.JSON_PROPERTY_SECOND,
   LocalTime.JSON_PROPERTY_NANO
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class LocalTime {
   public static final String JSON_PROPERTY_HOUR = "hour";
   private Integer hour;

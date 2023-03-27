@@ -8,6 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**id** | **Long** |  |  [optional] |
+|**createdDate** | **OffsetDateTime** |  |  [optional] |
 |**submitted** | **Boolean** |  |  [optional] |
 |**workingTime** | **Integer** |  |  [optional] |
 |**started** | **Boolean** |  |  [optional] |

@@ -42,7 +42,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ShortAnswerQuestionAllOf.JSON_PROPERTY_MATCH_LETTER_CASE
 })
 @JsonTypeName("ShortAnswerQuestion_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class ShortAnswerQuestionAllOf {
   public static final String JSON_PROPERTY_SPOTS = "spots";
   private List<ShortAnswerSpot> spots = new ArrayList<>();

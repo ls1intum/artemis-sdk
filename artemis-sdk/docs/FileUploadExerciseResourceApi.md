@@ -7,8 +7,10 @@ All URIs are relative to *http://localhost:8080*
 | [**createFileUploadExercise**](FileUploadExerciseResourceApi.md#createFileUploadExercise) | **POST** /api/file-upload-exercises |  |
 | [**deleteFileUploadExercise**](FileUploadExerciseResourceApi.md#deleteFileUploadExercise) | **DELETE** /api/file-upload-exercises/{exerciseId} |  |
 | [**exportSubmissions2**](FileUploadExerciseResourceApi.md#exportSubmissions2) | **POST** /api/file-upload-exercises/{exerciseId}/export-submissions |  |
+| [**getAllExercisesOnPage4**](FileUploadExerciseResourceApi.md#getAllExercisesOnPage4) | **GET** /api/file-upload-exercises |  |
 | [**getFileUploadExercise**](FileUploadExerciseResourceApi.md#getFileUploadExercise) | **GET** /api/file-upload-exercises/{exerciseId} |  |
 | [**getFileUploadExercisesForCourse**](FileUploadExerciseResourceApi.md#getFileUploadExercisesForCourse) | **GET** /api/courses/{courseId}/file-upload-exercises |  |
+| [**importFileUploadExercise**](FileUploadExerciseResourceApi.md#importFileUploadExercise) | **POST** /api/file-upload-exercises/import/{sourceId} |  |
 | [**reEvaluateAndUpdateFileUploadExercise**](FileUploadExerciseResourceApi.md#reEvaluateAndUpdateFileUploadExercise) | **PUT** /api/file-upload-exercises/{exerciseId}/re-evaluate |  |
 | [**updateFileUploadExercise**](FileUploadExerciseResourceApi.md#updateFileUploadExercise) | **PUT** /api/file-upload-exercises/{exerciseId} |  |
 
@@ -207,6 +209,74 @@ No authorization required
 | **200** | OK |  -  |
 
 
+## getAllExercisesOnPage4
+
+> SearchResultPageDTOFileUploadExercise getAllExercisesOnPage4(search, isCourseFilter, isExamFilter)
+
+
+
+### Example
+
+```java
+// Import classes:
+import de.tum.cit.ase.artemis.sdk.ApiClient;
+import de.tum.cit.ase.artemis.sdk.ApiException;
+import de.tum.cit.ase.artemis.sdk.Configuration;
+import de.tum.cit.ase.artemis.sdk.model.*;
+import de.tum.cit.ase.artemis.sdk.api.FileUploadExerciseResourceApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8080");
+
+        FileUploadExerciseResourceApi apiInstance = new FileUploadExerciseResourceApi(defaultClient);
+        PageableSearchDTOString search = new HashMap(); // PageableSearchDTOString | 
+        Boolean isCourseFilter = true; // Boolean | 
+        Boolean isExamFilter = true; // Boolean | 
+        try {
+            SearchResultPageDTOFileUploadExercise result = apiInstance.getAllExercisesOnPage4(search, isCourseFilter, isExamFilter);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling FileUploadExerciseResourceApi#getAllExercisesOnPage4");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **search** | [**PageableSearchDTOString**](PageableSearchDTOString.md)|  | |
+| **isCourseFilter** | **Boolean**|  | [optional] [default to true] |
+| **isExamFilter** | **Boolean**|  | [optional] [default to true] |
+
+### Return type
+
+[**SearchResultPageDTOFileUploadExercise**](SearchResultPageDTOFileUploadExercise.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **503** | Service Unavailable |  -  |
+| **200** | OK |  -  |
+
+
 ## getFileUploadExercise
 
 > FileUploadExercise getFileUploadExercise(exerciseId)
@@ -326,6 +396,72 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **503** | Service Unavailable |  -  |
+| **200** | OK |  -  |
+
+
+## importFileUploadExercise
+
+> FileUploadExercise importFileUploadExercise(sourceId, fileUploadExercise)
+
+
+
+### Example
+
+```java
+// Import classes:
+import de.tum.cit.ase.artemis.sdk.ApiClient;
+import de.tum.cit.ase.artemis.sdk.ApiException;
+import de.tum.cit.ase.artemis.sdk.Configuration;
+import de.tum.cit.ase.artemis.sdk.model.*;
+import de.tum.cit.ase.artemis.sdk.api.FileUploadExerciseResourceApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8080");
+
+        FileUploadExerciseResourceApi apiInstance = new FileUploadExerciseResourceApi(defaultClient);
+        Long sourceId = 56L; // Long | 
+        FileUploadExercise fileUploadExercise = new FileUploadExercise(); // FileUploadExercise | 
+        try {
+            FileUploadExercise result = apiInstance.importFileUploadExercise(sourceId, fileUploadExercise);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling FileUploadExerciseResourceApi#importFileUploadExercise");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **sourceId** | **Long**|  | |
+| **fileUploadExercise** | [**FileUploadExercise**](FileUploadExercise.md)|  | |
+
+### Return type
+
+[**FileUploadExercise**](FileUploadExercise.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: */*
 
 ### HTTP response details

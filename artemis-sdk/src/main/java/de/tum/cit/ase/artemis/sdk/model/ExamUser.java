@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import de.tum.cit.ase.artemis.sdk.model.Exam;
 import de.tum.cit.ase.artemis.sdk.model.User;
+import java.time.OffsetDateTime;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import de.tum.cit.ase.artemis.sdk.JSON;
 
@@ -33,6 +34,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
  */
 @JsonPropertyOrder({
   ExamUser.JSON_PROPERTY_ID,
+  ExamUser.JSON_PROPERTY_CREATED_DATE,
   ExamUser.JSON_PROPERTY_ACTUAL_ROOM,
   ExamUser.JSON_PROPERTY_ACTUAL_SEAT,
   ExamUser.JSON_PROPERTY_PLANNED_ROOM,
@@ -46,10 +48,13 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ExamUser.JSON_PROPERTY_EXAM,
   ExamUser.JSON_PROPERTY_USER
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class ExamUser {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
+
+  public static final String JSON_PROPERTY_CREATED_DATE = "createdDate";
+  private OffsetDateTime createdDate;
 
   public static final String JSON_PROPERTY_ACTUAL_ROOM = "actualRoom";
   private String actualRoom;
@@ -112,6 +117,31 @@ public class ExamUser {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(Long id) {
     this.id = id;
+  }
+
+
+  public ExamUser createdDate(OffsetDateTime createdDate) {
+    this.createdDate = createdDate;
+    return this;
+  }
+
+   /**
+   * Get createdDate
+   * @return createdDate
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CREATED_DATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public OffsetDateTime getCreatedDate() {
+    return createdDate;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CREATED_DATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCreatedDate(OffsetDateTime createdDate) {
+    this.createdDate = createdDate;
   }
 
 
@@ -428,6 +458,7 @@ public class ExamUser {
     }
     ExamUser examUser = (ExamUser) o;
     return Objects.equals(this.id, examUser.id) &&
+        Objects.equals(this.createdDate, examUser.createdDate) &&
         Objects.equals(this.actualRoom, examUser.actualRoom) &&
         Objects.equals(this.actualSeat, examUser.actualSeat) &&
         Objects.equals(this.plannedRoom, examUser.plannedRoom) &&
@@ -444,7 +475,7 @@ public class ExamUser {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, actualRoom, actualSeat, plannedRoom, plannedSeat, didCheckImage, didCheckName, didCheckLogin, didCheckRegistrationNumber, signingImagePath, studentImagePath, exam, user);
+    return Objects.hash(id, createdDate, actualRoom, actualSeat, plannedRoom, plannedSeat, didCheckImage, didCheckName, didCheckLogin, didCheckRegistrationNumber, signingImagePath, studentImagePath, exam, user);
   }
 
   @Override
@@ -452,6 +483,7 @@ public class ExamUser {
     StringBuilder sb = new StringBuilder();
     sb.append("class ExamUser {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     sb.append("    actualRoom: ").append(toIndentedString(actualRoom)).append("\n");
     sb.append("    actualSeat: ").append(toIndentedString(actualSeat)).append("\n");
     sb.append("    plannedRoom: ").append(toIndentedString(plannedRoom)).append("\n");

@@ -46,7 +46,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ModelingSubmissionAllOf.JSON_PROPERTY_RESULTS
 })
 @JsonTypeName("ModelingSubmission_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class ModelingSubmissionAllOf {
   public static final String JSON_PROPERTY_PARTICIPATION = "participation";
   private Participation participation;

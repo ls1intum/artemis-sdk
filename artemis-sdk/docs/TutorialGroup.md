@@ -22,6 +22,8 @@
 |**teachingAssistantName** | **String** |  |  [optional] |
 |**courseTitle** | **String** |  |  [optional] |
 |**nextSession** | [**TutorialGroupSession**](TutorialGroupSession.md) |  |  [optional] |
+|**channel** | [**ChannelDTO**](ChannelDTO.md) |  |  [optional] |
+|**averageAttendance** | **Integer** |  |  [optional] |
 |**tutorialGroupSchedule** | [**TutorialGroupSchedule**](TutorialGroupSchedule.md) |  |  [optional] |
 |**tutorialGroupSessions** | [**Set&lt;TutorialGroupSession&gt;**](TutorialGroupSession.md) |  |  [optional] |
 

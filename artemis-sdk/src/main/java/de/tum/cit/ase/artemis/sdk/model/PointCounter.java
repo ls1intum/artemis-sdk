@@ -35,7 +35,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   PointCounter.JSON_PROPERTY_UN_RATED_COUNTER,
   PointCounter.JSON_PROPERTY_POINTS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class PointCounter {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;

@@ -159,7 +159,7 @@ No authorization required
 
 ## deleteTestRun
 
-> StudentExam deleteTestRun(courseId, examId, testRunId)
+> deleteTestRun(courseId, examId, testRunId)
 
 
 
@@ -183,8 +183,7 @@ public class Example {
         Long examId = 56L; // Long | 
         Long testRunId = 56L; // Long | 
         try {
-            StudentExam result = apiInstance.deleteTestRun(courseId, examId, testRunId);
-            System.out.println(result);
+            apiInstance.deleteTestRun(courseId, examId, testRunId);
         } catch (ApiException e) {
             System.err.println("Exception when calling StudentExamResourceApi#deleteTestRun");
             System.err.println("Status code: " + e.getCode());
@@ -207,7 +206,7 @@ public class Example {
 
 ### Return type
 
-[**StudentExam**](StudentExam.md)
+null (empty response body)
 
 ### Authorization
 

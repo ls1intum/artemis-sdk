@@ -5,14 +5,14 @@ All URIs are relative to *http://localhost:8080*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**createSystemNotification**](AdminSystemNotificationResourceApi.md#createSystemNotification) | **POST** /api/admin/system-notifications |  |
-| [**deleteSystemNotification**](AdminSystemNotificationResourceApi.md#deleteSystemNotification) | **DELETE** /api/admin/system-notifications/{id} |  |
+| [**deleteSystemNotification**](AdminSystemNotificationResourceApi.md#deleteSystemNotification) | **DELETE** /api/admin/system-notifications/{notificationId} |  |
 | [**updateSystemNotification**](AdminSystemNotificationResourceApi.md#updateSystemNotification) | **PUT** /api/admin/system-notifications |  |
 
 
 
 ## createSystemNotification
 
-> GetAllNotificationsForCurrentUserFilteredBySettings200ResponseInner createSystemNotification(systemNotification)
+> CreateSystemNotification200Response createSystemNotification(systemNotification)
 
 
 
@@ -34,7 +34,7 @@ public class Example {
         AdminSystemNotificationResourceApi apiInstance = new AdminSystemNotificationResourceApi(defaultClient);
         SystemNotification systemNotification = new SystemNotification(); // SystemNotification | 
         try {
-            GetAllNotificationsForCurrentUserFilteredBySettings200ResponseInner result = apiInstance.createSystemNotification(systemNotification);
+            CreateSystemNotification200Response result = apiInstance.createSystemNotification(systemNotification);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AdminSystemNotificationResourceApi#createSystemNotification");
@@ -56,7 +56,7 @@ public class Example {
 
 ### Return type
 
-[**GetAllNotificationsForCurrentUserFilteredBySettings200ResponseInner**](GetAllNotificationsForCurrentUserFilteredBySettings200ResponseInner.md)
+[**CreateSystemNotification200Response**](CreateSystemNotification200Response.md)
 
 ### Authorization
 
@@ -76,7 +76,7 @@ No authorization required
 
 ## deleteSystemNotification
 
-> deleteSystemNotification(id)
+> deleteSystemNotification(notificationId)
 
 
 
@@ -96,9 +96,9 @@ public class Example {
         defaultClient.setBasePath("http://localhost:8080");
 
         AdminSystemNotificationResourceApi apiInstance = new AdminSystemNotificationResourceApi(defaultClient);
-        Long id = 56L; // Long | 
+        Long notificationId = 56L; // Long | 
         try {
-            apiInstance.deleteSystemNotification(id);
+            apiInstance.deleteSystemNotification(notificationId);
         } catch (ApiException e) {
             System.err.println("Exception when calling AdminSystemNotificationResourceApi#deleteSystemNotification");
             System.err.println("Status code: " + e.getCode());
@@ -115,7 +115,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **Long**|  | |
+| **notificationId** | **Long**|  | |
 
 ### Return type
 

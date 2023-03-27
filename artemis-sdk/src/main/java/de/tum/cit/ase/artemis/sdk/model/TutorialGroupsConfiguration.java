@@ -37,9 +37,11 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   TutorialGroupsConfiguration.JSON_PROPERTY_ID,
   TutorialGroupsConfiguration.JSON_PROPERTY_TUTORIAL_PERIOD_START_INCLUSIVE,
   TutorialGroupsConfiguration.JSON_PROPERTY_TUTORIAL_PERIOD_END_INCLUSIVE,
+  TutorialGroupsConfiguration.JSON_PROPERTY_USE_TUTORIAL_GROUP_CHANNELS,
+  TutorialGroupsConfiguration.JSON_PROPERTY_USE_PUBLIC_TUTORIAL_GROUP_CHANNELS,
   TutorialGroupsConfiguration.JSON_PROPERTY_TUTORIAL_GROUP_FREE_PERIODS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class TutorialGroupsConfiguration {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -49,6 +51,12 @@ public class TutorialGroupsConfiguration {
 
   public static final String JSON_PROPERTY_TUTORIAL_PERIOD_END_INCLUSIVE = "tutorialPeriodEndInclusive";
   private String tutorialPeriodEndInclusive;
+
+  public static final String JSON_PROPERTY_USE_TUTORIAL_GROUP_CHANNELS = "useTutorialGroupChannels";
+  private Boolean useTutorialGroupChannels;
+
+  public static final String JSON_PROPERTY_USE_PUBLIC_TUTORIAL_GROUP_CHANNELS = "usePublicTutorialGroupChannels";
+  private Boolean usePublicTutorialGroupChannels;
 
   public static final String JSON_PROPERTY_TUTORIAL_GROUP_FREE_PERIODS = "tutorialGroupFreePeriods";
   private Set<TutorialGroupFreePeriod> tutorialGroupFreePeriods = new LinkedHashSet<>();
@@ -131,6 +139,56 @@ public class TutorialGroupsConfiguration {
   }
 
 
+  public TutorialGroupsConfiguration useTutorialGroupChannels(Boolean useTutorialGroupChannels) {
+    this.useTutorialGroupChannels = useTutorialGroupChannels;
+    return this;
+  }
+
+   /**
+   * Get useTutorialGroupChannels
+   * @return useTutorialGroupChannels
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_USE_TUTORIAL_GROUP_CHANNELS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Boolean getUseTutorialGroupChannels() {
+    return useTutorialGroupChannels;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_USE_TUTORIAL_GROUP_CHANNELS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setUseTutorialGroupChannels(Boolean useTutorialGroupChannels) {
+    this.useTutorialGroupChannels = useTutorialGroupChannels;
+  }
+
+
+  public TutorialGroupsConfiguration usePublicTutorialGroupChannels(Boolean usePublicTutorialGroupChannels) {
+    this.usePublicTutorialGroupChannels = usePublicTutorialGroupChannels;
+    return this;
+  }
+
+   /**
+   * Get usePublicTutorialGroupChannels
+   * @return usePublicTutorialGroupChannels
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_USE_PUBLIC_TUTORIAL_GROUP_CHANNELS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Boolean getUsePublicTutorialGroupChannels() {
+    return usePublicTutorialGroupChannels;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_USE_PUBLIC_TUTORIAL_GROUP_CHANNELS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setUsePublicTutorialGroupChannels(Boolean usePublicTutorialGroupChannels) {
+    this.usePublicTutorialGroupChannels = usePublicTutorialGroupChannels;
+  }
+
+
   public TutorialGroupsConfiguration tutorialGroupFreePeriods(Set<TutorialGroupFreePeriod> tutorialGroupFreePeriods) {
     this.tutorialGroupFreePeriods = tutorialGroupFreePeriods;
     return this;
@@ -180,12 +238,14 @@ public class TutorialGroupsConfiguration {
     return Objects.equals(this.id, tutorialGroupsConfiguration.id) &&
         Objects.equals(this.tutorialPeriodStartInclusive, tutorialGroupsConfiguration.tutorialPeriodStartInclusive) &&
         Objects.equals(this.tutorialPeriodEndInclusive, tutorialGroupsConfiguration.tutorialPeriodEndInclusive) &&
+        Objects.equals(this.useTutorialGroupChannels, tutorialGroupsConfiguration.useTutorialGroupChannels) &&
+        Objects.equals(this.usePublicTutorialGroupChannels, tutorialGroupsConfiguration.usePublicTutorialGroupChannels) &&
         Objects.equals(this.tutorialGroupFreePeriods, tutorialGroupsConfiguration.tutorialGroupFreePeriods);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, tutorialPeriodStartInclusive, tutorialPeriodEndInclusive, tutorialGroupFreePeriods);
+    return Objects.hash(id, tutorialPeriodStartInclusive, tutorialPeriodEndInclusive, useTutorialGroupChannels, usePublicTutorialGroupChannels, tutorialGroupFreePeriods);
   }
 
   @Override
@@ -195,6 +255,8 @@ public class TutorialGroupsConfiguration {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    tutorialPeriodStartInclusive: ").append(toIndentedString(tutorialPeriodStartInclusive)).append("\n");
     sb.append("    tutorialPeriodEndInclusive: ").append(toIndentedString(tutorialPeriodEndInclusive)).append("\n");
+    sb.append("    useTutorialGroupChannels: ").append(toIndentedString(useTutorialGroupChannels)).append("\n");
+    sb.append("    usePublicTutorialGroupChannels: ").append(toIndentedString(usePublicTutorialGroupChannels)).append("\n");
     sb.append("    tutorialGroupFreePeriods: ").append(toIndentedString(tutorialGroupFreePeriods)).append("\n");
     sb.append("}");
     return sb.toString();

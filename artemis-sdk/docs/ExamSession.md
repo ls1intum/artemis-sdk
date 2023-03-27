@@ -8,13 +8,15 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**id** | **Long** |  |  [optional] |
+|**createdDate** | **OffsetDateTime** |  |  [optional] |
 |**studentExam** | [**StudentExam**](StudentExam.md) |  |  [optional] |
 |**sessionToken** | **String** |  |  [optional] |
 |**userAgent** | **String** |  |  [optional] |
 |**browserFingerprintHash** | **String** |  |  [optional] |
 |**instanceId** | **String** |  |  [optional] |
-|**ipAddress** | [**IPAddress**](IPAddress.md) |  |  [optional] |
+|**ipAddress** | **String** |  |  [optional] |
 |**initialSession** | **Boolean** |  |  [optional] |
+|**ipAddressFromIpAddress** | [**IPAddress**](IPAddress.md) |  |  [optional] |
 
 
 

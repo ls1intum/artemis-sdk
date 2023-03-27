@@ -36,7 +36,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   CourseManagementStatisticsDTO.JSON_PROPERTY_AVERAGE_SCORE_OF_COURSE,
   CourseManagementStatisticsDTO.JSON_PROPERTY_AVERAGE_SCORES_OF_EXERCISES
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class CourseManagementStatisticsDTO {
   public static final String JSON_PROPERTY_AVERAGE_SCORE_OF_COURSE = "averageScoreOfCourse";
   private Double averageScoreOfCourse;

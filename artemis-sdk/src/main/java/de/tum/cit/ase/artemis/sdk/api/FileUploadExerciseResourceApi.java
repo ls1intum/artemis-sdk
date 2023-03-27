@@ -10,6 +10,8 @@ import jakarta.ws.rs.core.GenericType;
 
 import java.io.File;
 import de.tum.cit.ase.artemis.sdk.model.FileUploadExercise;
+import de.tum.cit.ase.artemis.sdk.model.PageableSearchDTOString;
+import de.tum.cit.ase.artemis.sdk.model.SearchResultPageDTOFileUploadExercise;
 import de.tum.cit.ase.artemis.sdk.model.SubmissionExportOptionsDTO;
 
 import java.util.ArrayList;
@@ -17,7 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class FileUploadExerciseResourceApi {
   private ApiClient apiClient;
 
@@ -263,6 +265,82 @@ public class FileUploadExerciseResourceApi {
   /**
    * 
    * 
+   * @param search  (required)
+   * @param isCourseFilter  (optional, default to true)
+   * @param isExamFilter  (optional, default to true)
+   * @return SearchResultPageDTOFileUploadExercise
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
+       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public SearchResultPageDTOFileUploadExercise getAllExercisesOnPage4(PageableSearchDTOString search, Boolean isCourseFilter, Boolean isExamFilter) throws ApiException {
+    return getAllExercisesOnPage4WithHttpInfo(search, isCourseFilter, isExamFilter).getData();
+  }
+
+  /**
+   * 
+   * 
+   * @param search  (required)
+   * @param isCourseFilter  (optional, default to true)
+   * @param isExamFilter  (optional, default to true)
+   * @return ApiResponse&lt;SearchResultPageDTOFileUploadExercise&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
+       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public ApiResponse<SearchResultPageDTOFileUploadExercise> getAllExercisesOnPage4WithHttpInfo(PageableSearchDTOString search, Boolean isCourseFilter, Boolean isExamFilter) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'search' is set
+    if (search == null) {
+      throw new ApiException(400, "Missing the required parameter 'search' when calling getAllExercisesOnPage4");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/api/file-upload-exercises";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "search", search));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "isCourseFilter", isCourseFilter));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "isExamFilter", isExamFilter));
+
+    
+    
+    
+    final String[] localVarAccepts = {
+      "*/*"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<SearchResultPageDTOFileUploadExercise> localVarReturnType = new GenericType<SearchResultPageDTOFileUploadExercise>() {};
+
+    return apiClient.invokeAPI("FileUploadExerciseResourceApi.getAllExercisesOnPage4", localVarPath, "GET", localVarQueryParams, localVarPostBody,
+                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+  /**
+   * 
+   * 
    * @param exerciseId  (required)
    * @return FileUploadExercise
    * @throws ApiException if fails to make API call
@@ -397,6 +475,83 @@ public class FileUploadExerciseResourceApi {
     GenericType<List<FileUploadExercise>> localVarReturnType = new GenericType<List<FileUploadExercise>>() {};
 
     return apiClient.invokeAPI("FileUploadExerciseResourceApi.getFileUploadExercisesForCourse", localVarPath, "GET", localVarQueryParams, localVarPostBody,
+                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+  /**
+   * 
+   * 
+   * @param sourceId  (required)
+   * @param fileUploadExercise  (required)
+   * @return FileUploadExercise
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
+       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public FileUploadExercise importFileUploadExercise(Long sourceId, FileUploadExercise fileUploadExercise) throws ApiException {
+    return importFileUploadExerciseWithHttpInfo(sourceId, fileUploadExercise).getData();
+  }
+
+  /**
+   * 
+   * 
+   * @param sourceId  (required)
+   * @param fileUploadExercise  (required)
+   * @return ApiResponse&lt;FileUploadExercise&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
+       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public ApiResponse<FileUploadExercise> importFileUploadExerciseWithHttpInfo(Long sourceId, FileUploadExercise fileUploadExercise) throws ApiException {
+    Object localVarPostBody = fileUploadExercise;
+    
+    // verify the required parameter 'sourceId' is set
+    if (sourceId == null) {
+      throw new ApiException(400, "Missing the required parameter 'sourceId' when calling importFileUploadExercise");
+    }
+    
+    // verify the required parameter 'fileUploadExercise' is set
+    if (fileUploadExercise == null) {
+      throw new ApiException(400, "Missing the required parameter 'fileUploadExercise' when calling importFileUploadExercise");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/api/file-upload-exercises/import/{sourceId}"
+      .replaceAll("\\{" + "sourceId" + "\\}", apiClient.escapeString(sourceId.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    
+    
+    
+    final String[] localVarAccepts = {
+      "*/*"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<FileUploadExercise> localVarReturnType = new GenericType<FileUploadExercise>() {};
+
+    return apiClient.invokeAPI("FileUploadExerciseResourceApi.importFileUploadExercise", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }

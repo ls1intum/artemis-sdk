@@ -35,13 +35,14 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   RepositoryExportOptionsDTO.JSON_PROPERTY_FILTER_LATE_SUBMISSIONS,
   RepositoryExportOptionsDTO.JSON_PROPERTY_FILTER_LATE_SUBMISSIONS_INDIVIDUAL_DUE_DATE,
   RepositoryExportOptionsDTO.JSON_PROPERTY_FILTER_LATE_SUBMISSIONS_DATE,
+  RepositoryExportOptionsDTO.JSON_PROPERTY_EXCLUDE_PRACTICE_SUBMISSIONS,
   RepositoryExportOptionsDTO.JSON_PROPERTY_ADD_PARTICIPANT_NAME,
   RepositoryExportOptionsDTO.JSON_PROPERTY_COMBINE_STUDENT_COMMITS,
   RepositoryExportOptionsDTO.JSON_PROPERTY_ANONYMIZE_STUDENT_COMMITS,
   RepositoryExportOptionsDTO.JSON_PROPERTY_NORMALIZE_CODE_STYLE,
   RepositoryExportOptionsDTO.JSON_PROPERTY_HIDE_STUDENT_NAME_IN_ZIPPED_FOLDER
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class RepositoryExportOptionsDTO {
   public static final String JSON_PROPERTY_EXPORT_ALL_PARTICIPANTS = "exportAllParticipants";
   private Boolean exportAllParticipants;
@@ -54,6 +55,9 @@ public class RepositoryExportOptionsDTO {
 
   public static final String JSON_PROPERTY_FILTER_LATE_SUBMISSIONS_DATE = "filterLateSubmissionsDate";
   private OffsetDateTime filterLateSubmissionsDate;
+
+  public static final String JSON_PROPERTY_EXCLUDE_PRACTICE_SUBMISSIONS = "excludePracticeSubmissions";
+  private Boolean excludePracticeSubmissions;
 
   public static final String JSON_PROPERTY_ADD_PARTICIPANT_NAME = "addParticipantName";
   private Boolean addParticipantName;
@@ -170,6 +174,31 @@ public class RepositoryExportOptionsDTO {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFilterLateSubmissionsDate(OffsetDateTime filterLateSubmissionsDate) {
     this.filterLateSubmissionsDate = filterLateSubmissionsDate;
+  }
+
+
+  public RepositoryExportOptionsDTO excludePracticeSubmissions(Boolean excludePracticeSubmissions) {
+    this.excludePracticeSubmissions = excludePracticeSubmissions;
+    return this;
+  }
+
+   /**
+   * Get excludePracticeSubmissions
+   * @return excludePracticeSubmissions
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_EXCLUDE_PRACTICE_SUBMISSIONS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getExcludePracticeSubmissions() {
+    return excludePracticeSubmissions;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_EXCLUDE_PRACTICE_SUBMISSIONS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setExcludePracticeSubmissions(Boolean excludePracticeSubmissions) {
+    this.excludePracticeSubmissions = excludePracticeSubmissions;
   }
 
 
@@ -314,6 +343,7 @@ public class RepositoryExportOptionsDTO {
         Objects.equals(this.filterLateSubmissions, repositoryExportOptionsDTO.filterLateSubmissions) &&
         Objects.equals(this.filterLateSubmissionsIndividualDueDate, repositoryExportOptionsDTO.filterLateSubmissionsIndividualDueDate) &&
         Objects.equals(this.filterLateSubmissionsDate, repositoryExportOptionsDTO.filterLateSubmissionsDate) &&
+        Objects.equals(this.excludePracticeSubmissions, repositoryExportOptionsDTO.excludePracticeSubmissions) &&
         Objects.equals(this.addParticipantName, repositoryExportOptionsDTO.addParticipantName) &&
         Objects.equals(this.combineStudentCommits, repositoryExportOptionsDTO.combineStudentCommits) &&
         Objects.equals(this.anonymizeStudentCommits, repositoryExportOptionsDTO.anonymizeStudentCommits) &&
@@ -323,7 +353,7 @@ public class RepositoryExportOptionsDTO {
 
   @Override
   public int hashCode() {
-    return Objects.hash(exportAllParticipants, filterLateSubmissions, filterLateSubmissionsIndividualDueDate, filterLateSubmissionsDate, addParticipantName, combineStudentCommits, anonymizeStudentCommits, normalizeCodeStyle, hideStudentNameInZippedFolder);
+    return Objects.hash(exportAllParticipants, filterLateSubmissions, filterLateSubmissionsIndividualDueDate, filterLateSubmissionsDate, excludePracticeSubmissions, addParticipantName, combineStudentCommits, anonymizeStudentCommits, normalizeCodeStyle, hideStudentNameInZippedFolder);
   }
 
   @Override
@@ -334,6 +364,7 @@ public class RepositoryExportOptionsDTO {
     sb.append("    filterLateSubmissions: ").append(toIndentedString(filterLateSubmissions)).append("\n");
     sb.append("    filterLateSubmissionsIndividualDueDate: ").append(toIndentedString(filterLateSubmissionsIndividualDueDate)).append("\n");
     sb.append("    filterLateSubmissionsDate: ").append(toIndentedString(filterLateSubmissionsDate)).append("\n");
+    sb.append("    excludePracticeSubmissions: ").append(toIndentedString(excludePracticeSubmissions)).append("\n");
     sb.append("    addParticipantName: ").append(toIndentedString(addParticipantName)).append("\n");
     sb.append("    combineStudentCommits: ").append(toIndentedString(combineStudentCommits)).append("\n");
     sb.append("    anonymizeStudentCommits: ").append(toIndentedString(anonymizeStudentCommits)).append("\n");

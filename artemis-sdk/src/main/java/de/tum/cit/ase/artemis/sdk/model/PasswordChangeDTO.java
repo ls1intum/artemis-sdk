@@ -33,7 +33,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   PasswordChangeDTO.JSON_PROPERTY_CURRENT_PASSWORD,
   PasswordChangeDTO.JSON_PROPERTY_NEW_PASSWORD
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class PasswordChangeDTO {
   public static final String JSON_PROPERTY_CURRENT_PASSWORD = "currentPassword";
   private String currentPassword;

@@ -32,15 +32,19 @@ import de.tum.cit.ase.artemis.sdk.JSON;
  */
 @JsonPropertyOrder({
   TutorialGroupUpdateDTO.JSON_PROPERTY_TUTORIAL_GROUP,
-  TutorialGroupUpdateDTO.JSON_PROPERTY_NOTIFICATION_TEXT
+  TutorialGroupUpdateDTO.JSON_PROPERTY_NOTIFICATION_TEXT,
+  TutorialGroupUpdateDTO.JSON_PROPERTY_UPDATE_TUTORIAL_GROUP_CHANNEL_NAME
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class TutorialGroupUpdateDTO {
   public static final String JSON_PROPERTY_TUTORIAL_GROUP = "tutorialGroup";
   private TutorialGroup tutorialGroup;
 
   public static final String JSON_PROPERTY_NOTIFICATION_TEXT = "notificationText";
   private String notificationText;
+
+  public static final String JSON_PROPERTY_UPDATE_TUTORIAL_GROUP_CHANNEL_NAME = "updateTutorialGroupChannelName";
+  private Boolean updateTutorialGroupChannelName;
 
   public TutorialGroupUpdateDTO() { 
   }
@@ -95,6 +99,31 @@ public class TutorialGroupUpdateDTO {
   }
 
 
+  public TutorialGroupUpdateDTO updateTutorialGroupChannelName(Boolean updateTutorialGroupChannelName) {
+    this.updateTutorialGroupChannelName = updateTutorialGroupChannelName;
+    return this;
+  }
+
+   /**
+   * Get updateTutorialGroupChannelName
+   * @return updateTutorialGroupChannelName
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_UPDATE_TUTORIAL_GROUP_CHANNEL_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getUpdateTutorialGroupChannelName() {
+    return updateTutorialGroupChannelName;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_UPDATE_TUTORIAL_GROUP_CHANNEL_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setUpdateTutorialGroupChannelName(Boolean updateTutorialGroupChannelName) {
+    this.updateTutorialGroupChannelName = updateTutorialGroupChannelName;
+  }
+
+
   /**
    * Return true if this TutorialGroupUpdateDTO object is equal to o.
    */
@@ -108,12 +137,13 @@ public class TutorialGroupUpdateDTO {
     }
     TutorialGroupUpdateDTO tutorialGroupUpdateDTO = (TutorialGroupUpdateDTO) o;
     return Objects.equals(this.tutorialGroup, tutorialGroupUpdateDTO.tutorialGroup) &&
-        Objects.equals(this.notificationText, tutorialGroupUpdateDTO.notificationText);
+        Objects.equals(this.notificationText, tutorialGroupUpdateDTO.notificationText) &&
+        Objects.equals(this.updateTutorialGroupChannelName, tutorialGroupUpdateDTO.updateTutorialGroupChannelName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(tutorialGroup, notificationText);
+    return Objects.hash(tutorialGroup, notificationText, updateTutorialGroupChannelName);
   }
 
   @Override
@@ -122,6 +152,7 @@ public class TutorialGroupUpdateDTO {
     sb.append("class TutorialGroupUpdateDTO {\n");
     sb.append("    tutorialGroup: ").append(toIndentedString(tutorialGroup)).append("\n");
     sb.append("    notificationText: ").append(toIndentedString(notificationText)).append("\n");
+    sb.append("    updateTutorialGroupChannelName: ").append(toIndentedString(updateTutorialGroupChannelName)).append("\n");
     sb.append("}");
     return sb.toString();
   }

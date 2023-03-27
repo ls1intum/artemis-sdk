@@ -4,7 +4,7 @@ All URIs are relative to *http://localhost:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**deleteSubmission**](SubmissionResourceApi.md#deleteSubmission) | **DELETE** /api/submissions/{id} |  |
+| [**deleteSubmission**](SubmissionResourceApi.md#deleteSubmission) | **DELETE** /api/submissions/{submissionId} |  |
 | [**getSubmissionsOnPageWithSize**](SubmissionResourceApi.md#getSubmissionsOnPageWithSize) | **GET** /api/exercises/{exerciseId}/submissions-for-import |  |
 | [**getSubmissionsWithComplaintsForAssessmentDashboard**](SubmissionResourceApi.md#getSubmissionsWithComplaintsForAssessmentDashboard) | **GET** /api/exercises/{exerciseId}/submissions-with-complaints |  |
 | [**getSubmissionsWithMoreFeedbackRequestForAssessmentDashboard**](SubmissionResourceApi.md#getSubmissionsWithMoreFeedbackRequestForAssessmentDashboard) | **GET** /api/exercises/{exerciseId}/more-feedback-requests-with-complaints |  |
@@ -14,7 +14,7 @@ All URIs are relative to *http://localhost:8080*
 
 ## deleteSubmission
 
-> deleteSubmission(id)
+> deleteSubmission(submissionId)
 
 
 
@@ -34,9 +34,9 @@ public class Example {
         defaultClient.setBasePath("http://localhost:8080");
 
         SubmissionResourceApi apiInstance = new SubmissionResourceApi(defaultClient);
-        Long id = 56L; // Long | 
+        Long submissionId = 56L; // Long | 
         try {
-            apiInstance.deleteSubmission(id);
+            apiInstance.deleteSubmission(submissionId);
         } catch (ApiException e) {
             System.err.println("Exception when calling SubmissionResourceApi#deleteSubmission");
             System.err.println("Status code: " + e.getCode());
@@ -53,7 +53,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **Long**|  | |
+| **submissionId** | **Long**|  | |
 
 ### Return type
 

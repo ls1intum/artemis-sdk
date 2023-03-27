@@ -6,7 +6,7 @@ All URIs are relative to *http://localhost:8080*
 |------------- | ------------- | -------------|
 | [**getActiveAndFutureSystemNotifications**](SystemNotificationResourceApi.md#getActiveAndFutureSystemNotifications) | **GET** /api/system-notifications/active |  |
 | [**getAllSystemNotifications**](SystemNotificationResourceApi.md#getAllSystemNotifications) | **GET** /api/system-notifications |  |
-| [**getSystemNotification**](SystemNotificationResourceApi.md#getSystemNotification) | **GET** /api/system-notifications/{id} |  |
+| [**getSystemNotification**](SystemNotificationResourceApi.md#getSystemNotification) | **GET** /api/system-notifications/{notificationId} |  |
 
 
 
@@ -136,7 +136,7 @@ No authorization required
 
 ## getSystemNotification
 
-> SystemNotification getSystemNotification(id)
+> SystemNotification getSystemNotification(notificationId)
 
 
 
@@ -156,9 +156,9 @@ public class Example {
         defaultClient.setBasePath("http://localhost:8080");
 
         SystemNotificationResourceApi apiInstance = new SystemNotificationResourceApi(defaultClient);
-        Long id = 56L; // Long | 
+        Long notificationId = 56L; // Long | 
         try {
-            SystemNotification result = apiInstance.getSystemNotification(id);
+            SystemNotification result = apiInstance.getSystemNotification(notificationId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling SystemNotificationResourceApi#getSystemNotification");
@@ -176,7 +176,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **Long**|  | |
+| **notificationId** | **Long**|  | |
 
 ### Return type
 

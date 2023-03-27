@@ -50,7 +50,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   StudentResult.JSON_PROPERTY_EXERCISE_GROUP_ID_TO_EXERCISE_RESULT,
   StudentResult.JSON_PROPERTY_MOST_SEVERE_PLAGIARISM_VERDICT
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class StudentResult {
   public static final String JSON_PROPERTY_USER_ID = "userId";
   private Long userId;

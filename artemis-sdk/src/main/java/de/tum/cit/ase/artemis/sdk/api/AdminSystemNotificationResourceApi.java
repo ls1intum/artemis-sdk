@@ -8,7 +8,7 @@ import de.tum.cit.ase.artemis.sdk.Pair;
 
 import jakarta.ws.rs.core.GenericType;
 
-import de.tum.cit.ase.artemis.sdk.model.GetAllNotificationsForCurrentUserFilteredBySettings200ResponseInner;
+import de.tum.cit.ase.artemis.sdk.model.CreateSystemNotification200Response;
 import de.tum.cit.ase.artemis.sdk.model.SystemNotification;
 
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class AdminSystemNotificationResourceApi {
   private ApiClient apiClient;
 
@@ -50,7 +50,7 @@ public class AdminSystemNotificationResourceApi {
    * 
    * 
    * @param systemNotification  (required)
-   * @return GetAllNotificationsForCurrentUserFilteredBySettings200ResponseInner
+   * @return CreateSystemNotification200Response
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -59,7 +59,7 @@ public class AdminSystemNotificationResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public GetAllNotificationsForCurrentUserFilteredBySettings200ResponseInner createSystemNotification(SystemNotification systemNotification) throws ApiException {
+  public CreateSystemNotification200Response createSystemNotification(SystemNotification systemNotification) throws ApiException {
     return createSystemNotificationWithHttpInfo(systemNotification).getData();
   }
 
@@ -67,7 +67,7 @@ public class AdminSystemNotificationResourceApi {
    * 
    * 
    * @param systemNotification  (required)
-   * @return ApiResponse&lt;GetAllNotificationsForCurrentUserFilteredBySettings200ResponseInner&gt;
+   * @return ApiResponse&lt;CreateSystemNotification200Response&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -76,7 +76,7 @@ public class AdminSystemNotificationResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<GetAllNotificationsForCurrentUserFilteredBySettings200ResponseInner> createSystemNotificationWithHttpInfo(SystemNotification systemNotification) throws ApiException {
+  public ApiResponse<CreateSystemNotification200Response> createSystemNotificationWithHttpInfo(SystemNotification systemNotification) throws ApiException {
     Object localVarPostBody = systemNotification;
     
     // verify the required parameter 'systemNotification' is set
@@ -109,7 +109,7 @@ public class AdminSystemNotificationResourceApi {
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<GetAllNotificationsForCurrentUserFilteredBySettings200ResponseInner> localVarReturnType = new GenericType<GetAllNotificationsForCurrentUserFilteredBySettings200ResponseInner>() {};
+    GenericType<CreateSystemNotification200Response> localVarReturnType = new GenericType<CreateSystemNotification200Response>() {};
 
     return apiClient.invokeAPI("AdminSystemNotificationResourceApi.createSystemNotification", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -118,7 +118,7 @@ public class AdminSystemNotificationResourceApi {
   /**
    * 
    * 
-   * @param id  (required)
+   * @param notificationId  (required)
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -127,14 +127,14 @@ public class AdminSystemNotificationResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public void deleteSystemNotification(Long id) throws ApiException {
-    deleteSystemNotificationWithHttpInfo(id);
+  public void deleteSystemNotification(Long notificationId) throws ApiException {
+    deleteSystemNotificationWithHttpInfo(notificationId);
   }
 
   /**
    * 
    * 
-   * @param id  (required)
+   * @param notificationId  (required)
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -144,17 +144,17 @@ public class AdminSystemNotificationResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<Void> deleteSystemNotificationWithHttpInfo(Long id) throws ApiException {
+  public ApiResponse<Void> deleteSystemNotificationWithHttpInfo(Long notificationId) throws ApiException {
     Object localVarPostBody = null;
     
-    // verify the required parameter 'id' is set
-    if (id == null) {
-      throw new ApiException(400, "Missing the required parameter 'id' when calling deleteSystemNotification");
+    // verify the required parameter 'notificationId' is set
+    if (notificationId == null) {
+      throw new ApiException(400, "Missing the required parameter 'notificationId' when calling deleteSystemNotification");
     }
     
     // create path and map variables
-    String localVarPath = "/api/admin/system-notifications/{id}"
-      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+    String localVarPath = "/api/admin/system-notifications/{notificationId}"
+      .replaceAll("\\{" + "notificationId" + "\\}", apiClient.escapeString(notificationId.toString()));
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();

@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import de.tum.cit.ase.artemis.sdk.model.IPAddress;
 import de.tum.cit.ase.artemis.sdk.model.StudentExam;
+import java.time.OffsetDateTime;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import de.tum.cit.ase.artemis.sdk.JSON;
 
@@ -33,18 +34,23 @@ import de.tum.cit.ase.artemis.sdk.JSON;
  */
 @JsonPropertyOrder({
   ExamSession.JSON_PROPERTY_ID,
+  ExamSession.JSON_PROPERTY_CREATED_DATE,
   ExamSession.JSON_PROPERTY_STUDENT_EXAM,
   ExamSession.JSON_PROPERTY_SESSION_TOKEN,
   ExamSession.JSON_PROPERTY_USER_AGENT,
   ExamSession.JSON_PROPERTY_BROWSER_FINGERPRINT_HASH,
   ExamSession.JSON_PROPERTY_INSTANCE_ID,
   ExamSession.JSON_PROPERTY_IP_ADDRESS,
-  ExamSession.JSON_PROPERTY_INITIAL_SESSION
+  ExamSession.JSON_PROPERTY_INITIAL_SESSION,
+  ExamSession.JSON_PROPERTY_IP_ADDRESS_FROM_IP_ADDRESS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class ExamSession {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
+
+  public static final String JSON_PROPERTY_CREATED_DATE = "createdDate";
+  private OffsetDateTime createdDate;
 
   public static final String JSON_PROPERTY_STUDENT_EXAM = "studentExam";
   private StudentExam studentExam;
@@ -62,10 +68,13 @@ public class ExamSession {
   private String instanceId;
 
   public static final String JSON_PROPERTY_IP_ADDRESS = "ipAddress";
-  private IPAddress ipAddress;
+  private String ipAddress;
 
   public static final String JSON_PROPERTY_INITIAL_SESSION = "initialSession";
   private Boolean initialSession;
+
+  public static final String JSON_PROPERTY_IP_ADDRESS_FROM_IP_ADDRESS = "ipAddressFromIpAddress";
+  private IPAddress ipAddressFromIpAddress;
 
   public ExamSession() { 
   }
@@ -92,6 +101,31 @@ public class ExamSession {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(Long id) {
     this.id = id;
+  }
+
+
+  public ExamSession createdDate(OffsetDateTime createdDate) {
+    this.createdDate = createdDate;
+    return this;
+  }
+
+   /**
+   * Get createdDate
+   * @return createdDate
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CREATED_DATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public OffsetDateTime getCreatedDate() {
+    return createdDate;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CREATED_DATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCreatedDate(OffsetDateTime createdDate) {
+    this.createdDate = createdDate;
   }
 
 
@@ -220,7 +254,7 @@ public class ExamSession {
   }
 
 
-  public ExamSession ipAddress(IPAddress ipAddress) {
+  public ExamSession ipAddress(String ipAddress) {
     this.ipAddress = ipAddress;
     return this;
   }
@@ -233,14 +267,14 @@ public class ExamSession {
   @JsonProperty(JSON_PROPERTY_IP_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public IPAddress getIpAddress() {
+  public String getIpAddress() {
     return ipAddress;
   }
 
 
   @JsonProperty(JSON_PROPERTY_IP_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setIpAddress(IPAddress ipAddress) {
+  public void setIpAddress(String ipAddress) {
     this.ipAddress = ipAddress;
   }
 
@@ -270,6 +304,31 @@ public class ExamSession {
   }
 
 
+  public ExamSession ipAddressFromIpAddress(IPAddress ipAddressFromIpAddress) {
+    this.ipAddressFromIpAddress = ipAddressFromIpAddress;
+    return this;
+  }
+
+   /**
+   * Get ipAddressFromIpAddress
+   * @return ipAddressFromIpAddress
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_IP_ADDRESS_FROM_IP_ADDRESS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public IPAddress getIpAddressFromIpAddress() {
+    return ipAddressFromIpAddress;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_IP_ADDRESS_FROM_IP_ADDRESS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setIpAddressFromIpAddress(IPAddress ipAddressFromIpAddress) {
+    this.ipAddressFromIpAddress = ipAddressFromIpAddress;
+  }
+
+
   /**
    * Return true if this ExamSession object is equal to o.
    */
@@ -283,18 +342,20 @@ public class ExamSession {
     }
     ExamSession examSession = (ExamSession) o;
     return Objects.equals(this.id, examSession.id) &&
+        Objects.equals(this.createdDate, examSession.createdDate) &&
         Objects.equals(this.studentExam, examSession.studentExam) &&
         Objects.equals(this.sessionToken, examSession.sessionToken) &&
         Objects.equals(this.userAgent, examSession.userAgent) &&
         Objects.equals(this.browserFingerprintHash, examSession.browserFingerprintHash) &&
         Objects.equals(this.instanceId, examSession.instanceId) &&
         Objects.equals(this.ipAddress, examSession.ipAddress) &&
-        Objects.equals(this.initialSession, examSession.initialSession);
+        Objects.equals(this.initialSession, examSession.initialSession) &&
+        Objects.equals(this.ipAddressFromIpAddress, examSession.ipAddressFromIpAddress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, studentExam, sessionToken, userAgent, browserFingerprintHash, instanceId, ipAddress, initialSession);
+    return Objects.hash(id, createdDate, studentExam, sessionToken, userAgent, browserFingerprintHash, instanceId, ipAddress, initialSession, ipAddressFromIpAddress);
   }
 
   @Override
@@ -302,6 +363,7 @@ public class ExamSession {
     StringBuilder sb = new StringBuilder();
     sb.append("class ExamSession {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     sb.append("    studentExam: ").append(toIndentedString(studentExam)).append("\n");
     sb.append("    sessionToken: ").append(toIndentedString(sessionToken)).append("\n");
     sb.append("    userAgent: ").append(toIndentedString(userAgent)).append("\n");
@@ -309,6 +371,7 @@ public class ExamSession {
     sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
     sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
     sb.append("    initialSession: ").append(toIndentedString(initialSession)).append("\n");
+    sb.append("    ipAddressFromIpAddress: ").append(toIndentedString(ipAddressFromIpAddress)).append("\n");
     sb.append("}");
     return sb.toString();
   }

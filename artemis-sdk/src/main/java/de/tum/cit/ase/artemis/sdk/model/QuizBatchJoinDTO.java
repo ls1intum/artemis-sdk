@@ -32,7 +32,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
 @JsonPropertyOrder({
   QuizBatchJoinDTO.JSON_PROPERTY_PASSWORD
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class QuizBatchJoinDTO {
   public static final String JSON_PROPERTY_PASSWORD = "password";
   private String password;

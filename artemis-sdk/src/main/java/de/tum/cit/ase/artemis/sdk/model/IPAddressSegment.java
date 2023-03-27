@@ -52,8 +52,8 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   IPAddressSegment.JSON_PROPERTY_PREFIX_BLOCK,
   IPAddressSegment.JSON_PROPERTY_SEGMENT_PREFIX_LENGTH,
   IPAddressSegment.JSON_PROPERTY_MIN_PREFIX_LENGTH_FOR_BLOCK,
-  IPAddressSegment.JSON_PROPERTY_IPV6,
   IPAddressSegment.JSON_PROPERTY_MAX_VALUE,
+  IPAddressSegment.JSON_PROPERTY_IPV6,
   IPAddressSegment.JSON_PROPERTY_MULTIPLE,
   IPAddressSegment.JSON_PROPERTY_MAX_SEGMENT_VALUE,
   IPAddressSegment.JSON_PROPERTY_BYTES,
@@ -69,7 +69,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   IPAddressSegment.JSON_PROPERTY_PREFIXED,
   IPAddressSegment.JSON_PROPERTY_SINGLE_PREFIX_BLOCK
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class IPAddressSegment {
   public static final String JSON_PROPERTY_UPPER_BYTES = "upperBytes";
   private List<byte[]> upperBytes = new ArrayList<>();
@@ -163,11 +163,11 @@ public class IPAddressSegment {
   public static final String JSON_PROPERTY_MIN_PREFIX_LENGTH_FOR_BLOCK = "minPrefixLengthForBlock";
   private Integer minPrefixLengthForBlock;
 
-  public static final String JSON_PROPERTY_IPV6 = "ipv6";
-  private Boolean ipv6;
-
   public static final String JSON_PROPERTY_MAX_VALUE = "maxValue";
   private Long maxValue;
+
+  public static final String JSON_PROPERTY_IPV6 = "ipv6";
+  private Boolean ipv6;
 
   public static final String JSON_PROPERTY_MULTIPLE = "multiple";
   private Boolean multiple;
@@ -697,31 +697,6 @@ public class IPAddressSegment {
   }
 
 
-  public IPAddressSegment ipv6(Boolean ipv6) {
-    this.ipv6 = ipv6;
-    return this;
-  }
-
-   /**
-   * Get ipv6
-   * @return ipv6
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_IPV6)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getIpv6() {
-    return ipv6;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_IPV6)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setIpv6(Boolean ipv6) {
-    this.ipv6 = ipv6;
-  }
-
-
   public IPAddressSegment maxValue(Long maxValue) {
     this.maxValue = maxValue;
     return this;
@@ -744,6 +719,31 @@ public class IPAddressSegment {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMaxValue(Long maxValue) {
     this.maxValue = maxValue;
+  }
+
+
+  public IPAddressSegment ipv6(Boolean ipv6) {
+    this.ipv6 = ipv6;
+    return this;
+  }
+
+   /**
+   * Get ipv6
+   * @return ipv6
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_IPV6)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getIpv6() {
+    return ipv6;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_IPV6)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setIpv6(Boolean ipv6) {
+    this.ipv6 = ipv6;
   }
 
 
@@ -1136,8 +1136,8 @@ public class IPAddressSegment {
         Objects.equals(this.prefixBlock, ipAddressSegment.prefixBlock) &&
         Objects.equals(this.segmentPrefixLength, ipAddressSegment.segmentPrefixLength) &&
         Objects.equals(this.minPrefixLengthForBlock, ipAddressSegment.minPrefixLengthForBlock) &&
-        Objects.equals(this.ipv6, ipAddressSegment.ipv6) &&
         Objects.equals(this.maxValue, ipAddressSegment.maxValue) &&
+        Objects.equals(this.ipv6, ipAddressSegment.ipv6) &&
         Objects.equals(this.multiple, ipAddressSegment.multiple) &&
         Objects.equals(this.maxSegmentValue, ipAddressSegment.maxSegmentValue) &&
         Objects.equals(this.bytes, ipAddressSegment.bytes) &&
@@ -1156,7 +1156,7 @@ public class IPAddressSegment {
 
   @Override
   public int hashCode() {
-    return Objects.hash(upperBytes, value, upperValue, count, lower, upper, upperSegmentValue, upperDivisionValue, divisionValue, valueCount, prefixValueCount, ipv4, segmentValue, network, iterable, ipversion, prefixBlock, segmentPrefixLength, minPrefixLengthForBlock, ipv6, maxValue, multiple, maxSegmentValue, bytes, zero, byteCount, bitCount, prefixLengthForSingleBlock, fullRange, max, string, divisionPrefixLength, wildcardString, prefixed, singlePrefixBlock);
+    return Objects.hash(upperBytes, value, upperValue, count, lower, upper, upperSegmentValue, upperDivisionValue, divisionValue, valueCount, prefixValueCount, ipv4, segmentValue, network, iterable, ipversion, prefixBlock, segmentPrefixLength, minPrefixLengthForBlock, maxValue, ipv6, multiple, maxSegmentValue, bytes, zero, byteCount, bitCount, prefixLengthForSingleBlock, fullRange, max, string, divisionPrefixLength, wildcardString, prefixed, singlePrefixBlock);
   }
 
   @Override
@@ -1182,8 +1182,8 @@ public class IPAddressSegment {
     sb.append("    prefixBlock: ").append(toIndentedString(prefixBlock)).append("\n");
     sb.append("    segmentPrefixLength: ").append(toIndentedString(segmentPrefixLength)).append("\n");
     sb.append("    minPrefixLengthForBlock: ").append(toIndentedString(minPrefixLengthForBlock)).append("\n");
-    sb.append("    ipv6: ").append(toIndentedString(ipv6)).append("\n");
     sb.append("    maxValue: ").append(toIndentedString(maxValue)).append("\n");
+    sb.append("    ipv6: ").append(toIndentedString(ipv6)).append("\n");
     sb.append("    multiple: ").append(toIndentedString(multiple)).append("\n");
     sb.append("    maxSegmentValue: ").append(toIndentedString(maxSegmentValue)).append("\n");
     sb.append("    bytes: ").append(toIndentedString(bytes)).append("\n");

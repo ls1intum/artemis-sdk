@@ -37,10 +37,12 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ChannelDTOAllOf.JSON_PROPERTY_IS_ANNOUNCEMENT_CHANNEL,
   ChannelDTOAllOf.JSON_PROPERTY_IS_ARCHIVED,
   ChannelDTOAllOf.JSON_PROPERTY_HAS_CHANNEL_MODERATION_RIGHTS,
-  ChannelDTOAllOf.JSON_PROPERTY_IS_CHANNEL_MODERATOR
+  ChannelDTOAllOf.JSON_PROPERTY_IS_CHANNEL_MODERATOR,
+  ChannelDTOAllOf.JSON_PROPERTY_TUTORIAL_GROUP_ID,
+  ChannelDTOAllOf.JSON_PROPERTY_TUTORIAL_GROUP_TITLE
 })
 @JsonTypeName("ChannelDTO_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class ChannelDTOAllOf {
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
@@ -65,6 +67,12 @@ public class ChannelDTOAllOf {
 
   public static final String JSON_PROPERTY_IS_CHANNEL_MODERATOR = "isChannelModerator";
   private Boolean isChannelModerator;
+
+  public static final String JSON_PROPERTY_TUTORIAL_GROUP_ID = "tutorialGroupId";
+  private Long tutorialGroupId;
+
+  public static final String JSON_PROPERTY_TUTORIAL_GROUP_TITLE = "tutorialGroupTitle";
+  private String tutorialGroupTitle;
 
   public ChannelDTOAllOf() { 
   }
@@ -269,6 +277,56 @@ public class ChannelDTOAllOf {
   }
 
 
+  public ChannelDTOAllOf tutorialGroupId(Long tutorialGroupId) {
+    this.tutorialGroupId = tutorialGroupId;
+    return this;
+  }
+
+   /**
+   * Get tutorialGroupId
+   * @return tutorialGroupId
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TUTORIAL_GROUP_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Long getTutorialGroupId() {
+    return tutorialGroupId;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TUTORIAL_GROUP_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTutorialGroupId(Long tutorialGroupId) {
+    this.tutorialGroupId = tutorialGroupId;
+  }
+
+
+  public ChannelDTOAllOf tutorialGroupTitle(String tutorialGroupTitle) {
+    this.tutorialGroupTitle = tutorialGroupTitle;
+    return this;
+  }
+
+   /**
+   * Get tutorialGroupTitle
+   * @return tutorialGroupTitle
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TUTORIAL_GROUP_TITLE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getTutorialGroupTitle() {
+    return tutorialGroupTitle;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TUTORIAL_GROUP_TITLE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTutorialGroupTitle(String tutorialGroupTitle) {
+    this.tutorialGroupTitle = tutorialGroupTitle;
+  }
+
+
   /**
    * Return true if this ChannelDTO_allOf object is equal to o.
    */
@@ -288,12 +346,14 @@ public class ChannelDTOAllOf {
         Objects.equals(this.isAnnouncementChannel, channelDTOAllOf.isAnnouncementChannel) &&
         Objects.equals(this.isArchived, channelDTOAllOf.isArchived) &&
         Objects.equals(this.hasChannelModerationRights, channelDTOAllOf.hasChannelModerationRights) &&
-        Objects.equals(this.isChannelModerator, channelDTOAllOf.isChannelModerator);
+        Objects.equals(this.isChannelModerator, channelDTOAllOf.isChannelModerator) &&
+        Objects.equals(this.tutorialGroupId, channelDTOAllOf.tutorialGroupId) &&
+        Objects.equals(this.tutorialGroupTitle, channelDTOAllOf.tutorialGroupTitle);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, topic, isPublic, isAnnouncementChannel, isArchived, hasChannelModerationRights, isChannelModerator);
+    return Objects.hash(name, description, topic, isPublic, isAnnouncementChannel, isArchived, hasChannelModerationRights, isChannelModerator, tutorialGroupId, tutorialGroupTitle);
   }
 
   @Override
@@ -308,6 +368,8 @@ public class ChannelDTOAllOf {
     sb.append("    isArchived: ").append(toIndentedString(isArchived)).append("\n");
     sb.append("    hasChannelModerationRights: ").append(toIndentedString(hasChannelModerationRights)).append("\n");
     sb.append("    isChannelModerator: ").append(toIndentedString(isChannelModerator)).append("\n");
+    sb.append("    tutorialGroupId: ").append(toIndentedString(tutorialGroupId)).append("\n");
+    sb.append("    tutorialGroupTitle: ").append(toIndentedString(tutorialGroupTitle)).append("\n");
     sb.append("}");
     return sb.toString();
   }

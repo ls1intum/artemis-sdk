@@ -9,7 +9,6 @@ All URIs are relative to *http://localhost:8080*
 | [**deleteResult**](ResultResourceApi.md#deleteResult) | **DELETE** /api/participations/{participationId}/results/{resultId} |  |
 | [**getResult**](ResultResourceApi.md#getResult) | **GET** /api/participations/{participationId}/results/{resultId} |  |
 | [**getResultDetails**](ResultResourceApi.md#getResultDetails) | **GET** /api/participations/{participationId}/results/{resultId}/details |  |
-| [**getResultsForExercise**](ResultResourceApi.md#getResultsForExercise) | **GET** /api/exercises/{exerciseId}/results |  |
 | [**getResultsForExerciseWithPointsPerCriterion**](ResultResourceApi.md#getResultsForExerciseWithPointsPerCriterion) | **GET** /api/exercises/{exerciseId}/results-with-points-per-criterion |  |
 | [**processNewProgrammingExerciseResult**](ResultResourceApi.md#processNewProgrammingExerciseResult) | **POST** /api/programming-exercises/new-result |  |
 
@@ -331,72 +330,6 @@ public class Example {
 ### Return type
 
 [**List&lt;Feedback&gt;**](Feedback.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: */*
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **503** | Service Unavailable |  -  |
-| **200** | OK |  -  |
-
-
-## getResultsForExercise
-
-> List&lt;Result&gt; getResultsForExercise(exerciseId, withSubmissions)
-
-
-
-### Example
-
-```java
-// Import classes:
-import de.tum.cit.ase.artemis.sdk.ApiClient;
-import de.tum.cit.ase.artemis.sdk.ApiException;
-import de.tum.cit.ase.artemis.sdk.Configuration;
-import de.tum.cit.ase.artemis.sdk.model.*;
-import de.tum.cit.ase.artemis.sdk.api.ResultResourceApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://localhost:8080");
-
-        ResultResourceApi apiInstance = new ResultResourceApi(defaultClient);
-        Long exerciseId = 56L; // Long | 
-        Boolean withSubmissions = true; // Boolean | 
-        try {
-            List<Result> result = apiInstance.getResultsForExercise(exerciseId, withSubmissions);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ResultResourceApi#getResultsForExercise");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **exerciseId** | **Long**|  | |
-| **withSubmissions** | **Boolean**|  | [optional] [default to true] |
-
-### Return type
-
-[**List&lt;Result&gt;**](Result.md)
 
 ### Authorization
 

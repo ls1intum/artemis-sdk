@@ -8,6 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**id** | **Long** |  |  [optional] |
+|**createdDate** | **OffsetDateTime** |  |  [optional] |
 |**exercise** | [**Exercise**](Exercise.md) |  |  [optional] |
 |**student** | [**User**](User.md) |  |  [optional] |
 |**team** | [**Team**](Team.md) |  |  [optional] |

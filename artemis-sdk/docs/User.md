@@ -8,6 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**id** | **Long** |  |  [optional] |
+|**createdDate** | **OffsetDateTime** |  |  [optional] |
 |**login** | **String** |  |  |
 |**firstName** | **String** |  |  [optional] |
 |**lastName** | **String** |  |  [optional] |
@@ -18,7 +19,6 @@
 |**resetDate** | **OffsetDateTime** |  |  [optional] |
 |**lastNotificationRead** | **OffsetDateTime** |  |  [optional] |
 |**hideNotificationsUntil** | **OffsetDateTime** |  |  [optional] |
-|**vcsAccessToken** | **String** |  |  [optional] |
 |**groups** | **Set&lt;String&gt;** |  |  [optional] |
 |**guidedTourSettings** | [**Set&lt;GuidedTourSetting&gt;**](GuidedTourSetting.md) |  |  [optional] |
 |**authorities** | [**Set&lt;Authority&gt;**](Authority.md) |  |  [optional] |

@@ -40,22 +40,22 @@
 |**posts** | [**Set&lt;Post&gt;**](Post.md) |  |  [optional] |
 |**plagiarismCases** | [**Set&lt;PlagiarismCase&gt;**](PlagiarismCase.md) |  |  [optional] |
 |**exerciseType** | [**ExerciseTypeEnum**](#ExerciseTypeEnum) |  |  |
-|**numberOfAssessmentsOfCorrectionRounds** | [**List&lt;DueDateStat&gt;**](DueDateStat.md) |  |  [optional] |
-|**totalNumberOfAssessments** | [**DueDateStat**](DueDateStat.md) |  |  [optional] |
-|**averageRating** | **Double** |  |  [optional] |
-|**numberOfRatings** | **Long** |  |  [optional] |
+|**testRunParticipationsExist** | **Boolean** |  |  [optional] |
+|**numberOfParticipations** | **Long** |  |  [optional] |
 |**numberOfSubmissions** | [**DueDateStat**](DueDateStat.md) |  |  [optional] |
-|**numberOfOpenComplaints** | **Long** |  |  [optional] |
+|**totalNumberOfAssessments** | [**DueDateStat**](DueDateStat.md) |  |  [optional] |
+|**numberOfAssessmentsOfCorrectionRounds** | [**List&lt;DueDateStat&gt;**](DueDateStat.md) |  |  [optional] |
 |**numberOfComplaints** | **Long** |  |  [optional] |
-|**numberOfOpenMoreFeedbackRequests** | **Long** |  |  [optional] |
+|**numberOfOpenComplaints** | **Long** |  |  [optional] |
 |**numberOfMoreFeedbackRequests** | **Long** |  |  [optional] |
+|**numberOfOpenMoreFeedbackRequests** | **Long** |  |  [optional] |
 |**studentAssignedTeamId** | **Long** |  |  [optional] |
 |**studentAssignedTeamIdComputed** | **Boolean** |  |  [optional] |
 |**gradingInstructionFeedbackUsed** | **Boolean** |  |  [optional] |
-|**numberOfParticipations** | **Long** |  |  [optional] |
+|**averageRating** | **Double** |  |  [optional] |
+|**numberOfRatings** | **Long** |  |  [optional] |
 |**exampleSolutionPublished** | **Boolean** |  |  [optional] |
 |**released** | **Boolean** |  |  [optional] |
-|**testRunParticipationsExist** | **Boolean** |  |  [optional] |
 |**teamMode** | **Boolean** |  |  [optional] |
 |**visibleToStudents** | **Boolean** |  |  [optional] |
 |**type** | **String** |  |  |

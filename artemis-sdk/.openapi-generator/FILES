@@ -1,5 +1,4 @@
 .github/workflows/maven.yml
-.gitignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -73,6 +72,7 @@ docs/CoverageReport.md
 docs/CoverageReportResourceApi.md
 docs/CreateAttachmentUnitsRequest.md
 docs/CreateFileUploadSubmissionRequest.md
+docs/CreateSystemNotification200Response.md
 docs/DragAndDropMapping.md
 docs/DragAndDropQuestion.md
 docs/DragAndDropQuestionAllOf.md
@@ -121,7 +121,6 @@ docs/FileUploadExerciseResourceApi.md
 docs/FileUploadSubmission.md
 docs/FileUploadSubmissionAllOf.md
 docs/FileUploadSubmissionResourceApi.md
-docs/GetAllNotificationsForCurrentUserFilteredBySettings200ResponseInner.md
 docs/GetAllTextSubmissions200ResponseInner.md
 docs/GetConversationsOfUser200ResponseInner.md
 docs/GetExercise200Response.md
@@ -203,8 +202,6 @@ docs/OrganizationCountDTO.md
 docs/OrganizationResourceApi.md
 docs/Pageable.md
 docs/PageableSearchDTOString.md
-docs/ParticipantScoreAverageDTO.md
-docs/ParticipantScoreDTO.md
 docs/ParticipantScoreResourceApi.md
 docs/Participation.md
 docs/ParticipationResourceApi.md
@@ -281,6 +278,7 @@ docs/SavedExerciseAction.md
 docs/SavedExerciseActionAllOf.md
 docs/ScoreDTO.md
 docs/SearchResultPageDTOExam.md
+docs/SearchResultPageDTOFileUploadExercise.md
 docs/SearchResultPageDTOGradingScale.md
 docs/SearchResultPageDTOLearningGoal.md
 docs/SearchResultPageDTOLecture.md
@@ -558,6 +556,7 @@ src/main/java/de/tum/cit/ase/artemis/sdk/model/CoverageFileReport.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/CoverageReport.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/CreateAttachmentUnitsRequest.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/CreateFileUploadSubmissionRequest.java
+src/main/java/de/tum/cit/ase/artemis/sdk/model/CreateSystemNotification200Response.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/DragAndDropMapping.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/DragAndDropQuestion.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/DragAndDropQuestionAllOf.java
@@ -593,7 +592,6 @@ src/main/java/de/tum/cit/ase/artemis/sdk/model/FileUploadExercise.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/FileUploadExerciseAllOf.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/FileUploadSubmission.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/FileUploadSubmissionAllOf.java
-src/main/java/de/tum/cit/ase/artemis/sdk/model/GetAllNotificationsForCurrentUserFilteredBySettings200ResponseInner.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/GetAllTextSubmissions200ResponseInner.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/GetConversationsOfUser200ResponseInner.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/GetExercise200Response.java
@@ -656,8 +654,6 @@ src/main/java/de/tum/cit/ase/artemis/sdk/model/Organization.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/OrganizationCountDTO.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/Pageable.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/PageableSearchDTOString.java
-src/main/java/de/tum/cit/ase/artemis/sdk/model/ParticipantScoreAverageDTO.java
-src/main/java/de/tum/cit/ase/artemis/sdk/model/ParticipantScoreDTO.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/Participation.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/PasswordChangeDTO.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/PlagiarismCase.java
@@ -711,6 +707,7 @@ src/main/java/de/tum/cit/ase/artemis/sdk/model/SavedExerciseAction.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/SavedExerciseActionAllOf.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/ScoreDTO.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/SearchResultPageDTOExam.java
+src/main/java/de/tum/cit/ase/artemis/sdk/model/SearchResultPageDTOFileUploadExercise.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/SearchResultPageDTOGradingScale.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/SearchResultPageDTOLearningGoal.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/SearchResultPageDTOLecture.java
@@ -792,16 +789,5 @@ src/main/java/de/tum/cit/ase/artemis/sdk/model/UserInitializationDTO.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/UserPageableSearchDTO.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/UserPublicInfoDTO.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/VideoUnit.java
-src/test/java/de/tum/cit/ase/artemis/sdk/model/AnswerOptionTest.java
-src/test/java/de/tum/cit/ase/artemis/sdk/model/DragAndDropMappingTest.java
-src/test/java/de/tum/cit/ase/artemis/sdk/model/DragAndDropQuestionAllOfTest.java
-src/test/java/de/tum/cit/ase/artemis/sdk/model/DragAndDropQuestionTest.java
-src/test/java/de/tum/cit/ase/artemis/sdk/model/DragItemTest.java
-src/test/java/de/tum/cit/ase/artemis/sdk/model/DropLocationTest.java
-src/test/java/de/tum/cit/ase/artemis/sdk/model/MultipleChoiceQuestionAllOfTest.java
-src/test/java/de/tum/cit/ase/artemis/sdk/model/MultipleChoiceQuestionTest.java
-src/test/java/de/tum/cit/ase/artemis/sdk/model/ShortAnswerMappingTest.java
-src/test/java/de/tum/cit/ase/artemis/sdk/model/ShortAnswerQuestionAllOfTest.java
-src/test/java/de/tum/cit/ase/artemis/sdk/model/ShortAnswerQuestionTest.java
-src/test/java/de/tum/cit/ase/artemis/sdk/model/ShortAnswerSolutionTest.java
-src/test/java/de/tum/cit/ase/artemis/sdk/model/ShortAnswerSpotTest.java
+src/test/java/de/tum/cit/ase/artemis/sdk/model/CreateSystemNotification200ResponseTest.java
+src/test/java/de/tum/cit/ase/artemis/sdk/model/SearchResultPageDTOFileUploadExerciseTest.java

@@ -37,7 +37,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   NotificationSetting.JSON_PROPERTY_EMAIL,
   NotificationSetting.JSON_PROPERTY_USER
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class NotificationSetting {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;

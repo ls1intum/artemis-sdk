@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class FileResourceApi {
   private ApiClient apiClient;
 
@@ -899,7 +899,6 @@ public class FileResourceApi {
    * 
    * 
    * @param language  (required)
-   * @param projectType  (required)
    * @param filename  (required)
    * @return List&lt;byte[]&gt;
    * @throws ApiException if fails to make API call
@@ -910,15 +909,14 @@ public class FileResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public List<byte[]> getTemplateFile1(String language, String projectType, String filename) throws ApiException {
-    return getTemplateFile1WithHttpInfo(language, projectType, filename).getData();
+  public List<byte[]> getTemplateFile1(String language, String filename) throws ApiException {
+    return getTemplateFile1WithHttpInfo(language, filename).getData();
   }
 
   /**
    * 
    * 
    * @param language  (required)
-   * @param projectType  (required)
    * @param filename  (required)
    * @return ApiResponse&lt;List&lt;byte[]&gt;&gt;
    * @throws ApiException if fails to make API call
@@ -929,17 +927,12 @@ public class FileResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<List<byte[]>> getTemplateFile1WithHttpInfo(String language, String projectType, String filename) throws ApiException {
+  public ApiResponse<List<byte[]>> getTemplateFile1WithHttpInfo(String language, String filename) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'language' is set
     if (language == null) {
       throw new ApiException(400, "Missing the required parameter 'language' when calling getTemplateFile1");
-    }
-    
-    // verify the required parameter 'projectType' is set
-    if (projectType == null) {
-      throw new ApiException(400, "Missing the required parameter 'projectType' when calling getTemplateFile1");
     }
     
     // verify the required parameter 'filename' is set
@@ -950,7 +943,6 @@ public class FileResourceApi {
     // create path and map variables
     String localVarPath = "/api/files/templates/{language}/{filename}"
       .replaceAll("\\{" + "language" + "\\}", apiClient.escapeString(language.toString()))
-      .replaceAll("\\{" + "projectType" + "\\}", apiClient.escapeString(projectType.toString()))
       .replaceAll("\\{" + "filename" + "\\}", apiClient.escapeString(filename.toString()));
 
     // query params
@@ -984,8 +976,6 @@ public class FileResourceApi {
   /**
    * 
    * 
-   * @param language  (required)
-   * @param projectType  (required)
    * @param filename  (required)
    * @return List&lt;byte[]&gt;
    * @throws ApiException if fails to make API call
@@ -996,15 +986,13 @@ public class FileResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public List<byte[]> getTemplateFile2(String language, String projectType, String filename) throws ApiException {
-    return getTemplateFile2WithHttpInfo(language, projectType, filename).getData();
+  public List<byte[]> getTemplateFile2(String filename) throws ApiException {
+    return getTemplateFile2WithHttpInfo(filename).getData();
   }
 
   /**
    * 
    * 
-   * @param language  (required)
-   * @param projectType  (required)
    * @param filename  (required)
    * @return ApiResponse&lt;List&lt;byte[]&gt;&gt;
    * @throws ApiException if fails to make API call
@@ -1015,18 +1003,8 @@ public class FileResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<List<byte[]>> getTemplateFile2WithHttpInfo(String language, String projectType, String filename) throws ApiException {
+  public ApiResponse<List<byte[]>> getTemplateFile2WithHttpInfo(String filename) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'language' is set
-    if (language == null) {
-      throw new ApiException(400, "Missing the required parameter 'language' when calling getTemplateFile2");
-    }
-    
-    // verify the required parameter 'projectType' is set
-    if (projectType == null) {
-      throw new ApiException(400, "Missing the required parameter 'projectType' when calling getTemplateFile2");
-    }
     
     // verify the required parameter 'filename' is set
     if (filename == null) {
@@ -1035,8 +1013,6 @@ public class FileResourceApi {
     
     // create path and map variables
     String localVarPath = "/api/files/templates/{filename}"
-      .replaceAll("\\{" + "language" + "\\}", apiClient.escapeString(language.toString()))
-      .replaceAll("\\{" + "projectType" + "\\}", apiClient.escapeString(projectType.toString()))
       .replaceAll("\\{" + "filename" + "\\}", apiClient.escapeString(filename.toString()));
 
     // query params

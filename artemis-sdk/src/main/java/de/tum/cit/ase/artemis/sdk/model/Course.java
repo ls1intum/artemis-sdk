@@ -58,13 +58,13 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   Course.JSON_PROPERTY_DEFAULT_PROGRAMMING_LANGUAGE,
   Course.JSON_PROPERTY_ONLINE_COURSE,
   Course.JSON_PROPERTY_ONLINE_COURSE_CONFIGURATION,
+  Course.JSON_PROPERTY_COURSE_INFORMATION_SHARING_CONFIGURATION,
   Course.JSON_PROPERTY_MAX_COMPLAINTS,
   Course.JSON_PROPERTY_MAX_TEAM_COMPLAINTS,
   Course.JSON_PROPERTY_MAX_COMPLAINT_TIME_DAYS,
   Course.JSON_PROPERTY_MAX_REQUEST_MORE_FEEDBACK_TIME_DAYS,
   Course.JSON_PROPERTY_MAX_COMPLAINT_TEXT_LIMIT,
   Course.JSON_PROPERTY_MAX_COMPLAINT_RESPONSE_TEXT_LIMIT,
-  Course.JSON_PROPERTY_POSTS_ENABLED,
   Course.JSON_PROPERTY_POSTS,
   Course.JSON_PROPERTY_COLOR,
   Course.JSON_PROPERTY_COURSE_ICON,
@@ -81,15 +81,15 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   Course.JSON_PROPERTY_EXAMS,
   Course.JSON_PROPERTY_ORGANIZATIONS,
   Course.JSON_PROPERTY_TUTORIAL_GROUPS_CONFIGURATION,
+  Course.JSON_PROPERTY_NUMBER_OF_INSTRUCTORS,
+  Course.JSON_PROPERTY_NUMBER_OF_EDITORS,
+  Course.JSON_PROPERTY_NUMBER_OF_TEACHING_ASSISTANTS,
+  Course.JSON_PROPERTY_NUMBER_OF_STUDENTS,
   Course.JSON_PROPERTY_REQUEST_MORE_FEEDBACK_ENABLED,
   Course.JSON_PROPERTY_COMPLAINTS_ENABLED,
-  Course.JSON_PROPERTY_VALID_START_AND_END_DATE,
-  Course.JSON_PROPERTY_NUMBER_OF_INSTRUCTORS,
-  Course.JSON_PROPERTY_NUMBER_OF_TEACHING_ASSISTANTS,
-  Course.JSON_PROPERTY_NUMBER_OF_EDITORS,
-  Course.JSON_PROPERTY_NUMBER_OF_STUDENTS
+  Course.JSON_PROPERTY_VALID_START_AND_END_DATE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class Course {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -225,6 +225,48 @@ public class Course {
   public static final String JSON_PROPERTY_ONLINE_COURSE_CONFIGURATION = "onlineCourseConfiguration";
   private OnlineCourseConfiguration onlineCourseConfiguration;
 
+  /**
+   * Gets or Sets courseInformationSharingConfiguration
+   */
+  public enum CourseInformationSharingConfigurationEnum {
+    DISABLED("DISABLED"),
+    
+    COMMUNICATION_AND_MESSAGING("COMMUNICATION_AND_MESSAGING"),
+    
+    COMMUNICATION_ONLY("COMMUNICATION_ONLY"),
+    
+    MESSAGING_ONLY("MESSAGING_ONLY");
+
+    private String value;
+
+    CourseInformationSharingConfigurationEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static CourseInformationSharingConfigurationEnum fromValue(String value) {
+      for (CourseInformationSharingConfigurationEnum b : CourseInformationSharingConfigurationEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+  }
+
+  public static final String JSON_PROPERTY_COURSE_INFORMATION_SHARING_CONFIGURATION = "courseInformationSharingConfiguration";
+  private CourseInformationSharingConfigurationEnum courseInformationSharingConfiguration;
+
   public static final String JSON_PROPERTY_MAX_COMPLAINTS = "maxComplaints";
   private Integer maxComplaints;
 
@@ -242,9 +284,6 @@ public class Course {
 
   public static final String JSON_PROPERTY_MAX_COMPLAINT_RESPONSE_TEXT_LIMIT = "maxComplaintResponseTextLimit";
   private Integer maxComplaintResponseTextLimit;
-
-  public static final String JSON_PROPERTY_POSTS_ENABLED = "postsEnabled";
-  private Boolean postsEnabled;
 
   public static final String JSON_PROPERTY_POSTS = "posts";
   private Set<Post> posts = new LinkedHashSet<>();
@@ -294,6 +333,18 @@ public class Course {
   public static final String JSON_PROPERTY_TUTORIAL_GROUPS_CONFIGURATION = "tutorialGroupsConfiguration";
   private TutorialGroupsConfiguration tutorialGroupsConfiguration;
 
+  public static final String JSON_PROPERTY_NUMBER_OF_INSTRUCTORS = "numberOfInstructors";
+  private Long numberOfInstructors;
+
+  public static final String JSON_PROPERTY_NUMBER_OF_EDITORS = "numberOfEditors";
+  private Long numberOfEditors;
+
+  public static final String JSON_PROPERTY_NUMBER_OF_TEACHING_ASSISTANTS = "numberOfTeachingAssistants";
+  private Long numberOfTeachingAssistants;
+
+  public static final String JSON_PROPERTY_NUMBER_OF_STUDENTS = "numberOfStudents";
+  private Long numberOfStudents;
+
   public static final String JSON_PROPERTY_REQUEST_MORE_FEEDBACK_ENABLED = "requestMoreFeedbackEnabled";
   private Boolean requestMoreFeedbackEnabled;
 
@@ -302,18 +353,6 @@ public class Course {
 
   public static final String JSON_PROPERTY_VALID_START_AND_END_DATE = "validStartAndEndDate";
   private Boolean validStartAndEndDate;
-
-  public static final String JSON_PROPERTY_NUMBER_OF_INSTRUCTORS = "numberOfInstructors";
-  private Long numberOfInstructors;
-
-  public static final String JSON_PROPERTY_NUMBER_OF_TEACHING_ASSISTANTS = "numberOfTeachingAssistants";
-  private Long numberOfTeachingAssistants;
-
-  public static final String JSON_PROPERTY_NUMBER_OF_EDITORS = "numberOfEditors";
-  private Long numberOfEditors;
-
-  public static final String JSON_PROPERTY_NUMBER_OF_STUDENTS = "numberOfStudents";
-  private Long numberOfStudents;
 
   public Course() { 
   }
@@ -718,6 +757,31 @@ public class Course {
   }
 
 
+  public Course courseInformationSharingConfiguration(CourseInformationSharingConfigurationEnum courseInformationSharingConfiguration) {
+    this.courseInformationSharingConfiguration = courseInformationSharingConfiguration;
+    return this;
+  }
+
+   /**
+   * Get courseInformationSharingConfiguration
+   * @return courseInformationSharingConfiguration
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_COURSE_INFORMATION_SHARING_CONFIGURATION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public CourseInformationSharingConfigurationEnum getCourseInformationSharingConfiguration() {
+    return courseInformationSharingConfiguration;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_COURSE_INFORMATION_SHARING_CONFIGURATION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCourseInformationSharingConfiguration(CourseInformationSharingConfigurationEnum courseInformationSharingConfiguration) {
+    this.courseInformationSharingConfiguration = courseInformationSharingConfiguration;
+  }
+
+
   public Course maxComplaints(Integer maxComplaints) {
     this.maxComplaints = maxComplaints;
     return this;
@@ -865,31 +929,6 @@ public class Course {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMaxComplaintResponseTextLimit(Integer maxComplaintResponseTextLimit) {
     this.maxComplaintResponseTextLimit = maxComplaintResponseTextLimit;
-  }
-
-
-  public Course postsEnabled(Boolean postsEnabled) {
-    this.postsEnabled = postsEnabled;
-    return this;
-  }
-
-   /**
-   * Get postsEnabled
-   * @return postsEnabled
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_POSTS_ENABLED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getPostsEnabled() {
-    return postsEnabled;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_POSTS_ENABLED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPostsEnabled(Boolean postsEnabled) {
-    this.postsEnabled = postsEnabled;
   }
 
 
@@ -1347,6 +1386,106 @@ public class Course {
   }
 
 
+  public Course numberOfInstructors(Long numberOfInstructors) {
+    this.numberOfInstructors = numberOfInstructors;
+    return this;
+  }
+
+   /**
+   * Get numberOfInstructors
+   * @return numberOfInstructors
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_NUMBER_OF_INSTRUCTORS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Long getNumberOfInstructors() {
+    return numberOfInstructors;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_NUMBER_OF_INSTRUCTORS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setNumberOfInstructors(Long numberOfInstructors) {
+    this.numberOfInstructors = numberOfInstructors;
+  }
+
+
+  public Course numberOfEditors(Long numberOfEditors) {
+    this.numberOfEditors = numberOfEditors;
+    return this;
+  }
+
+   /**
+   * Get numberOfEditors
+   * @return numberOfEditors
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_NUMBER_OF_EDITORS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Long getNumberOfEditors() {
+    return numberOfEditors;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_NUMBER_OF_EDITORS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setNumberOfEditors(Long numberOfEditors) {
+    this.numberOfEditors = numberOfEditors;
+  }
+
+
+  public Course numberOfTeachingAssistants(Long numberOfTeachingAssistants) {
+    this.numberOfTeachingAssistants = numberOfTeachingAssistants;
+    return this;
+  }
+
+   /**
+   * Get numberOfTeachingAssistants
+   * @return numberOfTeachingAssistants
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_NUMBER_OF_TEACHING_ASSISTANTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Long getNumberOfTeachingAssistants() {
+    return numberOfTeachingAssistants;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_NUMBER_OF_TEACHING_ASSISTANTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setNumberOfTeachingAssistants(Long numberOfTeachingAssistants) {
+    this.numberOfTeachingAssistants = numberOfTeachingAssistants;
+  }
+
+
+  public Course numberOfStudents(Long numberOfStudents) {
+    this.numberOfStudents = numberOfStudents;
+    return this;
+  }
+
+   /**
+   * Get numberOfStudents
+   * @return numberOfStudents
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_NUMBER_OF_STUDENTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Long getNumberOfStudents() {
+    return numberOfStudents;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_NUMBER_OF_STUDENTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setNumberOfStudents(Long numberOfStudents) {
+    this.numberOfStudents = numberOfStudents;
+  }
+
+
   public Course requestMoreFeedbackEnabled(Boolean requestMoreFeedbackEnabled) {
     this.requestMoreFeedbackEnabled = requestMoreFeedbackEnabled;
     return this;
@@ -1422,106 +1561,6 @@ public class Course {
   }
 
 
-  public Course numberOfInstructors(Long numberOfInstructors) {
-    this.numberOfInstructors = numberOfInstructors;
-    return this;
-  }
-
-   /**
-   * Get numberOfInstructors
-   * @return numberOfInstructors
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_NUMBER_OF_INSTRUCTORS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Long getNumberOfInstructors() {
-    return numberOfInstructors;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_NUMBER_OF_INSTRUCTORS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNumberOfInstructors(Long numberOfInstructors) {
-    this.numberOfInstructors = numberOfInstructors;
-  }
-
-
-  public Course numberOfTeachingAssistants(Long numberOfTeachingAssistants) {
-    this.numberOfTeachingAssistants = numberOfTeachingAssistants;
-    return this;
-  }
-
-   /**
-   * Get numberOfTeachingAssistants
-   * @return numberOfTeachingAssistants
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_NUMBER_OF_TEACHING_ASSISTANTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Long getNumberOfTeachingAssistants() {
-    return numberOfTeachingAssistants;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_NUMBER_OF_TEACHING_ASSISTANTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNumberOfTeachingAssistants(Long numberOfTeachingAssistants) {
-    this.numberOfTeachingAssistants = numberOfTeachingAssistants;
-  }
-
-
-  public Course numberOfEditors(Long numberOfEditors) {
-    this.numberOfEditors = numberOfEditors;
-    return this;
-  }
-
-   /**
-   * Get numberOfEditors
-   * @return numberOfEditors
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_NUMBER_OF_EDITORS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Long getNumberOfEditors() {
-    return numberOfEditors;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_NUMBER_OF_EDITORS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNumberOfEditors(Long numberOfEditors) {
-    this.numberOfEditors = numberOfEditors;
-  }
-
-
-  public Course numberOfStudents(Long numberOfStudents) {
-    this.numberOfStudents = numberOfStudents;
-    return this;
-  }
-
-   /**
-   * Get numberOfStudents
-   * @return numberOfStudents
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_NUMBER_OF_STUDENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Long getNumberOfStudents() {
-    return numberOfStudents;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_NUMBER_OF_STUDENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNumberOfStudents(Long numberOfStudents) {
-    this.numberOfStudents = numberOfStudents;
-  }
-
-
   /**
    * Return true if this Course object is equal to o.
    */
@@ -1550,13 +1589,13 @@ public class Course {
         Objects.equals(this.defaultProgrammingLanguage, course.defaultProgrammingLanguage) &&
         Objects.equals(this.onlineCourse, course.onlineCourse) &&
         Objects.equals(this.onlineCourseConfiguration, course.onlineCourseConfiguration) &&
+        Objects.equals(this.courseInformationSharingConfiguration, course.courseInformationSharingConfiguration) &&
         Objects.equals(this.maxComplaints, course.maxComplaints) &&
         Objects.equals(this.maxTeamComplaints, course.maxTeamComplaints) &&
         Objects.equals(this.maxComplaintTimeDays, course.maxComplaintTimeDays) &&
         Objects.equals(this.maxRequestMoreFeedbackTimeDays, course.maxRequestMoreFeedbackTimeDays) &&
         Objects.equals(this.maxComplaintTextLimit, course.maxComplaintTextLimit) &&
         Objects.equals(this.maxComplaintResponseTextLimit, course.maxComplaintResponseTextLimit) &&
-        Objects.equals(this.postsEnabled, course.postsEnabled) &&
         Objects.equals(this.posts, course.posts) &&
         Objects.equals(this.color, course.color) &&
         Objects.equals(this.courseIcon, course.courseIcon) &&
@@ -1573,18 +1612,18 @@ public class Course {
         Objects.equals(this.exams, course.exams) &&
         Objects.equals(this.organizations, course.organizations) &&
         Objects.equals(this.tutorialGroupsConfiguration, course.tutorialGroupsConfiguration) &&
+        Objects.equals(this.numberOfInstructors, course.numberOfInstructors) &&
+        Objects.equals(this.numberOfEditors, course.numberOfEditors) &&
+        Objects.equals(this.numberOfTeachingAssistants, course.numberOfTeachingAssistants) &&
+        Objects.equals(this.numberOfStudents, course.numberOfStudents) &&
         Objects.equals(this.requestMoreFeedbackEnabled, course.requestMoreFeedbackEnabled) &&
         Objects.equals(this.complaintsEnabled, course.complaintsEnabled) &&
-        Objects.equals(this.validStartAndEndDate, course.validStartAndEndDate) &&
-        Objects.equals(this.numberOfInstructors, course.numberOfInstructors) &&
-        Objects.equals(this.numberOfTeachingAssistants, course.numberOfTeachingAssistants) &&
-        Objects.equals(this.numberOfEditors, course.numberOfEditors) &&
-        Objects.equals(this.numberOfStudents, course.numberOfStudents);
+        Objects.equals(this.validStartAndEndDate, course.validStartAndEndDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, title, description, shortName, studentGroupName, teachingAssistantGroupName, editorGroupName, instructorGroupName, startDate, endDate, semester, testCourse, language, defaultProgrammingLanguage, onlineCourse, onlineCourseConfiguration, maxComplaints, maxTeamComplaints, maxComplaintTimeDays, maxRequestMoreFeedbackTimeDays, maxComplaintTextLimit, maxComplaintResponseTextLimit, postsEnabled, posts, color, courseIcon, registrationEnabled, registrationConfirmationMessage, presentationScore, courseArchivePath, maxPoints, accuracyOfScores, timeZone, exercises, lectures, tutorialGroups, exams, organizations, tutorialGroupsConfiguration, requestMoreFeedbackEnabled, complaintsEnabled, validStartAndEndDate, numberOfInstructors, numberOfTeachingAssistants, numberOfEditors, numberOfStudents);
+    return Objects.hash(id, title, description, shortName, studentGroupName, teachingAssistantGroupName, editorGroupName, instructorGroupName, startDate, endDate, semester, testCourse, language, defaultProgrammingLanguage, onlineCourse, onlineCourseConfiguration, courseInformationSharingConfiguration, maxComplaints, maxTeamComplaints, maxComplaintTimeDays, maxRequestMoreFeedbackTimeDays, maxComplaintTextLimit, maxComplaintResponseTextLimit, posts, color, courseIcon, registrationEnabled, registrationConfirmationMessage, presentationScore, courseArchivePath, maxPoints, accuracyOfScores, timeZone, exercises, lectures, tutorialGroups, exams, organizations, tutorialGroupsConfiguration, numberOfInstructors, numberOfEditors, numberOfTeachingAssistants, numberOfStudents, requestMoreFeedbackEnabled, complaintsEnabled, validStartAndEndDate);
   }
 
   @Override
@@ -1607,13 +1646,13 @@ public class Course {
     sb.append("    defaultProgrammingLanguage: ").append(toIndentedString(defaultProgrammingLanguage)).append("\n");
     sb.append("    onlineCourse: ").append(toIndentedString(onlineCourse)).append("\n");
     sb.append("    onlineCourseConfiguration: ").append(toIndentedString(onlineCourseConfiguration)).append("\n");
+    sb.append("    courseInformationSharingConfiguration: ").append(toIndentedString(courseInformationSharingConfiguration)).append("\n");
     sb.append("    maxComplaints: ").append(toIndentedString(maxComplaints)).append("\n");
     sb.append("    maxTeamComplaints: ").append(toIndentedString(maxTeamComplaints)).append("\n");
     sb.append("    maxComplaintTimeDays: ").append(toIndentedString(maxComplaintTimeDays)).append("\n");
     sb.append("    maxRequestMoreFeedbackTimeDays: ").append(toIndentedString(maxRequestMoreFeedbackTimeDays)).append("\n");
     sb.append("    maxComplaintTextLimit: ").append(toIndentedString(maxComplaintTextLimit)).append("\n");
     sb.append("    maxComplaintResponseTextLimit: ").append(toIndentedString(maxComplaintResponseTextLimit)).append("\n");
-    sb.append("    postsEnabled: ").append(toIndentedString(postsEnabled)).append("\n");
     sb.append("    posts: ").append(toIndentedString(posts)).append("\n");
     sb.append("    color: ").append(toIndentedString(color)).append("\n");
     sb.append("    courseIcon: ").append(toIndentedString(courseIcon)).append("\n");
@@ -1630,13 +1669,13 @@ public class Course {
     sb.append("    exams: ").append(toIndentedString(exams)).append("\n");
     sb.append("    organizations: ").append(toIndentedString(organizations)).append("\n");
     sb.append("    tutorialGroupsConfiguration: ").append(toIndentedString(tutorialGroupsConfiguration)).append("\n");
+    sb.append("    numberOfInstructors: ").append(toIndentedString(numberOfInstructors)).append("\n");
+    sb.append("    numberOfEditors: ").append(toIndentedString(numberOfEditors)).append("\n");
+    sb.append("    numberOfTeachingAssistants: ").append(toIndentedString(numberOfTeachingAssistants)).append("\n");
+    sb.append("    numberOfStudents: ").append(toIndentedString(numberOfStudents)).append("\n");
     sb.append("    requestMoreFeedbackEnabled: ").append(toIndentedString(requestMoreFeedbackEnabled)).append("\n");
     sb.append("    complaintsEnabled: ").append(toIndentedString(complaintsEnabled)).append("\n");
     sb.append("    validStartAndEndDate: ").append(toIndentedString(validStartAndEndDate)).append("\n");
-    sb.append("    numberOfInstructors: ").append(toIndentedString(numberOfInstructors)).append("\n");
-    sb.append("    numberOfTeachingAssistants: ").append(toIndentedString(numberOfTeachingAssistants)).append("\n");
-    sb.append("    numberOfEditors: ").append(toIndentedString(numberOfEditors)).append("\n");
-    sb.append("    numberOfStudents: ").append(toIndentedString(numberOfStudents)).append("\n");
     sb.append("}");
     return sb.toString();
   }

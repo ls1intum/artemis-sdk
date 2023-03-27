@@ -38,6 +38,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   Feedback.JSON_PROPERTY_ID,
   Feedback.JSON_PROPERTY_TEXT,
   Feedback.JSON_PROPERTY_DETAIL_TEXT,
+  Feedback.JSON_PROPERTY_HAS_LONG_FEEDBACK_TEXT,
   Feedback.JSON_PROPERTY_REFERENCE,
   Feedback.JSON_PROPERTY_CREDITS,
   Feedback.JSON_PROPERTY_POSITIVE,
@@ -51,7 +52,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   Feedback.JSON_PROPERTY_FIRST_CONFLICTS,
   Feedback.JSON_PROPERTY_SECOND_CONFLICTS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class Feedback {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -61,6 +62,9 @@ public class Feedback {
 
   public static final String JSON_PROPERTY_DETAIL_TEXT = "detailText";
   private String detailText;
+
+  public static final String JSON_PROPERTY_HAS_LONG_FEEDBACK_TEXT = "hasLongFeedbackText";
+  private Boolean hasLongFeedbackText;
 
   public static final String JSON_PROPERTY_REFERENCE = "reference";
   private String reference;
@@ -249,6 +253,31 @@ public class Feedback {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDetailText(String detailText) {
     this.detailText = detailText;
+  }
+
+
+  public Feedback hasLongFeedbackText(Boolean hasLongFeedbackText) {
+    this.hasLongFeedbackText = hasLongFeedbackText;
+    return this;
+  }
+
+   /**
+   * Get hasLongFeedbackText
+   * @return hasLongFeedbackText
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_HAS_LONG_FEEDBACK_TEXT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getHasLongFeedbackText() {
+    return hasLongFeedbackText;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_HAS_LONG_FEEDBACK_TEXT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setHasLongFeedbackText(Boolean hasLongFeedbackText) {
+    this.hasLongFeedbackText = hasLongFeedbackText;
   }
 
 
@@ -583,6 +612,7 @@ public class Feedback {
     return Objects.equals(this.id, feedback.id) &&
         Objects.equals(this.text, feedback.text) &&
         Objects.equals(this.detailText, feedback.detailText) &&
+        Objects.equals(this.hasLongFeedbackText, feedback.hasLongFeedbackText) &&
         Objects.equals(this.reference, feedback.reference) &&
         Objects.equals(this.credits, feedback.credits) &&
         Objects.equals(this.positive, feedback.positive) &&
@@ -599,7 +629,7 @@ public class Feedback {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, text, detailText, reference, credits, positive, type, visibility, result, gradingInstruction, suggestedFeedbackReference, suggestedFeedbackOriginSubmissionReference, suggestedFeedbackParticipationReference, firstConflicts, secondConflicts);
+    return Objects.hash(id, text, detailText, hasLongFeedbackText, reference, credits, positive, type, visibility, result, gradingInstruction, suggestedFeedbackReference, suggestedFeedbackOriginSubmissionReference, suggestedFeedbackParticipationReference, firstConflicts, secondConflicts);
   }
 
   @Override
@@ -609,6 +639,7 @@ public class Feedback {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    detailText: ").append(toIndentedString(detailText)).append("\n");
+    sb.append("    hasLongFeedbackText: ").append(toIndentedString(hasLongFeedbackText)).append("\n");
     sb.append("    reference: ").append(toIndentedString(reference)).append("\n");
     sb.append("    credits: ").append(toIndentedString(credits)).append("\n");
     sb.append("    positive: ").append(toIndentedString(positive)).append("\n");

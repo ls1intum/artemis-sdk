@@ -40,6 +40,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
  */
 @JsonPropertyOrder({
   PlagiarismCase.JSON_PROPERTY_ID,
+  PlagiarismCase.JSON_PROPERTY_CREATED_DATE,
   PlagiarismCase.JSON_PROPERTY_EXERCISE,
   PlagiarismCase.JSON_PROPERTY_STUDENT,
   PlagiarismCase.JSON_PROPERTY_TEAM,
@@ -51,10 +52,13 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   PlagiarismCase.JSON_PROPERTY_VERDICT_DATE,
   PlagiarismCase.JSON_PROPERTY_VERDICT_POINT_DEDUCTION
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class PlagiarismCase {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
+
+  public static final String JSON_PROPERTY_CREATED_DATE = "createdDate";
+  private OffsetDateTime createdDate;
 
   public static final String JSON_PROPERTY_EXERCISE = "exercise";
   private Exercise exercise;
@@ -150,6 +154,31 @@ public class PlagiarismCase {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(Long id) {
     this.id = id;
+  }
+
+
+  public PlagiarismCase createdDate(OffsetDateTime createdDate) {
+    this.createdDate = createdDate;
+    return this;
+  }
+
+   /**
+   * Get createdDate
+   * @return createdDate
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CREATED_DATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public OffsetDateTime getCreatedDate() {
+    return createdDate;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CREATED_DATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCreatedDate(OffsetDateTime createdDate) {
+    this.createdDate = createdDate;
   }
 
 
@@ -425,6 +454,7 @@ public class PlagiarismCase {
     }
     PlagiarismCase plagiarismCase = (PlagiarismCase) o;
     return Objects.equals(this.id, plagiarismCase.id) &&
+        Objects.equals(this.createdDate, plagiarismCase.createdDate) &&
         Objects.equals(this.exercise, plagiarismCase.exercise) &&
         Objects.equals(this.student, plagiarismCase.student) &&
         Objects.equals(this.team, plagiarismCase.team) &&
@@ -439,7 +469,7 @@ public class PlagiarismCase {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, exercise, student, team, post, plagiarismSubmissions, verdict, verdictMessage, verdictBy, verdictDate, verdictPointDeduction);
+    return Objects.hash(id, createdDate, exercise, student, team, post, plagiarismSubmissions, verdict, verdictMessage, verdictBy, verdictDate, verdictPointDeduction);
   }
 
   @Override
@@ -447,6 +477,7 @@ public class PlagiarismCase {
     StringBuilder sb = new StringBuilder();
     sb.append("class PlagiarismCase {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     sb.append("    exercise: ").append(toIndentedString(exercise)).append("\n");
     sb.append("    student: ").append(toIndentedString(student)).append("\n");
     sb.append("    team: ").append(toIndentedString(team)).append("\n");

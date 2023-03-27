@@ -5,7 +5,7 @@ All URIs are relative to *http://localhost:8080*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**createAttachment**](AttachmentResourceApi.md#createAttachment) | **POST** /api/attachments |  |
-| [**deleteAttachment**](AttachmentResourceApi.md#deleteAttachment) | **DELETE** /api/attachments/{id} |  |
+| [**deleteAttachment**](AttachmentResourceApi.md#deleteAttachment) | **DELETE** /api/attachments/{attachmentId} |  |
 | [**getAttachment**](AttachmentResourceApi.md#getAttachment) | **GET** /api/attachments/{id} |  |
 | [**getAttachmentsForLecture**](AttachmentResourceApi.md#getAttachmentsForLecture) | **GET** /api/lectures/{lectureId}/attachments |  |
 | [**updateAttachment**](AttachmentResourceApi.md#updateAttachment) | **PUT** /api/attachments |  |
@@ -78,7 +78,7 @@ No authorization required
 
 ## deleteAttachment
 
-> deleteAttachment(id)
+> deleteAttachment(attachmentId)
 
 
 
@@ -98,9 +98,9 @@ public class Example {
         defaultClient.setBasePath("http://localhost:8080");
 
         AttachmentResourceApi apiInstance = new AttachmentResourceApi(defaultClient);
-        Long id = 56L; // Long | 
+        Long attachmentId = 56L; // Long | 
         try {
-            apiInstance.deleteAttachment(id);
+            apiInstance.deleteAttachment(attachmentId);
         } catch (ApiException e) {
             System.err.println("Exception when calling AttachmentResourceApi#deleteAttachment");
             System.err.println("Status code: " + e.getCode());
@@ -117,7 +117,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **Long**|  | |
+| **attachmentId** | **Long**|  | |
 
 ### Return type
 

@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class AttachmentResourceApi {
   private ApiClient apiClient;
 
@@ -117,7 +117,7 @@ public class AttachmentResourceApi {
   /**
    * 
    * 
-   * @param id  (required)
+   * @param attachmentId  (required)
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -126,14 +126,14 @@ public class AttachmentResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public void deleteAttachment(Long id) throws ApiException {
-    deleteAttachmentWithHttpInfo(id);
+  public void deleteAttachment(Long attachmentId) throws ApiException {
+    deleteAttachmentWithHttpInfo(attachmentId);
   }
 
   /**
    * 
    * 
-   * @param id  (required)
+   * @param attachmentId  (required)
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -143,17 +143,17 @@ public class AttachmentResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<Void> deleteAttachmentWithHttpInfo(Long id) throws ApiException {
+  public ApiResponse<Void> deleteAttachmentWithHttpInfo(Long attachmentId) throws ApiException {
     Object localVarPostBody = null;
     
-    // verify the required parameter 'id' is set
-    if (id == null) {
-      throw new ApiException(400, "Missing the required parameter 'id' when calling deleteAttachment");
+    // verify the required parameter 'attachmentId' is set
+    if (attachmentId == null) {
+      throw new ApiException(400, "Missing the required parameter 'attachmentId' when calling deleteAttachment");
     }
     
     // create path and map variables
-    String localVarPath = "/api/attachments/{id}"
-      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+    String localVarPath = "/api/attachments/{attachmentId}"
+      .replaceAll("\\{" + "attachmentId" + "\\}", apiClient.escapeString(attachmentId.toString()));
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();

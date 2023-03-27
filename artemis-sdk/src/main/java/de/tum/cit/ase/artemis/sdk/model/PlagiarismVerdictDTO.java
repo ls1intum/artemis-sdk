@@ -34,7 +34,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   PlagiarismVerdictDTO.JSON_PROPERTY_VERDICT_MESSAGE,
   PlagiarismVerdictDTO.JSON_PROPERTY_VERDICT_POINT_DEDUCTION
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class PlagiarismVerdictDTO {
   /**
    * Gets or Sets verdict

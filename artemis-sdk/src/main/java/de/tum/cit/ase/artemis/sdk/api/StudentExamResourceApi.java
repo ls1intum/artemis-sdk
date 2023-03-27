@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class StudentExamResourceApi {
   private ApiClient apiClient;
 
@@ -214,7 +214,6 @@ public class StudentExamResourceApi {
    * @param courseId  (required)
    * @param examId  (required)
    * @param testRunId  (required)
-   * @return StudentExam
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -223,8 +222,8 @@ public class StudentExamResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public StudentExam deleteTestRun(Long courseId, Long examId, Long testRunId) throws ApiException {
-    return deleteTestRunWithHttpInfo(courseId, examId, testRunId).getData();
+  public void deleteTestRun(Long courseId, Long examId, Long testRunId) throws ApiException {
+    deleteTestRunWithHttpInfo(courseId, examId, testRunId);
   }
 
   /**
@@ -233,7 +232,7 @@ public class StudentExamResourceApi {
    * @param courseId  (required)
    * @param examId  (required)
    * @param testRunId  (required)
-   * @return ApiResponse&lt;StudentExam&gt;
+   * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -242,7 +241,7 @@ public class StudentExamResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<StudentExam> deleteTestRunWithHttpInfo(Long courseId, Long examId, Long testRunId) throws ApiException {
+  public ApiResponse<Void> deleteTestRunWithHttpInfo(Long courseId, Long examId, Long testRunId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'courseId' is set
@@ -288,11 +287,9 @@ public class StudentExamResourceApi {
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<StudentExam> localVarReturnType = new GenericType<StudentExam>() {};
-
     return apiClient.invokeAPI("StudentExamResourceApi.deleteTestRun", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+                               localVarAuthNames, null, false);
   }
   /**
    * 

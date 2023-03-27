@@ -15,6 +15,8 @@
 |**isArchived** | **Boolean** |  |  [optional] |
 |**hasChannelModerationRights** | **Boolean** |  |  [optional] |
 |**isChannelModerator** | **Boolean** |  |  [optional] |
+|**tutorialGroupId** | **Long** |  |  [optional] |
+|**tutorialGroupTitle** | **String** |  |  [optional] |
 
 
 

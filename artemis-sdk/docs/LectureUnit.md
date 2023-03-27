@@ -13,8 +13,8 @@
 |**order** | **Integer** |  |  [optional] |
 |**lecture** | [**Lecture**](Lecture.md) |  |  [optional] |
 |**learningGoals** | [**Set&lt;LearningGoal&gt;**](LearningGoal.md) |  |  [optional] |
-|**visibleToStudents** | **Boolean** |  |  [optional] |
 |**completed** | **Boolean** |  |  [optional] |
+|**visibleToStudents** | **Boolean** |  |  [optional] |
 |**type** | **String** |  |  |
 
 

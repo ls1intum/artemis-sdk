@@ -23,13 +23,13 @@
 |**defaultProgrammingLanguage** | [**DefaultProgrammingLanguageEnum**](#DefaultProgrammingLanguageEnum) |  |  [optional] |
 |**onlineCourse** | **Boolean** |  |  [optional] |
 |**onlineCourseConfiguration** | [**OnlineCourseConfiguration**](OnlineCourseConfiguration.md) |  |  [optional] |
+|**courseInformationSharingConfiguration** | [**CourseInformationSharingConfigurationEnum**](#CourseInformationSharingConfigurationEnum) |  |  [optional] |
 |**maxComplaints** | **Integer** |  |  [optional] |
 |**maxTeamComplaints** | **Integer** |  |  [optional] |
 |**maxComplaintTimeDays** | **Integer** |  |  [optional] |
 |**maxRequestMoreFeedbackTimeDays** | **Integer** |  |  [optional] |
 |**maxComplaintTextLimit** | **Integer** |  |  [optional] |
 |**maxComplaintResponseTextLimit** | **Integer** |  |  [optional] |
-|**postsEnabled** | **Boolean** |  |  [optional] |
 |**posts** | [**Set&lt;Post&gt;**](Post.md) |  |  [optional] |
 |**color** | **String** |  |  [optional] |
 |**courseIcon** | **String** |  |  [optional] |
@@ -46,13 +46,13 @@
 |**exams** | [**Set&lt;Exam&gt;**](Exam.md) |  |  [optional] |
 |**organizations** | [**Set&lt;Organization&gt;**](Organization.md) |  |  [optional] |
 |**tutorialGroupsConfiguration** | [**TutorialGroupsConfiguration**](TutorialGroupsConfiguration.md) |  |  [optional] |
+|**numberOfInstructors** | **Long** |  |  [optional] |
+|**numberOfEditors** | **Long** |  |  [optional] |
+|**numberOfTeachingAssistants** | **Long** |  |  [optional] |
+|**numberOfStudents** | **Long** |  |  [optional] |
 |**requestMoreFeedbackEnabled** | **Boolean** |  |  [optional] |
 |**complaintsEnabled** | **Boolean** |  |  [optional] |
 |**validStartAndEndDate** | **Boolean** |  |  [optional] |
-|**numberOfInstructors** | **Long** |  |  [optional] |
-|**numberOfTeachingAssistants** | **Long** |  |  [optional] |
-|**numberOfEditors** | **Long** |  |  [optional] |
-|**numberOfStudents** | **Long** |  |  [optional] |
 
 
 
@@ -79,6 +79,17 @@
 | SWIFT | &quot;SWIFT&quot; |
 | OCAML | &quot;OCAML&quot; |
 | EMPTY | &quot;EMPTY&quot; |
+
+
+
+## Enum: CourseInformationSharingConfigurationEnum
+
+| Name | Value |
+|---- | -----|
+| DISABLED | &quot;DISABLED&quot; |
+| COMMUNICATION_AND_MESSAGING | &quot;COMMUNICATION_AND_MESSAGING&quot; |
+| COMMUNICATION_ONLY | &quot;COMMUNICATION_ONLY&quot; |
+| MESSAGING_ONLY | &quot;MESSAGING_ONLY&quot; |
 
 
 

@@ -23,6 +23,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import de.tum.cit.ase.artemis.sdk.model.ChannelDTO;
 import de.tum.cit.ase.artemis.sdk.model.Course;
 import de.tum.cit.ase.artemis.sdk.model.TutorialGroupSchedule;
 import de.tum.cit.ase.artemis.sdk.model.TutorialGroupSession;
@@ -52,10 +53,12 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   TutorialGroup.JSON_PROPERTY_TEACHING_ASSISTANT_NAME,
   TutorialGroup.JSON_PROPERTY_COURSE_TITLE,
   TutorialGroup.JSON_PROPERTY_NEXT_SESSION,
+  TutorialGroup.JSON_PROPERTY_CHANNEL,
+  TutorialGroup.JSON_PROPERTY_AVERAGE_ATTENDANCE,
   TutorialGroup.JSON_PROPERTY_TUTORIAL_GROUP_SCHEDULE,
   TutorialGroup.JSON_PROPERTY_TUTORIAL_GROUP_SESSIONS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class TutorialGroup {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -136,6 +139,12 @@ public class TutorialGroup {
 
   public static final String JSON_PROPERTY_NEXT_SESSION = "nextSession";
   private TutorialGroupSession nextSession;
+
+  public static final String JSON_PROPERTY_CHANNEL = "channel";
+  private ChannelDTO channel;
+
+  public static final String JSON_PROPERTY_AVERAGE_ATTENDANCE = "averageAttendance";
+  private Integer averageAttendance;
 
   public static final String JSON_PROPERTY_TUTORIAL_GROUP_SCHEDULE = "tutorialGroupSchedule";
   private TutorialGroupSchedule tutorialGroupSchedule;
@@ -522,6 +531,56 @@ public class TutorialGroup {
   }
 
 
+  public TutorialGroup channel(ChannelDTO channel) {
+    this.channel = channel;
+    return this;
+  }
+
+   /**
+   * Get channel
+   * @return channel
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CHANNEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public ChannelDTO getChannel() {
+    return channel;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CHANNEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setChannel(ChannelDTO channel) {
+    this.channel = channel;
+  }
+
+
+  public TutorialGroup averageAttendance(Integer averageAttendance) {
+    this.averageAttendance = averageAttendance;
+    return this;
+  }
+
+   /**
+   * Get averageAttendance
+   * @return averageAttendance
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_AVERAGE_ATTENDANCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getAverageAttendance() {
+    return averageAttendance;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_AVERAGE_ATTENDANCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAverageAttendance(Integer averageAttendance) {
+    this.averageAttendance = averageAttendance;
+  }
+
+
   public TutorialGroup tutorialGroupSchedule(TutorialGroupSchedule tutorialGroupSchedule) {
     this.tutorialGroupSchedule = tutorialGroupSchedule;
     return this;
@@ -608,13 +667,15 @@ public class TutorialGroup {
         Objects.equals(this.teachingAssistantName, tutorialGroup.teachingAssistantName) &&
         Objects.equals(this.courseTitle, tutorialGroup.courseTitle) &&
         Objects.equals(this.nextSession, tutorialGroup.nextSession) &&
+        Objects.equals(this.channel, tutorialGroup.channel) &&
+        Objects.equals(this.averageAttendance, tutorialGroup.averageAttendance) &&
         Objects.equals(this.tutorialGroupSchedule, tutorialGroup.tutorialGroupSchedule) &&
         Objects.equals(this.tutorialGroupSessions, tutorialGroup.tutorialGroupSessions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, course, title, additionalInformation, capacity, isOnline, campus, language, teachingAssistant, isUserRegistered, isUserTutor, numberOfRegisteredUsers, teachingAssistantName, courseTitle, nextSession, tutorialGroupSchedule, tutorialGroupSessions);
+    return Objects.hash(id, course, title, additionalInformation, capacity, isOnline, campus, language, teachingAssistant, isUserRegistered, isUserTutor, numberOfRegisteredUsers, teachingAssistantName, courseTitle, nextSession, channel, averageAttendance, tutorialGroupSchedule, tutorialGroupSessions);
   }
 
   @Override
@@ -636,6 +697,8 @@ public class TutorialGroup {
     sb.append("    teachingAssistantName: ").append(toIndentedString(teachingAssistantName)).append("\n");
     sb.append("    courseTitle: ").append(toIndentedString(courseTitle)).append("\n");
     sb.append("    nextSession: ").append(toIndentedString(nextSession)).append("\n");
+    sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
+    sb.append("    averageAttendance: ").append(toIndentedString(averageAttendance)).append("\n");
     sb.append("    tutorialGroupSchedule: ").append(toIndentedString(tutorialGroupSchedule)).append("\n");
     sb.append("    tutorialGroupSessions: ").append(toIndentedString(tutorialGroupSessions)).append("\n");
     sb.append("}");

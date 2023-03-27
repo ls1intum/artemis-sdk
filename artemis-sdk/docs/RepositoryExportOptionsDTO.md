@@ -11,6 +11,7 @@
 |**filterLateSubmissions** | **Boolean** |  |  [optional] |
 |**filterLateSubmissionsIndividualDueDate** | **Boolean** |  |  [optional] |
 |**filterLateSubmissionsDate** | **OffsetDateTime** |  |  [optional] |
+|**excludePracticeSubmissions** | **Boolean** |  |  [optional] |
 |**addParticipantName** | **Boolean** |  |  [optional] |
 |**combineStudentCommits** | **Boolean** |  |  [optional] |
 |**anonymizeStudentCommits** | **Boolean** |  |  [optional] |

@@ -41,6 +41,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
  */
 @JsonPropertyOrder({
   StudentExam.JSON_PROPERTY_ID,
+  StudentExam.JSON_PROPERTY_CREATED_DATE,
   StudentExam.JSON_PROPERTY_SUBMITTED,
   StudentExam.JSON_PROPERTY_WORKING_TIME,
   StudentExam.JSON_PROPERTY_STARTED,
@@ -53,10 +54,13 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   StudentExam.JSON_PROPERTY_EXAM_SESSIONS,
   StudentExam.JSON_PROPERTY_ENDED
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class StudentExam {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
+
+  public static final String JSON_PROPERTY_CREATED_DATE = "createdDate";
+  private OffsetDateTime createdDate;
 
   public static final String JSON_PROPERTY_SUBMITTED = "submitted";
   private Boolean submitted;
@@ -116,6 +120,31 @@ public class StudentExam {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(Long id) {
     this.id = id;
+  }
+
+
+  public StudentExam createdDate(OffsetDateTime createdDate) {
+    this.createdDate = createdDate;
+    return this;
+  }
+
+   /**
+   * Get createdDate
+   * @return createdDate
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CREATED_DATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public OffsetDateTime getCreatedDate() {
+    return createdDate;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CREATED_DATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCreatedDate(OffsetDateTime createdDate) {
+    this.createdDate = createdDate;
   }
 
 
@@ -424,6 +453,7 @@ public class StudentExam {
     }
     StudentExam studentExam = (StudentExam) o;
     return Objects.equals(this.id, studentExam.id) &&
+        Objects.equals(this.createdDate, studentExam.createdDate) &&
         Objects.equals(this.submitted, studentExam.submitted) &&
         Objects.equals(this.workingTime, studentExam.workingTime) &&
         Objects.equals(this.started, studentExam.started) &&
@@ -439,7 +469,7 @@ public class StudentExam {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, submitted, workingTime, started, startedDate, submissionDate, testRun, exam, user, exercises, examSessions, ended);
+    return Objects.hash(id, createdDate, submitted, workingTime, started, startedDate, submissionDate, testRun, exam, user, exercises, examSessions, ended);
   }
 
   @Override
@@ -447,6 +477,7 @@ public class StudentExam {
     StringBuilder sb = new StringBuilder();
     sb.append("class StudentExam {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     sb.append("    submitted: ").append(toIndentedString(submitted)).append("\n");
     sb.append("    workingTime: ").append(toIndentedString(workingTime)).append("\n");
     sb.append("    started: ").append(toIndentedString(started)).append("\n");

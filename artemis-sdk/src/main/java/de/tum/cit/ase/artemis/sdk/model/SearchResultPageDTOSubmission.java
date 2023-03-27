@@ -36,7 +36,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   SearchResultPageDTOSubmission.JSON_PROPERTY_RESULTS_ON_PAGE,
   SearchResultPageDTOSubmission.JSON_PROPERTY_NUMBER_OF_PAGES
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-02T15:54:21.223567Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
 public class SearchResultPageDTOSubmission {
   public static final String JSON_PROPERTY_RESULTS_ON_PAGE = "resultsOnPage";
   private List<GetAllTextSubmissions200ResponseInner> resultsOnPage = new ArrayList<>();
