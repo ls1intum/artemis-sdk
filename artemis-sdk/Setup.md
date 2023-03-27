@@ -14,3 +14,6 @@
 * ApiClient.java: allow selfsigned certificates in customizeClientBuilder
 * model/ModelingPlagiarismResult.java: PlagiarismComparisonObject instead of PlagiarismComparisonModelingSubmissionElement otherwise Error during Compilation
 * model/Submisson.java: Participation instead of CleanupBuildPlan200Response and durationInMinutes not private otherwise Error during Compilation
+
+4) build: 
+./gradlew clean build
