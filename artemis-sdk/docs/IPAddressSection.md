@@ -14,8 +14,8 @@
 |**hostMaskPrefix** | **Integer** |  |  [optional] |
 |**networkMaskPrefix** | **Integer** |  |  [optional] |
 |**entireAddress** | **Boolean** |  |  [optional] |
-|**ipv4** | **Boolean** |  |  [optional] |
 |**segmentCount** | **Integer** |  |  [optional] |
+|**ipv4** | **Boolean** |  |  [optional] |
 |**maxSegmentValue** | **Integer** |  |  [optional] |
 |**nonZeroHostCount** | **Integer** |  |  [optional] |
 |**byteCount** | **Integer** |  |  [optional] |

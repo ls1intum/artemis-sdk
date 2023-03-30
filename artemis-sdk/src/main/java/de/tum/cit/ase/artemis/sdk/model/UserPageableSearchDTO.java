@@ -44,7 +44,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   UserPageableSearchDTO.JSON_PROPERTY_COURSE_IDS,
   UserPageableSearchDTO.JSON_PROPERTY_REGISTRATION_NUMBERS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
 public class UserPageableSearchDTO {
   public static final String JSON_PROPERTY_PAGE = "page";
   private Integer page;

@@ -40,7 +40,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   TextAssessmentDTO.JSON_PROPERTY_TEXT_BLOCKS,
   TextAssessmentDTO.JSON_PROPERTY_FEEDBACKS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
 public class TextAssessmentDTO {
   public static final String JSON_PROPERTY_TEXT_BLOCKS = "textBlocks";
   private Set<TextBlock> textBlocks = new LinkedHashSet<>();

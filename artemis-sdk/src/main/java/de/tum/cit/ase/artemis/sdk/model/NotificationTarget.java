@@ -40,7 +40,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   NotificationTarget.JSON_PROPERTY_EXAM,
   NotificationTarget.JSON_PROPERTY_LECTURE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
 public class NotificationTarget {
   public static final String JSON_PROPERTY_MESSAGE = "message";
   private String message;

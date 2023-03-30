@@ -36,7 +36,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   DragItem.JSON_PROPERTY_INVALID,
   DragItem.JSON_PROPERTY_TEMP_I_D
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
 public class DragItem {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;

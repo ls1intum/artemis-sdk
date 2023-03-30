@@ -39,7 +39,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   StudentParticipationAllOf.JSON_PROPERTY_PARTICIPANT_NAME
 })
 @JsonTypeName("StudentParticipation_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
 public class StudentParticipationAllOf {
   public static final String JSON_PROPERTY_PRESENTATION_SCORE = "presentationScore";
   private Integer presentationScore;

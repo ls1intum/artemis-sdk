@@ -37,7 +37,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   CourseManagementOverviewStatisticsDTO.JSON_PROPERTY_ACTIVE_STUDENTS,
   CourseManagementOverviewStatisticsDTO.JSON_PROPERTY_EXERCISE_D_T_O_S
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
 public class CourseManagementOverviewStatisticsDTO {
   public static final String JSON_PROPERTY_COURSE_ID = "courseId";
   private Long courseId;

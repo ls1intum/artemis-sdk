@@ -37,7 +37,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ExerciseResult.JSON_PROPERTY_ACHIEVED_POINTS,
   ExerciseResult.JSON_PROPERTY_HAS_NON_EMPTY_SUBMISSION
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
 public class ExerciseResult {
   public static final String JSON_PROPERTY_EXERCISE_ID = "exerciseId";
   private Long exerciseId;

@@ -33,7 +33,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   FileSubmission.JSON_PROPERTY_FILE_NAME,
   FileSubmission.JSON_PROPERTY_FILE_CONTENT
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
 public class FileSubmission {
   public static final String JSON_PROPERTY_FILE_NAME = "fileName";
   private String fileName;

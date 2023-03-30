@@ -50,7 +50,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   Lecture.JSON_PROPERTY_POSTS,
   Lecture.JSON_PROPERTY_COURSE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
 public class Lecture {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;

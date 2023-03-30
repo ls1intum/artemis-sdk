@@ -15,6 +15,7 @@ docs/AdminSystemNotificationResourceApi.md
 docs/AdminTextAssessmentEventResourceApi.md
 docs/AdminTextExerciseResourceApi.md
 docs/AdminUserResourceApi.md
+docs/AnswerCounter.md
 docs/AnswerMessageResourceApi.md
 docs/AnswerOption.md
 docs/AnswerPost.md
@@ -76,8 +77,11 @@ docs/CreateSystemNotification200Response.md
 docs/DragAndDropMapping.md
 docs/DragAndDropQuestion.md
 docs/DragAndDropQuestionAllOf.md
+docs/DragAndDropQuestionStatistic.md
+docs/DragAndDropQuestionStatisticAllOf.md
 docs/DragItem.md
 docs/DropLocation.md
+docs/DropLocationCounter.md
 docs/DueDateStat.md
 docs/EndedExamAction.md
 docs/Exam.md
@@ -183,6 +187,8 @@ docs/ModelingSubmissionElement.md
 docs/ModelingSubmissionResourceApi.md
 docs/MultipleChoiceQuestion.md
 docs/MultipleChoiceQuestionAllOf.md
+docs/MultipleChoiceQuestionStatistic.md
+docs/MultipleChoiceQuestionStatisticAllOf.md
 docs/Notification.md
 docs/NotificationResourceApi.md
 docs/NotificationSetting.md
@@ -290,8 +296,11 @@ docs/SearchResultPageDTOTextExercise.md
 docs/ShortAnswerMapping.md
 docs/ShortAnswerQuestion.md
 docs/ShortAnswerQuestionAllOf.md
+docs/ShortAnswerQuestionStatistic.md
+docs/ShortAnswerQuestionStatisticAllOf.md
 docs/ShortAnswerSolution.md
 docs/ShortAnswerSpot.md
+docs/ShortAnswerSpotCounter.md
 docs/SimilarElementCount.md
 docs/SingleUserNotification.md
 docs/SingleUserNotificationAllOf.md
@@ -515,6 +524,7 @@ src/main/java/de/tum/cit/ase/artemis/sdk/auth/Authentication.java
 src/main/java/de/tum/cit/ase/artemis/sdk/auth/HttpBasicAuth.java
 src/main/java/de/tum/cit/ase/artemis/sdk/auth/HttpBearerAuth.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/AbstractOpenApiSchema.java
+src/main/java/de/tum/cit/ase/artemis/sdk/model/AnswerCounter.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/AnswerOption.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/AnswerPost.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/ApollonDiagram.java
@@ -560,8 +570,11 @@ src/main/java/de/tum/cit/ase/artemis/sdk/model/CreateSystemNotification200Respon
 src/main/java/de/tum/cit/ase/artemis/sdk/model/DragAndDropMapping.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/DragAndDropQuestion.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/DragAndDropQuestionAllOf.java
+src/main/java/de/tum/cit/ase/artemis/sdk/model/DragAndDropQuestionStatistic.java
+src/main/java/de/tum/cit/ase/artemis/sdk/model/DragAndDropQuestionStatisticAllOf.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/DragItem.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/DropLocation.java
+src/main/java/de/tum/cit/ase/artemis/sdk/model/DropLocationCounter.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/DueDateStat.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/EndedExamAction.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/Exam.java
@@ -641,6 +654,8 @@ src/main/java/de/tum/cit/ase/artemis/sdk/model/ModelingSubmissionAllOf.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/ModelingSubmissionElement.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/MultipleChoiceQuestion.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/MultipleChoiceQuestionAllOf.java
+src/main/java/de/tum/cit/ase/artemis/sdk/model/MultipleChoiceQuestionStatistic.java
+src/main/java/de/tum/cit/ase/artemis/sdk/model/MultipleChoiceQuestionStatisticAllOf.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/Notification.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/NotificationSetting.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/NotificationTarget.java
@@ -719,8 +734,11 @@ src/main/java/de/tum/cit/ase/artemis/sdk/model/SearchResultPageDTOTextExercise.j
 src/main/java/de/tum/cit/ase/artemis/sdk/model/ShortAnswerMapping.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/ShortAnswerQuestion.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/ShortAnswerQuestionAllOf.java
+src/main/java/de/tum/cit/ase/artemis/sdk/model/ShortAnswerQuestionStatistic.java
+src/main/java/de/tum/cit/ase/artemis/sdk/model/ShortAnswerQuestionStatisticAllOf.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/ShortAnswerSolution.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/ShortAnswerSpot.java
+src/main/java/de/tum/cit/ase/artemis/sdk/model/ShortAnswerSpotCounter.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/SimilarElementCount.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/SingleUserNotification.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/SingleUserNotificationAllOf.java
@@ -789,5 +807,12 @@ src/main/java/de/tum/cit/ase/artemis/sdk/model/UserInitializationDTO.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/UserPageableSearchDTO.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/UserPublicInfoDTO.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/VideoUnit.java
-src/test/java/de/tum/cit/ase/artemis/sdk/model/CreateSystemNotification200ResponseTest.java
-src/test/java/de/tum/cit/ase/artemis/sdk/model/SearchResultPageDTOFileUploadExerciseTest.java
+src/test/java/de/tum/cit/ase/artemis/sdk/model/AnswerCounterTest.java
+src/test/java/de/tum/cit/ase/artemis/sdk/model/DragAndDropQuestionStatisticAllOfTest.java
+src/test/java/de/tum/cit/ase/artemis/sdk/model/DragAndDropQuestionStatisticTest.java
+src/test/java/de/tum/cit/ase/artemis/sdk/model/DropLocationCounterTest.java
+src/test/java/de/tum/cit/ase/artemis/sdk/model/MultipleChoiceQuestionStatisticAllOfTest.java
+src/test/java/de/tum/cit/ase/artemis/sdk/model/MultipleChoiceQuestionStatisticTest.java
+src/test/java/de/tum/cit/ase/artemis/sdk/model/ShortAnswerQuestionStatisticAllOfTest.java
+src/test/java/de/tum/cit/ase/artemis/sdk/model/ShortAnswerQuestionStatisticTest.java
+src/test/java/de/tum/cit/ase/artemis/sdk/model/ShortAnswerSpotCounterTest.java

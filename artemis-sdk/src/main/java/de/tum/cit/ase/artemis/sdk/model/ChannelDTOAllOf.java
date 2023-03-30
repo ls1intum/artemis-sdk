@@ -42,7 +42,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ChannelDTOAllOf.JSON_PROPERTY_TUTORIAL_GROUP_TITLE
 })
 @JsonTypeName("ChannelDTO_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-27T15:31:11.360443Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
 public class ChannelDTOAllOf {
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
