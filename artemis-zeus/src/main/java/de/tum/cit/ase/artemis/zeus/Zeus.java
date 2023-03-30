@@ -6,9 +6,9 @@ import de.tum.cit.ase.artemis.sdk.Configuration;
 import de.tum.cit.ase.artemis.sdk.api.*;
 import de.tum.cit.ase.artemis.sdk.model.LoginVM;
 
+import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
-import picocli.CommandLine;
 
 import java.util.List;
 
@@ -53,6 +53,9 @@ public class Zeus {
 
     private static final QuizExerciseResourceApi quizExerciseResourceApi = new QuizExerciseResourceApi(Zeus.getDefaultClient());
     public static QuizExerciseResourceApi getQuizExerciseResourceApi() { return quizExerciseResourceApi; }
+
+    private static final FileResourceApi fileResourceApi = new FileResourceApi(Zeus.getDefaultClient());
+    public static FileResourceApi getFileResourceApi() { return fileResourceApi; }
 
 
     private static String authenticateAndGetCookie(String username, String password) {

@@ -21,6 +21,8 @@ jar {
 }
 
 graalvmNative {
+    //TODO: integrate agent to generate meta infos in resources/META-INF.native-image somehow which is required for
+    //      some reflections to work
     binaries {
         main {
             // Main options
