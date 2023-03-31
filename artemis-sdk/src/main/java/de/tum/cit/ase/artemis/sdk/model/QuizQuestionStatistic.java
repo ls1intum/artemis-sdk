@@ -50,12 +50,9 @@ import de.tum.cit.ase.artemis.sdk.JSON;
 )
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = true)
 @JsonSubTypes({
-  @JsonSubTypes.Type(value = DragAndDropQuestionStatistic.class, name = "DD"),
-  @JsonSubTypes.Type(value = DragAndDropQuestionStatistic.class, name = "DragAndDropQuestionStatistic"),
-  @JsonSubTypes.Type(value = MultipleChoiceQuestionStatistic.class, name = "MC"),
-  @JsonSubTypes.Type(value = MultipleChoiceQuestionStatistic.class, name = "MultipleChoiceQuestionStatistic"),
-  @JsonSubTypes.Type(value = ShortAnswerQuestionStatistic.class, name = "SA"),
-  @JsonSubTypes.Type(value = ShortAnswerQuestionStatistic.class, name = "ShortAnswerQuestionStatistic"),
+  @JsonSubTypes.Type(value = DragAndDropQuestionStatistic.class, name = "drag-and-drop"),
+  @JsonSubTypes.Type(value = MultipleChoiceQuestionStatistic.class, name = "multiple-choice"),
+  @JsonSubTypes.Type(value = ShortAnswerQuestionStatistic.class, name = "short-answer"),
 })
 
 public class QuizQuestionStatistic {
