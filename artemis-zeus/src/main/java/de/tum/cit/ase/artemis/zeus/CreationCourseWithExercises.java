@@ -1,13 +1,23 @@
 package de.tum.cit.ase.artemis.zeus;
 
 import de.tum.cit.ase.artemis.sdk.model.*;
+
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
+import picocli.CommandLine.Mixin;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
+import java.net.URL;
+import java.io.IOException;
 
 @Command(name = "courseWithExercises", description = "creates an Artemis course with exercises",
         mixinStandardHelpOptions = true)
@@ -18,6 +28,9 @@ public class CreationCourseWithExercises implements Callable<Integer> {
 
     @Option(names = {"--title"}, required = true)
     private String title;
+
+    private static Logger logger = LogManager.getLogger();
+    @Mixin LoggingMixin loggingMixin;
 
     @Override
     public Integer call() {
@@ -75,9 +88,20 @@ public class CreationCourseWithExercises implements Callable<Integer> {
                 .points(5);
         quizQuestions.add(multipleChoiceQuestion);
         // create Drag and Drop question
-        // String backgroundImagePath =  Zeus.getFileResourceApi().saveFile(false,
-        //         new SaveMarkdownFileRequest()._file(new File("https://artemis.ase.in.tum.de/public/images/logo.png")));
-        List<DragAndDropMapping>DaDCorrectMappings = new ArrayList<DragAndDropMapping>(2);
+        URL url = Zeus.class.getClassLoader().getResource("testdata/images/background.jpg");
+        File backgroundImage = new File(url.getPath());
+        String backgroundImagePathJSON = Zeus.getFileResourceApi().saveFile(backgroundImage, false);
+        // TODO: rethink if it's possible to extract or hand this on in a nicer way than extracting it here?!
+        String backgroundImagePath = null;
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            JsonNode node = mapper.readTree(backgroundImagePathJSON);
+            backgroundImagePath = node.get("path").asText();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        logger.debug(backgroundImagePath);
+        List<DragAndDropMapping> DaDCorrectMappings = new ArrayList<DragAndDropMapping>(2);
         DragAndDropMapping dragAndDropMappingA = new DragAndDropMapping()
                 .dropLocation(new DropLocation()
                         .height(88.0)
@@ -102,7 +126,7 @@ public class CreationCourseWithExercises implements Callable<Integer> {
         DragAndDropQuestion dragAndDropQuestion = (DragAndDropQuestion) new DragAndDropQuestion()
                 .correctMappings(DaDCorrectMappings)
                 .dragItems(dragItems)
-                .backgroundFilePath("https://artemis.ase.in.tum.de/public/images/logo.png")
+                .backgroundFilePath(backgroundImagePath)
                 .title(pregeneratedTitlePrefix + "Drag and Drop Question")
                 .points(5);
         quizQuestions.add(dragAndDropQuestion);

@@ -9,6 +9,10 @@ import de.tum.cit.ase.artemis.sdk.model.LoginVM;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
+import picocli.CommandLine.Mixin;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
@@ -24,7 +28,11 @@ public class Zeus {
     @Option(names = {"--password"}, description = "Artemis password (default: ${DEFAULT-VALUE})")
     private static String artemisPassword = "artemis_admin";
 
-
+    static {
+        LoggingMixin.initializeLog4j(); // programmatic initialization; must be done before calling LogManager.getLogger()
+    }
+    private static Logger logger = LogManager.getLogger(Zeus.class);
+    @Mixin LoggingMixin loggingMixin;
 
     private static final ApiClient defaultClient = Configuration.getDefaultApiClient();
     public static ApiClient getDefaultClient() {
@@ -78,13 +86,16 @@ public class Zeus {
     }
 
     public static void prepareRestClient() {
+        logger.debug("preparing Rest Client (set URL and set Coockie for auth)");
         defaultClient.setBasePath(Zeus.artemisUrl);
         //TODO: maybe reuse/use the official jersey authentication methods?
         defaultClient.addDefaultHeader("Cookie", authenticateAndGetCookie(Zeus.artemisUsername, Zeus.artemisPassword));
     }
 
     public static void main(String[] args) {
-        int exitCode = new CommandLine(new Zeus()).execute(args);
+        int exitCode = new CommandLine(new Zeus())
+                .setExecutionStrategy(LoggingMixin::executionStrategy)
+                .execute(args);
         System.exit(exitCode);
     }
 }

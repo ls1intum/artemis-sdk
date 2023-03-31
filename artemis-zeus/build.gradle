@@ -41,6 +41,7 @@ ext {
     jersey_version = "3.0.4"
     junit_version = "5.8.2"
     picocli_version = "4.7.1"
+    log4j_version = "2.16.0"
 }
 
 //TODO: use gradle shadow jar instead of duplicate dependencies from artemis-client-sdk, at least for development
@@ -63,6 +64,8 @@ dependencies {
     implementation files('libs/artemis-client-sdk-v0.jar')
     implementation "info.picocli:picocli:$picocli_version"
     annotationProcessor "info.picocli:picocli-codegen:$picocli_version"
+    implementation "org.apache.logging.log4j:log4j-core:$log4j_version"
+    implementation "org.apache.logging.log4j:log4j-slf4j-impl:$log4j_version"
 }
 
 test {
