@@ -11,10 +11,11 @@ import jakarta.ws.rs.core.GenericType;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class AdminTextExerciseResourceApi {
   private ApiClient apiClient;
 
@@ -74,41 +75,19 @@ public class AdminTextExerciseResourceApi {
      </table>
    */
   public ApiResponse<Void> triggerAutomaticAssessmentWithHttpInfo(Long exerciseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling triggerAutomaticAssessment");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/admin/text-exercises/{exerciseId}/trigger-automatic-assessment"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("AdminTextExerciseResourceApi.triggerAutomaticAssessment", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("AdminTextExerciseResourceApi.triggerAutomaticAssessment", localVarPath, "POST", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
 }

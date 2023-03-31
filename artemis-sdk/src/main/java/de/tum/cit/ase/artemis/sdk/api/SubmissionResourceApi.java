@@ -15,10 +15,11 @@ import de.tum.cit.ase.artemis.sdk.model.SubmissionWithComplaintDTO;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class SubmissionResourceApi {
   private ApiClient apiClient;
 
@@ -78,42 +79,20 @@ public class SubmissionResourceApi {
      </table>
    */
   public ApiResponse<Void> deleteSubmissionWithHttpInfo(Long submissionId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'submissionId' is set
+    // Check required parameters
     if (submissionId == null) {
       throw new ApiException(400, "Missing the required parameter 'submissionId' when calling deleteSubmission");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/submissions/{submissionId}"
-      .replaceAll("\\{" + "submissionId" + "\\}", apiClient.escapeString(submissionId.toString()));
+            .replaceAll("\\{submissionId}", apiClient.escapeString(submissionId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("SubmissionResourceApi.deleteSubmission", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("SubmissionResourceApi.deleteSubmission", localVarPath, "DELETE", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -148,50 +127,29 @@ public class SubmissionResourceApi {
      </table>
    */
   public ApiResponse<SearchResultPageDTOSubmission> getSubmissionsOnPageWithSizeWithHttpInfo(Long exerciseId, PageableSearchDTOString search) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling getSubmissionsOnPageWithSize");
     }
-    
-    // verify the required parameter 'search' is set
     if (search == null) {
       throw new ApiException(400, "Missing the required parameter 'search' when calling getSubmissionsOnPageWithSize");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/exercises/{exerciseId}/submissions-for-import"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "search", search)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "search", search));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<SearchResultPageDTOSubmission> localVarReturnType = new GenericType<SearchResultPageDTOSubmission>() {};
-
-    return apiClient.invokeAPI("SubmissionResourceApi.getSubmissionsOnPageWithSize", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("SubmissionResourceApi.getSubmissionsOnPageWithSize", localVarPath, "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -224,44 +182,21 @@ public class SubmissionResourceApi {
      </table>
    */
   public ApiResponse<List<SubmissionWithComplaintDTO>> getSubmissionsWithComplaintsForAssessmentDashboardWithHttpInfo(Long exerciseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling getSubmissionsWithComplaintsForAssessmentDashboard");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/exercises/{exerciseId}/submissions-with-complaints"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<SubmissionWithComplaintDTO>> localVarReturnType = new GenericType<List<SubmissionWithComplaintDTO>>() {};
-
-    return apiClient.invokeAPI("SubmissionResourceApi.getSubmissionsWithComplaintsForAssessmentDashboard", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("SubmissionResourceApi.getSubmissionsWithComplaintsForAssessmentDashboard", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -294,44 +229,21 @@ public class SubmissionResourceApi {
      </table>
    */
   public ApiResponse<List<SubmissionWithComplaintDTO>> getSubmissionsWithMoreFeedbackRequestForAssessmentDashboardWithHttpInfo(Long exerciseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling getSubmissionsWithMoreFeedbackRequestForAssessmentDashboard");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/exercises/{exerciseId}/more-feedback-requests-with-complaints"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<SubmissionWithComplaintDTO>> localVarReturnType = new GenericType<List<SubmissionWithComplaintDTO>>() {};
-
-    return apiClient.invokeAPI("SubmissionResourceApi.getSubmissionsWithMoreFeedbackRequestForAssessmentDashboard", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("SubmissionResourceApi.getSubmissionsWithMoreFeedbackRequestForAssessmentDashboard", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -364,43 +276,20 @@ public class SubmissionResourceApi {
      </table>
    */
   public ApiResponse<List<GetAllTextSubmissions200ResponseInner>> getTestRunSubmissionsForAssessmentWithHttpInfo(Long exerciseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling getTestRunSubmissionsForAssessment");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/exercises/{exerciseId}/test-run-submissions"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<GetAllTextSubmissions200ResponseInner>> localVarReturnType = new GenericType<List<GetAllTextSubmissions200ResponseInner>>() {};
-
-    return apiClient.invokeAPI("SubmissionResourceApi.getTestRunSubmissionsForAssessment", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("SubmissionResourceApi.getTestRunSubmissionsForAssessment", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

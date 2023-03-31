@@ -58,7 +58,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   UserDTO.JSON_PROPERTY_VCS_ACCESS_TOKEN,
   UserDTO.JSON_PROPERTY_INTERNAL
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class UserDTO {
   public static final String JSON_PROPERTY_CREATED_BY = "createdBy";
   private String createdBy;
@@ -106,16 +106,16 @@ public class UserDTO {
   private OffsetDateTime lastNotificationRead;
 
   public static final String JSON_PROPERTY_AUTHORITIES = "authorities";
-  private Set<String> authorities = new LinkedHashSet<>();
+  private Set<String> authorities;
 
   public static final String JSON_PROPERTY_GROUPS = "groups";
-  private Set<String> groups = new LinkedHashSet<>();
+  private Set<String> groups;
 
   public static final String JSON_PROPERTY_GUIDED_TOUR_SETTINGS = "guidedTourSettings";
-  private Set<GuidedTourSetting> guidedTourSettings = new LinkedHashSet<>();
+  private Set<GuidedTourSetting> guidedTourSettings;
 
   public static final String JSON_PROPERTY_ORGANIZATIONS = "organizations";
-  private Set<Organization> organizations = new LinkedHashSet<>();
+  private Set<Organization> organizations;
 
   public static final String JSON_PROPERTY_VCS_ACCESS_TOKEN = "vcsAccessToken";
   private String vcsAccessToken;

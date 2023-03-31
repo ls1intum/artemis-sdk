@@ -12,10 +12,11 @@ import de.tum.cit.ase.artemis.sdk.model.ApollonDiagram;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class ApollonDiagramResourceApi {
   private ApiClient apiClient;
 
@@ -78,49 +79,24 @@ public class ApollonDiagramResourceApi {
      </table>
    */
   public ApiResponse<ApollonDiagram> createApollonDiagramWithHttpInfo(Long courseId, ApollonDiagram apollonDiagram) throws ApiException {
-    Object localVarPostBody = apollonDiagram;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling createApollonDiagram");
     }
-    
-    // verify the required parameter 'apollonDiagram' is set
     if (apollonDiagram == null) {
       throw new ApiException(400, "Missing the required parameter 'apollonDiagram' when calling createApollonDiagram");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/course/{courseId}/apollon-diagrams"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<ApollonDiagram> localVarReturnType = new GenericType<ApollonDiagram>() {};
-
-    return apiClient.invokeAPI("ApollonDiagramResourceApi.createApollonDiagram", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ApollonDiagramResourceApi.createApollonDiagram", localVarPath, "POST", new ArrayList<>(), apollonDiagram,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -154,48 +130,24 @@ public class ApollonDiagramResourceApi {
      </table>
    */
   public ApiResponse<Void> deleteApollonDiagramWithHttpInfo(Long apollonDiagramId, Long courseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'apollonDiagramId' is set
+    // Check required parameters
     if (apollonDiagramId == null) {
       throw new ApiException(400, "Missing the required parameter 'apollonDiagramId' when calling deleteApollonDiagram");
     }
-    
-    // verify the required parameter 'courseId' is set
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling deleteApollonDiagram");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/course/{courseId}/apollon-diagrams/{apollonDiagramId}"
-      .replaceAll("\\{" + "apollonDiagramId" + "\\}", apiClient.escapeString(apollonDiagramId.toString()))
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{apollonDiagramId}", apiClient.escapeString(apollonDiagramId.toString()))
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("ApollonDiagramResourceApi.deleteApollonDiagram", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("ApollonDiagramResourceApi.deleteApollonDiagram", localVarPath, "DELETE", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -230,50 +182,25 @@ public class ApollonDiagramResourceApi {
      </table>
    */
   public ApiResponse<ApollonDiagram> getApollonDiagramWithHttpInfo(Long apollonDiagramId, Long courseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'apollonDiagramId' is set
+    // Check required parameters
     if (apollonDiagramId == null) {
       throw new ApiException(400, "Missing the required parameter 'apollonDiagramId' when calling getApollonDiagram");
     }
-    
-    // verify the required parameter 'courseId' is set
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getApollonDiagram");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/course/{courseId}/apollon-diagrams/{apollonDiagramId}"
-      .replaceAll("\\{" + "apollonDiagramId" + "\\}", apiClient.escapeString(apollonDiagramId.toString()))
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{apollonDiagramId}", apiClient.escapeString(apollonDiagramId.toString()))
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<ApollonDiagram> localVarReturnType = new GenericType<ApollonDiagram>() {};
-
-    return apiClient.invokeAPI("ApollonDiagramResourceApi.getApollonDiagram", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ApollonDiagramResourceApi.getApollonDiagram", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -306,44 +233,21 @@ public class ApollonDiagramResourceApi {
      </table>
    */
   public ApiResponse<String> getDiagramTitleWithHttpInfo(Long diagramId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'diagramId' is set
+    // Check required parameters
     if (diagramId == null) {
       throw new ApiException(400, "Missing the required parameter 'diagramId' when calling getDiagramTitle");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/apollon-diagrams/{diagramId}/title"
-      .replaceAll("\\{" + "diagramId" + "\\}", apiClient.escapeString(diagramId.toString()));
+            .replaceAll("\\{diagramId}", apiClient.escapeString(diagramId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<String> localVarReturnType = new GenericType<String>() {};
-
-    return apiClient.invokeAPI("ApollonDiagramResourceApi.getDiagramTitle", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ApollonDiagramResourceApi.getDiagramTitle", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -376,44 +280,21 @@ public class ApollonDiagramResourceApi {
      </table>
    */
   public ApiResponse<List<ApollonDiagram>> getDiagramsByCourseWithHttpInfo(Long courseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getDiagramsByCourse");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/course/{courseId}/apollon-diagrams"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<ApollonDiagram>> localVarReturnType = new GenericType<List<ApollonDiagram>>() {};
-
-    return apiClient.invokeAPI("ApollonDiagramResourceApi.getDiagramsByCourse", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ApollonDiagramResourceApi.getDiagramsByCourse", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -448,48 +329,23 @@ public class ApollonDiagramResourceApi {
      </table>
    */
   public ApiResponse<ApollonDiagram> updateApollonDiagramWithHttpInfo(Long courseId, ApollonDiagram apollonDiagram) throws ApiException {
-    Object localVarPostBody = apollonDiagram;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling updateApollonDiagram");
     }
-    
-    // verify the required parameter 'apollonDiagram' is set
     if (apollonDiagram == null) {
       throw new ApiException(400, "Missing the required parameter 'apollonDiagram' when calling updateApollonDiagram");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/course/{courseId}/apollon-diagrams"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<ApollonDiagram> localVarReturnType = new GenericType<ApollonDiagram>() {};
-
-    return apiClient.invokeAPI("ApollonDiagramResourceApi.updateApollonDiagram", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ApollonDiagramResourceApi.updateApollonDiagram", localVarPath, "PUT", new ArrayList<>(), apollonDiagram,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

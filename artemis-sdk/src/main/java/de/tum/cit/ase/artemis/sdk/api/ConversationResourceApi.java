@@ -14,10 +14,11 @@ import de.tum.cit.ase.artemis.sdk.model.Pageable;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class ConversationResourceApi {
   private ApiClient apiClient;
 
@@ -81,54 +82,32 @@ public class ConversationResourceApi {
      </table>
    */
   public ApiResponse<Void> changeFavoriteStatusWithHttpInfo(Long courseId, Long conversationId, Boolean isFavorite) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling changeFavoriteStatus");
     }
-    
-    // verify the required parameter 'conversationId' is set
     if (conversationId == null) {
       throw new ApiException(400, "Missing the required parameter 'conversationId' when calling changeFavoriteStatus");
     }
-    
-    // verify the required parameter 'isFavorite' is set
     if (isFavorite == null) {
       throw new ApiException(400, "Missing the required parameter 'isFavorite' when calling changeFavoriteStatus");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/conversations/{conversationId}/favorite"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "conversationId" + "\\}", apiClient.escapeString(conversationId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{conversationId}", apiClient.escapeString(conversationId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "isFavorite", isFavorite)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "isFavorite", isFavorite));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("ConversationResourceApi.changeFavoriteStatus", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("ConversationResourceApi.changeFavoriteStatus", localVarPath, "POST", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -161,44 +140,21 @@ public class ConversationResourceApi {
      </table>
    */
   public ApiResponse<List<GetConversationsOfUser200ResponseInner>> getConversationsOfUserWithHttpInfo(Long courseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getConversationsOfUser");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/conversations"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<GetConversationsOfUser200ResponseInner>> localVarReturnType = new GenericType<List<GetConversationsOfUser200ResponseInner>>() {};
-
-    return apiClient.invokeAPI("ConversationResourceApi.getConversationsOfUser", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ConversationResourceApi.getConversationsOfUser", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -239,63 +195,38 @@ public class ConversationResourceApi {
      </table>
    */
   public ApiResponse<List<ConversationUserDTO>> searchMembersOfConversationWithHttpInfo(Long courseId, Long conversationId, String loginOrName, Pageable pageable, String filter) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling searchMembersOfConversation");
     }
-    
-    // verify the required parameter 'conversationId' is set
     if (conversationId == null) {
       throw new ApiException(400, "Missing the required parameter 'conversationId' when calling searchMembersOfConversation");
     }
-    
-    // verify the required parameter 'loginOrName' is set
     if (loginOrName == null) {
       throw new ApiException(400, "Missing the required parameter 'loginOrName' when calling searchMembersOfConversation");
     }
-    
-    // verify the required parameter 'pageable' is set
     if (pageable == null) {
       throw new ApiException(400, "Missing the required parameter 'pageable' when calling searchMembersOfConversation");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/conversations/{conversationId}/members/search"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "conversationId" + "\\}", apiClient.escapeString(conversationId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{conversationId}", apiClient.escapeString(conversationId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "loginOrName", loginOrName));
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "loginOrName", loginOrName)
+    );
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "filter", filter));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "pageable", pageable));
 
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<ConversationUserDTO>> localVarReturnType = new GenericType<List<ConversationUserDTO>>() {};
-
-    return apiClient.invokeAPI("ConversationResourceApi.searchMembersOfConversation", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ConversationResourceApi.searchMembersOfConversation", localVarPath, "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -331,53 +262,31 @@ public class ConversationResourceApi {
      </table>
    */
   public ApiResponse<Void> switchHiddenStatusWithHttpInfo(Long courseId, Long conversationId, Boolean isHidden) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling switchHiddenStatus");
     }
-    
-    // verify the required parameter 'conversationId' is set
     if (conversationId == null) {
       throw new ApiException(400, "Missing the required parameter 'conversationId' when calling switchHiddenStatus");
     }
-    
-    // verify the required parameter 'isHidden' is set
     if (isHidden == null) {
       throw new ApiException(400, "Missing the required parameter 'isHidden' when calling switchHiddenStatus");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/conversations/{conversationId}/hidden"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "conversationId" + "\\}", apiClient.escapeString(conversationId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{conversationId}", apiClient.escapeString(conversationId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "isHidden", isHidden)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "isHidden", isHidden));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("ConversationResourceApi.switchHiddenStatus", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("ConversationResourceApi.switchHiddenStatus", localVarPath, "POST", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
 }

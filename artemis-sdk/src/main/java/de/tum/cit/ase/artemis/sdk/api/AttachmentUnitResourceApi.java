@@ -17,10 +17,11 @@ import de.tum.cit.ase.artemis.sdk.model.SaveMarkdownFileRequest;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class AttachmentUnitResourceApi {
   private ApiClient apiClient;
 
@@ -89,66 +90,41 @@ public class AttachmentUnitResourceApi {
      </table>
    */
   public ApiResponse<AttachmentUnit> createAttachmentUnitWithHttpInfo(Long lectureId, AttachmentUnit attachmentUnit, Attachment attachment, File _file, Boolean keepFilename) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'lectureId' is set
+    // Check required parameters
     if (lectureId == null) {
       throw new ApiException(400, "Missing the required parameter 'lectureId' when calling createAttachmentUnit");
     }
-    
-    // verify the required parameter 'attachmentUnit' is set
     if (attachmentUnit == null) {
       throw new ApiException(400, "Missing the required parameter 'attachmentUnit' when calling createAttachmentUnit");
     }
-    
-    // verify the required parameter 'attachment' is set
     if (attachment == null) {
       throw new ApiException(400, "Missing the required parameter 'attachment' when calling createAttachmentUnit");
     }
-    
-    // verify the required parameter '_file' is set
     if (_file == null) {
       throw new ApiException(400, "Missing the required parameter '_file' when calling createAttachmentUnit");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/lectures/{lectureId}/attachment-units"
-      .replaceAll("\\{" + "lectureId" + "\\}", apiClient.escapeString(lectureId.toString()));
+            .replaceAll("\\{lectureId}", apiClient.escapeString(lectureId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "keepFilename", keepFilename)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "keepFilename", keepFilename));
+    // Form parameters
+    Map<String, Object> localVarFormParams = new LinkedHashMap<>();
+    localVarFormParams.put("attachmentUnit", attachmentUnit);
+    localVarFormParams.put("attachment", attachment);
+    localVarFormParams.put("file", _file);
 
-    
-    
-    if (attachmentUnit != null)
-      localVarFormParams.put("attachmentUnit", attachmentUnit);
-if (attachment != null)
-      localVarFormParams.put("attachment", attachment);
-if (_file != null)
-      localVarFormParams.put("file", _file);
-
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "multipart/form-data"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("multipart/form-data");
     GenericType<AttachmentUnit> localVarReturnType = new GenericType<AttachmentUnit>() {};
-
-    return apiClient.invokeAPI("AttachmentUnitResourceApi.createAttachmentUnit", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AttachmentUnitResourceApi.createAttachmentUnit", localVarPath, "POST", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), localVarFormParams, localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -183,44 +159,21 @@ if (_file != null)
      </table>
    */
   public ApiResponse<List<AttachmentUnit>> createAttachmentUnitsWithHttpInfo(Long lectureId, CreateAttachmentUnitsRequest createAttachmentUnitsRequest) throws ApiException {
-    Object localVarPostBody = createAttachmentUnitsRequest;
-    
-    // verify the required parameter 'lectureId' is set
+    // Check required parameters
     if (lectureId == null) {
       throw new ApiException(400, "Missing the required parameter 'lectureId' when calling createAttachmentUnits");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/lectures/{lectureId}/attachment-units/split"
-      .replaceAll("\\{" + "lectureId" + "\\}", apiClient.escapeString(lectureId.toString()));
+            .replaceAll("\\{lectureId}", apiClient.escapeString(lectureId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<List<AttachmentUnit>> localVarReturnType = new GenericType<List<AttachmentUnit>>() {};
-
-    return apiClient.invokeAPI("AttachmentUnitResourceApi.createAttachmentUnits", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AttachmentUnitResourceApi.createAttachmentUnits", localVarPath, "POST", new ArrayList<>(), createAttachmentUnitsRequest,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -255,50 +208,25 @@ if (_file != null)
      </table>
    */
   public ApiResponse<AttachmentUnit> getAttachmentUnitWithHttpInfo(Long attachmentUnitId, Long lectureId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'attachmentUnitId' is set
+    // Check required parameters
     if (attachmentUnitId == null) {
       throw new ApiException(400, "Missing the required parameter 'attachmentUnitId' when calling getAttachmentUnit");
     }
-    
-    // verify the required parameter 'lectureId' is set
     if (lectureId == null) {
       throw new ApiException(400, "Missing the required parameter 'lectureId' when calling getAttachmentUnit");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/lectures/{lectureId}/attachment-units/{attachmentUnitId}"
-      .replaceAll("\\{" + "attachmentUnitId" + "\\}", apiClient.escapeString(attachmentUnitId.toString()))
-      .replaceAll("\\{" + "lectureId" + "\\}", apiClient.escapeString(lectureId.toString()));
+            .replaceAll("\\{attachmentUnitId}", apiClient.escapeString(attachmentUnitId.toString()))
+            .replaceAll("\\{lectureId}", apiClient.escapeString(lectureId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<AttachmentUnit> localVarReturnType = new GenericType<AttachmentUnit>() {};
-
-    return apiClient.invokeAPI("AttachmentUnitResourceApi.getAttachmentUnit", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AttachmentUnitResourceApi.getAttachmentUnit", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -333,44 +261,21 @@ if (_file != null)
      </table>
    */
   public ApiResponse<LectureUnitInformationDTO> getAttachmentUnitsDataWithHttpInfo(Long lectureId, SaveMarkdownFileRequest saveMarkdownFileRequest) throws ApiException {
-    Object localVarPostBody = saveMarkdownFileRequest;
-    
-    // verify the required parameter 'lectureId' is set
+    // Check required parameters
     if (lectureId == null) {
       throw new ApiException(400, "Missing the required parameter 'lectureId' when calling getAttachmentUnitsData");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/lectures/{lectureId}/process-units"
-      .replaceAll("\\{" + "lectureId" + "\\}", apiClient.escapeString(lectureId.toString()));
+            .replaceAll("\\{lectureId}", apiClient.escapeString(lectureId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<LectureUnitInformationDTO> localVarReturnType = new GenericType<LectureUnitInformationDTO>() {};
-
-    return apiClient.invokeAPI("AttachmentUnitResourceApi.getAttachmentUnitsData", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AttachmentUnitResourceApi.getAttachmentUnitsData", localVarPath, "POST", new ArrayList<>(), saveMarkdownFileRequest,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -415,67 +320,44 @@ if (_file != null)
      </table>
    */
   public ApiResponse<AttachmentUnit> updateAttachmentUnitWithHttpInfo(Long lectureId, Long attachmentUnitId, AttachmentUnit attachmentUnit, Attachment attachment, Boolean keepFilename, String notificationText, File _file) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'lectureId' is set
+    // Check required parameters
     if (lectureId == null) {
       throw new ApiException(400, "Missing the required parameter 'lectureId' when calling updateAttachmentUnit");
     }
-    
-    // verify the required parameter 'attachmentUnitId' is set
     if (attachmentUnitId == null) {
       throw new ApiException(400, "Missing the required parameter 'attachmentUnitId' when calling updateAttachmentUnit");
     }
-    
-    // verify the required parameter 'attachmentUnit' is set
     if (attachmentUnit == null) {
       throw new ApiException(400, "Missing the required parameter 'attachmentUnit' when calling updateAttachmentUnit");
     }
-    
-    // verify the required parameter 'attachment' is set
     if (attachment == null) {
       throw new ApiException(400, "Missing the required parameter 'attachment' when calling updateAttachmentUnit");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/lectures/{lectureId}/attachment-units/{attachmentUnitId}"
-      .replaceAll("\\{" + "lectureId" + "\\}", apiClient.escapeString(lectureId.toString()))
-      .replaceAll("\\{" + "attachmentUnitId" + "\\}", apiClient.escapeString(attachmentUnitId.toString()));
+            .replaceAll("\\{lectureId}", apiClient.escapeString(lectureId.toString()))
+            .replaceAll("\\{attachmentUnitId}", apiClient.escapeString(attachmentUnitId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "keepFilename", keepFilename));
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "keepFilename", keepFilename)
+    );
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "notificationText", notificationText));
 
-    
-    
-    if (attachmentUnit != null)
-      localVarFormParams.put("attachmentUnit", attachmentUnit);
-if (attachment != null)
-      localVarFormParams.put("attachment", attachment);
-if (_file != null)
+    // Form parameters
+    Map<String, Object> localVarFormParams = new LinkedHashMap<>();
+    localVarFormParams.put("attachmentUnit", attachmentUnit);
+    localVarFormParams.put("attachment", attachment);
+    if (_file != null) {
       localVarFormParams.put("file", _file);
+    }
 
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "multipart/form-data"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("multipart/form-data");
     GenericType<AttachmentUnit> localVarReturnType = new GenericType<AttachmentUnit>() {};
-
-    return apiClient.invokeAPI("AttachmentUnitResourceApi.updateAttachmentUnit", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AttachmentUnitResourceApi.updateAttachmentUnit", localVarPath, "PUT", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), localVarFormParams, localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

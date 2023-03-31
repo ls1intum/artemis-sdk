@@ -13,10 +13,11 @@ import java.util.Set;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class ProgrammingSubmissionResourceApi {
   private ApiClient apiClient;
 
@@ -83,47 +84,28 @@ public class ProgrammingSubmissionResourceApi {
      </table>
    */
   public ApiResponse<List<ProgrammingSubmission>> getAllProgrammingSubmissionsWithHttpInfo(Long exerciseId, Boolean submittedOnly, Boolean assessedByTutor, Integer correctionRound) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling getAllProgrammingSubmissions");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/exercises/{exerciseId}/programming-submissions"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "submittedOnly", submittedOnly));
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "submittedOnly", submittedOnly)
+    );
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "assessedByTutor", assessedByTutor));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "correction-round", correctionRound));
 
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<ProgrammingSubmission>> localVarReturnType = new GenericType<List<ProgrammingSubmission>>() {};
-
-    return apiClient.invokeAPI("ProgrammingSubmissionResourceApi.getAllProgrammingSubmissions", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ProgrammingSubmissionResourceApi.getAllProgrammingSubmissions", localVarPath, "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -160,46 +142,27 @@ public class ProgrammingSubmissionResourceApi {
      </table>
    */
   public ApiResponse<ProgrammingSubmission> getProgrammingSubmissionWithoutAssessmentWithHttpInfo(Long exerciseId, Boolean lock, Integer correctionRound) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling getProgrammingSubmissionWithoutAssessment");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/exercises/{exerciseId}/programming-submission-without-assessment"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "lock", lock));
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "lock", lock)
+    );
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "correction-round", correctionRound));
 
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<ProgrammingSubmission> localVarReturnType = new GenericType<ProgrammingSubmission>() {};
-
-    return apiClient.invokeAPI("ProgrammingSubmissionResourceApi.getProgrammingSubmissionWithoutAssessment", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ProgrammingSubmissionResourceApi.getProgrammingSubmissionWithoutAssessment", localVarPath, "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -234,45 +197,26 @@ public class ProgrammingSubmissionResourceApi {
      </table>
    */
   public ApiResponse<ProgrammingSubmission> lockAndGetProgrammingSubmissionWithHttpInfo(Long submissionId, Integer correctionRound) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'submissionId' is set
+    // Check required parameters
     if (submissionId == null) {
       throw new ApiException(400, "Missing the required parameter 'submissionId' when calling lockAndGetProgrammingSubmission");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/programming-submissions/{submissionId}/lock"
-      .replaceAll("\\{" + "submissionId" + "\\}", apiClient.escapeString(submissionId.toString()));
+            .replaceAll("\\{submissionId}", apiClient.escapeString(submissionId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "correction-round", correctionRound)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "correction-round", correctionRound));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<ProgrammingSubmission> localVarReturnType = new GenericType<ProgrammingSubmission>() {};
-
-    return apiClient.invokeAPI("ProgrammingSubmissionResourceApi.lockAndGetProgrammingSubmission", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ProgrammingSubmissionResourceApi.lockAndGetProgrammingSubmission", localVarPath, "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -307,49 +251,24 @@ public class ProgrammingSubmissionResourceApi {
      </table>
    */
   public ApiResponse<Object> processNewProgrammingSubmissionWithHttpInfo(Long participationId, Object body) throws ApiException {
-    Object localVarPostBody = body;
-    
-    // verify the required parameter 'participationId' is set
+    // Check required parameters
     if (participationId == null) {
       throw new ApiException(400, "Missing the required parameter 'participationId' when calling processNewProgrammingSubmission");
     }
-    
-    // verify the required parameter 'body' is set
     if (body == null) {
       throw new ApiException(400, "Missing the required parameter 'body' when calling processNewProgrammingSubmission");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/programming-submissions/{participationId}"
-      .replaceAll("\\{" + "participationId" + "\\}", apiClient.escapeString(participationId.toString()));
+            .replaceAll("\\{participationId}", apiClient.escapeString(participationId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-
-    return apiClient.invokeAPI("ProgrammingSubmissionResourceApi.processNewProgrammingSubmission", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ProgrammingSubmissionResourceApi.processNewProgrammingSubmission", localVarPath, "POST", new ArrayList<>(), body,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -383,47 +302,23 @@ public class ProgrammingSubmissionResourceApi {
      </table>
    */
   public ApiResponse<Void> testCaseChangedWithHttpInfo(Long exerciseId, Object body) throws ApiException {
-    Object localVarPostBody = body;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling testCaseChanged");
     }
-    
-    // verify the required parameter 'body' is set
     if (body == null) {
       throw new ApiException(400, "Missing the required parameter 'body' when calling testCaseChanged");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/programming-exercises/test-cases-changed/{exerciseId}"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("ProgrammingSubmissionResourceApi.testCaseChanged", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
+    return apiClient.invokeAPI("ProgrammingSubmissionResourceApi.testCaseChanged", localVarPath, "POST", new ArrayList<>(), body,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -457,43 +352,25 @@ public class ProgrammingSubmissionResourceApi {
      </table>
    */
   public ApiResponse<Void> triggerBuildWithHttpInfo(Long participationId, String submissionType) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'participationId' is set
+    // Check required parameters
     if (participationId == null) {
       throw new ApiException(400, "Missing the required parameter 'participationId' when calling triggerBuild");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/programming-submissions/{participationId}/trigger-build"
-      .replaceAll("\\{" + "participationId" + "\\}", apiClient.escapeString(participationId.toString()));
+            .replaceAll("\\{participationId}", apiClient.escapeString(participationId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "submissionType", submissionType)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "submissionType", submissionType));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("ProgrammingSubmissionResourceApi.triggerBuild", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("ProgrammingSubmissionResourceApi.triggerBuild", localVarPath, "POST", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -527,43 +404,25 @@ public class ProgrammingSubmissionResourceApi {
      </table>
    */
   public ApiResponse<Void> triggerFailedBuildWithHttpInfo(Long participationId, Boolean lastGraded) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'participationId' is set
+    // Check required parameters
     if (participationId == null) {
       throw new ApiException(400, "Missing the required parameter 'participationId' when calling triggerFailedBuild");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/programming-submissions/{participationId}/trigger-failed-build"
-      .replaceAll("\\{" + "participationId" + "\\}", apiClient.escapeString(participationId.toString()));
+            .replaceAll("\\{participationId}", apiClient.escapeString(participationId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "lastGraded", lastGraded)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "lastGraded", lastGraded));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("ProgrammingSubmissionResourceApi.triggerFailedBuild", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("ProgrammingSubmissionResourceApi.triggerFailedBuild", localVarPath, "POST", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -597,47 +456,23 @@ public class ProgrammingSubmissionResourceApi {
      </table>
    */
   public ApiResponse<Void> triggerInstructorBuildForExerciseWithHttpInfo(Long exerciseId, Set<Long> requestBody) throws ApiException {
-    Object localVarPostBody = requestBody;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling triggerInstructorBuildForExercise");
     }
-    
-    // verify the required parameter 'requestBody' is set
     if (requestBody == null) {
       throw new ApiException(400, "Missing the required parameter 'requestBody' when calling triggerInstructorBuildForExercise");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/programming-exercises/{exerciseId}/trigger-instructor-build"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("ProgrammingSubmissionResourceApi.triggerInstructorBuildForExercise", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
+    return apiClient.invokeAPI("ProgrammingSubmissionResourceApi.triggerInstructorBuildForExercise", localVarPath, "POST", new ArrayList<>(), requestBody,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -669,41 +504,19 @@ public class ProgrammingSubmissionResourceApi {
      </table>
    */
   public ApiResponse<Void> triggerInstructorBuildForExercise1WithHttpInfo(Long exerciseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling triggerInstructorBuildForExercise1");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/programming-exercises/{exerciseId}/trigger-instructor-build-all"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("ProgrammingSubmissionResourceApi.triggerInstructorBuildForExercise1", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("ProgrammingSubmissionResourceApi.triggerInstructorBuildForExercise1", localVarPath, "POST", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
 }

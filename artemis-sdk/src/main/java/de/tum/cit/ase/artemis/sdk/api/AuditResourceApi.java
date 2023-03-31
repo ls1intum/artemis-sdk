@@ -14,10 +14,11 @@ import de.tum.cit.ase.artemis.sdk.model.Pageable;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class AuditResourceApi {
   private ApiClient apiClient;
 
@@ -78,44 +79,21 @@ public class AuditResourceApi {
      </table>
    */
   public ApiResponse<AuditEvent> getWithHttpInfo(Long id) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'id' is set
+    // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling get");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/admin/audits/{id}"
-      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<AuditEvent> localVarReturnType = new GenericType<AuditEvent>() {};
-
-    return apiClient.invokeAPI("AuditResourceApi.get", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AuditResourceApi.get", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -152,55 +130,29 @@ public class AuditResourceApi {
      </table>
    */
   public ApiResponse<List<AuditEvent>> getAll1WithHttpInfo(Pageable pageable, LocalDate fromDate, LocalDate toDate) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'pageable' is set
+    // Check required parameters
     if (pageable == null) {
       throw new ApiException(400, "Missing the required parameter 'pageable' when calling getAll1");
     }
-    
-    // verify the required parameter 'fromDate' is set
     if (fromDate == null) {
       throw new ApiException(400, "Missing the required parameter 'fromDate' when calling getAll1");
     }
-    
-    // verify the required parameter 'toDate' is set
     if (toDate == null) {
       throw new ApiException(400, "Missing the required parameter 'toDate' when calling getAll1");
     }
-    
-    // create path and map variables
-    String localVarPath = "/api/admin/audits";
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "pageable", pageable));
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "pageable", pageable)
+    );
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "fromDate", fromDate));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "toDate", toDate));
 
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<AuditEvent>> localVarReturnType = new GenericType<List<AuditEvent>>() {};
-
-    return apiClient.invokeAPI("AuditResourceApi.getAll1", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AuditResourceApi.getAll1", "/api/admin/audits", "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

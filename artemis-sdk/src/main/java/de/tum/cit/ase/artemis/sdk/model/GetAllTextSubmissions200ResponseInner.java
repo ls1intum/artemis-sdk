@@ -72,7 +72,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import de.tum.cit.ase.artemis.sdk.JSON;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 @JsonDeserialize(using = GetAllTextSubmissions200ResponseInner.GetAllTextSubmissions200ResponseInnerDeserializer.class)
 @JsonSerialize(using = GetAllTextSubmissions200ResponseInner.GetAllTextSubmissions200ResponseInnerSerializer.class)
 public class GetAllTextSubmissions200ResponseInner extends AbstractOpenApiSchema {
@@ -257,7 +257,7 @@ public class GetAllTextSubmissions200ResponseInner extends AbstractOpenApiSchema
     }
 
     // store a list of schema names defined in oneOf
-    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+    public static final Map<String, GenericType> schemas = new HashMap<>();
 
     public GetAllTextSubmissions200ResponseInner() {
         super("oneOf", Boolean.FALSE);
@@ -301,7 +301,7 @@ public class GetAllTextSubmissions200ResponseInner extends AbstractOpenApiSchema
         });
         JSON.registerDescendants(GetAllTextSubmissions200ResponseInner.class, Collections.unmodifiableMap(schemas));
         // Initialize and register the discriminator mappings.
-        Map<String, Class<?>> mappings = new HashMap<String, Class<?>>();
+        Map<String, Class<?>> mappings = new HashMap<>();
         mappings.put("FileUploadSubmission", FileUploadSubmission.class);
         mappings.put("ModelingSubmission", ModelingSubmission.class);
         mappings.put("ProgrammingSubmission", ProgrammingSubmission.class);
@@ -326,27 +326,27 @@ public class GetAllTextSubmissions200ResponseInner extends AbstractOpenApiSchema
      */
     @Override
     public void setActualInstance(Object instance) {
-        if (JSON.isInstanceOf(FileUploadSubmission.class, instance, new HashSet<Class<?>>())) {
+        if (JSON.isInstanceOf(FileUploadSubmission.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (JSON.isInstanceOf(ModelingSubmission.class, instance, new HashSet<Class<?>>())) {
+        if (JSON.isInstanceOf(ModelingSubmission.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (JSON.isInstanceOf(ProgrammingSubmission.class, instance, new HashSet<Class<?>>())) {
+        if (JSON.isInstanceOf(ProgrammingSubmission.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (JSON.isInstanceOf(QuizSubmission.class, instance, new HashSet<Class<?>>())) {
+        if (JSON.isInstanceOf(QuizSubmission.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (JSON.isInstanceOf(TextSubmission.class, instance, new HashSet<Class<?>>())) {
+        if (JSON.isInstanceOf(TextSubmission.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }

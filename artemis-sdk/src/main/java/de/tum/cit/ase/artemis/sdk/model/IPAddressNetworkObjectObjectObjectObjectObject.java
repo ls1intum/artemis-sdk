@@ -42,7 +42,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   IPAddressNetworkObjectObjectObjectObjectObject.JSON_PROPERTY_SEGMENT_CACHING,
   IPAddressNetworkObjectObjectObjectObjectObject.JSON_PROPERTY_PREFIX_CONFIGURATION
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class IPAddressNetworkObjectObjectObjectObjectObject {
   public static final String JSON_PROPERTY_LOOPBACK = "loopback";
   private Object loopback;
@@ -51,7 +51,7 @@ public class IPAddressNetworkObjectObjectObjectObjectObject {
   private IPAddressCreatorObjectObjectObjectObjectObject addressCreator;
 
   public static final String JSON_PROPERTY_STANDARD_LOOPBACK_STRINGS = "standardLoopbackStrings";
-  private List<String> standardLoopbackStrings = new ArrayList<>();
+  private List<String> standardLoopbackStrings;
 
   public static final String JSON_PROPERTY_IPV4 = "ipv4";
   private Boolean ipv4;

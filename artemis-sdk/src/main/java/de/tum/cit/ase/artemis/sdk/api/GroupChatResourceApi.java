@@ -12,10 +12,11 @@ import de.tum.cit.ase.artemis.sdk.model.GroupChatDTO;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class GroupChatResourceApi {
   private ApiClient apiClient;
 
@@ -79,53 +80,27 @@ public class GroupChatResourceApi {
      </table>
    */
   public ApiResponse<Void> deregisterUsersFromGroupChatWithHttpInfo(Long courseId, Long groupChatId, List<String> requestBody) throws ApiException {
-    Object localVarPostBody = requestBody;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling deregisterUsersFromGroupChat");
     }
-    
-    // verify the required parameter 'groupChatId' is set
     if (groupChatId == null) {
       throw new ApiException(400, "Missing the required parameter 'groupChatId' when calling deregisterUsersFromGroupChat");
     }
-    
-    // verify the required parameter 'requestBody' is set
     if (requestBody == null) {
       throw new ApiException(400, "Missing the required parameter 'requestBody' when calling deregisterUsersFromGroupChat");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/group-chats/{groupChatId}/deregister"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "groupChatId" + "\\}", apiClient.escapeString(groupChatId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{groupChatId}", apiClient.escapeString(groupChatId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("GroupChatResourceApi.deregisterUsersFromGroupChat", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
+    return apiClient.invokeAPI("GroupChatResourceApi.deregisterUsersFromGroupChat", localVarPath, "POST", new ArrayList<>(), requestBody,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -161,53 +136,27 @@ public class GroupChatResourceApi {
      </table>
    */
   public ApiResponse<Void> registerUsersToGroupChatWithHttpInfo(Long courseId, Long groupChatId, List<String> requestBody) throws ApiException {
-    Object localVarPostBody = requestBody;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling registerUsersToGroupChat");
     }
-    
-    // verify the required parameter 'groupChatId' is set
     if (groupChatId == null) {
       throw new ApiException(400, "Missing the required parameter 'groupChatId' when calling registerUsersToGroupChat");
     }
-    
-    // verify the required parameter 'requestBody' is set
     if (requestBody == null) {
       throw new ApiException(400, "Missing the required parameter 'requestBody' when calling registerUsersToGroupChat");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/group-chats/{groupChatId}/register"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "groupChatId" + "\\}", apiClient.escapeString(groupChatId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{groupChatId}", apiClient.escapeString(groupChatId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("GroupChatResourceApi.registerUsersToGroupChat", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
+    return apiClient.invokeAPI("GroupChatResourceApi.registerUsersToGroupChat", localVarPath, "POST", new ArrayList<>(), requestBody,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -242,49 +191,24 @@ public class GroupChatResourceApi {
      </table>
    */
   public ApiResponse<GroupChatDTO> startGroupChatWithHttpInfo(Long courseId, List<String> requestBody) throws ApiException {
-    Object localVarPostBody = requestBody;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling startGroupChat");
     }
-    
-    // verify the required parameter 'requestBody' is set
     if (requestBody == null) {
       throw new ApiException(400, "Missing the required parameter 'requestBody' when calling startGroupChat");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/group-chats"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<GroupChatDTO> localVarReturnType = new GenericType<GroupChatDTO>() {};
-
-    return apiClient.invokeAPI("GroupChatResourceApi.startGroupChat", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("GroupChatResourceApi.startGroupChat", localVarPath, "POST", new ArrayList<>(), requestBody,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -321,54 +245,27 @@ public class GroupChatResourceApi {
      </table>
    */
   public ApiResponse<GroupChatDTO> updateGroupChatWithHttpInfo(Long courseId, Long groupChatId, GroupChatDTO groupChatDTO) throws ApiException {
-    Object localVarPostBody = groupChatDTO;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling updateGroupChat");
     }
-    
-    // verify the required parameter 'groupChatId' is set
     if (groupChatId == null) {
       throw new ApiException(400, "Missing the required parameter 'groupChatId' when calling updateGroupChat");
     }
-    
-    // verify the required parameter 'groupChatDTO' is set
     if (groupChatDTO == null) {
       throw new ApiException(400, "Missing the required parameter 'groupChatDTO' when calling updateGroupChat");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/group-chats/{groupChatId}"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "groupChatId" + "\\}", apiClient.escapeString(groupChatId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{groupChatId}", apiClient.escapeString(groupChatId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<GroupChatDTO> localVarReturnType = new GenericType<GroupChatDTO>() {};
-
-    return apiClient.invokeAPI("GroupChatResourceApi.updateGroupChat", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("GroupChatResourceApi.updateGroupChat", localVarPath, "PUT", new ArrayList<>(), groupChatDTO,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

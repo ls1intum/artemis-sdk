@@ -14,10 +14,11 @@ import de.tum.cit.ase.artemis.sdk.model.RepositoryStatusDTO;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class TestRepositoryResourceApi {
   private ApiClient apiClient;
 
@@ -77,42 +78,20 @@ public class TestRepositoryResourceApi {
      </table>
    */
   public ApiResponse<Void> commitChangesWithHttpInfo(Long exerciseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling commitChanges");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/test-repository/{exerciseId}/commit"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("TestRepositoryResourceApi.commitChanges", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("TestRepositoryResourceApi.commitChanges", localVarPath, "POST", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -146,48 +125,28 @@ public class TestRepositoryResourceApi {
      </table>
    */
   public ApiResponse<Void> createFileWithHttpInfo(Long exerciseId, String _file) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling createFile");
     }
-    
-    // verify the required parameter '_file' is set
     if (_file == null) {
       throw new ApiException(400, "Missing the required parameter '_file' when calling createFile");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/test-repository/{exerciseId}/file"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "file", _file)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "file", _file));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("TestRepositoryResourceApi.createFile", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("TestRepositoryResourceApi.createFile", localVarPath, "POST", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -221,48 +180,28 @@ public class TestRepositoryResourceApi {
      </table>
    */
   public ApiResponse<Void> createFolderWithHttpInfo(Long exerciseId, String folder) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling createFolder");
     }
-    
-    // verify the required parameter 'folder' is set
     if (folder == null) {
       throw new ApiException(400, "Missing the required parameter 'folder' when calling createFolder");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/test-repository/{exerciseId}/folder"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "folder", folder)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("TestRepositoryResourceApi.createFolder", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("TestRepositoryResourceApi.createFolder", localVarPath, "POST", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -296,48 +235,28 @@ public class TestRepositoryResourceApi {
      </table>
    */
   public ApiResponse<Void> deleteFileWithHttpInfo(Long exerciseId, String _file) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling deleteFile");
     }
-    
-    // verify the required parameter '_file' is set
     if (_file == null) {
       throw new ApiException(400, "Missing the required parameter '_file' when calling deleteFile");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/test-repository/{exerciseId}/file"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "file", _file)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "file", _file));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("TestRepositoryResourceApi.deleteFile", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("TestRepositoryResourceApi.deleteFile", localVarPath, "DELETE", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -372,50 +291,29 @@ public class TestRepositoryResourceApi {
      </table>
    */
   public ApiResponse<List<byte[]>> getFileWithHttpInfo(Long exerciseId, String _file) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling getFile");
     }
-    
-    // verify the required parameter '_file' is set
     if (_file == null) {
       throw new ApiException(400, "Missing the required parameter '_file' when calling getFile");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/test-repository/{exerciseId}/file"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "file", _file)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "file", _file));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*", "application/octet-stream"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*", "application/octet-stream");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<byte[]>> localVarReturnType = new GenericType<List<byte[]>>() {};
-
-    return apiClient.invokeAPI("TestRepositoryResourceApi.getFile", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("TestRepositoryResourceApi.getFile", localVarPath, "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -448,44 +346,21 @@ public class TestRepositoryResourceApi {
      </table>
    */
   public ApiResponse<Map<String, String>> getFilesWithHttpInfo(Long exerciseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling getFiles");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/test-repository/{exerciseId}/files"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*", "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*", "application/json");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<Map<String, String>> localVarReturnType = new GenericType<Map<String, String>>() {};
-
-    return apiClient.invokeAPI("TestRepositoryResourceApi.getFiles", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("TestRepositoryResourceApi.getFiles", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -518,44 +393,21 @@ public class TestRepositoryResourceApi {
      </table>
    */
   public ApiResponse<RepositoryStatusDTO> getStatusWithHttpInfo(Long exerciseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling getStatus");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/test-repository/{exerciseId}"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*", "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*", "application/json");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<RepositoryStatusDTO> localVarReturnType = new GenericType<RepositoryStatusDTO>() {};
-
-    return apiClient.invokeAPI("TestRepositoryResourceApi.getStatus", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("TestRepositoryResourceApi.getStatus", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -587,42 +439,20 @@ public class TestRepositoryResourceApi {
      </table>
    */
   public ApiResponse<Void> pullChangesWithHttpInfo(Long exerciseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling pullChanges");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/test-repository/{exerciseId}/pull"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("TestRepositoryResourceApi.pullChanges", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("TestRepositoryResourceApi.pullChanges", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -656,47 +486,23 @@ public class TestRepositoryResourceApi {
      </table>
    */
   public ApiResponse<Void> renameFileWithHttpInfo(Long exerciseId, FileMove fileMove) throws ApiException {
-    Object localVarPostBody = fileMove;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling renameFile");
     }
-    
-    // verify the required parameter 'fileMove' is set
     if (fileMove == null) {
       throw new ApiException(400, "Missing the required parameter 'fileMove' when calling renameFile");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/test-repository/{exerciseId}/rename-file"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("TestRepositoryResourceApi.renameFile", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
+    return apiClient.invokeAPI("TestRepositoryResourceApi.renameFile", localVarPath, "POST", new ArrayList<>(), fileMove,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -728,42 +534,20 @@ public class TestRepositoryResourceApi {
      </table>
    */
   public ApiResponse<Void> resetToLastCommitWithHttpInfo(Long exerciseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling resetToLastCommit");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/test-repository/{exerciseId}/reset"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("TestRepositoryResourceApi.resetToLastCommit", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("TestRepositoryResourceApi.resetToLastCommit", localVarPath, "POST", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -800,54 +584,31 @@ public class TestRepositoryResourceApi {
      </table>
    */
   public ApiResponse<Map<String, String>> updateTestFilesWithHttpInfo(Long exerciseId, Boolean commit, List<FileSubmission> fileSubmission) throws ApiException {
-    Object localVarPostBody = fileSubmission;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling updateTestFiles");
     }
-    
-    // verify the required parameter 'commit' is set
     if (commit == null) {
       throw new ApiException(400, "Missing the required parameter 'commit' when calling updateTestFiles");
     }
-    
-    // verify the required parameter 'fileSubmission' is set
     if (fileSubmission == null) {
       throw new ApiException(400, "Missing the required parameter 'fileSubmission' when calling updateTestFiles");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/test-repository/{exerciseId}/files"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "commit", commit)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "commit", commit));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<Map<String, String>> localVarReturnType = new GenericType<Map<String, String>>() {};
-
-    return apiClient.invokeAPI("TestRepositoryResourceApi.updateTestFiles", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("TestRepositoryResourceApi.updateTestFiles", localVarPath, "PUT", localVarQueryParams, fileSubmission,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

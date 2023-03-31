@@ -42,16 +42,16 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   TextAssessmentUpdateDTO.JSON_PROPERTY_COMPLAINT_RESPONSE,
   TextAssessmentUpdateDTO.JSON_PROPERTY_TEXT_BLOCKS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class TextAssessmentUpdateDTO {
   public static final String JSON_PROPERTY_FEEDBACKS = "feedbacks";
-  private List<Feedback> feedbacks = new ArrayList<>();
+  private List<Feedback> feedbacks;
 
   public static final String JSON_PROPERTY_COMPLAINT_RESPONSE = "complaintResponse";
   private ComplaintResponse complaintResponse;
 
   public static final String JSON_PROPERTY_TEXT_BLOCKS = "textBlocks";
-  private Set<TextBlock> textBlocks = new LinkedHashSet<>();
+  private Set<TextBlock> textBlocks;
 
   public TextAssessmentUpdateDTO() { 
   }

@@ -12,10 +12,11 @@ import de.tum.cit.ase.artemis.sdk.model.Attachment;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class AttachmentResourceApi {
   private ApiClient apiClient;
 
@@ -76,43 +77,17 @@ public class AttachmentResourceApi {
      </table>
    */
   public ApiResponse<Attachment> createAttachmentWithHttpInfo(Attachment attachment) throws ApiException {
-    Object localVarPostBody = attachment;
-    
-    // verify the required parameter 'attachment' is set
+    // Check required parameters
     if (attachment == null) {
       throw new ApiException(400, "Missing the required parameter 'attachment' when calling createAttachment");
     }
-    
-    // create path and map variables
-    String localVarPath = "/api/attachments";
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<Attachment> localVarReturnType = new GenericType<Attachment>() {};
-
-    return apiClient.invokeAPI("AttachmentResourceApi.createAttachment", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AttachmentResourceApi.createAttachment", "/api/attachments", "POST", new ArrayList<>(), attachment,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -144,42 +119,20 @@ public class AttachmentResourceApi {
      </table>
    */
   public ApiResponse<Void> deleteAttachmentWithHttpInfo(Long attachmentId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'attachmentId' is set
+    // Check required parameters
     if (attachmentId == null) {
       throw new ApiException(400, "Missing the required parameter 'attachmentId' when calling deleteAttachment");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/attachments/{attachmentId}"
-      .replaceAll("\\{" + "attachmentId" + "\\}", apiClient.escapeString(attachmentId.toString()));
+            .replaceAll("\\{attachmentId}", apiClient.escapeString(attachmentId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("AttachmentResourceApi.deleteAttachment", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("AttachmentResourceApi.deleteAttachment", localVarPath, "DELETE", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -212,44 +165,21 @@ public class AttachmentResourceApi {
      </table>
    */
   public ApiResponse<Attachment> getAttachmentWithHttpInfo(Long id) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'id' is set
+    // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling getAttachment");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/attachments/{id}"
-      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<Attachment> localVarReturnType = new GenericType<Attachment>() {};
-
-    return apiClient.invokeAPI("AttachmentResourceApi.getAttachment", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AttachmentResourceApi.getAttachment", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -282,44 +212,21 @@ public class AttachmentResourceApi {
      </table>
    */
   public ApiResponse<List<Attachment>> getAttachmentsForLectureWithHttpInfo(Long lectureId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'lectureId' is set
+    // Check required parameters
     if (lectureId == null) {
       throw new ApiException(400, "Missing the required parameter 'lectureId' when calling getAttachmentsForLecture");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/lectures/{lectureId}/attachments"
-      .replaceAll("\\{" + "lectureId" + "\\}", apiClient.escapeString(lectureId.toString()));
+            .replaceAll("\\{lectureId}", apiClient.escapeString(lectureId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<Attachment>> localVarReturnType = new GenericType<List<Attachment>>() {};
-
-    return apiClient.invokeAPI("AttachmentResourceApi.getAttachmentsForLecture", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AttachmentResourceApi.getAttachmentsForLecture", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -354,43 +261,21 @@ public class AttachmentResourceApi {
      </table>
    */
   public ApiResponse<Attachment> updateAttachmentWithHttpInfo(Attachment attachment, String notificationText) throws ApiException {
-    Object localVarPostBody = attachment;
-    
-    // verify the required parameter 'attachment' is set
+    // Check required parameters
     if (attachment == null) {
       throw new ApiException(400, "Missing the required parameter 'attachment' when calling updateAttachment");
     }
-    
-    // create path and map variables
-    String localVarPath = "/api/attachments";
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "notificationText", notificationText)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "notificationText", notificationText));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<Attachment> localVarReturnType = new GenericType<Attachment>() {};
-
-    return apiClient.invokeAPI("AttachmentResourceApi.updateAttachment", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AttachmentResourceApi.updateAttachment", "/api/attachments", "PUT", localVarQueryParams, attachment,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

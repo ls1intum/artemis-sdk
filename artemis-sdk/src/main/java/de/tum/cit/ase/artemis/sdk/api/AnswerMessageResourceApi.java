@@ -12,10 +12,11 @@ import de.tum.cit.ase.artemis.sdk.model.AnswerPost;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class AnswerMessageResourceApi {
   private ApiClient apiClient;
 
@@ -78,49 +79,24 @@ public class AnswerMessageResourceApi {
      </table>
    */
   public ApiResponse<AnswerPost> createAnswerPost1WithHttpInfo(Long courseId, AnswerPost answerPost) throws ApiException {
-    Object localVarPostBody = answerPost;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling createAnswerPost1");
     }
-    
-    // verify the required parameter 'answerPost' is set
     if (answerPost == null) {
       throw new ApiException(400, "Missing the required parameter 'answerPost' when calling createAnswerPost1");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/answer-messages"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<AnswerPost> localVarReturnType = new GenericType<AnswerPost>() {};
-
-    return apiClient.invokeAPI("AnswerMessageResourceApi.createAnswerPost1", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AnswerMessageResourceApi.createAnswerPost1", localVarPath, "POST", new ArrayList<>(), answerPost,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -154,48 +130,24 @@ public class AnswerMessageResourceApi {
      </table>
    */
   public ApiResponse<Void> deleteAnswerPost1WithHttpInfo(Long courseId, Long answerMessageId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling deleteAnswerPost1");
     }
-    
-    // verify the required parameter 'answerMessageId' is set
     if (answerMessageId == null) {
       throw new ApiException(400, "Missing the required parameter 'answerMessageId' when calling deleteAnswerPost1");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/answer-messages/{answerMessageId}"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "answerMessageId" + "\\}", apiClient.escapeString(answerMessageId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{answerMessageId}", apiClient.escapeString(answerMessageId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("AnswerMessageResourceApi.deleteAnswerPost1", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("AnswerMessageResourceApi.deleteAnswerPost1", localVarPath, "DELETE", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -232,54 +184,27 @@ public class AnswerMessageResourceApi {
      </table>
    */
   public ApiResponse<AnswerPost> updateAnswerPost1WithHttpInfo(Long courseId, Long answerMessageId, AnswerPost answerPost) throws ApiException {
-    Object localVarPostBody = answerPost;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling updateAnswerPost1");
     }
-    
-    // verify the required parameter 'answerMessageId' is set
     if (answerMessageId == null) {
       throw new ApiException(400, "Missing the required parameter 'answerMessageId' when calling updateAnswerPost1");
     }
-    
-    // verify the required parameter 'answerPost' is set
     if (answerPost == null) {
       throw new ApiException(400, "Missing the required parameter 'answerPost' when calling updateAnswerPost1");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/answer-messages/{answerMessageId}"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "answerMessageId" + "\\}", apiClient.escapeString(answerMessageId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{answerMessageId}", apiClient.escapeString(answerMessageId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<AnswerPost> localVarReturnType = new GenericType<AnswerPost>() {};
-
-    return apiClient.invokeAPI("AnswerMessageResourceApi.updateAnswerPost1", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AnswerMessageResourceApi.updateAnswerPost1", localVarPath, "PUT", new ArrayList<>(), answerPost,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

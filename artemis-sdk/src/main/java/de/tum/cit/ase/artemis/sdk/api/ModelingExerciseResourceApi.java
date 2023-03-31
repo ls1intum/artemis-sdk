@@ -17,10 +17,11 @@ import de.tum.cit.ase.artemis.sdk.model.SubmissionExportOptionsDTO;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class ModelingExerciseResourceApi {
   private ApiClient apiClient;
 
@@ -87,62 +88,37 @@ public class ModelingExerciseResourceApi {
      </table>
    */
   public ApiResponse<ModelingPlagiarismResult> checkPlagiarism2WithHttpInfo(Long exerciseId, Float similarityThreshold, Integer minimumScore, Integer minimumSize) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling checkPlagiarism2");
     }
-    
-    // verify the required parameter 'similarityThreshold' is set
     if (similarityThreshold == null) {
       throw new ApiException(400, "Missing the required parameter 'similarityThreshold' when calling checkPlagiarism2");
     }
-    
-    // verify the required parameter 'minimumScore' is set
     if (minimumScore == null) {
       throw new ApiException(400, "Missing the required parameter 'minimumScore' when calling checkPlagiarism2");
     }
-    
-    // verify the required parameter 'minimumSize' is set
     if (minimumSize == null) {
       throw new ApiException(400, "Missing the required parameter 'minimumSize' when calling checkPlagiarism2");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/modeling-exercises/{exerciseId}/check-plagiarism"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "similarityThreshold", similarityThreshold));
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "similarityThreshold", similarityThreshold)
+    );
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "minimumScore", minimumScore));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "minimumSize", minimumSize));
 
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<ModelingPlagiarismResult> localVarReturnType = new GenericType<ModelingPlagiarismResult>() {};
-
-    return apiClient.invokeAPI("ModelingExerciseResourceApi.checkPlagiarism2", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ModelingExerciseResourceApi.checkPlagiarism2", localVarPath, "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -175,43 +151,17 @@ public class ModelingExerciseResourceApi {
      </table>
    */
   public ApiResponse<ModelingExercise> createModelingExerciseWithHttpInfo(ModelingExercise modelingExercise) throws ApiException {
-    Object localVarPostBody = modelingExercise;
-    
-    // verify the required parameter 'modelingExercise' is set
+    // Check required parameters
     if (modelingExercise == null) {
       throw new ApiException(400, "Missing the required parameter 'modelingExercise' when calling createModelingExercise");
     }
-    
-    // create path and map variables
-    String localVarPath = "/api/modeling-exercises";
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<ModelingExercise> localVarReturnType = new GenericType<ModelingExercise>() {};
-
-    return apiClient.invokeAPI("ModelingExerciseResourceApi.createModelingExercise", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ModelingExerciseResourceApi.createModelingExercise", "/api/modeling-exercises", "POST", new ArrayList<>(), modelingExercise,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -243,42 +193,20 @@ public class ModelingExerciseResourceApi {
      </table>
    */
   public ApiResponse<Void> deleteModelingExerciseWithHttpInfo(Long exerciseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling deleteModelingExercise");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/modeling-exercises/{exerciseId}"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("ModelingExerciseResourceApi.deleteModelingExercise", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("ModelingExerciseResourceApi.deleteModelingExercise", localVarPath, "DELETE", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -313,49 +241,24 @@ public class ModelingExerciseResourceApi {
      </table>
    */
   public ApiResponse<File> exportSubmissions1WithHttpInfo(Long exerciseId, SubmissionExportOptionsDTO submissionExportOptionsDTO) throws ApiException {
-    Object localVarPostBody = submissionExportOptionsDTO;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling exportSubmissions1");
     }
-    
-    // verify the required parameter 'submissionExportOptionsDTO' is set
     if (submissionExportOptionsDTO == null) {
       throw new ApiException(400, "Missing the required parameter 'submissionExportOptionsDTO' when calling exportSubmissions1");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/modeling-exercises/{exerciseId}/export-submissions"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<File> localVarReturnType = new GenericType<File>() {};
-
-    return apiClient.invokeAPI("ModelingExerciseResourceApi.exportSubmissions1", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ModelingExerciseResourceApi.exportSubmissions1", localVarPath, "POST", new ArrayList<>(), submissionExportOptionsDTO,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -392,46 +295,24 @@ public class ModelingExerciseResourceApi {
      </table>
    */
   public ApiResponse<SearchResultPageDTOModelingExercise> getAllExercisesOnPage3WithHttpInfo(PageableSearchDTOString search, Boolean isCourseFilter, Boolean isExamFilter) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'search' is set
+    // Check required parameters
     if (search == null) {
       throw new ApiException(400, "Missing the required parameter 'search' when calling getAllExercisesOnPage3");
     }
-    
-    // create path and map variables
-    String localVarPath = "/api/modeling-exercises";
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "search", search));
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "search", search)
+    );
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "isCourseFilter", isCourseFilter));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "isExamFilter", isExamFilter));
 
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<SearchResultPageDTOModelingExercise> localVarReturnType = new GenericType<SearchResultPageDTOModelingExercise>() {};
-
-    return apiClient.invokeAPI("ModelingExerciseResourceApi.getAllExercisesOnPage3", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ModelingExerciseResourceApi.getAllExercisesOnPage3", "/api/modeling-exercises", "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -464,44 +345,21 @@ public class ModelingExerciseResourceApi {
      </table>
    */
   public ApiResponse<ModelingExercise> getModelingExerciseWithHttpInfo(Long exerciseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling getModelingExercise");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/modeling-exercises/{exerciseId}"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<ModelingExercise> localVarReturnType = new GenericType<ModelingExercise>() {};
-
-    return apiClient.invokeAPI("ModelingExerciseResourceApi.getModelingExercise", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ModelingExerciseResourceApi.getModelingExercise", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -534,44 +392,21 @@ public class ModelingExerciseResourceApi {
      </table>
    */
   public ApiResponse<List<ModelingExercise>> getModelingExercisesForCourseWithHttpInfo(Long courseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getModelingExercisesForCourse");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/modeling-exercises"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<ModelingExercise>> localVarReturnType = new GenericType<List<ModelingExercise>>() {};
-
-    return apiClient.invokeAPI("ModelingExerciseResourceApi.getModelingExercisesForCourse", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ModelingExerciseResourceApi.getModelingExercisesForCourse", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -604,44 +439,21 @@ public class ModelingExerciseResourceApi {
      </table>
    */
   public ApiResponse<ModelingPlagiarismResult> getPlagiarismResult2WithHttpInfo(Long exerciseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling getPlagiarismResult2");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/modeling-exercises/{exerciseId}/plagiarism-result"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<ModelingPlagiarismResult> localVarReturnType = new GenericType<ModelingPlagiarismResult>() {};
-
-    return apiClient.invokeAPI("ModelingExerciseResourceApi.getPlagiarismResult2", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ModelingExerciseResourceApi.getPlagiarismResult2", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -676,49 +488,24 @@ public class ModelingExerciseResourceApi {
      </table>
    */
   public ApiResponse<ModelingExercise> importExercise2WithHttpInfo(Long sourceExerciseId, ModelingExercise modelingExercise) throws ApiException {
-    Object localVarPostBody = modelingExercise;
-    
-    // verify the required parameter 'sourceExerciseId' is set
+    // Check required parameters
     if (sourceExerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'sourceExerciseId' when calling importExercise2");
     }
-    
-    // verify the required parameter 'modelingExercise' is set
     if (modelingExercise == null) {
       throw new ApiException(400, "Missing the required parameter 'modelingExercise' when calling importExercise2");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/modeling-exercises/import/{sourceExerciseId}"
-      .replaceAll("\\{" + "sourceExerciseId" + "\\}", apiClient.escapeString(sourceExerciseId.toString()));
+            .replaceAll("\\{sourceExerciseId}", apiClient.escapeString(sourceExerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<ModelingExercise> localVarReturnType = new GenericType<ModelingExercise>() {};
-
-    return apiClient.invokeAPI("ModelingExerciseResourceApi.importExercise2", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ModelingExerciseResourceApi.importExercise2", localVarPath, "POST", new ArrayList<>(), modelingExercise,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -755,50 +542,29 @@ public class ModelingExerciseResourceApi {
      </table>
    */
   public ApiResponse<ModelingExercise> reEvaluateAndUpdateModelingExerciseWithHttpInfo(Long exerciseId, ModelingExercise modelingExercise, Boolean deleteFeedback) throws ApiException {
-    Object localVarPostBody = modelingExercise;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling reEvaluateAndUpdateModelingExercise");
     }
-    
-    // verify the required parameter 'modelingExercise' is set
     if (modelingExercise == null) {
       throw new ApiException(400, "Missing the required parameter 'modelingExercise' when calling reEvaluateAndUpdateModelingExercise");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/modeling-exercises/{exerciseId}/re-evaluate"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "deleteFeedback", deleteFeedback)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "deleteFeedback", deleteFeedback));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<ModelingExercise> localVarReturnType = new GenericType<ModelingExercise>() {};
-
-    return apiClient.invokeAPI("ModelingExerciseResourceApi.reEvaluateAndUpdateModelingExercise", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ModelingExerciseResourceApi.reEvaluateAndUpdateModelingExercise", localVarPath, "PUT", localVarQueryParams, modelingExercise,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -833,43 +599,21 @@ public class ModelingExerciseResourceApi {
      </table>
    */
   public ApiResponse<ModelingExercise> updateModelingExerciseWithHttpInfo(ModelingExercise modelingExercise, String notificationText) throws ApiException {
-    Object localVarPostBody = modelingExercise;
-    
-    // verify the required parameter 'modelingExercise' is set
+    // Check required parameters
     if (modelingExercise == null) {
       throw new ApiException(400, "Missing the required parameter 'modelingExercise' when calling updateModelingExercise");
     }
-    
-    // create path and map variables
-    String localVarPath = "/api/modeling-exercises";
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "notificationText", notificationText)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "notificationText", notificationText));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<ModelingExercise> localVarReturnType = new GenericType<ModelingExercise>() {};
-
-    return apiClient.invokeAPI("ModelingExerciseResourceApi.updateModelingExercise", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ModelingExerciseResourceApi.updateModelingExercise", "/api/modeling-exercises", "PUT", localVarQueryParams, modelingExercise,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

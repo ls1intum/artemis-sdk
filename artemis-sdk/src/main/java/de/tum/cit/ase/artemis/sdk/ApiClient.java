@@ -35,6 +35,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import org.glassfish.jersey.logging.LoggingFeature;
+import java.util.AbstractMap.SimpleEntry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.Collection;
@@ -42,11 +43,14 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.HashMap;
-import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import java.time.OffsetDateTime;
 
 import java.net.URLEncoder;
@@ -66,27 +70,28 @@ import de.tum.cit.ase.artemis.sdk.auth.ApiKeyAuth;
 /**
  * <p>ApiClient class.</p>
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class ApiClient extends JavaTimeFormatter {
-  protected Map<String, String> defaultHeaderMap = new HashMap<String, String>();
-  protected Map<String, String> defaultCookieMap = new HashMap<String, String>();
+  private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)^(application/json|[^;/ \t]+/[^;/ \t]+[+]json)[ \t]*(;.*)?$");
+
+  protected Map<String, String> defaultHeaderMap = new HashMap<>();
+  protected Map<String, String> defaultCookieMap = new HashMap<>();
   protected String basePath = "http://localhost:8080";
   protected String userAgent;
   private static final Logger log = Logger.getLogger(ApiClient.class.getName());
 
-  protected List<ServerConfiguration> servers = new ArrayList<ServerConfiguration>(Arrays.asList(
-    new ServerConfiguration(
-      "http://localhost:8080",
-      "Generated server url",
-      new HashMap<String, ServerVariable>()
-    )
+  protected List<ServerConfiguration> servers = new ArrayList<>(Arrays.asList(
+          new ServerConfiguration(
+                  "http://localhost:8080",
+                  "Generated server url",
+                  new LinkedHashMap<>()
+          )
   ));
   protected Integer serverIndex = 0;
   protected Map<String, String> serverVariables = null;
-  protected Map<String, List<ServerConfiguration>> operationServers = new HashMap<String, List<ServerConfiguration>>() {{
-  }};
-  protected Map<String, Integer> operationServerIndex = new HashMap<String, Integer>();
-  protected Map<String, Map<String, String>> operationServerVariables = new HashMap<String, Map<String, String>>();
+  protected Map<String, List<ServerConfiguration>> operationServers = new LinkedHashMap<>();
+  protected Map<String, Integer> operationServerIndex = new HashMap<>();
+  protected Map<String, Map<String, String>> operationServerVariables = new HashMap<>();
   protected boolean debugging = false;
   protected ClientConfig clientConfig;
   protected int connectionTimeout = 0;
@@ -123,13 +128,13 @@ public class ApiClient extends JavaTimeFormatter {
     setUserAgent("OpenAPI-Generator/v0/java");
 
     // Setup authentications (key: authentication name, value: authentication).
-    authentications = new HashMap<String, Authentication>();
+    authentications = new HashMap<>();
     Authentication auth = null;
     // Prevent the authentications from being modified.
     authentications = Collections.unmodifiableMap(authentications);
 
     // Setup authentication lookup (key: authentication alias, value: authentication name)
-    authenticationLookup = new HashMap<String, String>();
+    authenticationLookup = new HashMap<>();
   }
 
   /**
@@ -154,7 +159,7 @@ public class ApiClient extends JavaTimeFormatter {
    * <p>Setter for the field <code>httpClient</code>.</p>
    *
    * @param httpClient a {@link jakarta.ws.rs.client.Client} object.
-   * @return a {@link de.tum.cit.ase.artemis.sdk.ApiClient} object.
+   * @return a {@link org.openapitools.client.ApiClient} object.
    */
   public ApiClient setHttpClient(Client httpClient) {
     this.httpClient = httpClient;
@@ -174,7 +179,7 @@ public class ApiClient extends JavaTimeFormatter {
    * Sets the base URL to the location where the OpenAPI document is being served.
    *
    * @param basePath The base URL to the target host.
-   * @return a {@link de.tum.cit.ase.artemis.sdk.ApiClient} object.
+   * @return a {@link org.openapitools.client.ApiClient} object.
    */
   public ApiClient setBasePath(String basePath) {
     this.basePath = basePath;
@@ -194,7 +199,7 @@ public class ApiClient extends JavaTimeFormatter {
    * <p>Setter for the field <code>servers</code>.</p>
    *
    * @param servers a {@link java.util.List} of servers.
-   * @return a {@link de.tum.cit.ase.artemis.sdk.ApiClient} object.
+   * @return a {@link org.openapitools.client.ApiClient} object.
    */
   public ApiClient setServers(List<ServerConfiguration> servers) {
     this.servers = servers;
@@ -215,7 +220,7 @@ public class ApiClient extends JavaTimeFormatter {
    * <p>Setter for the field <code>serverIndex</code>.</p>
    *
    * @param serverIndex the server index
-   * @return a {@link de.tum.cit.ase.artemis.sdk.ApiClient} object.
+   * @return a {@link org.openapitools.client.ApiClient} object.
    */
   public ApiClient setServerIndex(Integer serverIndex) {
     this.serverIndex = serverIndex;
@@ -236,7 +241,7 @@ public class ApiClient extends JavaTimeFormatter {
    * <p>Setter for the field <code>serverVariables</code>.</p>
    *
    * @param serverVariables a {@link java.util.Map} of server variables.
-   * @return a {@link de.tum.cit.ase.artemis.sdk.ApiClient} object.
+   * @return a {@link org.openapitools.client.ApiClient} object.
    */
   public ApiClient setServerVariables(Map<String, String> serverVariables) {
     this.serverVariables = serverVariables;
@@ -273,7 +278,7 @@ public class ApiClient extends JavaTimeFormatter {
    * Helper method to set username for the first HTTP basic authentication.
    *
    * @param username Username
-   * @return a {@link de.tum.cit.ase.artemis.sdk.ApiClient} object.
+   * @return a {@link org.openapitools.client.ApiClient} object.
    */
   public ApiClient setUsername(String username) {
     for (Authentication auth : authentications.values()) {
@@ -289,7 +294,7 @@ public class ApiClient extends JavaTimeFormatter {
    * Helper method to set password for the first HTTP basic authentication.
    *
    * @param password Password
-   * @return a {@link de.tum.cit.ase.artemis.sdk.ApiClient} object.
+   * @return a {@link org.openapitools.client.ApiClient} object.
    */
   public ApiClient setPassword(String password) {
     for (Authentication auth : authentications.values()) {
@@ -305,7 +310,7 @@ public class ApiClient extends JavaTimeFormatter {
    * Helper method to set API key value for the first API key authentication.
    *
    * @param apiKey API key
-   * @return a {@link de.tum.cit.ase.artemis.sdk.ApiClient} object.
+   * @return a {@link org.openapitools.client.ApiClient} object.
    */
   public ApiClient setApiKey(String apiKey) {
     for (Authentication auth : authentications.values()) {
@@ -321,7 +326,7 @@ public class ApiClient extends JavaTimeFormatter {
    * Helper method to configure authentications which respects aliases of API keys.
    *
    * @param secrets Hash map from authentication name to its secret.
-   * @return a {@link de.tum.cit.ase.artemis.sdk.ApiClient} object.
+   * @return a {@link org.openapitools.client.ApiClient} object.
    */
   public ApiClient configureApiKeys(Map<String, String> secrets) {
     for (Map.Entry<String, Authentication> authEntry : authentications.entrySet()) {
@@ -343,7 +348,7 @@ public class ApiClient extends JavaTimeFormatter {
    * Helper method to set API key prefix for the first API key authentication.
    *
    * @param apiKeyPrefix API key prefix
-   * @return a {@link de.tum.cit.ase.artemis.sdk.ApiClient} object.
+   * @return a {@link org.openapitools.client.ApiClient} object.
    */
   public ApiClient setApiKeyPrefix(String apiKeyPrefix) {
     for (Authentication auth : authentications.values()) {
@@ -359,7 +364,7 @@ public class ApiClient extends JavaTimeFormatter {
    * Helper method to set bearer token for the first Bearer authentication.
    *
    * @param bearerToken Bearer token
-   * @return a {@link de.tum.cit.ase.artemis.sdk.ApiClient} object.
+   * @return a {@link org.openapitools.client.ApiClient} object.
    */
   public ApiClient setBearerToken(String bearerToken) {
     for (Authentication auth : authentications.values()) {
@@ -375,7 +380,7 @@ public class ApiClient extends JavaTimeFormatter {
    * Set the User-Agent header's value (by adding to the default header map).
    *
    * @param userAgent Http user agent
-   * @return a {@link de.tum.cit.ase.artemis.sdk.ApiClient} object.
+   * @return a {@link org.openapitools.client.ApiClient} object.
    */
   public ApiClient setUserAgent(String userAgent) {
     this.userAgent = userAgent;
@@ -397,7 +402,7 @@ public class ApiClient extends JavaTimeFormatter {
    *
    * @param key The header's key
    * @param value The header's value
-   * @return a {@link de.tum.cit.ase.artemis.sdk.ApiClient} object.
+   * @return a {@link org.openapitools.client.ApiClient} object.
    */
   public ApiClient addDefaultHeader(String key, String value) {
     defaultHeaderMap.put(key, value);
@@ -409,7 +414,7 @@ public class ApiClient extends JavaTimeFormatter {
    *
    * @param key The cookie's key
    * @param value The cookie's value
-   * @return a {@link de.tum.cit.ase.artemis.sdk.ApiClient} object.
+   * @return a {@link org.openapitools.client.ApiClient} object.
    */
   public ApiClient addDefaultCookie(String key, String value) {
     defaultCookieMap.put(key, value);
@@ -429,7 +434,7 @@ public class ApiClient extends JavaTimeFormatter {
    * Set the client config.
    *
    * @param clientConfig Set the client config
-   * @return a {@link de.tum.cit.ase.artemis.sdk.ApiClient} object.
+   * @return a {@link org.openapitools.client.ApiClient} object.
    */
   public ApiClient setClientConfig(ClientConfig clientConfig) {
     this.clientConfig = clientConfig;
@@ -451,7 +456,7 @@ public class ApiClient extends JavaTimeFormatter {
    * Enable/disable debugging for this API client.
    *
    * @param debugging To enable (true) or disable (false) debugging
-   * @return a {@link de.tum.cit.ase.artemis.sdk.ApiClient} object.
+   * @return a {@link org.openapitools.client.ApiClient} object.
    */
   public ApiClient setDebugging(boolean debugging) {
     this.debugging = debugging;
@@ -475,7 +480,7 @@ public class ApiClient extends JavaTimeFormatter {
    * Set temp folder path
    *
    * @param tempFolderPath Temp folder path
-   * @return a {@link de.tum.cit.ase.artemis.sdk.ApiClient} object.
+   * @return a {@link org.openapitools.client.ApiClient} object.
    */
   public ApiClient setTempFolderPath(String tempFolderPath) {
     this.tempFolderPath = tempFolderPath;
@@ -497,7 +502,7 @@ public class ApiClient extends JavaTimeFormatter {
    * {@link Integer#MAX_VALUE}.
    *
    * @param connectionTimeout Connection timeout in milliseconds
-   * @return a {@link de.tum.cit.ase.artemis.sdk.ApiClient} object.
+   * @return a {@link org.openapitools.client.ApiClient} object.
    */
   public ApiClient setConnectTimeout(int connectionTimeout) {
     this.connectionTimeout = connectionTimeout;
@@ -520,7 +525,7 @@ public class ApiClient extends JavaTimeFormatter {
    * {@link Integer#MAX_VALUE}.
    *
    * @param readTimeout Read timeout in milliseconds
-   * @return a {@link de.tum.cit.ase.artemis.sdk.ApiClient} object.
+   * @return a {@link org.openapitools.client.ApiClient} object.
    */
   public ApiClient setReadTimeout(int readTimeout) {
     this.readTimeout = readTimeout;
@@ -541,7 +546,7 @@ public class ApiClient extends JavaTimeFormatter {
    * Set the date format used to parse/format date parameters.
    *
    * @param dateFormat Date format
-   * @return a {@link de.tum.cit.ase.artemis.sdk.ApiClient} object.
+   * @return a {@link org.openapitools.client.ApiClient} object.
    */
   public ApiClient setDateFormat(DateFormat dateFormat) {
     this.dateFormat = dateFormat;
@@ -610,7 +615,7 @@ public class ApiClient extends JavaTimeFormatter {
    * @return List of pairs
    */
   public List<Pair> parameterToPairs(String collectionFormat, String name, Object value){
-    List<Pair> params = new ArrayList<Pair>();
+    List<Pair> params = new ArrayList<>();
 
     // preconditions
     if (name == null || name.isEmpty() || value == null) return params;
@@ -669,14 +674,13 @@ public class ApiClient extends JavaTimeFormatter {
    *   application/json; charset=UTF8
    *   APPLICATION/JSON
    *   application/vnd.company+json
-   * "* / *" is also default to JSON
+   * "*{@literal /}*" is also considered JSON by this method.
    *
    * @param mime MIME
    * @return True if the MIME type is JSON
    */
   public boolean isJsonMime(String mime) {
-    String jsonMime = "(?i)^(application/json|[^;/ \t]+/[^;/ \t]+[+]json)[ \t]*(;.*)?$";
-    return mime != null && (mime.matches(jsonMime) || mime.equals("*/*"));
+    return mime != null && (mime.equals("*/*") || JSON_MIME_PATTERN.matcher(mime).matches());
   }
 
   /**
@@ -688,8 +692,8 @@ public class ApiClient extends JavaTimeFormatter {
    * @return The Accept header to use. If the given array is empty,
    *   null will be returned (not to set the Accept header explicitly).
    */
-  public String selectHeaderAccept(String[] accepts) {
-    if (accepts.length == 0) {
+  public String selectHeaderAccept(String... accepts) {
+    if (accepts == null || accepts.length == 0) {
       return null;
     }
     for (String accept : accepts) {
@@ -709,8 +713,8 @@ public class ApiClient extends JavaTimeFormatter {
    * @return The Content-Type header to use. If the given array is empty,
    *   JSON will be used.
    */
-  public String selectHeaderContentType(String[] contentTypes) {
-    if (contentTypes.length == 0) {
+  public String selectHeaderContentType(String... contentTypes) {
+    if (contentTypes == null || contentTypes.length == 0) {
       return "application/json";
     }
     for (String contentType : contentTypes) {
@@ -757,8 +761,7 @@ public class ApiClient extends JavaTimeFormatter {
           multiPart.bodyPart(new FormDataBodyPart(contentDisp, file, MediaType.APPLICATION_OCTET_STREAM_TYPE));
         } else {
           FormDataContentDisposition contentDisp = FormDataContentDisposition.name(param.getKey()).build();
-          //TODO: check if a condition is necessary if object -> JSON else just pass a String?
-          multiPart.bodyPart(new FormDataBodyPart(contentDisp, param.getValue(), MediaType.APPLICATION_JSON_TYPE));
+          multiPart.bodyPart(new FormDataBodyPart(contentDisp, parameterToString(param.getValue())));
         }
       }
       entity = Entity.entity(multiPart, MediaType.MULTIPART_FORM_DATA_TYPE);
@@ -1003,15 +1006,17 @@ public class ApiClient extends JavaTimeFormatter {
     Map<String, String> allHeaderParams = new HashMap<>(defaultHeaderMap);
     allHeaderParams.putAll(headerParams);
 
-    // update different parameters (e.g. headers) for authentication
-    updateParamsForAuth(
-        authNames,
-        queryParams,
-        allHeaderParams,
-        cookieParams,
-        null,
-        method,
-        target.getUri());
+    if (authNames != null) {
+      // update different parameters (e.g. headers) for authentication
+      updateParamsForAuth(
+          authNames,
+          queryParams,
+          allHeaderParams,
+          cookieParams,
+          null,
+          method,
+          target.getUri());
+    }
 
     for (Entry<String, String> entry : allHeaderParams.entrySet()) {
       String value = entry.getValue();
@@ -1025,10 +1030,11 @@ public class ApiClient extends JavaTimeFormatter {
     try {
       response = sendRequest(method, invocationBuilder, entity);
 
-      int statusCode = response.getStatusInfo().getStatusCode();
+      final int statusCode = response.getStatusInfo().getStatusCode();
+
       Map<String, List<String>> responseHeaders = buildResponseHeaders(response);
 
-      if (response.getStatusInfo() == Status.NO_CONTENT) {
+      if (statusCode == Status.NO_CONTENT.getStatusCode()) {
         return new ApiResponse<T>(statusCode, responseHeaders);
       } else if (response.getStatusInfo().getFamily() == Status.Family.SUCCESSFUL) {
         if (returnType == null) {
@@ -1143,14 +1149,6 @@ public class ApiClient extends JavaTimeFormatter {
    */
   protected void customizeClientBuilder(ClientBuilder clientBuilder) {
     // No-op extension point
-    try {
-      // TODO: make this configurable via command argument in artemis-zeus?!
-      disableCertificateValidation(clientBuilder);
-    } catch (KeyManagementException e) {
-      throw new RuntimeException(e);
-    } catch (NoSuchAlgorithmException e) {
-      throw new RuntimeException(e);
-    }
   }
 
   /**
@@ -1190,10 +1188,10 @@ public class ApiClient extends JavaTimeFormatter {
    * @return a {@link java.util.Map} of response headers.
    */
   protected Map<String, List<String>> buildResponseHeaders(Response response) {
-    Map<String, List<String>> responseHeaders = new HashMap<String, List<String>>();
+    Map<String, List<String>> responseHeaders = new HashMap<>();
     for (Entry<String, List<Object>> entry: response.getHeaders().entrySet()) {
       List<Object> values = entry.getValue();
-      List<String> headers = new ArrayList<String>();
+      List<String> headers = new ArrayList<>();
       for (Object o : values) {
         headers.add(String.valueOf(o));
       }

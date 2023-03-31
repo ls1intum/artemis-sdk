@@ -17,10 +17,11 @@ import de.tum.cit.ase.artemis.sdk.model.UpdateExamUserRequest;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class ExamUserResourceApi {
   private ApiClient apiClient;
 
@@ -83,50 +84,25 @@ public class ExamUserResourceApi {
      </table>
    */
   public ApiResponse<Set<ExamUserAttendanceCheckDTO>> getAllWhoDidNotSignWithHttpInfo(Long courseId, Long examId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getAllWhoDidNotSign");
     }
-    
-    // verify the required parameter 'examId' is set
     if (examId == null) {
       throw new ApiException(400, "Missing the required parameter 'examId' when calling getAllWhoDidNotSign");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/exams/{examId}/verify-exam-users"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "examId" + "\\}", apiClient.escapeString(examId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{examId}", apiClient.escapeString(examId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<Set<ExamUserAttendanceCheckDTO>> localVarReturnType = new GenericType<Set<ExamUserAttendanceCheckDTO>>() {};
-
-    return apiClient.invokeAPI("ExamUserResourceApi.getAllWhoDidNotSign", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ExamUserResourceApi.getAllWhoDidNotSign", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -163,50 +139,25 @@ public class ExamUserResourceApi {
      </table>
    */
   public ApiResponse<ExamUsersNotFoundDTO> saveUsersImagesWithHttpInfo(Long courseId, Long examId, SaveMarkdownFileRequest saveMarkdownFileRequest) throws ApiException {
-    Object localVarPostBody = saveMarkdownFileRequest;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling saveUsersImages");
     }
-    
-    // verify the required parameter 'examId' is set
     if (examId == null) {
       throw new ApiException(400, "Missing the required parameter 'examId' when calling saveUsersImages");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/exams/{examId}/exam-users-save-images"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "examId" + "\\}", apiClient.escapeString(examId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{examId}", apiClient.escapeString(examId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<ExamUsersNotFoundDTO> localVarReturnType = new GenericType<ExamUsersNotFoundDTO>() {};
-
-    return apiClient.invokeAPI("ExamUserResourceApi.saveUsersImages", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ExamUserResourceApi.saveUsersImages", localVarPath, "POST", new ArrayList<>(), saveMarkdownFileRequest,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -243,49 +194,24 @@ public class ExamUserResourceApi {
      </table>
    */
   public ApiResponse<ExamUser> updateExamUserWithHttpInfo(Long courseId, Long examId, UpdateExamUserRequest updateExamUserRequest) throws ApiException {
-    Object localVarPostBody = updateExamUserRequest;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling updateExamUser");
     }
-    
-    // verify the required parameter 'examId' is set
     if (examId == null) {
       throw new ApiException(400, "Missing the required parameter 'examId' when calling updateExamUser");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/exams/{examId}/exam-users"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "examId" + "\\}", apiClient.escapeString(examId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{examId}", apiClient.escapeString(examId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<ExamUser> localVarReturnType = new GenericType<ExamUser>() {};
-
-    return apiClient.invokeAPI("ExamUserResourceApi.updateExamUser", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ExamUserResourceApi.updateExamUser", localVarPath, "POST", new ArrayList<>(), updateExamUserRequest,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

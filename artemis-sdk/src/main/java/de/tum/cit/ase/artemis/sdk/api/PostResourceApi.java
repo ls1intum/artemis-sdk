@@ -14,10 +14,11 @@ import de.tum.cit.ase.artemis.sdk.model.PostContextFilter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class PostResourceApi {
   private ApiClient apiClient;
 
@@ -80,49 +81,24 @@ public class PostResourceApi {
      </table>
    */
   public ApiResponse<List<Post>> computeSimilarityScoresWitCoursePostsWithHttpInfo(Long courseId, Post post) throws ApiException {
-    Object localVarPostBody = post;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling computeSimilarityScoresWitCoursePosts");
     }
-    
-    // verify the required parameter 'post' is set
     if (post == null) {
       throw new ApiException(400, "Missing the required parameter 'post' when calling computeSimilarityScoresWitCoursePosts");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/posts/similarity-check"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<List<Post>> localVarReturnType = new GenericType<List<Post>>() {};
-
-    return apiClient.invokeAPI("PostResourceApi.computeSimilarityScoresWitCoursePosts", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("PostResourceApi.computeSimilarityScoresWitCoursePosts", localVarPath, "POST", new ArrayList<>(), post,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -157,49 +133,24 @@ public class PostResourceApi {
      </table>
    */
   public ApiResponse<Post> createPostWithHttpInfo(Long courseId, Post post) throws ApiException {
-    Object localVarPostBody = post;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling createPost");
     }
-    
-    // verify the required parameter 'post' is set
     if (post == null) {
       throw new ApiException(400, "Missing the required parameter 'post' when calling createPost");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/posts"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<Post> localVarReturnType = new GenericType<Post>() {};
-
-    return apiClient.invokeAPI("PostResourceApi.createPost", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("PostResourceApi.createPost", localVarPath, "POST", new ArrayList<>(), post,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -233,48 +184,24 @@ public class PostResourceApi {
      </table>
    */
   public ApiResponse<Void> deletePostWithHttpInfo(Long courseId, Long postId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling deletePost");
     }
-    
-    // verify the required parameter 'postId' is set
     if (postId == null) {
       throw new ApiException(400, "Missing the required parameter 'postId' when calling deletePost");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/posts/{postId}"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "postId" + "\\}", apiClient.escapeString(postId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{postId}", apiClient.escapeString(postId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("PostResourceApi.deletePost", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("PostResourceApi.deletePost", localVarPath, "DELETE", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -307,44 +234,21 @@ public class PostResourceApi {
      </table>
    */
   public ApiResponse<List<String>> getAllPostTagsForCourseWithHttpInfo(Long courseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getAllPostTagsForCourse");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/posts/tags"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<String>> localVarReturnType = new GenericType<List<String>>() {};
-
-    return apiClient.invokeAPI("PostResourceApi.getAllPostTagsForCourse", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("PostResourceApi.getAllPostTagsForCourse", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -383,57 +287,34 @@ public class PostResourceApi {
      </table>
    */
   public ApiResponse<List<Post>> getPostsInCourseWithHttpInfo(Pageable pageable, PostContextFilter postContextFilter, Long courseId, Boolean pagingEnabled) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'pageable' is set
+    // Check required parameters
     if (pageable == null) {
       throw new ApiException(400, "Missing the required parameter 'pageable' when calling getPostsInCourse");
     }
-    
-    // verify the required parameter 'postContextFilter' is set
     if (postContextFilter == null) {
       throw new ApiException(400, "Missing the required parameter 'postContextFilter' when calling getPostsInCourse");
     }
-    
-    // verify the required parameter 'courseId' is set
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getPostsInCourse");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/posts"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "pageable", pageable));
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "pageable", pageable)
+    );
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "pagingEnabled", pagingEnabled));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "postContextFilter", postContextFilter));
 
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<Post>> localVarReturnType = new GenericType<List<Post>>() {};
-
-    return apiClient.invokeAPI("PostResourceApi.getPostsInCourse", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("PostResourceApi.getPostsInCourse", localVarPath, "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -470,56 +351,33 @@ public class PostResourceApi {
      </table>
    */
   public ApiResponse<Post> updateDisplayPriorityWithHttpInfo(Long courseId, Long postId, String displayPriority) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling updateDisplayPriority");
     }
-    
-    // verify the required parameter 'postId' is set
     if (postId == null) {
       throw new ApiException(400, "Missing the required parameter 'postId' when calling updateDisplayPriority");
     }
-    
-    // verify the required parameter 'displayPriority' is set
     if (displayPriority == null) {
       throw new ApiException(400, "Missing the required parameter 'displayPriority' when calling updateDisplayPriority");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/posts/{postId}/display-priority"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "postId" + "\\}", apiClient.escapeString(postId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{postId}", apiClient.escapeString(postId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "displayPriority", displayPriority)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "displayPriority", displayPriority));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<Post> localVarReturnType = new GenericType<Post>() {};
-
-    return apiClient.invokeAPI("PostResourceApi.updateDisplayPriority", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("PostResourceApi.updateDisplayPriority", localVarPath, "PUT", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -556,54 +414,27 @@ public class PostResourceApi {
      </table>
    */
   public ApiResponse<Post> updatePostWithHttpInfo(Long courseId, Long postId, Post post) throws ApiException {
-    Object localVarPostBody = post;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling updatePost");
     }
-    
-    // verify the required parameter 'postId' is set
     if (postId == null) {
       throw new ApiException(400, "Missing the required parameter 'postId' when calling updatePost");
     }
-    
-    // verify the required parameter 'post' is set
     if (post == null) {
       throw new ApiException(400, "Missing the required parameter 'post' when calling updatePost");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/posts/{postId}"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "postId" + "\\}", apiClient.escapeString(postId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{postId}", apiClient.escapeString(postId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<Post> localVarReturnType = new GenericType<Post>() {};
-
-    return apiClient.invokeAPI("PostResourceApi.updatePost", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("PostResourceApi.updatePost", localVarPath, "PUT", new ArrayList<>(), post,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

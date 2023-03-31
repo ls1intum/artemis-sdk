@@ -12,10 +12,11 @@ import de.tum.cit.ase.artemis.sdk.model.UpdateLectureUnitsOrder200ResponseInner;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class LectureUnitResourceApi {
   private ApiClient apiClient;
 
@@ -79,54 +80,32 @@ public class LectureUnitResourceApi {
      </table>
    */
   public ApiResponse<Void> completeLectureUnitWithHttpInfo(Long lectureUnitId, Long lectureId, Boolean completed) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'lectureUnitId' is set
+    // Check required parameters
     if (lectureUnitId == null) {
       throw new ApiException(400, "Missing the required parameter 'lectureUnitId' when calling completeLectureUnit");
     }
-    
-    // verify the required parameter 'lectureId' is set
     if (lectureId == null) {
       throw new ApiException(400, "Missing the required parameter 'lectureId' when calling completeLectureUnit");
     }
-    
-    // verify the required parameter 'completed' is set
     if (completed == null) {
       throw new ApiException(400, "Missing the required parameter 'completed' when calling completeLectureUnit");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/lectures/{lectureId}/lecture-units/{lectureUnitId}/completion"
-      .replaceAll("\\{" + "lectureUnitId" + "\\}", apiClient.escapeString(lectureUnitId.toString()))
-      .replaceAll("\\{" + "lectureId" + "\\}", apiClient.escapeString(lectureId.toString()));
+            .replaceAll("\\{lectureUnitId}", apiClient.escapeString(lectureUnitId.toString()))
+            .replaceAll("\\{lectureId}", apiClient.escapeString(lectureId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "completed", completed)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "completed", completed));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("LectureUnitResourceApi.completeLectureUnit", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("LectureUnitResourceApi.completeLectureUnit", localVarPath, "POST", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -160,48 +139,24 @@ public class LectureUnitResourceApi {
      </table>
    */
   public ApiResponse<Void> deleteLectureUnitWithHttpInfo(Long lectureUnitId, Long lectureId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'lectureUnitId' is set
+    // Check required parameters
     if (lectureUnitId == null) {
       throw new ApiException(400, "Missing the required parameter 'lectureUnitId' when calling deleteLectureUnit");
     }
-    
-    // verify the required parameter 'lectureId' is set
     if (lectureId == null) {
       throw new ApiException(400, "Missing the required parameter 'lectureId' when calling deleteLectureUnit");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/lectures/{lectureId}/lecture-units/{lectureUnitId}"
-      .replaceAll("\\{" + "lectureUnitId" + "\\}", apiClient.escapeString(lectureUnitId.toString()))
-      .replaceAll("\\{" + "lectureId" + "\\}", apiClient.escapeString(lectureId.toString()));
+            .replaceAll("\\{lectureUnitId}", apiClient.escapeString(lectureUnitId.toString()))
+            .replaceAll("\\{lectureId}", apiClient.escapeString(lectureId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("LectureUnitResourceApi.deleteLectureUnit", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("LectureUnitResourceApi.deleteLectureUnit", localVarPath, "DELETE", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -236,48 +191,23 @@ public class LectureUnitResourceApi {
      </table>
    */
   public ApiResponse<List<UpdateLectureUnitsOrder200ResponseInner>> updateLectureUnitsOrderWithHttpInfo(Long lectureId, List<Long> requestBody) throws ApiException {
-    Object localVarPostBody = requestBody;
-    
-    // verify the required parameter 'lectureId' is set
+    // Check required parameters
     if (lectureId == null) {
       throw new ApiException(400, "Missing the required parameter 'lectureId' when calling updateLectureUnitsOrder");
     }
-    
-    // verify the required parameter 'requestBody' is set
     if (requestBody == null) {
       throw new ApiException(400, "Missing the required parameter 'requestBody' when calling updateLectureUnitsOrder");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/lectures/{lectureId}/lecture-units-order"
-      .replaceAll("\\{" + "lectureId" + "\\}", apiClient.escapeString(lectureId.toString()));
+            .replaceAll("\\{lectureId}", apiClient.escapeString(lectureId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<List<UpdateLectureUnitsOrder200ResponseInner>> localVarReturnType = new GenericType<List<UpdateLectureUnitsOrder200ResponseInner>>() {};
-
-    return apiClient.invokeAPI("LectureUnitResourceApi.updateLectureUnitsOrder", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("LectureUnitResourceApi.updateLectureUnitsOrder", localVarPath, "PUT", new ArrayList<>(), requestBody,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

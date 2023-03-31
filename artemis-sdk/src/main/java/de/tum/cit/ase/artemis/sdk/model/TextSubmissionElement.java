@@ -39,7 +39,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   TextSubmissionElement.JSON_PROPERTY_TYPE,
   TextSubmissionElement.JSON_PROPERTY_LENGTH
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class TextSubmissionElement {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;

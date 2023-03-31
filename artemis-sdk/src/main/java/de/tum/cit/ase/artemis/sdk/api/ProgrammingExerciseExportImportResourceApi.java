@@ -14,10 +14,11 @@ import de.tum.cit.ase.artemis.sdk.model.RepositoryExportOptionsDTO;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class ProgrammingExerciseExportImportResourceApi {
   private ApiClient apiClient;
 
@@ -80,50 +81,25 @@ public class ProgrammingExerciseExportImportResourceApi {
      </table>
    */
   public ApiResponse<File> exportInstructorAuxiliaryRepositoryWithHttpInfo(Long exerciseId, Long repositoryId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling exportInstructorAuxiliaryRepository");
     }
-    
-    // verify the required parameter 'repositoryId' is set
     if (repositoryId == null) {
       throw new ApiException(400, "Missing the required parameter 'repositoryId' when calling exportInstructorAuxiliaryRepository");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/programming-exercises/{exerciseId}/export-instructor-auxiliary-repository/{repositoryId}"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()))
-      .replaceAll("\\{" + "repositoryId" + "\\}", apiClient.escapeString(repositoryId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()))
+            .replaceAll("\\{repositoryId}", apiClient.escapeString(repositoryId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<File> localVarReturnType = new GenericType<File>() {};
-
-    return apiClient.invokeAPI("ProgrammingExerciseExportImportResourceApi.exportInstructorAuxiliaryRepository", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ProgrammingExerciseExportImportResourceApi.exportInstructorAuxiliaryRepository", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -156,44 +132,21 @@ public class ProgrammingExerciseExportImportResourceApi {
      </table>
    */
   public ApiResponse<File> exportInstructorExerciseWithHttpInfo(Long exerciseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling exportInstructorExercise");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/programming-exercises/{exerciseId}/export-instructor-exercise"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<File> localVarReturnType = new GenericType<File>() {};
-
-    return apiClient.invokeAPI("ProgrammingExerciseExportImportResourceApi.exportInstructorExercise", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ProgrammingExerciseExportImportResourceApi.exportInstructorExercise", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -228,50 +181,25 @@ public class ProgrammingExerciseExportImportResourceApi {
      </table>
    */
   public ApiResponse<File> exportInstructorRepositoryWithHttpInfo(Long exerciseId, String repositoryType) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling exportInstructorRepository");
     }
-    
-    // verify the required parameter 'repositoryType' is set
     if (repositoryType == null) {
       throw new ApiException(400, "Missing the required parameter 'repositoryType' when calling exportInstructorRepository");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/programming-exercises/{exerciseId}/export-instructor-repository/{repositoryType}"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()))
-      .replaceAll("\\{" + "repositoryType" + "\\}", apiClient.escapeString(repositoryType.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()))
+            .replaceAll("\\{repositoryType}", apiClient.escapeString(repositoryType));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<File> localVarReturnType = new GenericType<File>() {};
-
-    return apiClient.invokeAPI("ProgrammingExerciseExportImportResourceApi.exportInstructorRepository", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ProgrammingExerciseExportImportResourceApi.exportInstructorRepository", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -306,50 +234,29 @@ public class ProgrammingExerciseExportImportResourceApi {
      </table>
    */
   public ApiResponse<File> exportStudentRequestedRepositoryWithHttpInfo(Long exerciseId, Boolean includeTests) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling exportStudentRequestedRepository");
     }
-    
-    // verify the required parameter 'includeTests' is set
     if (includeTests == null) {
       throw new ApiException(400, "Missing the required parameter 'includeTests' when calling exportStudentRequestedRepository");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/programming-exercises/{exerciseId}/export-student-requested-repository"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "includeTests", includeTests)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "includeTests", includeTests));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<File> localVarReturnType = new GenericType<File>() {};
-
-    return apiClient.invokeAPI("ProgrammingExerciseExportImportResourceApi.exportStudentRequestedRepository", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ProgrammingExerciseExportImportResourceApi.exportStudentRequestedRepository", localVarPath, "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -386,55 +293,28 @@ public class ProgrammingExerciseExportImportResourceApi {
      </table>
    */
   public ApiResponse<File> exportSubmissionsByParticipationIdsWithHttpInfo(Long exerciseId, String participationIds, RepositoryExportOptionsDTO repositoryExportOptionsDTO) throws ApiException {
-    Object localVarPostBody = repositoryExportOptionsDTO;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling exportSubmissionsByParticipationIds");
     }
-    
-    // verify the required parameter 'participationIds' is set
     if (participationIds == null) {
       throw new ApiException(400, "Missing the required parameter 'participationIds' when calling exportSubmissionsByParticipationIds");
     }
-    
-    // verify the required parameter 'repositoryExportOptionsDTO' is set
     if (repositoryExportOptionsDTO == null) {
       throw new ApiException(400, "Missing the required parameter 'repositoryExportOptionsDTO' when calling exportSubmissionsByParticipationIds");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/programming-exercises/{exerciseId}/export-repos-by-participation-ids/{participationIds}"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()))
-      .replaceAll("\\{" + "participationIds" + "\\}", apiClient.escapeString(participationIds.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()))
+            .replaceAll("\\{participationIds}", apiClient.escapeString(participationIds));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<File> localVarReturnType = new GenericType<File>() {};
-
-    return apiClient.invokeAPI("ProgrammingExerciseExportImportResourceApi.exportSubmissionsByParticipationIds", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ProgrammingExerciseExportImportResourceApi.exportSubmissionsByParticipationIds", localVarPath, "POST", new ArrayList<>(), repositoryExportOptionsDTO,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -471,55 +351,28 @@ public class ProgrammingExerciseExportImportResourceApi {
      </table>
    */
   public ApiResponse<File> exportSubmissionsByStudentLoginsWithHttpInfo(Long exerciseId, String participantIdentifiers, RepositoryExportOptionsDTO repositoryExportOptionsDTO) throws ApiException {
-    Object localVarPostBody = repositoryExportOptionsDTO;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling exportSubmissionsByStudentLogins");
     }
-    
-    // verify the required parameter 'participantIdentifiers' is set
     if (participantIdentifiers == null) {
       throw new ApiException(400, "Missing the required parameter 'participantIdentifiers' when calling exportSubmissionsByStudentLogins");
     }
-    
-    // verify the required parameter 'repositoryExportOptionsDTO' is set
     if (repositoryExportOptionsDTO == null) {
       throw new ApiException(400, "Missing the required parameter 'repositoryExportOptionsDTO' when calling exportSubmissionsByStudentLogins");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/programming-exercises/{exerciseId}/export-repos-by-participant-identifiers/{participantIdentifiers}"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()))
-      .replaceAll("\\{" + "participantIdentifiers" + "\\}", apiClient.escapeString(participantIdentifiers.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()))
+            .replaceAll("\\{participantIdentifiers}", apiClient.escapeString(participantIdentifiers));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<File> localVarReturnType = new GenericType<File>() {};
-
-    return apiClient.invokeAPI("ProgrammingExerciseExportImportResourceApi.exportSubmissionsByStudentLogins", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ProgrammingExerciseExportImportResourceApi.exportSubmissionsByStudentLogins", localVarPath, "POST", new ArrayList<>(), repositoryExportOptionsDTO,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -558,50 +411,29 @@ public class ProgrammingExerciseExportImportResourceApi {
      </table>
    */
   public ApiResponse<ProgrammingExercise> importProgrammingExerciseWithHttpInfo(Long sourceExerciseId, ProgrammingExercise programmingExercise, Boolean recreateBuildPlans, Boolean updateTemplate) throws ApiException {
-    Object localVarPostBody = programmingExercise;
-    
-    // verify the required parameter 'sourceExerciseId' is set
+    // Check required parameters
     if (sourceExerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'sourceExerciseId' when calling importProgrammingExercise");
     }
-    
-    // verify the required parameter 'programmingExercise' is set
     if (programmingExercise == null) {
       throw new ApiException(400, "Missing the required parameter 'programmingExercise' when calling importProgrammingExercise");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/programming-exercises/import/{sourceExerciseId}"
-      .replaceAll("\\{" + "sourceExerciseId" + "\\}", apiClient.escapeString(sourceExerciseId.toString()));
+            .replaceAll("\\{sourceExerciseId}", apiClient.escapeString(sourceExerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "recreateBuildPlans", recreateBuildPlans));
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "recreateBuildPlans", recreateBuildPlans)
+    );
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "updateTemplate", updateTemplate));
 
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<ProgrammingExercise> localVarReturnType = new GenericType<ProgrammingExercise>() {};
-
-    return apiClient.invokeAPI("ProgrammingExerciseExportImportResourceApi.importProgrammingExercise", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ProgrammingExerciseExportImportResourceApi.importProgrammingExercise", localVarPath, "POST", localVarQueryParams, programmingExercise,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

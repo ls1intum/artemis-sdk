@@ -807,12 +807,3 @@ src/main/java/de/tum/cit/ase/artemis/sdk/model/UserInitializationDTO.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/UserPageableSearchDTO.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/UserPublicInfoDTO.java
 src/main/java/de/tum/cit/ase/artemis/sdk/model/VideoUnit.java
-src/test/java/de/tum/cit/ase/artemis/sdk/model/AnswerCounterTest.java
-src/test/java/de/tum/cit/ase/artemis/sdk/model/DragAndDropQuestionStatisticAllOfTest.java
-src/test/java/de/tum/cit/ase/artemis/sdk/model/DragAndDropQuestionStatisticTest.java
-src/test/java/de/tum/cit/ase/artemis/sdk/model/DropLocationCounterTest.java
-src/test/java/de/tum/cit/ase/artemis/sdk/model/MultipleChoiceQuestionStatisticAllOfTest.java
-src/test/java/de/tum/cit/ase/artemis/sdk/model/MultipleChoiceQuestionStatisticTest.java
-src/test/java/de/tum/cit/ase/artemis/sdk/model/ShortAnswerQuestionStatisticAllOfTest.java
-src/test/java/de/tum/cit/ase/artemis/sdk/model/ShortAnswerQuestionStatisticTest.java
-src/test/java/de/tum/cit/ase/artemis/sdk/model/ShortAnswerSpotCounterTest.java

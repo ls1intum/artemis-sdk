@@ -68,7 +68,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import de.tum.cit.ase.artemis.sdk.JSON;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 @JsonDeserialize(using = UpdateLectureUnitsOrder200ResponseInner.UpdateLectureUnitsOrder200ResponseInnerDeserializer.class)
 @JsonSerialize(using = UpdateLectureUnitsOrder200ResponseInner.UpdateLectureUnitsOrder200ResponseInnerSerializer.class)
 public class UpdateLectureUnitsOrder200ResponseInner extends AbstractOpenApiSchema {
@@ -253,7 +253,7 @@ public class UpdateLectureUnitsOrder200ResponseInner extends AbstractOpenApiSche
     }
 
     // store a list of schema names defined in oneOf
-    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+    public static final Map<String, GenericType> schemas = new HashMap<>();
 
     public UpdateLectureUnitsOrder200ResponseInner() {
         super("oneOf", Boolean.FALSE);
@@ -297,7 +297,7 @@ public class UpdateLectureUnitsOrder200ResponseInner extends AbstractOpenApiSche
         });
         JSON.registerDescendants(UpdateLectureUnitsOrder200ResponseInner.class, Collections.unmodifiableMap(schemas));
         // Initialize and register the discriminator mappings.
-        Map<String, Class<?>> mappings = new HashMap<String, Class<?>>();
+        Map<String, Class<?>> mappings = new HashMap<>();
         mappings.put("AttachmentUnit", AttachmentUnit.class);
         mappings.put("ExerciseUnit", ExerciseUnit.class);
         mappings.put("OnlineUnit", OnlineUnit.class);
@@ -322,27 +322,27 @@ public class UpdateLectureUnitsOrder200ResponseInner extends AbstractOpenApiSche
      */
     @Override
     public void setActualInstance(Object instance) {
-        if (JSON.isInstanceOf(AttachmentUnit.class, instance, new HashSet<Class<?>>())) {
+        if (JSON.isInstanceOf(AttachmentUnit.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (JSON.isInstanceOf(ExerciseUnit.class, instance, new HashSet<Class<?>>())) {
+        if (JSON.isInstanceOf(ExerciseUnit.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (JSON.isInstanceOf(OnlineUnit.class, instance, new HashSet<Class<?>>())) {
+        if (JSON.isInstanceOf(OnlineUnit.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (JSON.isInstanceOf(TextUnit.class, instance, new HashSet<Class<?>>())) {
+        if (JSON.isInstanceOf(TextUnit.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (JSON.isInstanceOf(VideoUnit.class, instance, new HashSet<Class<?>>())) {
+        if (JSON.isInstanceOf(VideoUnit.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }

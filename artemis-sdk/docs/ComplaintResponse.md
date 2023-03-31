@@ -13,8 +13,8 @@
 |**submittedTime** | **OffsetDateTime** |  |  [optional] |
 |**complaint** | [**Complaint**](Complaint.md) |  |  [optional] |
 |**reviewer** | [**User**](User.md) |  |  [optional] |
-|**lockEndDate** | **OffsetDateTime** |  |  [optional] |
 |**isCurrentlyLocked** | **Boolean** |  |  [optional] |
+|**lockEndDate** | **OffsetDateTime** |  |  [optional] |
 
 
 

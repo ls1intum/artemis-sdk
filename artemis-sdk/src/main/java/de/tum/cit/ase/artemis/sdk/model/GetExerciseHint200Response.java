@@ -63,7 +63,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import de.tum.cit.ase.artemis.sdk.JSON;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 @JsonDeserialize(using = GetExerciseHint200Response.GetExerciseHint200ResponseDeserializer.class)
 @JsonSerialize(using = GetExerciseHint200Response.GetExerciseHint200ResponseSerializer.class)
 public class GetExerciseHint200Response extends AbstractOpenApiSchema {
@@ -170,7 +170,7 @@ public class GetExerciseHint200Response extends AbstractOpenApiSchema {
     }
 
     // store a list of schema names defined in oneOf
-    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+    public static final Map<String, GenericType> schemas = new HashMap<>();
 
     public GetExerciseHint200Response() {
         super("oneOf", Boolean.FALSE);
@@ -193,7 +193,7 @@ public class GetExerciseHint200Response extends AbstractOpenApiSchema {
         });
         JSON.registerDescendants(GetExerciseHint200Response.class, Collections.unmodifiableMap(schemas));
         // Initialize and register the discriminator mappings.
-        Map<String, Class<?>> mappings = new HashMap<String, Class<?>>();
+        Map<String, Class<?>> mappings = new HashMap<>();
         mappings.put("CodeHint", CodeHint.class);
         mappings.put("ExerciseHint", ExerciseHint.class);
         mappings.put("getExerciseHint_200_response", GetExerciseHint200Response.class);
@@ -215,12 +215,12 @@ public class GetExerciseHint200Response extends AbstractOpenApiSchema {
      */
     @Override
     public void setActualInstance(Object instance) {
-        if (JSON.isInstanceOf(CodeHint.class, instance, new HashSet<Class<?>>())) {
+        if (JSON.isInstanceOf(CodeHint.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (JSON.isInstanceOf(ExerciseHint.class, instance, new HashSet<Class<?>>())) {
+        if (JSON.isInstanceOf(ExerciseHint.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }

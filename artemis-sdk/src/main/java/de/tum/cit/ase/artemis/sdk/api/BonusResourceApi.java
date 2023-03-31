@@ -13,10 +13,11 @@ import de.tum.cit.ase.artemis.sdk.model.BonusExampleDTO;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class BonusResourceApi {
   private ApiClient apiClient;
 
@@ -89,80 +90,49 @@ public class BonusResourceApi {
      </table>
    */
   public ApiResponse<BonusExampleDTO> calculateGradeWithBonusWithHttpInfo(Long courseId, Long examId, String bonusStrategy, Double calculationSign, Double bonusToPoints, Long sourceGradingScaleId, Double sourcePoints) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling calculateGradeWithBonus");
     }
-    
-    // verify the required parameter 'examId' is set
     if (examId == null) {
       throw new ApiException(400, "Missing the required parameter 'examId' when calling calculateGradeWithBonus");
     }
-    
-    // verify the required parameter 'bonusStrategy' is set
     if (bonusStrategy == null) {
       throw new ApiException(400, "Missing the required parameter 'bonusStrategy' when calling calculateGradeWithBonus");
     }
-    
-    // verify the required parameter 'calculationSign' is set
     if (calculationSign == null) {
       throw new ApiException(400, "Missing the required parameter 'calculationSign' when calling calculateGradeWithBonus");
     }
-    
-    // verify the required parameter 'bonusToPoints' is set
     if (bonusToPoints == null) {
       throw new ApiException(400, "Missing the required parameter 'bonusToPoints' when calling calculateGradeWithBonus");
     }
-    
-    // verify the required parameter 'sourceGradingScaleId' is set
     if (sourceGradingScaleId == null) {
       throw new ApiException(400, "Missing the required parameter 'sourceGradingScaleId' when calling calculateGradeWithBonus");
     }
-    
-    // verify the required parameter 'sourcePoints' is set
     if (sourcePoints == null) {
       throw new ApiException(400, "Missing the required parameter 'sourcePoints' when calling calculateGradeWithBonus");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/exams/{examId}/bonus/calculate-raw"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "examId" + "\\}", apiClient.escapeString(examId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{examId}", apiClient.escapeString(examId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "bonusStrategy", bonusStrategy));
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "bonusStrategy", bonusStrategy)
+    );
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "calculationSign", calculationSign));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "bonusToPoints", bonusToPoints));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "sourceGradingScaleId", sourceGradingScaleId));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "sourcePoints", sourcePoints));
 
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<BonusExampleDTO> localVarReturnType = new GenericType<BonusExampleDTO>() {};
-
-    return apiClient.invokeAPI("BonusResourceApi.calculateGradeWithBonus", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("BonusResourceApi.calculateGradeWithBonus", localVarPath, "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -199,55 +169,28 @@ public class BonusResourceApi {
      </table>
    */
   public ApiResponse<Bonus> createBonusForExamWithHttpInfo(Long courseId, Long examId, Bonus bonus) throws ApiException {
-    Object localVarPostBody = bonus;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling createBonusForExam");
     }
-    
-    // verify the required parameter 'examId' is set
     if (examId == null) {
       throw new ApiException(400, "Missing the required parameter 'examId' when calling createBonusForExam");
     }
-    
-    // verify the required parameter 'bonus' is set
     if (bonus == null) {
       throw new ApiException(400, "Missing the required parameter 'bonus' when calling createBonusForExam");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/exams/{examId}/bonus"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "examId" + "\\}", apiClient.escapeString(examId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{examId}", apiClient.escapeString(examId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<Bonus> localVarReturnType = new GenericType<Bonus>() {};
-
-    return apiClient.invokeAPI("BonusResourceApi.createBonusForExam", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("BonusResourceApi.createBonusForExam", localVarPath, "POST", new ArrayList<>(), bonus,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -283,54 +226,28 @@ public class BonusResourceApi {
      </table>
    */
   public ApiResponse<Void> deleteBonusWithHttpInfo(Long courseId, Long examId, Long bonusId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling deleteBonus");
     }
-    
-    // verify the required parameter 'examId' is set
     if (examId == null) {
       throw new ApiException(400, "Missing the required parameter 'examId' when calling deleteBonus");
     }
-    
-    // verify the required parameter 'bonusId' is set
     if (bonusId == null) {
       throw new ApiException(400, "Missing the required parameter 'bonusId' when calling deleteBonus");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/exams/{examId}/bonus/{bonusId}"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "examId" + "\\}", apiClient.escapeString(examId.toString()))
-      .replaceAll("\\{" + "bonusId" + "\\}", apiClient.escapeString(bonusId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{examId}", apiClient.escapeString(examId.toString()))
+            .replaceAll("\\{bonusId}", apiClient.escapeString(bonusId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("BonusResourceApi.deleteBonus", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("BonusResourceApi.deleteBonus", localVarPath, "DELETE", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -367,51 +284,30 @@ public class BonusResourceApi {
      </table>
    */
   public ApiResponse<Bonus> getBonusForExamWithHttpInfo(Long courseId, Long examId, Boolean includeSourceGradeSteps) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getBonusForExam");
     }
-    
-    // verify the required parameter 'examId' is set
     if (examId == null) {
       throw new ApiException(400, "Missing the required parameter 'examId' when calling getBonusForExam");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/exams/{examId}/bonus"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "examId" + "\\}", apiClient.escapeString(examId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{examId}", apiClient.escapeString(examId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "includeSourceGradeSteps", includeSourceGradeSteps)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "includeSourceGradeSteps", includeSourceGradeSteps));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<Bonus> localVarReturnType = new GenericType<Bonus>() {};
-
-    return apiClient.invokeAPI("BonusResourceApi.getBonusForExam", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("BonusResourceApi.getBonusForExam", localVarPath, "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -450,60 +346,31 @@ public class BonusResourceApi {
      </table>
    */
   public ApiResponse<Bonus> updateBonusWithHttpInfo(Long courseId, Long examId, Long bonusId, Bonus bonus) throws ApiException {
-    Object localVarPostBody = bonus;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling updateBonus");
     }
-    
-    // verify the required parameter 'examId' is set
     if (examId == null) {
       throw new ApiException(400, "Missing the required parameter 'examId' when calling updateBonus");
     }
-    
-    // verify the required parameter 'bonusId' is set
     if (bonusId == null) {
       throw new ApiException(400, "Missing the required parameter 'bonusId' when calling updateBonus");
     }
-    
-    // verify the required parameter 'bonus' is set
     if (bonus == null) {
       throw new ApiException(400, "Missing the required parameter 'bonus' when calling updateBonus");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/exams/{examId}/bonus/{bonusId}"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "examId" + "\\}", apiClient.escapeString(examId.toString()))
-      .replaceAll("\\{" + "bonusId" + "\\}", apiClient.escapeString(bonusId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{examId}", apiClient.escapeString(examId.toString()))
+            .replaceAll("\\{bonusId}", apiClient.escapeString(bonusId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<Bonus> localVarReturnType = new GenericType<Bonus>() {};
-
-    return apiClient.invokeAPI("BonusResourceApi.updateBonus", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("BonusResourceApi.updateBonus", localVarPath, "PUT", new ArrayList<>(), bonus,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

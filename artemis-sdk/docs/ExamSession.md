@@ -15,8 +15,8 @@
 |**browserFingerprintHash** | **String** |  |  [optional] |
 |**instanceId** | **String** |  |  [optional] |
 |**ipAddress** | **String** |  |  [optional] |
-|**initialSession** | **Boolean** |  |  [optional] |
 |**ipAddressFromIpAddress** | [**IPAddress**](IPAddress.md) |  |  [optional] |
+|**initialSession** | **Boolean** |  |  [optional] |
 
 
 

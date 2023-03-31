@@ -50,7 +50,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ProgrammingExerciseTestCase.JSON_PROPERTY_TYPE,
   ProgrammingExerciseTestCase.JSON_PROPERTY_COVERAGE_ENTRIES
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class ProgrammingExerciseTestCase {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -111,10 +111,10 @@ public class ProgrammingExerciseTestCase {
   private Double bonusPoints;
 
   public static final String JSON_PROPERTY_TASKS = "tasks";
-  private Set<ProgrammingExerciseTask> tasks = new LinkedHashSet<>();
+  private Set<ProgrammingExerciseTask> tasks;
 
   public static final String JSON_PROPERTY_SOLUTION_ENTRIES = "solutionEntries";
-  private Set<ProgrammingExerciseSolutionEntry> solutionEntries = new LinkedHashSet<>();
+  private Set<ProgrammingExerciseSolutionEntry> solutionEntries;
 
   public static final String JSON_PROPERTY_EXERCISE = "exercise";
   private Exercise exercise;
@@ -160,7 +160,7 @@ public class ProgrammingExerciseTestCase {
   private TypeEnum type;
 
   public static final String JSON_PROPERTY_COVERAGE_ENTRIES = "coverageEntries";
-  private Set<TestwiseCoverageReportEntry> coverageEntries = new LinkedHashSet<>();
+  private Set<TestwiseCoverageReportEntry> coverageEntries;
 
   public ProgrammingExerciseTestCase() { 
   }

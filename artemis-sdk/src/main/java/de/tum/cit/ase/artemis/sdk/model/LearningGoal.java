@@ -48,7 +48,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   LearningGoal.JSON_PROPERTY_CONSECUTIVE_COURSES,
   LearningGoal.JSON_PROPERTY_USER_PROGRESS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class LearningGoal {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -112,16 +112,16 @@ public class LearningGoal {
   private Course course;
 
   public static final String JSON_PROPERTY_EXERCISES = "exercises";
-  private Set<GetExercise200Response> exercises = new LinkedHashSet<>();
+  private Set<GetExercise200Response> exercises;
 
   public static final String JSON_PROPERTY_LECTURE_UNITS = "lectureUnits";
-  private Set<LectureUnit> lectureUnits = new LinkedHashSet<>();
+  private Set<LectureUnit> lectureUnits;
 
   public static final String JSON_PROPERTY_CONSECUTIVE_COURSES = "consecutiveCourses";
-  private Set<Course> consecutiveCourses = new LinkedHashSet<>();
+  private Set<Course> consecutiveCourses;
 
   public static final String JSON_PROPERTY_USER_PROGRESS = "userProgress";
-  private Set<LearningGoalProgress> userProgress = new LinkedHashSet<>();
+  private Set<LearningGoalProgress> userProgress;
 
   public LearningGoal() { 
   }

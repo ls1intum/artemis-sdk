@@ -35,7 +35,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   SubmissionPenaltyPolicyAllOf.JSON_PROPERTY_EXCEEDING_PENALTY
 })
 @JsonTypeName("SubmissionPenaltyPolicy_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class SubmissionPenaltyPolicyAllOf {
   public static final String JSON_PROPERTY_PROGRAMMING_EXERCISE = "programmingExercise";
   private ProgrammingExercise programmingExercise;

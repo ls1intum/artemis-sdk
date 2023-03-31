@@ -37,7 +37,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ProgrammingExerciseGradingStatisticsDTO.JSON_PROPERTY_TEST_CASE_STATS_MAP,
   ProgrammingExerciseGradingStatisticsDTO.JSON_PROPERTY_CATEGORY_ISSUES_MAP
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class ProgrammingExerciseGradingStatisticsDTO {
   public static final String JSON_PROPERTY_NUM_PARTICIPATIONS = "numParticipations";
   private Integer numParticipations;

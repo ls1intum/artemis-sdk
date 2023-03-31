@@ -41,10 +41,10 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ExamSession.JSON_PROPERTY_BROWSER_FINGERPRINT_HASH,
   ExamSession.JSON_PROPERTY_INSTANCE_ID,
   ExamSession.JSON_PROPERTY_IP_ADDRESS,
-  ExamSession.JSON_PROPERTY_INITIAL_SESSION,
-  ExamSession.JSON_PROPERTY_IP_ADDRESS_FROM_IP_ADDRESS
+  ExamSession.JSON_PROPERTY_IP_ADDRESS_FROM_IP_ADDRESS,
+  ExamSession.JSON_PROPERTY_INITIAL_SESSION
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class ExamSession {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -70,11 +70,11 @@ public class ExamSession {
   public static final String JSON_PROPERTY_IP_ADDRESS = "ipAddress";
   private String ipAddress;
 
-  public static final String JSON_PROPERTY_INITIAL_SESSION = "initialSession";
-  private Boolean initialSession;
-
   public static final String JSON_PROPERTY_IP_ADDRESS_FROM_IP_ADDRESS = "ipAddressFromIpAddress";
   private IPAddress ipAddressFromIpAddress;
+
+  public static final String JSON_PROPERTY_INITIAL_SESSION = "initialSession";
+  private Boolean initialSession;
 
   public ExamSession() { 
   }
@@ -279,31 +279,6 @@ public class ExamSession {
   }
 
 
-  public ExamSession initialSession(Boolean initialSession) {
-    this.initialSession = initialSession;
-    return this;
-  }
-
-   /**
-   * Get initialSession
-   * @return initialSession
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_INITIAL_SESSION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getInitialSession() {
-    return initialSession;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_INITIAL_SESSION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setInitialSession(Boolean initialSession) {
-    this.initialSession = initialSession;
-  }
-
-
   public ExamSession ipAddressFromIpAddress(IPAddress ipAddressFromIpAddress) {
     this.ipAddressFromIpAddress = ipAddressFromIpAddress;
     return this;
@@ -329,6 +304,31 @@ public class ExamSession {
   }
 
 
+  public ExamSession initialSession(Boolean initialSession) {
+    this.initialSession = initialSession;
+    return this;
+  }
+
+   /**
+   * Get initialSession
+   * @return initialSession
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_INITIAL_SESSION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getInitialSession() {
+    return initialSession;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_INITIAL_SESSION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setInitialSession(Boolean initialSession) {
+    this.initialSession = initialSession;
+  }
+
+
   /**
    * Return true if this ExamSession object is equal to o.
    */
@@ -349,13 +349,13 @@ public class ExamSession {
         Objects.equals(this.browserFingerprintHash, examSession.browserFingerprintHash) &&
         Objects.equals(this.instanceId, examSession.instanceId) &&
         Objects.equals(this.ipAddress, examSession.ipAddress) &&
-        Objects.equals(this.initialSession, examSession.initialSession) &&
-        Objects.equals(this.ipAddressFromIpAddress, examSession.ipAddressFromIpAddress);
+        Objects.equals(this.ipAddressFromIpAddress, examSession.ipAddressFromIpAddress) &&
+        Objects.equals(this.initialSession, examSession.initialSession);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdDate, studentExam, sessionToken, userAgent, browserFingerprintHash, instanceId, ipAddress, initialSession, ipAddressFromIpAddress);
+    return Objects.hash(id, createdDate, studentExam, sessionToken, userAgent, browserFingerprintHash, instanceId, ipAddress, ipAddressFromIpAddress, initialSession);
   }
 
   @Override
@@ -370,8 +370,8 @@ public class ExamSession {
     sb.append("    browserFingerprintHash: ").append(toIndentedString(browserFingerprintHash)).append("\n");
     sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
     sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
-    sb.append("    initialSession: ").append(toIndentedString(initialSession)).append("\n");
     sb.append("    ipAddressFromIpAddress: ").append(toIndentedString(ipAddressFromIpAddress)).append("\n");
+    sb.append("    initialSession: ").append(toIndentedString(initialSession)).append("\n");
     sb.append("}");
     return sb.toString();
   }

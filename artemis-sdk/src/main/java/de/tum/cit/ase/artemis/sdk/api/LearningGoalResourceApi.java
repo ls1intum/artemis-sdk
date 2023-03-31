@@ -18,10 +18,11 @@ import java.util.Set;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class LearningGoalResourceApi {
   private ApiClient apiClient;
 
@@ -84,50 +85,25 @@ public class LearningGoalResourceApi {
      </table>
    */
   public ApiResponse<LearningGoal> addPrerequisiteWithHttpInfo(Long learningGoalId, Long courseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'learningGoalId' is set
+    // Check required parameters
     if (learningGoalId == null) {
       throw new ApiException(400, "Missing the required parameter 'learningGoalId' when calling addPrerequisite");
     }
-    
-    // verify the required parameter 'courseId' is set
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling addPrerequisite");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/prerequisites/{learningGoalId}"
-      .replaceAll("\\{" + "learningGoalId" + "\\}", apiClient.escapeString(learningGoalId.toString()))
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{learningGoalId}", apiClient.escapeString(learningGoalId.toString()))
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<LearningGoal> localVarReturnType = new GenericType<LearningGoal>() {};
-
-    return apiClient.invokeAPI("LearningGoalResourceApi.addPrerequisite", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("LearningGoalResourceApi.addPrerequisite", localVarPath, "POST", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -162,49 +138,24 @@ public class LearningGoalResourceApi {
      </table>
    */
   public ApiResponse<LearningGoal> createLearningGoalWithHttpInfo(Long courseId, LearningGoal learningGoal) throws ApiException {
-    Object localVarPostBody = learningGoal;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling createLearningGoal");
     }
-    
-    // verify the required parameter 'learningGoal' is set
     if (learningGoal == null) {
       throw new ApiException(400, "Missing the required parameter 'learningGoal' when calling createLearningGoal");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/learning-goals"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<LearningGoal> localVarReturnType = new GenericType<LearningGoal>() {};
-
-    return apiClient.invokeAPI("LearningGoalResourceApi.createLearningGoal", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("LearningGoalResourceApi.createLearningGoal", localVarPath, "POST", new ArrayList<>(), learningGoal,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -243,57 +194,34 @@ public class LearningGoalResourceApi {
      </table>
    */
   public ApiResponse<LearningGoalRelation> createLearningGoalRelationWithHttpInfo(Long courseId, Long tailLearningGoalId, Long headLearningGoalId, String type) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling createLearningGoalRelation");
     }
-    
-    // verify the required parameter 'tailLearningGoalId' is set
     if (tailLearningGoalId == null) {
       throw new ApiException(400, "Missing the required parameter 'tailLearningGoalId' when calling createLearningGoalRelation");
     }
-    
-    // verify the required parameter 'headLearningGoalId' is set
     if (headLearningGoalId == null) {
       throw new ApiException(400, "Missing the required parameter 'headLearningGoalId' when calling createLearningGoalRelation");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/learning-goals/{tailLearningGoalId}/relations/{headLearningGoalId}"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "tailLearningGoalId" + "\\}", apiClient.escapeString(tailLearningGoalId.toString()))
-      .replaceAll("\\{" + "headLearningGoalId" + "\\}", apiClient.escapeString(headLearningGoalId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{tailLearningGoalId}", apiClient.escapeString(tailLearningGoalId.toString()))
+            .replaceAll("\\{headLearningGoalId}", apiClient.escapeString(headLearningGoalId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "type", type)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "type", type));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<LearningGoalRelation> localVarReturnType = new GenericType<LearningGoalRelation>() {};
-
-    return apiClient.invokeAPI("LearningGoalResourceApi.createLearningGoalRelation", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("LearningGoalResourceApi.createLearningGoalRelation", localVarPath, "POST", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -327,48 +255,24 @@ public class LearningGoalResourceApi {
      </table>
    */
   public ApiResponse<Void> deleteLearningGoalWithHttpInfo(Long learningGoalId, Long courseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'learningGoalId' is set
+    // Check required parameters
     if (learningGoalId == null) {
       throw new ApiException(400, "Missing the required parameter 'learningGoalId' when calling deleteLearningGoal");
     }
-    
-    // verify the required parameter 'courseId' is set
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling deleteLearningGoal");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/learning-goals/{learningGoalId}"
-      .replaceAll("\\{" + "learningGoalId" + "\\}", apiClient.escapeString(learningGoalId.toString()))
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{learningGoalId}", apiClient.escapeString(learningGoalId.toString()))
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("LearningGoalResourceApi.deleteLearningGoal", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("LearningGoalResourceApi.deleteLearningGoal", localVarPath, "DELETE", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -401,44 +305,22 @@ public class LearningGoalResourceApi {
      </table>
    */
   public ApiResponse<SearchResultPageDTOLearningGoal> getAllLecturesOnPage1WithHttpInfo(PageableSearchDTOString search) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'search' is set
+    // Check required parameters
     if (search == null) {
       throw new ApiException(400, "Missing the required parameter 'search' when calling getAllLecturesOnPage1");
     }
-    
-    // create path and map variables
-    String localVarPath = "/api/learning-goals";
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "search", search)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "search", search));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<SearchResultPageDTOLearningGoal> localVarReturnType = new GenericType<SearchResultPageDTOLearningGoal>() {};
-
-    return apiClient.invokeAPI("LearningGoalResourceApi.getAllLecturesOnPage1", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("LearningGoalResourceApi.getAllLecturesOnPage1", "/api/learning-goals", "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -473,50 +355,25 @@ public class LearningGoalResourceApi {
      </table>
    */
   public ApiResponse<LearningGoal> getLearningGoalWithHttpInfo(Long learningGoalId, Long courseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'learningGoalId' is set
+    // Check required parameters
     if (learningGoalId == null) {
       throw new ApiException(400, "Missing the required parameter 'learningGoalId' when calling getLearningGoal");
     }
-    
-    // verify the required parameter 'courseId' is set
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getLearningGoal");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/learning-goals/{learningGoalId}"
-      .replaceAll("\\{" + "learningGoalId" + "\\}", apiClient.escapeString(learningGoalId.toString()))
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{learningGoalId}", apiClient.escapeString(learningGoalId.toString()))
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<LearningGoal> localVarReturnType = new GenericType<LearningGoal>() {};
-
-    return apiClient.invokeAPI("LearningGoalResourceApi.getLearningGoal", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("LearningGoalResourceApi.getLearningGoal", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -551,50 +408,25 @@ public class LearningGoalResourceApi {
      </table>
    */
   public ApiResponse<CourseLearningGoalProgressDTO> getLearningGoalCourseProgressWithHttpInfo(Long courseId, Long learningGoalId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getLearningGoalCourseProgress");
     }
-    
-    // verify the required parameter 'learningGoalId' is set
     if (learningGoalId == null) {
       throw new ApiException(400, "Missing the required parameter 'learningGoalId' when calling getLearningGoalCourseProgress");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/learning-goals/{learningGoalId}/course-progress"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "learningGoalId" + "\\}", apiClient.escapeString(learningGoalId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{learningGoalId}", apiClient.escapeString(learningGoalId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<CourseLearningGoalProgressDTO> localVarReturnType = new GenericType<CourseLearningGoalProgressDTO>() {};
-
-    return apiClient.invokeAPI("LearningGoalResourceApi.getLearningGoalCourseProgress", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("LearningGoalResourceApi.getLearningGoalCourseProgress", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -629,50 +461,25 @@ public class LearningGoalResourceApi {
      </table>
    */
   public ApiResponse<Set<LearningGoalRelation>> getLearningGoalRelationsWithHttpInfo(Long learningGoalId, Long courseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'learningGoalId' is set
+    // Check required parameters
     if (learningGoalId == null) {
       throw new ApiException(400, "Missing the required parameter 'learningGoalId' when calling getLearningGoalRelations");
     }
-    
-    // verify the required parameter 'courseId' is set
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getLearningGoalRelations");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/learning-goals/{learningGoalId}/relations"
-      .replaceAll("\\{" + "learningGoalId" + "\\}", apiClient.escapeString(learningGoalId.toString()))
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{learningGoalId}", apiClient.escapeString(learningGoalId.toString()))
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<Set<LearningGoalRelation>> localVarReturnType = new GenericType<Set<LearningGoalRelation>>() {};
-
-    return apiClient.invokeAPI("LearningGoalResourceApi.getLearningGoalRelations", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("LearningGoalResourceApi.getLearningGoalRelations", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -709,51 +516,30 @@ public class LearningGoalResourceApi {
      </table>
    */
   public ApiResponse<LearningGoalProgress> getLearningGoalStudentProgressWithHttpInfo(Long courseId, Long learningGoalId, Boolean refresh) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getLearningGoalStudentProgress");
     }
-    
-    // verify the required parameter 'learningGoalId' is set
     if (learningGoalId == null) {
       throw new ApiException(400, "Missing the required parameter 'learningGoalId' when calling getLearningGoalStudentProgress");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/learning-goals/{learningGoalId}/student-progress"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "learningGoalId" + "\\}", apiClient.escapeString(learningGoalId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{learningGoalId}", apiClient.escapeString(learningGoalId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "refresh", refresh)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "refresh", refresh));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<LearningGoalProgress> localVarReturnType = new GenericType<LearningGoalProgress>() {};
-
-    return apiClient.invokeAPI("LearningGoalResourceApi.getLearningGoalStudentProgress", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("LearningGoalResourceApi.getLearningGoalStudentProgress", localVarPath, "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -786,44 +572,21 @@ public class LearningGoalResourceApi {
      </table>
    */
   public ApiResponse<String> getLearningGoalTitleWithHttpInfo(Long learningGoalId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'learningGoalId' is set
+    // Check required parameters
     if (learningGoalId == null) {
       throw new ApiException(400, "Missing the required parameter 'learningGoalId' when calling getLearningGoalTitle");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/learning-goals/{learningGoalId}/title"
-      .replaceAll("\\{" + "learningGoalId" + "\\}", apiClient.escapeString(learningGoalId.toString()));
+            .replaceAll("\\{learningGoalId}", apiClient.escapeString(learningGoalId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<String> localVarReturnType = new GenericType<String>() {};
-
-    return apiClient.invokeAPI("LearningGoalResourceApi.getLearningGoalTitle", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("LearningGoalResourceApi.getLearningGoalTitle", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -856,44 +619,21 @@ public class LearningGoalResourceApi {
      </table>
    */
   public ApiResponse<List<LearningGoal>> getLearningGoalsWithHttpInfo(Long courseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getLearningGoals");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/learning-goals"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<LearningGoal>> localVarReturnType = new GenericType<List<LearningGoal>>() {};
-
-    return apiClient.invokeAPI("LearningGoalResourceApi.getLearningGoals", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("LearningGoalResourceApi.getLearningGoals", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -926,44 +666,21 @@ public class LearningGoalResourceApi {
      </table>
    */
   public ApiResponse<List<LearningGoal>> getPrerequisitesWithHttpInfo(Long courseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getPrerequisites");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/prerequisites"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<LearningGoal>> localVarReturnType = new GenericType<List<LearningGoal>>() {};
-
-    return apiClient.invokeAPI("LearningGoalResourceApi.getPrerequisites", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("LearningGoalResourceApi.getPrerequisites", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -999,54 +716,28 @@ public class LearningGoalResourceApi {
      </table>
    */
   public ApiResponse<Void> removeLearningGoalRelationWithHttpInfo(Long learningGoalId, Long courseId, Long learningGoalRelationId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'learningGoalId' is set
+    // Check required parameters
     if (learningGoalId == null) {
       throw new ApiException(400, "Missing the required parameter 'learningGoalId' when calling removeLearningGoalRelation");
     }
-    
-    // verify the required parameter 'courseId' is set
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling removeLearningGoalRelation");
     }
-    
-    // verify the required parameter 'learningGoalRelationId' is set
     if (learningGoalRelationId == null) {
       throw new ApiException(400, "Missing the required parameter 'learningGoalRelationId' when calling removeLearningGoalRelation");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/learning-goals/{learningGoalId}/relations/{learningGoalRelationId}"
-      .replaceAll("\\{" + "learningGoalId" + "\\}", apiClient.escapeString(learningGoalId.toString()))
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "learningGoalRelationId" + "\\}", apiClient.escapeString(learningGoalRelationId.toString()));
+            .replaceAll("\\{learningGoalId}", apiClient.escapeString(learningGoalId.toString()))
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{learningGoalRelationId}", apiClient.escapeString(learningGoalRelationId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("LearningGoalResourceApi.removeLearningGoalRelation", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("LearningGoalResourceApi.removeLearningGoalRelation", localVarPath, "DELETE", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -1080,48 +771,24 @@ public class LearningGoalResourceApi {
      </table>
    */
   public ApiResponse<Void> removePrerequisiteWithHttpInfo(Long learningGoalId, Long courseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'learningGoalId' is set
+    // Check required parameters
     if (learningGoalId == null) {
       throw new ApiException(400, "Missing the required parameter 'learningGoalId' when calling removePrerequisite");
     }
-    
-    // verify the required parameter 'courseId' is set
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling removePrerequisite");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/prerequisites/{learningGoalId}"
-      .replaceAll("\\{" + "learningGoalId" + "\\}", apiClient.escapeString(learningGoalId.toString()))
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{learningGoalId}", apiClient.escapeString(learningGoalId.toString()))
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("LearningGoalResourceApi.removePrerequisite", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("LearningGoalResourceApi.removePrerequisite", localVarPath, "DELETE", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -1156,48 +823,23 @@ public class LearningGoalResourceApi {
      </table>
    */
   public ApiResponse<LearningGoal> updateLearningGoalWithHttpInfo(Long courseId, LearningGoal learningGoal) throws ApiException {
-    Object localVarPostBody = learningGoal;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling updateLearningGoal");
     }
-    
-    // verify the required parameter 'learningGoal' is set
     if (learningGoal == null) {
       throw new ApiException(400, "Missing the required parameter 'learningGoal' when calling updateLearningGoal");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/learning-goals"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<LearningGoal> localVarReturnType = new GenericType<LearningGoal>() {};
-
-    return apiClient.invokeAPI("LearningGoalResourceApi.updateLearningGoal", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("LearningGoalResourceApi.updateLearningGoal", localVarPath, "PUT", new ArrayList<>(), learningGoal,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

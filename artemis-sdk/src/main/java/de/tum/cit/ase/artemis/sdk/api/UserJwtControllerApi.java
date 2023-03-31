@@ -12,10 +12,11 @@ import de.tum.cit.ase.artemis.sdk.model.LoginVM;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class UserJwtControllerApi {
   private ApiClient apiClient;
 
@@ -77,48 +78,23 @@ public class UserJwtControllerApi {
      </table>
    */
   public ApiResponse<Void> authorizeWithHttpInfo(String userAgent, LoginVM loginVM) throws ApiException {
-    Object localVarPostBody = loginVM;
-    
-    // verify the required parameter 'userAgent' is set
+    // Check required parameters
     if (userAgent == null) {
       throw new ApiException(400, "Missing the required parameter 'userAgent' when calling authorize");
     }
-    
-    // verify the required parameter 'loginVM' is set
     if (loginVM == null) {
       throw new ApiException(400, "Missing the required parameter 'loginVM' when calling authorize");
     }
-    
-    // create path and map variables
-    String localVarPath = "/api/authenticate";
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Header parameters
+    Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
+    localVarHeaderParams.put("User-Agent", apiClient.parameterToString(userAgent));
 
-
-    if (userAgent != null)
-      localVarHeaderParams.put("User-Agent", apiClient.parameterToString(userAgent));
-
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("UserJwtControllerApi.authorize", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
+    return apiClient.invokeAPI("UserJwtControllerApi.authorize", "/api/authenticate", "POST", new ArrayList<>(), loginVM,
+                               localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -150,41 +126,16 @@ public class UserJwtControllerApi {
      </table>
    */
   public ApiResponse<Void> authorizeSAML2WithHttpInfo(String body) throws ApiException {
-    Object localVarPostBody = body;
-    
-    // verify the required parameter 'body' is set
+    // Check required parameters
     if (body == null) {
       throw new ApiException(400, "Missing the required parameter 'body' when calling authorizeSAML2");
     }
-    
-    // create path and map variables
-    String localVarPath = "/api/saml2";
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("UserJwtControllerApi.authorizeSAML2", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
+    return apiClient.invokeAPI("UserJwtControllerApi.authorizeSAML2", "/api/saml2", "POST", new ArrayList<>(), body,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -214,35 +165,10 @@ public class UserJwtControllerApi {
      </table>
    */
   public ApiResponse<Void> logoutWithHttpInfo() throws ApiException {
-    Object localVarPostBody = null;
-    
-    // create path and map variables
-    String localVarPath = "/api/logout";
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("UserJwtControllerApi.logout", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("UserJwtControllerApi.logout", "/api/logout", "POST", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
 }

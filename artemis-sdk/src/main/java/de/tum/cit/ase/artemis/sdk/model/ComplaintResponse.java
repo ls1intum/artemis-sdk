@@ -39,10 +39,10 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ComplaintResponse.JSON_PROPERTY_SUBMITTED_TIME,
   ComplaintResponse.JSON_PROPERTY_COMPLAINT,
   ComplaintResponse.JSON_PROPERTY_REVIEWER,
-  ComplaintResponse.JSON_PROPERTY_LOCK_END_DATE,
-  ComplaintResponse.JSON_PROPERTY_IS_CURRENTLY_LOCKED
+  ComplaintResponse.JSON_PROPERTY_IS_CURRENTLY_LOCKED,
+  ComplaintResponse.JSON_PROPERTY_LOCK_END_DATE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class ComplaintResponse {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -62,11 +62,11 @@ public class ComplaintResponse {
   public static final String JSON_PROPERTY_REVIEWER = "reviewer";
   private User reviewer;
 
-  public static final String JSON_PROPERTY_LOCK_END_DATE = "lockEndDate";
-  private OffsetDateTime lockEndDate;
-
   public static final String JSON_PROPERTY_IS_CURRENTLY_LOCKED = "isCurrentlyLocked";
   private Boolean isCurrentlyLocked;
+
+  public static final String JSON_PROPERTY_LOCK_END_DATE = "lockEndDate";
+  private OffsetDateTime lockEndDate;
 
   public ComplaintResponse() { 
   }
@@ -221,31 +221,6 @@ public class ComplaintResponse {
   }
 
 
-  public ComplaintResponse lockEndDate(OffsetDateTime lockEndDate) {
-    this.lockEndDate = lockEndDate;
-    return this;
-  }
-
-   /**
-   * Get lockEndDate
-   * @return lockEndDate
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LOCK_END_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public OffsetDateTime getLockEndDate() {
-    return lockEndDate;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_LOCK_END_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLockEndDate(OffsetDateTime lockEndDate) {
-    this.lockEndDate = lockEndDate;
-  }
-
-
   public ComplaintResponse isCurrentlyLocked(Boolean isCurrentlyLocked) {
     this.isCurrentlyLocked = isCurrentlyLocked;
     return this;
@@ -271,6 +246,31 @@ public class ComplaintResponse {
   }
 
 
+  public ComplaintResponse lockEndDate(OffsetDateTime lockEndDate) {
+    this.lockEndDate = lockEndDate;
+    return this;
+  }
+
+   /**
+   * Get lockEndDate
+   * @return lockEndDate
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_LOCK_END_DATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public OffsetDateTime getLockEndDate() {
+    return lockEndDate;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_LOCK_END_DATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setLockEndDate(OffsetDateTime lockEndDate) {
+    this.lockEndDate = lockEndDate;
+  }
+
+
   /**
    * Return true if this ComplaintResponse object is equal to o.
    */
@@ -289,13 +289,13 @@ public class ComplaintResponse {
         Objects.equals(this.submittedTime, complaintResponse.submittedTime) &&
         Objects.equals(this.complaint, complaintResponse.complaint) &&
         Objects.equals(this.reviewer, complaintResponse.reviewer) &&
-        Objects.equals(this.lockEndDate, complaintResponse.lockEndDate) &&
-        Objects.equals(this.isCurrentlyLocked, complaintResponse.isCurrentlyLocked);
+        Objects.equals(this.isCurrentlyLocked, complaintResponse.isCurrentlyLocked) &&
+        Objects.equals(this.lockEndDate, complaintResponse.lockEndDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdDate, responseText, submittedTime, complaint, reviewer, lockEndDate, isCurrentlyLocked);
+    return Objects.hash(id, createdDate, responseText, submittedTime, complaint, reviewer, isCurrentlyLocked, lockEndDate);
   }
 
   @Override
@@ -308,8 +308,8 @@ public class ComplaintResponse {
     sb.append("    submittedTime: ").append(toIndentedString(submittedTime)).append("\n");
     sb.append("    complaint: ").append(toIndentedString(complaint)).append("\n");
     sb.append("    reviewer: ").append(toIndentedString(reviewer)).append("\n");
-    sb.append("    lockEndDate: ").append(toIndentedString(lockEndDate)).append("\n");
     sb.append("    isCurrentlyLocked: ").append(toIndentedString(isCurrentlyLocked)).append("\n");
+    sb.append("    lockEndDate: ").append(toIndentedString(lockEndDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

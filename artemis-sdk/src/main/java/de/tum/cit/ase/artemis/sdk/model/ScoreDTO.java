@@ -36,7 +36,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ScoreDTO.JSON_PROPERTY_SCORE_ACHIEVED,
   ScoreDTO.JSON_PROPERTY_REGULAR_POINTS_ACHIEVABLE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class ScoreDTO {
   public static final String JSON_PROPERTY_STUDENT_ID = "studentId";
   private Long studentId;

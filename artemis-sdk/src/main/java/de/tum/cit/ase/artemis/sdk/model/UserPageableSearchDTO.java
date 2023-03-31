@@ -44,7 +44,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   UserPageableSearchDTO.JSON_PROPERTY_COURSE_IDS,
   UserPageableSearchDTO.JSON_PROPERTY_REGISTRATION_NUMBERS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class UserPageableSearchDTO {
   public static final String JSON_PROPERTY_PAGE = "page";
   private Integer page;
@@ -97,19 +97,19 @@ public class UserPageableSearchDTO {
   private String sortedColumn;
 
   public static final String JSON_PROPERTY_AUTHORITIES = "authorities";
-  private Set<String> authorities = new LinkedHashSet<>();
+  private Set<String> authorities;
 
   public static final String JSON_PROPERTY_ORIGINS = "origins";
-  private Set<String> origins = new LinkedHashSet<>();
+  private Set<String> origins;
 
   public static final String JSON_PROPERTY_STATUS = "status";
-  private Set<String> status = new LinkedHashSet<>();
+  private Set<String> status;
 
   public static final String JSON_PROPERTY_COURSE_IDS = "courseIds";
-  private Set<Long> courseIds = new LinkedHashSet<>();
+  private Set<Long> courseIds;
 
   public static final String JSON_PROPERTY_REGISTRATION_NUMBERS = "registrationNumbers";
-  private Set<String> registrationNumbers = new LinkedHashSet<>();
+  private Set<String> registrationNumbers;
 
   public UserPageableSearchDTO() { 
   }

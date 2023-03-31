@@ -14,10 +14,11 @@ import de.tum.cit.ase.artemis.sdk.model.Result;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class ModelingAssessmentResourceApi {
   private ApiClient apiClient;
 
@@ -77,42 +78,20 @@ public class ModelingAssessmentResourceApi {
      </table>
    */
   public ApiResponse<Void> cancelAssessment1WithHttpInfo(Long submissionId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'submissionId' is set
+    // Check required parameters
     if (submissionId == null) {
       throw new ApiException(400, "Missing the required parameter 'submissionId' when calling cancelAssessment1");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/modeling-submissions/{submissionId}/cancel-assessment"
-      .replaceAll("\\{" + "submissionId" + "\\}", apiClient.escapeString(submissionId.toString()));
+            .replaceAll("\\{submissionId}", apiClient.escapeString(submissionId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("ModelingAssessmentResourceApi.cancelAssessment1", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("ModelingAssessmentResourceApi.cancelAssessment1", localVarPath, "PUT", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -148,54 +127,28 @@ public class ModelingAssessmentResourceApi {
      </table>
    */
   public ApiResponse<Void> deleteAssessment2WithHttpInfo(Long participationId, Long submissionId, Long resultId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'participationId' is set
+    // Check required parameters
     if (participationId == null) {
       throw new ApiException(400, "Missing the required parameter 'participationId' when calling deleteAssessment2");
     }
-    
-    // verify the required parameter 'submissionId' is set
     if (submissionId == null) {
       throw new ApiException(400, "Missing the required parameter 'submissionId' when calling deleteAssessment2");
     }
-    
-    // verify the required parameter 'resultId' is set
     if (resultId == null) {
       throw new ApiException(400, "Missing the required parameter 'resultId' when calling deleteAssessment2");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/participations/{participationId}/modeling-submissions/{submissionId}/results/{resultId}"
-      .replaceAll("\\{" + "participationId" + "\\}", apiClient.escapeString(participationId.toString()))
-      .replaceAll("\\{" + "submissionId" + "\\}", apiClient.escapeString(submissionId.toString()))
-      .replaceAll("\\{" + "resultId" + "\\}", apiClient.escapeString(resultId.toString()));
+            .replaceAll("\\{participationId}", apiClient.escapeString(participationId.toString()))
+            .replaceAll("\\{submissionId}", apiClient.escapeString(submissionId.toString()))
+            .replaceAll("\\{resultId}", apiClient.escapeString(resultId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("ModelingAssessmentResourceApi.deleteAssessment2", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("ModelingAssessmentResourceApi.deleteAssessment2", localVarPath, "DELETE", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -228,44 +181,21 @@ public class ModelingAssessmentResourceApi {
      </table>
    */
   public ApiResponse<Result> getAssessmentBySubmissionIdWithHttpInfo(Long submissionId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'submissionId' is set
+    // Check required parameters
     if (submissionId == null) {
       throw new ApiException(400, "Missing the required parameter 'submissionId' when calling getAssessmentBySubmissionId");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/modeling-submissions/{submissionId}/result"
-      .replaceAll("\\{" + "submissionId" + "\\}", apiClient.escapeString(submissionId.toString()));
+            .replaceAll("\\{submissionId}", apiClient.escapeString(submissionId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<Result> localVarReturnType = new GenericType<Result>() {};
-
-    return apiClient.invokeAPI("ModelingAssessmentResourceApi.getAssessmentBySubmissionId", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ModelingAssessmentResourceApi.getAssessmentBySubmissionId", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -300,50 +230,25 @@ public class ModelingAssessmentResourceApi {
      </table>
    */
   public ApiResponse<Result> getModelingExampleAssessmentWithHttpInfo(Long exerciseId, Long submissionId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling getModelingExampleAssessment");
     }
-    
-    // verify the required parameter 'submissionId' is set
     if (submissionId == null) {
       throw new ApiException(400, "Missing the required parameter 'submissionId' when calling getModelingExampleAssessment");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/exercise/{exerciseId}/modeling-submissions/{submissionId}/example-assessment"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()))
-      .replaceAll("\\{" + "submissionId" + "\\}", apiClient.escapeString(submissionId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()))
+            .replaceAll("\\{submissionId}", apiClient.escapeString(submissionId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<Result> localVarReturnType = new GenericType<Result>() {};
-
-    return apiClient.invokeAPI("ModelingAssessmentResourceApi.getModelingExampleAssessment", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ModelingAssessmentResourceApi.getModelingExampleAssessment", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -382,56 +287,33 @@ public class ModelingAssessmentResourceApi {
      </table>
    */
   public ApiResponse<Result> saveModelingAssessmentWithHttpInfo(Long submissionId, Long resultId, List<Feedback> feedback, Boolean submit) throws ApiException {
-    Object localVarPostBody = feedback;
-    
-    // verify the required parameter 'submissionId' is set
+    // Check required parameters
     if (submissionId == null) {
       throw new ApiException(400, "Missing the required parameter 'submissionId' when calling saveModelingAssessment");
     }
-    
-    // verify the required parameter 'resultId' is set
     if (resultId == null) {
       throw new ApiException(400, "Missing the required parameter 'resultId' when calling saveModelingAssessment");
     }
-    
-    // verify the required parameter 'feedback' is set
     if (feedback == null) {
       throw new ApiException(400, "Missing the required parameter 'feedback' when calling saveModelingAssessment");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/modeling-submissions/{submissionId}/result/{resultId}/assessment"
-      .replaceAll("\\{" + "submissionId" + "\\}", apiClient.escapeString(submissionId.toString()))
-      .replaceAll("\\{" + "resultId" + "\\}", apiClient.escapeString(resultId.toString()));
+            .replaceAll("\\{submissionId}", apiClient.escapeString(submissionId.toString()))
+            .replaceAll("\\{resultId}", apiClient.escapeString(resultId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "submit", submit)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "submit", submit));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<Result> localVarReturnType = new GenericType<Result>() {};
-
-    return apiClient.invokeAPI("ModelingAssessmentResourceApi.saveModelingAssessment", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ModelingAssessmentResourceApi.saveModelingAssessment", localVarPath, "PUT", localVarQueryParams, feedback,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -466,49 +348,24 @@ public class ModelingAssessmentResourceApi {
      </table>
    */
   public ApiResponse<Result> saveModelingExampleAssessmentWithHttpInfo(Long exampleSubmissionId, List<Feedback> feedback) throws ApiException {
-    Object localVarPostBody = feedback;
-    
-    // verify the required parameter 'exampleSubmissionId' is set
+    // Check required parameters
     if (exampleSubmissionId == null) {
       throw new ApiException(400, "Missing the required parameter 'exampleSubmissionId' when calling saveModelingExampleAssessment");
     }
-    
-    // verify the required parameter 'feedback' is set
     if (feedback == null) {
       throw new ApiException(400, "Missing the required parameter 'feedback' when calling saveModelingExampleAssessment");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/modeling-submissions/{exampleSubmissionId}/example-assessment"
-      .replaceAll("\\{" + "exampleSubmissionId" + "\\}", apiClient.escapeString(exampleSubmissionId.toString()));
+            .replaceAll("\\{exampleSubmissionId}", apiClient.escapeString(exampleSubmissionId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<Result> localVarReturnType = new GenericType<Result>() {};
-
-    return apiClient.invokeAPI("ModelingAssessmentResourceApi.saveModelingExampleAssessment", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ModelingAssessmentResourceApi.saveModelingExampleAssessment", localVarPath, "PUT", new ArrayList<>(), feedback,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -543,48 +400,23 @@ public class ModelingAssessmentResourceApi {
      </table>
    */
   public ApiResponse<Result> updateModelingAssessmentAfterComplaintWithHttpInfo(Long submissionId, AssessmentUpdate assessmentUpdate) throws ApiException {
-    Object localVarPostBody = assessmentUpdate;
-    
-    // verify the required parameter 'submissionId' is set
+    // Check required parameters
     if (submissionId == null) {
       throw new ApiException(400, "Missing the required parameter 'submissionId' when calling updateModelingAssessmentAfterComplaint");
     }
-    
-    // verify the required parameter 'assessmentUpdate' is set
     if (assessmentUpdate == null) {
       throw new ApiException(400, "Missing the required parameter 'assessmentUpdate' when calling updateModelingAssessmentAfterComplaint");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/modeling-submissions/{submissionId}/assessment-after-complaint"
-      .replaceAll("\\{" + "submissionId" + "\\}", apiClient.escapeString(submissionId.toString()));
+            .replaceAll("\\{submissionId}", apiClient.escapeString(submissionId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<Result> localVarReturnType = new GenericType<Result>() {};
-
-    return apiClient.invokeAPI("ModelingAssessmentResourceApi.updateModelingAssessmentAfterComplaint", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ModelingAssessmentResourceApi.updateModelingAssessmentAfterComplaint", localVarPath, "PUT", new ArrayList<>(), assessmentUpdate,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

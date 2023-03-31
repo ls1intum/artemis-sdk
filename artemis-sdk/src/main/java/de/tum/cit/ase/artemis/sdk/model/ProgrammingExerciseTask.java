@@ -40,7 +40,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ProgrammingExerciseTask.JSON_PROPERTY_EXERCISE_HINTS,
   ProgrammingExerciseTask.JSON_PROPERTY_TEST_CASES
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class ProgrammingExerciseTask {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -49,10 +49,10 @@ public class ProgrammingExerciseTask {
   private String taskName;
 
   public static final String JSON_PROPERTY_EXERCISE_HINTS = "exerciseHints";
-  private Set<ExerciseHint> exerciseHints = new LinkedHashSet<>();
+  private Set<ExerciseHint> exerciseHints;
 
   public static final String JSON_PROPERTY_TEST_CASES = "testCases";
-  private Set<ProgrammingExerciseTestCase> testCases = new LinkedHashSet<>();
+  private Set<ProgrammingExerciseTestCase> testCases;
 
   public ProgrammingExerciseTask() { 
   }

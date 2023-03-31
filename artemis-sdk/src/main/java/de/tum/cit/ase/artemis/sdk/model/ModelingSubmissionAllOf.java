@@ -46,7 +46,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ModelingSubmissionAllOf.JSON_PROPERTY_RESULTS
 })
 @JsonTypeName("ModelingSubmission_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class ModelingSubmissionAllOf {
   public static final String JSON_PROPERTY_PARTICIPATION = "participation";
   private Participation participation;
@@ -58,13 +58,13 @@ public class ModelingSubmissionAllOf {
   private String explanationText;
 
   public static final String JSON_PROPERTY_SIMILAR_ELEMENT_COUNTS = "similarElementCounts";
-  private Set<SimilarElementCount> similarElementCounts = new LinkedHashSet<>();
+  private Set<SimilarElementCount> similarElementCounts;
 
   public static final String JSON_PROPERTY_SIMILAR_ELEMENTS = "similarElements";
-  private Set<SimilarElementCount> similarElements = new LinkedHashSet<>();
+  private Set<SimilarElementCount> similarElements;
 
   public static final String JSON_PROPERTY_RESULTS = "results";
-  private List<Result> results = new ArrayList<>();
+  private List<Result> results;
 
   public ModelingSubmissionAllOf() { 
   }

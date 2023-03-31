@@ -47,7 +47,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   GradingScale.JSON_PROPERTY_GRADE_STEPS,
   GradingScale.JSON_PROPERTY_BONUS_FROM
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class GradingScale {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -145,10 +145,10 @@ public class GradingScale {
   private Exam exam;
 
   public static final String JSON_PROPERTY_GRADE_STEPS = "gradeSteps";
-  private Set<GradeStep> gradeSteps = new LinkedHashSet<>();
+  private Set<GradeStep> gradeSteps;
 
   public static final String JSON_PROPERTY_BONUS_FROM = "bonusFrom";
-  private Set<Bonus> bonusFrom = new LinkedHashSet<>();
+  private Set<Bonus> bonusFrom;
 
   public GradingScale() { 
   }

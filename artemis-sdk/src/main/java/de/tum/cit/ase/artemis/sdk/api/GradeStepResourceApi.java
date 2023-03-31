@@ -14,10 +14,11 @@ import de.tum.cit.ase.artemis.sdk.model.GradeStepsDTO;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class GradeStepResourceApi {
   private ApiClient apiClient;
 
@@ -78,44 +79,21 @@ public class GradeStepResourceApi {
      </table>
    */
   public ApiResponse<GradeStepsDTO> getAllGradeStepsForCourseWithHttpInfo(Long courseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getAllGradeStepsForCourse");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/grading-scale/grade-steps"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<GradeStepsDTO> localVarReturnType = new GenericType<GradeStepsDTO>() {};
-
-    return apiClient.invokeAPI("GradeStepResourceApi.getAllGradeStepsForCourse", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("GradeStepResourceApi.getAllGradeStepsForCourse", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -150,50 +128,25 @@ public class GradeStepResourceApi {
      </table>
    */
   public ApiResponse<GradeStepsDTO> getAllGradeStepsForExamWithHttpInfo(Long courseId, Long examId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getAllGradeStepsForExam");
     }
-    
-    // verify the required parameter 'examId' is set
     if (examId == null) {
       throw new ApiException(400, "Missing the required parameter 'examId' when calling getAllGradeStepsForExam");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/exams/{examId}/grading-scale/grade-steps"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "examId" + "\\}", apiClient.escapeString(examId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{examId}", apiClient.escapeString(examId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<GradeStepsDTO> localVarReturnType = new GenericType<GradeStepsDTO>() {};
-
-    return apiClient.invokeAPI("GradeStepResourceApi.getAllGradeStepsForExam", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("GradeStepResourceApi.getAllGradeStepsForExam", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -228,50 +181,29 @@ public class GradeStepResourceApi {
      </table>
    */
   public ApiResponse<GradeDTO> getGradeStepByPercentageForCourseWithHttpInfo(Long courseId, Double gradePercentage) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getGradeStepByPercentageForCourse");
     }
-    
-    // verify the required parameter 'gradePercentage' is set
     if (gradePercentage == null) {
       throw new ApiException(400, "Missing the required parameter 'gradePercentage' when calling getGradeStepByPercentageForCourse");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/grading-scale/match-grade-step"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "gradePercentage", gradePercentage)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "gradePercentage", gradePercentage));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<GradeDTO> localVarReturnType = new GenericType<GradeDTO>() {};
-
-    return apiClient.invokeAPI("GradeStepResourceApi.getGradeStepByPercentageForCourse", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("GradeStepResourceApi.getGradeStepByPercentageForCourse", localVarPath, "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -308,56 +240,33 @@ public class GradeStepResourceApi {
      </table>
    */
   public ApiResponse<GradeDTO> getGradeStepByPercentageForExamWithHttpInfo(Long courseId, Long examId, Double gradePercentage) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getGradeStepByPercentageForExam");
     }
-    
-    // verify the required parameter 'examId' is set
     if (examId == null) {
       throw new ApiException(400, "Missing the required parameter 'examId' when calling getGradeStepByPercentageForExam");
     }
-    
-    // verify the required parameter 'gradePercentage' is set
     if (gradePercentage == null) {
       throw new ApiException(400, "Missing the required parameter 'gradePercentage' when calling getGradeStepByPercentageForExam");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/exams/{examId}/grading-scale/match-grade-step"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "examId" + "\\}", apiClient.escapeString(examId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{examId}", apiClient.escapeString(examId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "gradePercentage", gradePercentage)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "gradePercentage", gradePercentage));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<GradeDTO> localVarReturnType = new GenericType<GradeDTO>() {};
-
-    return apiClient.invokeAPI("GradeStepResourceApi.getGradeStepByPercentageForExam", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("GradeStepResourceApi.getGradeStepByPercentageForExam", localVarPath, "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -392,50 +301,25 @@ public class GradeStepResourceApi {
      </table>
    */
   public ApiResponse<GradeStep> getGradeStepsByIdForCourseWithHttpInfo(Long courseId, Long gradeStepId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getGradeStepsByIdForCourse");
     }
-    
-    // verify the required parameter 'gradeStepId' is set
     if (gradeStepId == null) {
       throw new ApiException(400, "Missing the required parameter 'gradeStepId' when calling getGradeStepsByIdForCourse");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/grading-scale/grade-steps/{gradeStepId}"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "gradeStepId" + "\\}", apiClient.escapeString(gradeStepId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{gradeStepId}", apiClient.escapeString(gradeStepId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<GradeStep> localVarReturnType = new GenericType<GradeStep>() {};
-
-    return apiClient.invokeAPI("GradeStepResourceApi.getGradeStepsByIdForCourse", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("GradeStepResourceApi.getGradeStepsByIdForCourse", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -472,55 +356,28 @@ public class GradeStepResourceApi {
      </table>
    */
   public ApiResponse<GradeStep> getGradeStepsByIdForExamWithHttpInfo(Long courseId, Long examId, Long gradeStepId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getGradeStepsByIdForExam");
     }
-    
-    // verify the required parameter 'examId' is set
     if (examId == null) {
       throw new ApiException(400, "Missing the required parameter 'examId' when calling getGradeStepsByIdForExam");
     }
-    
-    // verify the required parameter 'gradeStepId' is set
     if (gradeStepId == null) {
       throw new ApiException(400, "Missing the required parameter 'gradeStepId' when calling getGradeStepsByIdForExam");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/exams/{examId}/grading-scale/grade-steps/{gradeStepId}"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "examId" + "\\}", apiClient.escapeString(examId.toString()))
-      .replaceAll("\\{" + "gradeStepId" + "\\}", apiClient.escapeString(gradeStepId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{examId}", apiClient.escapeString(examId.toString()))
+            .replaceAll("\\{gradeStepId}", apiClient.escapeString(gradeStepId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<GradeStep> localVarReturnType = new GenericType<GradeStep>() {};
-
-    return apiClient.invokeAPI("GradeStepResourceApi.getGradeStepsByIdForExam", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("GradeStepResourceApi.getGradeStepsByIdForExam", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

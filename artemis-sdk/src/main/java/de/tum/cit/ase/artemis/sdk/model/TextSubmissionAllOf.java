@@ -45,7 +45,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   TextSubmissionAllOf.JSON_PROPERTY_RESULTS
 })
 @JsonTypeName("TextSubmission_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class TextSubmissionAllOf {
   public static final String JSON_PROPERTY_PARTICIPATION = "participation";
   private Participation participation;
@@ -92,10 +92,10 @@ public class TextSubmissionAllOf {
   private LanguageEnum language;
 
   public static final String JSON_PROPERTY_BLOCKS = "blocks";
-  private Set<TextBlock> blocks = new LinkedHashSet<>();
+  private Set<TextBlock> blocks;
 
   public static final String JSON_PROPERTY_RESULTS = "results";
-  private List<Result> results = new ArrayList<>();
+  private List<Result> results;
 
   public TextSubmissionAllOf() { 
   }

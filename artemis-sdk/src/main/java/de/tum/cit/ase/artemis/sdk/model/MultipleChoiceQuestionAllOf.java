@@ -37,10 +37,10 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   MultipleChoiceQuestionAllOf.JSON_PROPERTY_SINGLE_CHOICE
 })
 @JsonTypeName("MultipleChoiceQuestion_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class MultipleChoiceQuestionAllOf {
   public static final String JSON_PROPERTY_ANSWER_OPTIONS = "answerOptions";
-  private List<AnswerOption> answerOptions = new ArrayList<>();
+  private List<AnswerOption> answerOptions;
 
   public static final String JSON_PROPERTY_SINGLE_CHOICE = "singleChoice";
   private Boolean singleChoice;

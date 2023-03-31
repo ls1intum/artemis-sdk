@@ -45,7 +45,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   QuizSubmissionAllOf.JSON_PROPERTY_RESULTS
 })
 @JsonTypeName("QuizSubmission_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class QuizSubmissionAllOf {
   public static final String JSON_PROPERTY_PARTICIPATION = "participation";
   private Participation participation;
@@ -57,10 +57,10 @@ public class QuizSubmissionAllOf {
   private Long quizBatch;
 
   public static final String JSON_PROPERTY_SUBMITTED_ANSWERS = "submittedAnswers";
-  private Set<SubmittedAnswer> submittedAnswers = new LinkedHashSet<>();
+  private Set<SubmittedAnswer> submittedAnswers;
 
   public static final String JSON_PROPERTY_RESULTS = "results";
-  private List<Result> results = new ArrayList<>();
+  private List<Result> results;
 
   public QuizSubmissionAllOf() { 
   }

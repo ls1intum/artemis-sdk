@@ -16,10 +16,11 @@ import de.tum.cit.ase.artemis.sdk.model.SubmissionExportOptionsDTO;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class FileUploadExerciseResourceApi {
   private ApiClient apiClient;
 
@@ -80,43 +81,17 @@ public class FileUploadExerciseResourceApi {
      </table>
    */
   public ApiResponse<FileUploadExercise> createFileUploadExerciseWithHttpInfo(FileUploadExercise fileUploadExercise) throws ApiException {
-    Object localVarPostBody = fileUploadExercise;
-    
-    // verify the required parameter 'fileUploadExercise' is set
+    // Check required parameters
     if (fileUploadExercise == null) {
       throw new ApiException(400, "Missing the required parameter 'fileUploadExercise' when calling createFileUploadExercise");
     }
-    
-    // create path and map variables
-    String localVarPath = "/api/file-upload-exercises";
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<FileUploadExercise> localVarReturnType = new GenericType<FileUploadExercise>() {};
-
-    return apiClient.invokeAPI("FileUploadExerciseResourceApi.createFileUploadExercise", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("FileUploadExerciseResourceApi.createFileUploadExercise", "/api/file-upload-exercises", "POST", new ArrayList<>(), fileUploadExercise,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -148,42 +123,20 @@ public class FileUploadExerciseResourceApi {
      </table>
    */
   public ApiResponse<Void> deleteFileUploadExerciseWithHttpInfo(Long exerciseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling deleteFileUploadExercise");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/file-upload-exercises/{exerciseId}"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("FileUploadExerciseResourceApi.deleteFileUploadExercise", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("FileUploadExerciseResourceApi.deleteFileUploadExercise", localVarPath, "DELETE", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -218,49 +171,24 @@ public class FileUploadExerciseResourceApi {
      </table>
    */
   public ApiResponse<File> exportSubmissions2WithHttpInfo(Long exerciseId, SubmissionExportOptionsDTO submissionExportOptionsDTO) throws ApiException {
-    Object localVarPostBody = submissionExportOptionsDTO;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling exportSubmissions2");
     }
-    
-    // verify the required parameter 'submissionExportOptionsDTO' is set
     if (submissionExportOptionsDTO == null) {
       throw new ApiException(400, "Missing the required parameter 'submissionExportOptionsDTO' when calling exportSubmissions2");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/file-upload-exercises/{exerciseId}/export-submissions"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<File> localVarReturnType = new GenericType<File>() {};
-
-    return apiClient.invokeAPI("FileUploadExerciseResourceApi.exportSubmissions2", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("FileUploadExerciseResourceApi.exportSubmissions2", localVarPath, "POST", new ArrayList<>(), submissionExportOptionsDTO,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -297,46 +225,24 @@ public class FileUploadExerciseResourceApi {
      </table>
    */
   public ApiResponse<SearchResultPageDTOFileUploadExercise> getAllExercisesOnPage4WithHttpInfo(PageableSearchDTOString search, Boolean isCourseFilter, Boolean isExamFilter) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'search' is set
+    // Check required parameters
     if (search == null) {
       throw new ApiException(400, "Missing the required parameter 'search' when calling getAllExercisesOnPage4");
     }
-    
-    // create path and map variables
-    String localVarPath = "/api/file-upload-exercises";
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "search", search));
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "search", search)
+    );
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "isCourseFilter", isCourseFilter));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "isExamFilter", isExamFilter));
 
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<SearchResultPageDTOFileUploadExercise> localVarReturnType = new GenericType<SearchResultPageDTOFileUploadExercise>() {};
-
-    return apiClient.invokeAPI("FileUploadExerciseResourceApi.getAllExercisesOnPage4", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("FileUploadExerciseResourceApi.getAllExercisesOnPage4", "/api/file-upload-exercises", "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -369,44 +275,21 @@ public class FileUploadExerciseResourceApi {
      </table>
    */
   public ApiResponse<FileUploadExercise> getFileUploadExerciseWithHttpInfo(Long exerciseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling getFileUploadExercise");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/file-upload-exercises/{exerciseId}"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<FileUploadExercise> localVarReturnType = new GenericType<FileUploadExercise>() {};
-
-    return apiClient.invokeAPI("FileUploadExerciseResourceApi.getFileUploadExercise", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("FileUploadExerciseResourceApi.getFileUploadExercise", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -439,44 +322,21 @@ public class FileUploadExerciseResourceApi {
      </table>
    */
   public ApiResponse<List<FileUploadExercise>> getFileUploadExercisesForCourseWithHttpInfo(Long courseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getFileUploadExercisesForCourse");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/file-upload-exercises"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<FileUploadExercise>> localVarReturnType = new GenericType<List<FileUploadExercise>>() {};
-
-    return apiClient.invokeAPI("FileUploadExerciseResourceApi.getFileUploadExercisesForCourse", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("FileUploadExerciseResourceApi.getFileUploadExercisesForCourse", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -511,49 +371,24 @@ public class FileUploadExerciseResourceApi {
      </table>
    */
   public ApiResponse<FileUploadExercise> importFileUploadExerciseWithHttpInfo(Long sourceId, FileUploadExercise fileUploadExercise) throws ApiException {
-    Object localVarPostBody = fileUploadExercise;
-    
-    // verify the required parameter 'sourceId' is set
+    // Check required parameters
     if (sourceId == null) {
       throw new ApiException(400, "Missing the required parameter 'sourceId' when calling importFileUploadExercise");
     }
-    
-    // verify the required parameter 'fileUploadExercise' is set
     if (fileUploadExercise == null) {
       throw new ApiException(400, "Missing the required parameter 'fileUploadExercise' when calling importFileUploadExercise");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/file-upload-exercises/import/{sourceId}"
-      .replaceAll("\\{" + "sourceId" + "\\}", apiClient.escapeString(sourceId.toString()));
+            .replaceAll("\\{sourceId}", apiClient.escapeString(sourceId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<FileUploadExercise> localVarReturnType = new GenericType<FileUploadExercise>() {};
-
-    return apiClient.invokeAPI("FileUploadExerciseResourceApi.importFileUploadExercise", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("FileUploadExerciseResourceApi.importFileUploadExercise", localVarPath, "POST", new ArrayList<>(), fileUploadExercise,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -590,50 +425,29 @@ public class FileUploadExerciseResourceApi {
      </table>
    */
   public ApiResponse<FileUploadExercise> reEvaluateAndUpdateFileUploadExerciseWithHttpInfo(Long exerciseId, FileUploadExercise fileUploadExercise, Boolean deleteFeedback) throws ApiException {
-    Object localVarPostBody = fileUploadExercise;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling reEvaluateAndUpdateFileUploadExercise");
     }
-    
-    // verify the required parameter 'fileUploadExercise' is set
     if (fileUploadExercise == null) {
       throw new ApiException(400, "Missing the required parameter 'fileUploadExercise' when calling reEvaluateAndUpdateFileUploadExercise");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/file-upload-exercises/{exerciseId}/re-evaluate"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "deleteFeedback", deleteFeedback)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "deleteFeedback", deleteFeedback));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<FileUploadExercise> localVarReturnType = new GenericType<FileUploadExercise>() {};
-
-    return apiClient.invokeAPI("FileUploadExerciseResourceApi.reEvaluateAndUpdateFileUploadExercise", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("FileUploadExerciseResourceApi.reEvaluateAndUpdateFileUploadExercise", localVarPath, "PUT", localVarQueryParams, fileUploadExercise,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -670,49 +484,28 @@ public class FileUploadExerciseResourceApi {
      </table>
    */
   public ApiResponse<FileUploadExercise> updateFileUploadExerciseWithHttpInfo(Long exerciseId, FileUploadExercise fileUploadExercise, String notificationText) throws ApiException {
-    Object localVarPostBody = fileUploadExercise;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling updateFileUploadExercise");
     }
-    
-    // verify the required parameter 'fileUploadExercise' is set
     if (fileUploadExercise == null) {
       throw new ApiException(400, "Missing the required parameter 'fileUploadExercise' when calling updateFileUploadExercise");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/file-upload-exercises/{exerciseId}"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "notificationText", notificationText)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "notificationText", notificationText));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<FileUploadExercise> localVarReturnType = new GenericType<FileUploadExercise>() {};
-
-    return apiClient.invokeAPI("FileUploadExerciseResourceApi.updateFileUploadExercise", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("FileUploadExerciseResourceApi.updateFileUploadExercise", localVarPath, "PUT", localVarQueryParams, fileUploadExercise,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

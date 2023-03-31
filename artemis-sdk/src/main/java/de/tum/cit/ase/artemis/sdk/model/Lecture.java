@@ -50,7 +50,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   Lecture.JSON_PROPERTY_POSTS,
   Lecture.JSON_PROPERTY_COURSE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class Lecture {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -68,13 +68,13 @@ public class Lecture {
   private OffsetDateTime endDate;
 
   public static final String JSON_PROPERTY_ATTACHMENTS = "attachments";
-  private Set<Attachment> attachments = new LinkedHashSet<>();
+  private Set<Attachment> attachments;
 
   public static final String JSON_PROPERTY_LECTURE_UNITS = "lectureUnits";
-  private List<LectureUnit> lectureUnits = new ArrayList<>();
+  private List<LectureUnit> lectureUnits;
 
   public static final String JSON_PROPERTY_POSTS = "posts";
-  private Set<Post> posts = new LinkedHashSet<>();
+  private Set<Post> posts;
 
   public static final String JSON_PROPERTY_COURSE = "course";
   private Course course;

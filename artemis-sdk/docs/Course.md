@@ -46,13 +46,13 @@
 |**exams** | [**Set&lt;Exam&gt;**](Exam.md) |  |  [optional] |
 |**organizations** | [**Set&lt;Organization&gt;**](Organization.md) |  |  [optional] |
 |**tutorialGroupsConfiguration** | [**TutorialGroupsConfiguration**](TutorialGroupsConfiguration.md) |  |  [optional] |
-|**numberOfInstructors** | **Long** |  |  [optional] |
-|**numberOfEditors** | **Long** |  |  [optional] |
-|**numberOfTeachingAssistants** | **Long** |  |  [optional] |
-|**numberOfStudents** | **Long** |  |  [optional] |
 |**requestMoreFeedbackEnabled** | **Boolean** |  |  [optional] |
 |**complaintsEnabled** | **Boolean** |  |  [optional] |
 |**validStartAndEndDate** | **Boolean** |  |  [optional] |
+|**numberOfInstructors** | **Long** |  |  [optional] |
+|**numberOfTeachingAssistants** | **Long** |  |  [optional] |
+|**numberOfEditors** | **Long** |  |  [optional] |
+|**numberOfStudents** | **Long** |  |  [optional] |
 
 
 

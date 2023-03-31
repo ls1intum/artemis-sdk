@@ -13,10 +13,11 @@ import de.tum.cit.ase.artemis.sdk.model.ExerciseManagementStatisticsDTO;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class StatisticsResourceApi {
   private ApiClient apiClient;
 
@@ -85,68 +86,38 @@ public class StatisticsResourceApi {
      </table>
    */
   public ApiResponse<List<Integer>> getChartDataWithHttpInfo(String span, Integer periodIndex, String graphType, String view, Long entityId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'span' is set
+    // Check required parameters
     if (span == null) {
       throw new ApiException(400, "Missing the required parameter 'span' when calling getChartData");
     }
-    
-    // verify the required parameter 'periodIndex' is set
     if (periodIndex == null) {
       throw new ApiException(400, "Missing the required parameter 'periodIndex' when calling getChartData");
     }
-    
-    // verify the required parameter 'graphType' is set
     if (graphType == null) {
       throw new ApiException(400, "Missing the required parameter 'graphType' when calling getChartData");
     }
-    
-    // verify the required parameter 'view' is set
     if (view == null) {
       throw new ApiException(400, "Missing the required parameter 'view' when calling getChartData");
     }
-    
-    // verify the required parameter 'entityId' is set
     if (entityId == null) {
       throw new ApiException(400, "Missing the required parameter 'entityId' when calling getChartData");
     }
-    
-    // create path and map variables
-    String localVarPath = "/api/management/statistics/data-for-content";
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "span", span));
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "span", span)
+    );
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "periodIndex", periodIndex));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "graphType", graphType));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "view", view));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "entityId", entityId));
 
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<Integer>> localVarReturnType = new GenericType<List<Integer>>() {};
-
-    return apiClient.invokeAPI("StatisticsResourceApi.getChartData", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("StatisticsResourceApi.getChartData", "/api/management/statistics/data-for-content", "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -179,44 +150,22 @@ public class StatisticsResourceApi {
      </table>
    */
   public ApiResponse<CourseManagementStatisticsDTO> getCourseStatisticsWithHttpInfo(Long courseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getCourseStatistics");
     }
-    
-    // create path and map variables
-    String localVarPath = "/api/management/statistics/course-statistics";
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "courseId", courseId)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "courseId", courseId));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<CourseManagementStatisticsDTO> localVarReturnType = new GenericType<CourseManagementStatisticsDTO>() {};
-
-    return apiClient.invokeAPI("StatisticsResourceApi.getCourseStatistics", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("StatisticsResourceApi.getCourseStatistics", "/api/management/statistics/course-statistics", "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -249,43 +198,21 @@ public class StatisticsResourceApi {
      </table>
    */
   public ApiResponse<ExerciseManagementStatisticsDTO> getExerciseStatisticsWithHttpInfo(Long exerciseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling getExerciseStatistics");
     }
-    
-    // create path and map variables
-    String localVarPath = "/api/management/statistics/exercise-statistics";
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "exerciseId", exerciseId)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "exerciseId", exerciseId));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<ExerciseManagementStatisticsDTO> localVarReturnType = new GenericType<ExerciseManagementStatisticsDTO>() {};
-
-    return apiClient.invokeAPI("StatisticsResourceApi.getExerciseStatistics", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("StatisticsResourceApi.getExerciseStatistics", "/api/management/statistics/exercise-statistics", "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

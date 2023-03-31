@@ -12,10 +12,11 @@ import de.tum.cit.ase.artemis.sdk.model.TextAssessmentEvent;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class TextAssessmentEventResourceApi {
   private ApiClient apiClient;
 
@@ -75,41 +76,16 @@ public class TextAssessmentEventResourceApi {
      </table>
    */
   public ApiResponse<Void> addAssessmentEventWithHttpInfo(TextAssessmentEvent textAssessmentEvent) throws ApiException {
-    Object localVarPostBody = textAssessmentEvent;
-    
-    // verify the required parameter 'textAssessmentEvent' is set
+    // Check required parameters
     if (textAssessmentEvent == null) {
       throw new ApiException(400, "Missing the required parameter 'textAssessmentEvent' when calling addAssessmentEvent");
     }
-    
-    // create path and map variables
-    String localVarPath = "/api/event-insights/text-assessment/events";
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("TextAssessmentEventResourceApi.addAssessmentEvent", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
+    return apiClient.invokeAPI("TextAssessmentEventResourceApi.addAssessmentEvent", "/api/event-insights/text-assessment/events", "POST", new ArrayList<>(), textAssessmentEvent,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -144,49 +120,24 @@ public class TextAssessmentEventResourceApi {
      </table>
    */
   public ApiResponse<Integer> getNumberOfTutorsInvolvedWithHttpInfo(Long courseId, Long exerciseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getNumberOfTutorsInvolved");
     }
-    
-    // verify the required parameter 'exerciseId' is set
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling getNumberOfTutorsInvolved");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/event-insights/text-assessment/courses/{courseId}/text-exercises/{exerciseId}/tutors-involved"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<Integer> localVarReturnType = new GenericType<Integer>() {};
-
-    return apiClient.invokeAPI("TextAssessmentEventResourceApi.getNumberOfTutorsInvolved", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("TextAssessmentEventResourceApi.getNumberOfTutorsInvolved", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

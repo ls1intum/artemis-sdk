@@ -62,7 +62,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   Post.JSON_PROPERTY_VOTE_COUNT,
   Post.JSON_PROPERTY_AUTHOR_ROLE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class Post {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -83,13 +83,13 @@ public class Post {
   private Boolean visibleForStudents;
 
   public static final String JSON_PROPERTY_REACTIONS = "reactions";
-  private Set<Reaction> reactions = new LinkedHashSet<>();
+  private Set<Reaction> reactions;
 
   public static final String JSON_PROPERTY_ANSWERS = "answers";
-  private Set<AnswerPost> answers = new LinkedHashSet<>();
+  private Set<AnswerPost> answers;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
-  private Set<String> tags = new LinkedHashSet<>();
+  private Set<String> tags;
 
   public static final String JSON_PROPERTY_EXERCISE = "exercise";
   private Exercise exercise;

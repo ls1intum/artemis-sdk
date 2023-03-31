@@ -43,7 +43,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ProgrammingSubmissionAllOf.JSON_PROPERTY_RESULTS
 })
 @JsonTypeName("ProgrammingSubmission_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class ProgrammingSubmissionAllOf {
   public static final String JSON_PROPERTY_PARTICIPATION = "participation";
   private Participation participation;
@@ -58,10 +58,10 @@ public class ProgrammingSubmissionAllOf {
   private Boolean buildArtifact;
 
   public static final String JSON_PROPERTY_BUILD_LOG_ENTRIES = "buildLogEntries";
-  private List<BuildLogEntry> buildLogEntries = new ArrayList<>();
+  private List<BuildLogEntry> buildLogEntries;
 
   public static final String JSON_PROPERTY_RESULTS = "results";
-  private List<Result> results = new ArrayList<>();
+  private List<Result> results;
 
   public ProgrammingSubmissionAllOf() { 
   }

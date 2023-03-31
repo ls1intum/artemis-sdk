@@ -15,10 +15,11 @@ import de.tum.cit.ase.artemis.sdk.model.UserPageableSearchDTO;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class AdminUserResourceApi {
   private ApiClient apiClient;
 
@@ -79,43 +80,17 @@ public class AdminUserResourceApi {
      </table>
    */
   public ApiResponse<User> createUserWithHttpInfo(ManagedUserVM managedUserVM) throws ApiException {
-    Object localVarPostBody = managedUserVM;
-    
-    // verify the required parameter 'managedUserVM' is set
+    // Check required parameters
     if (managedUserVM == null) {
       throw new ApiException(400, "Missing the required parameter 'managedUserVM' when calling createUser");
     }
-    
-    // create path and map variables
-    String localVarPath = "/api/admin/users";
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<User> localVarReturnType = new GenericType<User>() {};
-
-    return apiClient.invokeAPI("AdminUserResourceApi.createUser", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AdminUserResourceApi.createUser", "/api/admin/users", "POST", new ArrayList<>(), managedUserVM,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -147,42 +122,20 @@ public class AdminUserResourceApi {
      </table>
    */
   public ApiResponse<Void> deleteUserWithHttpInfo(String login) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'login' is set
+    // Check required parameters
     if (login == null) {
       throw new ApiException(400, "Missing the required parameter 'login' when calling deleteUser");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/admin/users/{login}"
-      .replaceAll("\\{" + "login" + "\\}", apiClient.escapeString(login.toString()));
+            .replaceAll("\\{login}", apiClient.escapeString(login));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("AdminUserResourceApi.deleteUser", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("AdminUserResourceApi.deleteUser", localVarPath, "DELETE", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -215,44 +168,22 @@ public class AdminUserResourceApi {
      </table>
    */
   public ApiResponse<List<String>> deleteUsersWithHttpInfo(List<String> login) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'login' is set
+    // Check required parameters
     if (login == null) {
       throw new ApiException(400, "Missing the required parameter 'login' when calling deleteUsers");
     }
-    
-    // create path and map variables
-    String localVarPath = "/api/admin/users";
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("multi", "login", login)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "login", login));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<String>> localVarReturnType = new GenericType<List<String>>() {};
-
-    return apiClient.invokeAPI("AdminUserResourceApi.deleteUsers", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AdminUserResourceApi.deleteUsers", "/api/admin/users", "DELETE", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -285,44 +216,22 @@ public class AdminUserResourceApi {
      </table>
    */
   public ApiResponse<List<UserDTO>> getAllUsersWithHttpInfo(UserPageableSearchDTO userSearch) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'userSearch' is set
+    // Check required parameters
     if (userSearch == null) {
       throw new ApiException(400, "Missing the required parameter 'userSearch' when calling getAllUsers");
     }
-    
-    // create path and map variables
-    String localVarPath = "/api/admin/users";
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "userSearch", userSearch)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "userSearch", userSearch));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<UserDTO>> localVarReturnType = new GenericType<List<UserDTO>>() {};
-
-    return apiClient.invokeAPI("AdminUserResourceApi.getAllUsers", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AdminUserResourceApi.getAllUsers", "/api/admin/users", "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -353,38 +262,12 @@ public class AdminUserResourceApi {
      </table>
    */
   public ApiResponse<List<String>> getAuthoritiesWithHttpInfo() throws ApiException {
-    Object localVarPostBody = null;
-    
-    // create path and map variables
-    String localVarPath = "/api/admin/users/authorities";
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<String>> localVarReturnType = new GenericType<List<String>>() {};
-
-    return apiClient.invokeAPI("AdminUserResourceApi.getAuthorities", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AdminUserResourceApi.getAuthorities", "/api/admin/users/authorities", "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -417,44 +300,21 @@ public class AdminUserResourceApi {
      </table>
    */
   public ApiResponse<UserDTO> syncUserViaLdapWithHttpInfo(Long userId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
+    // Check required parameters
     if (userId == null) {
       throw new ApiException(400, "Missing the required parameter 'userId' when calling syncUserViaLdap");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/admin/users/{userId}/sync-ldap"
-      .replaceAll("\\{" + "userId" + "\\}", apiClient.escapeString(userId.toString()));
+            .replaceAll("\\{userId}", apiClient.escapeString(userId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<UserDTO> localVarReturnType = new GenericType<UserDTO>() {};
-
-    return apiClient.invokeAPI("AdminUserResourceApi.syncUserViaLdap", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AdminUserResourceApi.syncUserViaLdap", localVarPath, "PUT", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -487,42 +347,16 @@ public class AdminUserResourceApi {
      </table>
    */
   public ApiResponse<UserDTO> updateUserWithHttpInfo(ManagedUserVM managedUserVM) throws ApiException {
-    Object localVarPostBody = managedUserVM;
-    
-    // verify the required parameter 'managedUserVM' is set
+    // Check required parameters
     if (managedUserVM == null) {
       throw new ApiException(400, "Missing the required parameter 'managedUserVM' when calling updateUser");
     }
-    
-    // create path and map variables
-    String localVarPath = "/api/admin/users";
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<UserDTO> localVarReturnType = new GenericType<UserDTO>() {};
-
-    return apiClient.invokeAPI("AdminUserResourceApi.updateUser", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AdminUserResourceApi.updateUser", "/api/admin/users", "PUT", new ArrayList<>(), managedUserVM,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

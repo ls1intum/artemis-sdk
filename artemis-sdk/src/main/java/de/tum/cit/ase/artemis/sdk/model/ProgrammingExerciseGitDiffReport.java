@@ -41,7 +41,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ProgrammingExerciseGitDiffReport.JSON_PROPERTY_SOLUTION_REPOSITORY_COMMIT_HASH,
   ProgrammingExerciseGitDiffReport.JSON_PROPERTY_ENTRIES
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class ProgrammingExerciseGitDiffReport {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -56,7 +56,7 @@ public class ProgrammingExerciseGitDiffReport {
   private String solutionRepositoryCommitHash;
 
   public static final String JSON_PROPERTY_ENTRIES = "entries";
-  private Set<ProgrammingExerciseGitDiffEntry> entries = new LinkedHashSet<>();
+  private Set<ProgrammingExerciseGitDiffEntry> entries;
 
   public ProgrammingExerciseGitDiffReport() { 
   }

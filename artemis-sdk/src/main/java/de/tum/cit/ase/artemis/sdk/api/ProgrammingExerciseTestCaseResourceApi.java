@@ -14,10 +14,11 @@ import java.util.Set;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class ProgrammingExerciseTestCaseResourceApi {
   private ApiClient apiClient;
 
@@ -78,44 +79,21 @@ public class ProgrammingExerciseTestCaseResourceApi {
      </table>
    */
   public ApiResponse<Set<ProgrammingExerciseTestCase>> getTestCasesWithHttpInfo(Long exerciseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling getTestCases");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/programming-exercises/{exerciseId}/test-cases"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<Set<ProgrammingExerciseTestCase>> localVarReturnType = new GenericType<Set<ProgrammingExerciseTestCase>>() {};
-
-    return apiClient.invokeAPI("ProgrammingExerciseTestCaseResourceApi.getTestCases", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ProgrammingExerciseTestCaseResourceApi.getTestCases", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -148,44 +126,21 @@ public class ProgrammingExerciseTestCaseResourceApi {
      </table>
    */
   public ApiResponse<List<ProgrammingExerciseTestCase>> resetTestCasesWithHttpInfo(Long exerciseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling resetTestCases");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/programming-exercises/{exerciseId}/test-cases/reset"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<ProgrammingExerciseTestCase>> localVarReturnType = new GenericType<List<ProgrammingExerciseTestCase>>() {};
-
-    return apiClient.invokeAPI("ProgrammingExerciseTestCaseResourceApi.resetTestCases", localVarPath, "PATCH", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ProgrammingExerciseTestCaseResourceApi.resetTestCases", localVarPath, "PATCH", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -220,48 +175,23 @@ public class ProgrammingExerciseTestCaseResourceApi {
      </table>
    */
   public ApiResponse<Set<ProgrammingExerciseTestCase>> updateTestCasesWithHttpInfo(Long exerciseId, Set<ProgrammingExerciseTestCaseDTO> programmingExerciseTestCaseDTO) throws ApiException {
-    Object localVarPostBody = programmingExerciseTestCaseDTO;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling updateTestCases");
     }
-    
-    // verify the required parameter 'programmingExerciseTestCaseDTO' is set
     if (programmingExerciseTestCaseDTO == null) {
       throw new ApiException(400, "Missing the required parameter 'programmingExerciseTestCaseDTO' when calling updateTestCases");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/programming-exercises/{exerciseId}/update-test-cases"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<Set<ProgrammingExerciseTestCase>> localVarReturnType = new GenericType<Set<ProgrammingExerciseTestCase>>() {};
-
-    return apiClient.invokeAPI("ProgrammingExerciseTestCaseResourceApi.updateTestCases", localVarPath, "PATCH", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ProgrammingExerciseTestCaseResourceApi.updateTestCases", localVarPath, "PATCH", new ArrayList<>(), programmingExerciseTestCaseDTO,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

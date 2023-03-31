@@ -52,7 +52,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   Feedback.JSON_PROPERTY_FIRST_CONFLICTS,
   Feedback.JSON_PROPERTY_SECOND_CONFLICTS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class Feedback {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -173,10 +173,10 @@ public class Feedback {
   private Long suggestedFeedbackParticipationReference;
 
   public static final String JSON_PROPERTY_FIRST_CONFLICTS = "firstConflicts";
-  private List<FeedbackConflict> firstConflicts = new ArrayList<>();
+  private List<FeedbackConflict> firstConflicts;
 
   public static final String JSON_PROPERTY_SECOND_CONFLICTS = "secondConflicts";
-  private List<FeedbackConflict> secondConflicts = new ArrayList<>();
+  private List<FeedbackConflict> secondConflicts;
 
   public Feedback() { 
   }

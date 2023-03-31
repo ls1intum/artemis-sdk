@@ -71,7 +71,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   Exam.JSON_PROPERTY_EXAM_USERS,
   Exam.JSON_PROPERTY_NUMBER_OF_EXAM_USERS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class Exam {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -149,16 +149,16 @@ public class Exam {
   private Course course;
 
   public static final String JSON_PROPERTY_EXERCISE_GROUPS = "exerciseGroups";
-  private List<ExerciseGroup> exerciseGroups = new ArrayList<>();
+  private List<ExerciseGroup> exerciseGroups;
 
   public static final String JSON_PROPERTY_STUDENT_EXAMS = "studentExams";
-  private Set<StudentExam> studentExams = new LinkedHashSet<>();
+  private Set<StudentExam> studentExams;
 
   public static final String JSON_PROPERTY_EXAM_ARCHIVE_PATH = "examArchivePath";
   private String examArchivePath;
 
   public static final String JSON_PROPERTY_EXAM_USERS = "examUsers";
-  private Set<ExamUser> examUsers = new LinkedHashSet<>();
+  private Set<ExamUser> examUsers;
 
   public static final String JSON_PROPERTY_NUMBER_OF_EXAM_USERS = "numberOfExamUsers";
   private Long numberOfExamUsers;

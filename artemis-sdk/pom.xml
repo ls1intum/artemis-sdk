@@ -311,6 +311,7 @@
             <groupId>jakarta.annotation</groupId>
             <artifactId>jakarta.annotation-api</artifactId>
             <version>${jakarta-annotation-version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.glassfish.jersey.connectors</groupId>
@@ -331,7 +332,7 @@
         <jersey-version>3.0.4</jersey-version>
         <jackson-version>2.13.4</jackson-version>
         <jackson-databind-version>2.13.4.2</jackson-databind-version>
-        <jackson-databind-nullable-version>0.2.4</jackson-databind-nullable-version>
+        <jackson-databind-nullable-version>0.2.6</jackson-databind-nullable-version>
         <jakarta-annotation-version>2.1.0</jakarta-annotation-version>
         <junit-version>5.8.2</junit-version>
         <spotless.version>2.21.0</spotless.version>

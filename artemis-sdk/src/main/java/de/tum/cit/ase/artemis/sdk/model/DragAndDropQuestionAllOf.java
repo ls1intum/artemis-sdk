@@ -41,19 +41,19 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   DragAndDropQuestionAllOf.JSON_PROPERTY_CORRECT_MAPPINGS
 })
 @JsonTypeName("DragAndDropQuestion_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class DragAndDropQuestionAllOf {
   public static final String JSON_PROPERTY_BACKGROUND_FILE_PATH = "backgroundFilePath";
   private String backgroundFilePath;
 
   public static final String JSON_PROPERTY_DROP_LOCATIONS = "dropLocations";
-  private List<DropLocation> dropLocations = new ArrayList<>();
+  private List<DropLocation> dropLocations;
 
   public static final String JSON_PROPERTY_DRAG_ITEMS = "dragItems";
-  private List<DragItem> dragItems = new ArrayList<>();
+  private List<DragItem> dragItems;
 
   public static final String JSON_PROPERTY_CORRECT_MAPPINGS = "correctMappings";
-  private List<DragAndDropMapping> correctMappings = new ArrayList<>();
+  private List<DragAndDropMapping> correctMappings;
 
   public DragAndDropQuestionAllOf() { 
   }

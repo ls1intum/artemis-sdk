@@ -945,13 +945,14 @@ No authorization required
 
 ## saveFile
 
-> String saveFile(keepFileName, saveMarkdownFileRequest)
+> String saveFile(_file, keepFileName)
 
 
 
 ### Example
 
 ```java
+import java.io.File;
 // Import classes:
 import de.tum.cit.ase.artemis.sdk.ApiClient;
 import de.tum.cit.ase.artemis.sdk.ApiException;
@@ -965,10 +966,10 @@ public class Example {
         defaultClient.setBasePath("http://localhost:8080");
 
         FileResourceApi apiInstance = new FileResourceApi(defaultClient);
+        File _file = new File("/path/to/file"); // File | 
         Boolean keepFileName = false; // Boolean | 
-        SaveMarkdownFileRequest saveMarkdownFileRequest = new SaveMarkdownFileRequest(); // SaveMarkdownFileRequest | 
         try {
-            String result = apiInstance.saveFile(keepFileName, saveMarkdownFileRequest);
+            String result = apiInstance.saveFile(_file, keepFileName);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling FileResourceApi#saveFile");
@@ -986,8 +987,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
+| **_file** | **File**|  | |
 | **keepFileName** | **Boolean**|  | [optional] [default to false] |
-| **saveMarkdownFileRequest** | [**SaveMarkdownFileRequest**](SaveMarkdownFileRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -999,7 +1000,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: multipart/form-data
 - **Accept**: */*
 
 ### HTTP response details

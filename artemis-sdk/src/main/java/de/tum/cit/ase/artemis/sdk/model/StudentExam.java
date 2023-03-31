@@ -54,7 +54,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   StudentExam.JSON_PROPERTY_EXAM_SESSIONS,
   StudentExam.JSON_PROPERTY_ENDED
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class StudentExam {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -87,10 +87,10 @@ public class StudentExam {
   private User user;
 
   public static final String JSON_PROPERTY_EXERCISES = "exercises";
-  private List<Exercise> exercises = new ArrayList<>();
+  private List<Exercise> exercises;
 
   public static final String JSON_PROPERTY_EXAM_SESSIONS = "examSessions";
-  private Set<ExamSession> examSessions = new LinkedHashSet<>();
+  private Set<ExamSession> examSessions;
 
   public static final String JSON_PROPERTY_ENDED = "ended";
   private Boolean ended;

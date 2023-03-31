@@ -41,7 +41,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   GradeStepsDTO.JSON_PROPERTY_PLAGIARISM_GRADE,
   GradeStepsDTO.JSON_PROPERTY_NO_PARTICIPATION_GRADE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class GradeStepsDTO {
   public static final String JSON_PROPERTY_TITLE = "title";
   private String title;
@@ -87,7 +87,7 @@ public class GradeStepsDTO {
   private GradeTypeEnum gradeType;
 
   public static final String JSON_PROPERTY_GRADE_STEPS = "gradeSteps";
-  private Set<GradeStep> gradeSteps = new LinkedHashSet<>();
+  private Set<GradeStep> gradeSteps;
 
   public static final String JSON_PROPERTY_MAX_POINTS = "maxPoints";
   private Integer maxPoints;

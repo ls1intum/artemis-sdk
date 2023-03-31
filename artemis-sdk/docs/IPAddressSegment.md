@@ -26,8 +26,8 @@
 |**segmentPrefixLength** | **Integer** |  |  [optional] |
 |**minPrefixLengthForBlock** | **Integer** |  |  [optional] |
 |**segmentValue** | **Integer** |  |  [optional] |
-|**ipv6** | **Boolean** |  |  [optional] |
 |**maxValue** | **Long** |  |  [optional] |
+|**ipv6** | **Boolean** |  |  [optional] |
 |**multiple** | **Boolean** |  |  [optional] |
 |**maxSegmentValue** | **Integer** |  |  [optional] |
 |**bytes** | **List&lt;byte[]&gt;** |  |  [optional] |

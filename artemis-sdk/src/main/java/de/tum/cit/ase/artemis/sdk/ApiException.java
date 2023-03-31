@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * API Exception
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class ApiException extends RuntimeException {
     private int code = 0;
     private Map<String, List<String>> responseHeaders = null;

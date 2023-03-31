@@ -56,11 +56,11 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   User.JSON_PROPERTY_ORGANIZATIONS,
   User.JSON_PROPERTY_TUTORIAL_GROUP_REGISTRATIONS,
   User.JSON_PROPERTY_NAME,
-  User.JSON_PROPERTY_INTERNAL,
   User.JSON_PROPERTY_PARTICIPANT_IDENTIFIER,
-  User.JSON_PROPERTY_VISIBLE_REGISTRATION_NUMBER
+  User.JSON_PROPERTY_VISIBLE_REGISTRATION_NUMBER,
+  User.JSON_PROPERTY_INTERNAL
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class User {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -99,31 +99,31 @@ public class User {
   private OffsetDateTime hideNotificationsUntil;
 
   public static final String JSON_PROPERTY_GROUPS = "groups";
-  private Set<String> groups = new LinkedHashSet<>();
+  private Set<String> groups;
 
   public static final String JSON_PROPERTY_GUIDED_TOUR_SETTINGS = "guidedTourSettings";
-  private Set<GuidedTourSetting> guidedTourSettings = new LinkedHashSet<>();
+  private Set<GuidedTourSetting> guidedTourSettings;
 
   public static final String JSON_PROPERTY_AUTHORITIES = "authorities";
-  private Set<Authority> authorities = new LinkedHashSet<>();
+  private Set<Authority> authorities;
 
   public static final String JSON_PROPERTY_ORGANIZATIONS = "organizations";
-  private Set<Organization> organizations = new LinkedHashSet<>();
+  private Set<Organization> organizations;
 
   public static final String JSON_PROPERTY_TUTORIAL_GROUP_REGISTRATIONS = "tutorialGroupRegistrations";
-  private Set<TutorialGroupRegistration> tutorialGroupRegistrations = new LinkedHashSet<>();
+  private Set<TutorialGroupRegistration> tutorialGroupRegistrations;
 
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
-
-  public static final String JSON_PROPERTY_INTERNAL = "internal";
-  private Boolean internal;
 
   public static final String JSON_PROPERTY_PARTICIPANT_IDENTIFIER = "participantIdentifier";
   private String participantIdentifier;
 
   public static final String JSON_PROPERTY_VISIBLE_REGISTRATION_NUMBER = "visibleRegistrationNumber";
   private String visibleRegistrationNumber;
+
+  public static final String JSON_PROPERTY_INTERNAL = "internal";
+  private Boolean internal;
 
   public User() { 
   }
@@ -623,31 +623,6 @@ public class User {
   }
 
 
-  public User internal(Boolean internal) {
-    this.internal = internal;
-    return this;
-  }
-
-   /**
-   * Get internal
-   * @return internal
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_INTERNAL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getInternal() {
-    return internal;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_INTERNAL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setInternal(Boolean internal) {
-    this.internal = internal;
-  }
-
-
   public User participantIdentifier(String participantIdentifier) {
     this.participantIdentifier = participantIdentifier;
     return this;
@@ -698,6 +673,31 @@ public class User {
   }
 
 
+  public User internal(Boolean internal) {
+    this.internal = internal;
+    return this;
+  }
+
+   /**
+   * Get internal
+   * @return internal
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_INTERNAL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getInternal() {
+    return internal;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_INTERNAL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setInternal(Boolean internal) {
+    this.internal = internal;
+  }
+
+
   /**
    * Return true if this User object is equal to o.
    */
@@ -728,14 +728,14 @@ public class User {
         Objects.equals(this.organizations, user.organizations) &&
         Objects.equals(this.tutorialGroupRegistrations, user.tutorialGroupRegistrations) &&
         Objects.equals(this.name, user.name) &&
-        Objects.equals(this.internal, user.internal) &&
         Objects.equals(this.participantIdentifier, user.participantIdentifier) &&
-        Objects.equals(this.visibleRegistrationNumber, user.visibleRegistrationNumber);
+        Objects.equals(this.visibleRegistrationNumber, user.visibleRegistrationNumber) &&
+        Objects.equals(this.internal, user.internal);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdDate, login, firstName, lastName, email, activated, langKey, imageUrl, resetDate, lastNotificationRead, hideNotificationsUntil, groups, guidedTourSettings, authorities, organizations, tutorialGroupRegistrations, name, internal, participantIdentifier, visibleRegistrationNumber);
+    return Objects.hash(id, createdDate, login, firstName, lastName, email, activated, langKey, imageUrl, resetDate, lastNotificationRead, hideNotificationsUntil, groups, guidedTourSettings, authorities, organizations, tutorialGroupRegistrations, name, participantIdentifier, visibleRegistrationNumber, internal);
   }
 
   @Override
@@ -760,9 +760,9 @@ public class User {
     sb.append("    organizations: ").append(toIndentedString(organizations)).append("\n");
     sb.append("    tutorialGroupRegistrations: ").append(toIndentedString(tutorialGroupRegistrations)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    internal: ").append(toIndentedString(internal)).append("\n");
     sb.append("    participantIdentifier: ").append(toIndentedString(participantIdentifier)).append("\n");
     sb.append("    visibleRegistrationNumber: ").append(toIndentedString(visibleRegistrationNumber)).append("\n");
+    sb.append("    internal: ").append(toIndentedString(internal)).append("\n");
     sb.append("}");
     return sb.toString();
   }

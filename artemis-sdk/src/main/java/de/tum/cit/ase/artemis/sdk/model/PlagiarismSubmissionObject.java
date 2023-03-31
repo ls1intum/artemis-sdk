@@ -43,7 +43,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   PlagiarismSubmissionObject.JSON_PROPERTY_SIZE,
   PlagiarismSubmissionObject.JSON_PROPERTY_SCORE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class PlagiarismSubmissionObject {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -55,7 +55,7 @@ public class PlagiarismSubmissionObject {
   private String studentLogin;
 
   public static final String JSON_PROPERTY_ELEMENTS = "elements";
-  private List<Object> elements = new ArrayList<>();
+  private List<Object> elements;
 
   public static final String JSON_PROPERTY_PLAGIARISM_CASE = "plagiarismCase";
   private PlagiarismCase plagiarismCase;

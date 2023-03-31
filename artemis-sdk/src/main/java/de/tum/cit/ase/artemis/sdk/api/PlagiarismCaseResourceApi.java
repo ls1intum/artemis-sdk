@@ -15,10 +15,11 @@ import java.util.Set;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class PlagiarismCaseResourceApi {
   private ApiClient apiClient;
 
@@ -81,50 +82,25 @@ public class PlagiarismCaseResourceApi {
      </table>
    */
   public ApiResponse<PlagiarismCaseInfoDTO> getPlagiarismCaseForExerciseForStudentWithHttpInfo(Long courseId, Long exerciseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getPlagiarismCaseForExerciseForStudent");
     }
-    
-    // verify the required parameter 'exerciseId' is set
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling getPlagiarismCaseForExerciseForStudent");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/exercises/{exerciseId}/plagiarism-case"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<PlagiarismCaseInfoDTO> localVarReturnType = new GenericType<PlagiarismCaseInfoDTO>() {};
-
-    return apiClient.invokeAPI("PlagiarismCaseResourceApi.getPlagiarismCaseForExerciseForStudent", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("PlagiarismCaseResourceApi.getPlagiarismCaseForExerciseForStudent", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -159,50 +135,25 @@ public class PlagiarismCaseResourceApi {
      </table>
    */
   public ApiResponse<PlagiarismCase> getPlagiarismCaseForInstructorWithHttpInfo(Long courseId, Long plagiarismCaseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getPlagiarismCaseForInstructor");
     }
-    
-    // verify the required parameter 'plagiarismCaseId' is set
     if (plagiarismCaseId == null) {
       throw new ApiException(400, "Missing the required parameter 'plagiarismCaseId' when calling getPlagiarismCaseForInstructor");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/plagiarism-cases/{plagiarismCaseId}/for-instructor"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "plagiarismCaseId" + "\\}", apiClient.escapeString(plagiarismCaseId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{plagiarismCaseId}", apiClient.escapeString(plagiarismCaseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<PlagiarismCase> localVarReturnType = new GenericType<PlagiarismCase>() {};
-
-    return apiClient.invokeAPI("PlagiarismCaseResourceApi.getPlagiarismCaseForInstructor", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("PlagiarismCaseResourceApi.getPlagiarismCaseForInstructor", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -237,50 +188,25 @@ public class PlagiarismCaseResourceApi {
      </table>
    */
   public ApiResponse<PlagiarismCase> getPlagiarismCaseForStudentWithHttpInfo(Long courseId, Long plagiarismCaseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getPlagiarismCaseForStudent");
     }
-    
-    // verify the required parameter 'plagiarismCaseId' is set
     if (plagiarismCaseId == null) {
       throw new ApiException(400, "Missing the required parameter 'plagiarismCaseId' when calling getPlagiarismCaseForStudent");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/plagiarism-cases/{plagiarismCaseId}/for-student"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "plagiarismCaseId" + "\\}", apiClient.escapeString(plagiarismCaseId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{plagiarismCaseId}", apiClient.escapeString(plagiarismCaseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<PlagiarismCase> localVarReturnType = new GenericType<PlagiarismCase>() {};
-
-    return apiClient.invokeAPI("PlagiarismCaseResourceApi.getPlagiarismCaseForStudent", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("PlagiarismCaseResourceApi.getPlagiarismCaseForStudent", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -313,44 +239,21 @@ public class PlagiarismCaseResourceApi {
      </table>
    */
   public ApiResponse<List<PlagiarismCase>> getPlagiarismCasesForCourseForInstructorWithHttpInfo(Long courseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getPlagiarismCasesForCourseForInstructor");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/plagiarism-cases/for-instructor"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<PlagiarismCase>> localVarReturnType = new GenericType<List<PlagiarismCase>>() {};
-
-    return apiClient.invokeAPI("PlagiarismCaseResourceApi.getPlagiarismCasesForCourseForInstructor", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("PlagiarismCaseResourceApi.getPlagiarismCasesForCourseForInstructor", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -385,50 +288,25 @@ public class PlagiarismCaseResourceApi {
      </table>
    */
   public ApiResponse<List<PlagiarismCase>> getPlagiarismCasesForExamForInstructorWithHttpInfo(Long courseId, Long examId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getPlagiarismCasesForExamForInstructor");
     }
-    
-    // verify the required parameter 'examId' is set
     if (examId == null) {
       throw new ApiException(400, "Missing the required parameter 'examId' when calling getPlagiarismCasesForExamForInstructor");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/exams/{examId}/plagiarism-cases/for-instructor"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "examId" + "\\}", apiClient.escapeString(examId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{examId}", apiClient.escapeString(examId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<PlagiarismCase>> localVarReturnType = new GenericType<List<PlagiarismCase>>() {};
-
-    return apiClient.invokeAPI("PlagiarismCaseResourceApi.getPlagiarismCasesForExamForInstructor", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("PlagiarismCaseResourceApi.getPlagiarismCasesForExamForInstructor", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -463,50 +341,29 @@ public class PlagiarismCaseResourceApi {
      </table>
    */
   public ApiResponse<Map<String, PlagiarismCaseInfoDTO>> getPlagiarismCasesForExercisesForStudentWithHttpInfo(Long courseId, Set<Long> exerciseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getPlagiarismCasesForExercisesForStudent");
     }
-    
-    // verify the required parameter 'exerciseId' is set
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling getPlagiarismCasesForExercisesForStudent");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/plagiarism-cases"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("multi", "exerciseId", exerciseId)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "exerciseId", exerciseId));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<Map<String, PlagiarismCaseInfoDTO>> localVarReturnType = new GenericType<Map<String, PlagiarismCaseInfoDTO>>() {};
-
-    return apiClient.invokeAPI("PlagiarismCaseResourceApi.getPlagiarismCasesForExercisesForStudent", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("PlagiarismCaseResourceApi.getPlagiarismCasesForExercisesForStudent", localVarPath, "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -543,54 +400,27 @@ public class PlagiarismCaseResourceApi {
      </table>
    */
   public ApiResponse<PlagiarismCase> savePlagiarismCaseVerdictWithHttpInfo(Long courseId, Long plagiarismCaseId, PlagiarismVerdictDTO plagiarismVerdictDTO) throws ApiException {
-    Object localVarPostBody = plagiarismVerdictDTO;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling savePlagiarismCaseVerdict");
     }
-    
-    // verify the required parameter 'plagiarismCaseId' is set
     if (plagiarismCaseId == null) {
       throw new ApiException(400, "Missing the required parameter 'plagiarismCaseId' when calling savePlagiarismCaseVerdict");
     }
-    
-    // verify the required parameter 'plagiarismVerdictDTO' is set
     if (plagiarismVerdictDTO == null) {
       throw new ApiException(400, "Missing the required parameter 'plagiarismVerdictDTO' when calling savePlagiarismCaseVerdict");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/plagiarism-cases/{plagiarismCaseId}/verdict"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "plagiarismCaseId" + "\\}", apiClient.escapeString(plagiarismCaseId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{plagiarismCaseId}", apiClient.escapeString(plagiarismCaseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<PlagiarismCase> localVarReturnType = new GenericType<PlagiarismCase>() {};
-
-    return apiClient.invokeAPI("PlagiarismCaseResourceApi.savePlagiarismCaseVerdict", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("PlagiarismCaseResourceApi.savePlagiarismCaseVerdict", localVarPath, "PUT", new ArrayList<>(), plagiarismVerdictDTO,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

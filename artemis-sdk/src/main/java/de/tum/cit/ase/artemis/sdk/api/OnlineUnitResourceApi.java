@@ -13,10 +13,11 @@ import de.tum.cit.ase.artemis.sdk.model.OnlineUnit;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class OnlineUnitResourceApi {
   private ApiClient apiClient;
 
@@ -79,49 +80,24 @@ public class OnlineUnitResourceApi {
      </table>
    */
   public ApiResponse<OnlineUnit> createOnlineUnitWithHttpInfo(Long lectureId, OnlineUnit onlineUnit) throws ApiException {
-    Object localVarPostBody = onlineUnit;
-    
-    // verify the required parameter 'lectureId' is set
+    // Check required parameters
     if (lectureId == null) {
       throw new ApiException(400, "Missing the required parameter 'lectureId' when calling createOnlineUnit");
     }
-    
-    // verify the required parameter 'onlineUnit' is set
     if (onlineUnit == null) {
       throw new ApiException(400, "Missing the required parameter 'onlineUnit' when calling createOnlineUnit");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/lectures/{lectureId}/online-units"
-      .replaceAll("\\{" + "lectureId" + "\\}", apiClient.escapeString(lectureId.toString()));
+            .replaceAll("\\{lectureId}", apiClient.escapeString(lectureId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<OnlineUnit> localVarReturnType = new GenericType<OnlineUnit>() {};
-
-    return apiClient.invokeAPI("OnlineUnitResourceApi.createOnlineUnit", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("OnlineUnitResourceApi.createOnlineUnit", localVarPath, "POST", new ArrayList<>(), onlineUnit,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -154,44 +130,22 @@ public class OnlineUnitResourceApi {
      </table>
    */
   public ApiResponse<OnlineResourceDTO> getOnlineResourceWithHttpInfo(String link) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'link' is set
+    // Check required parameters
     if (link == null) {
       throw new ApiException(400, "Missing the required parameter 'link' when calling getOnlineResource");
     }
-    
-    // create path and map variables
-    String localVarPath = "/api/lectures/online-units/fetch-online-resource";
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "link", link)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "link", link));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<OnlineResourceDTO> localVarReturnType = new GenericType<OnlineResourceDTO>() {};
-
-    return apiClient.invokeAPI("OnlineUnitResourceApi.getOnlineResource", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("OnlineUnitResourceApi.getOnlineResource", "/api/lectures/online-units/fetch-online-resource", "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -226,50 +180,25 @@ public class OnlineUnitResourceApi {
      </table>
    */
   public ApiResponse<OnlineUnit> getOnlineUnitWithHttpInfo(Long onlineUnitId, Long lectureId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'onlineUnitId' is set
+    // Check required parameters
     if (onlineUnitId == null) {
       throw new ApiException(400, "Missing the required parameter 'onlineUnitId' when calling getOnlineUnit");
     }
-    
-    // verify the required parameter 'lectureId' is set
     if (lectureId == null) {
       throw new ApiException(400, "Missing the required parameter 'lectureId' when calling getOnlineUnit");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/lectures/{lectureId}/online-units/{onlineUnitId}"
-      .replaceAll("\\{" + "onlineUnitId" + "\\}", apiClient.escapeString(onlineUnitId.toString()))
-      .replaceAll("\\{" + "lectureId" + "\\}", apiClient.escapeString(lectureId.toString()));
+            .replaceAll("\\{onlineUnitId}", apiClient.escapeString(onlineUnitId.toString()))
+            .replaceAll("\\{lectureId}", apiClient.escapeString(lectureId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<OnlineUnit> localVarReturnType = new GenericType<OnlineUnit>() {};
-
-    return apiClient.invokeAPI("OnlineUnitResourceApi.getOnlineUnit", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("OnlineUnitResourceApi.getOnlineUnit", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -304,48 +233,23 @@ public class OnlineUnitResourceApi {
      </table>
    */
   public ApiResponse<OnlineUnit> updateOnlineUnitWithHttpInfo(Long lectureId, OnlineUnit onlineUnit) throws ApiException {
-    Object localVarPostBody = onlineUnit;
-    
-    // verify the required parameter 'lectureId' is set
+    // Check required parameters
     if (lectureId == null) {
       throw new ApiException(400, "Missing the required parameter 'lectureId' when calling updateOnlineUnit");
     }
-    
-    // verify the required parameter 'onlineUnit' is set
     if (onlineUnit == null) {
       throw new ApiException(400, "Missing the required parameter 'onlineUnit' when calling updateOnlineUnit");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/lectures/{lectureId}/online-units"
-      .replaceAll("\\{" + "lectureId" + "\\}", apiClient.escapeString(lectureId.toString()));
+            .replaceAll("\\{lectureId}", apiClient.escapeString(lectureId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<OnlineUnit> localVarReturnType = new GenericType<OnlineUnit>() {};
-
-    return apiClient.invokeAPI("OnlineUnitResourceApi.updateOnlineUnit", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("OnlineUnitResourceApi.updateOnlineUnit", localVarPath, "PUT", new ArrayList<>(), onlineUnit,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

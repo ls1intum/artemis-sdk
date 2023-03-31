@@ -12,10 +12,11 @@ import de.tum.cit.ase.artemis.sdk.model.TutorialGroupsConfiguration;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class TutorialGroupsConfigurationResourceApi {
   private ApiClient apiClient;
 
@@ -78,49 +79,24 @@ public class TutorialGroupsConfigurationResourceApi {
      </table>
    */
   public ApiResponse<TutorialGroupsConfiguration> create2WithHttpInfo(Long courseId, TutorialGroupsConfiguration tutorialGroupsConfiguration) throws ApiException {
-    Object localVarPostBody = tutorialGroupsConfiguration;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling create2");
     }
-    
-    // verify the required parameter 'tutorialGroupsConfiguration' is set
     if (tutorialGroupsConfiguration == null) {
       throw new ApiException(400, "Missing the required parameter 'tutorialGroupsConfiguration' when calling create2");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/tutorial-groups-configuration"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<TutorialGroupsConfiguration> localVarReturnType = new GenericType<TutorialGroupsConfiguration>() {};
-
-    return apiClient.invokeAPI("TutorialGroupsConfigurationResourceApi.create2", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("TutorialGroupsConfigurationResourceApi.create2", localVarPath, "POST", new ArrayList<>(), tutorialGroupsConfiguration,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -153,44 +129,21 @@ public class TutorialGroupsConfigurationResourceApi {
      </table>
    */
   public ApiResponse<TutorialGroupsConfiguration> getOneOfCourse1WithHttpInfo(Long courseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getOneOfCourse1");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/tutorial-groups-configuration"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<TutorialGroupsConfiguration> localVarReturnType = new GenericType<TutorialGroupsConfiguration>() {};
-
-    return apiClient.invokeAPI("TutorialGroupsConfigurationResourceApi.getOneOfCourse1", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("TutorialGroupsConfigurationResourceApi.getOneOfCourse1", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -227,54 +180,27 @@ public class TutorialGroupsConfigurationResourceApi {
      </table>
    */
   public ApiResponse<TutorialGroupsConfiguration> update2WithHttpInfo(Long courseId, Long tutorialGroupsConfigurationId, TutorialGroupsConfiguration tutorialGroupsConfiguration) throws ApiException {
-    Object localVarPostBody = tutorialGroupsConfiguration;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling update2");
     }
-    
-    // verify the required parameter 'tutorialGroupsConfigurationId' is set
     if (tutorialGroupsConfigurationId == null) {
       throw new ApiException(400, "Missing the required parameter 'tutorialGroupsConfigurationId' when calling update2");
     }
-    
-    // verify the required parameter 'tutorialGroupsConfiguration' is set
     if (tutorialGroupsConfiguration == null) {
       throw new ApiException(400, "Missing the required parameter 'tutorialGroupsConfiguration' when calling update2");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/tutorial-groups-configuration/{tutorialGroupsConfigurationId}"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "tutorialGroupsConfigurationId" + "\\}", apiClient.escapeString(tutorialGroupsConfigurationId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{tutorialGroupsConfigurationId}", apiClient.escapeString(tutorialGroupsConfigurationId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<TutorialGroupsConfiguration> localVarReturnType = new GenericType<TutorialGroupsConfiguration>() {};
-
-    return apiClient.invokeAPI("TutorialGroupsConfigurationResourceApi.update2", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("TutorialGroupsConfigurationResourceApi.update2", localVarPath, "PUT", new ArrayList<>(), tutorialGroupsConfiguration,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

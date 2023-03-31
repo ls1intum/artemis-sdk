@@ -62,7 +62,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import de.tum.cit.ase.artemis.sdk.JSON;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 @JsonDeserialize(using = CreateSystemNotification200Response.CreateSystemNotification200ResponseDeserializer.class)
 @JsonSerialize(using = CreateSystemNotification200Response.CreateSystemNotification200ResponseSerializer.class)
 public class CreateSystemNotification200Response extends AbstractOpenApiSchema {
@@ -195,7 +195,7 @@ public class CreateSystemNotification200Response extends AbstractOpenApiSchema {
     }
 
     // store a list of schema names defined in oneOf
-    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+    public static final Map<String, GenericType> schemas = new HashMap<>();
 
     public CreateSystemNotification200Response() {
         super("oneOf", Boolean.FALSE);
@@ -225,7 +225,7 @@ public class CreateSystemNotification200Response extends AbstractOpenApiSchema {
         });
         JSON.registerDescendants(CreateSystemNotification200Response.class, Collections.unmodifiableMap(schemas));
         // Initialize and register the discriminator mappings.
-        Map<String, Class<?>> mappings = new HashMap<String, Class<?>>();
+        Map<String, Class<?>> mappings = new HashMap<>();
         mappings.put("GroupNotification", GroupNotification.class);
         mappings.put("SingleUserNotification", SingleUserNotification.class);
         mappings.put("SystemNotification", SystemNotification.class);
@@ -248,17 +248,17 @@ public class CreateSystemNotification200Response extends AbstractOpenApiSchema {
      */
     @Override
     public void setActualInstance(Object instance) {
-        if (JSON.isInstanceOf(GroupNotification.class, instance, new HashSet<Class<?>>())) {
+        if (JSON.isInstanceOf(GroupNotification.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (JSON.isInstanceOf(SingleUserNotification.class, instance, new HashSet<Class<?>>())) {
+        if (JSON.isInstanceOf(SingleUserNotification.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (JSON.isInstanceOf(SystemNotification.class, instance, new HashSet<Class<?>>())) {
+        if (JSON.isInstanceOf(SystemNotification.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }

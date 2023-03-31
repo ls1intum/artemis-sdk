@@ -18,10 +18,11 @@ import de.tum.cit.ase.artemis.sdk.model.TextSubmission;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class TextAssessmentResourceApi {
   private ApiClient apiClient;
 
@@ -83,48 +84,24 @@ public class TextAssessmentResourceApi {
      </table>
    */
   public ApiResponse<Void> cancelAssessment3WithHttpInfo(Long participationId, Long submissionId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'participationId' is set
+    // Check required parameters
     if (participationId == null) {
       throw new ApiException(400, "Missing the required parameter 'participationId' when calling cancelAssessment3");
     }
-    
-    // verify the required parameter 'submissionId' is set
     if (submissionId == null) {
       throw new ApiException(400, "Missing the required parameter 'submissionId' when calling cancelAssessment3");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/participations/{participationId}/submissions/{submissionId}/cancel-assessment"
-      .replaceAll("\\{" + "participationId" + "\\}", apiClient.escapeString(participationId.toString()))
-      .replaceAll("\\{" + "submissionId" + "\\}", apiClient.escapeString(submissionId.toString()));
+            .replaceAll("\\{participationId}", apiClient.escapeString(participationId.toString()))
+            .replaceAll("\\{submissionId}", apiClient.escapeString(submissionId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("TextAssessmentResourceApi.cancelAssessment3", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("TextAssessmentResourceApi.cancelAssessment3", localVarPath, "POST", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -160,54 +137,28 @@ public class TextAssessmentResourceApi {
      </table>
    */
   public ApiResponse<Void> deleteAssessmentWithHttpInfo(Long participationId, Long submissionId, Long resultId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'participationId' is set
+    // Check required parameters
     if (participationId == null) {
       throw new ApiException(400, "Missing the required parameter 'participationId' when calling deleteAssessment");
     }
-    
-    // verify the required parameter 'submissionId' is set
     if (submissionId == null) {
       throw new ApiException(400, "Missing the required parameter 'submissionId' when calling deleteAssessment");
     }
-    
-    // verify the required parameter 'resultId' is set
     if (resultId == null) {
       throw new ApiException(400, "Missing the required parameter 'resultId' when calling deleteAssessment");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/participations/{participationId}/text-submissions/{submissionId}/results/{resultId}"
-      .replaceAll("\\{" + "participationId" + "\\}", apiClient.escapeString(participationId.toString()))
-      .replaceAll("\\{" + "submissionId" + "\\}", apiClient.escapeString(submissionId.toString()))
-      .replaceAll("\\{" + "resultId" + "\\}", apiClient.escapeString(resultId.toString()));
+            .replaceAll("\\{participationId}", apiClient.escapeString(participationId.toString()))
+            .replaceAll("\\{submissionId}", apiClient.escapeString(submissionId.toString()))
+            .replaceAll("\\{resultId}", apiClient.escapeString(resultId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("TextAssessmentResourceApi.deleteAssessment", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("TextAssessmentResourceApi.deleteAssessment", localVarPath, "DELETE", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -241,48 +192,24 @@ public class TextAssessmentResourceApi {
      </table>
    */
   public ApiResponse<Void> deleteTextExampleAssessmentWithHttpInfo(Long exerciseId, Long exampleSubmissionId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling deleteTextExampleAssessment");
     }
-    
-    // verify the required parameter 'exampleSubmissionId' is set
     if (exampleSubmissionId == null) {
       throw new ApiException(400, "Missing the required parameter 'exampleSubmissionId' when calling deleteTextExampleAssessment");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/exercises/{exerciseId}/example-submissions/{exampleSubmissionId}/example-text-assessment/feedback"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()))
-      .replaceAll("\\{" + "exampleSubmissionId" + "\\}", apiClient.escapeString(exampleSubmissionId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()))
+            .replaceAll("\\{exampleSubmissionId}", apiClient.escapeString(exampleSubmissionId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("TextAssessmentResourceApi.deleteTextExampleAssessment", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("TextAssessmentResourceApi.deleteTextExampleAssessment", localVarPath, "DELETE", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -319,56 +246,29 @@ public class TextAssessmentResourceApi {
      </table>
    */
   public ApiResponse<Set<TextSubmission>> getConflictingTextSubmissionsWithHttpInfo(Long participationId, Long submissionId, Long feedbackId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'participationId' is set
+    // Check required parameters
     if (participationId == null) {
       throw new ApiException(400, "Missing the required parameter 'participationId' when calling getConflictingTextSubmissions");
     }
-    
-    // verify the required parameter 'submissionId' is set
     if (submissionId == null) {
       throw new ApiException(400, "Missing the required parameter 'submissionId' when calling getConflictingTextSubmissions");
     }
-    
-    // verify the required parameter 'feedbackId' is set
     if (feedbackId == null) {
       throw new ApiException(400, "Missing the required parameter 'feedbackId' when calling getConflictingTextSubmissions");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/participations/{participationId}/submissions/{submissionId}/feedbacks/{feedbackId}/feedback-conflicts"
-      .replaceAll("\\{" + "participationId" + "\\}", apiClient.escapeString(participationId.toString()))
-      .replaceAll("\\{" + "submissionId" + "\\}", apiClient.escapeString(submissionId.toString()))
-      .replaceAll("\\{" + "feedbackId" + "\\}", apiClient.escapeString(feedbackId.toString()));
+            .replaceAll("\\{participationId}", apiClient.escapeString(participationId.toString()))
+            .replaceAll("\\{submissionId}", apiClient.escapeString(submissionId.toString()))
+            .replaceAll("\\{feedbackId}", apiClient.escapeString(feedbackId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<Set<TextSubmission>> localVarReturnType = new GenericType<Set<TextSubmission>>() {};
-
-    return apiClient.invokeAPI("TextAssessmentResourceApi.getConflictingTextSubmissions", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("TextAssessmentResourceApi.getConflictingTextSubmissions", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -403,50 +303,25 @@ public class TextAssessmentResourceApi {
      </table>
    */
   public ApiResponse<Result> getExampleResultForTutorWithHttpInfo(Long exerciseId, Long submissionId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling getExampleResultForTutor");
     }
-    
-    // verify the required parameter 'submissionId' is set
     if (submissionId == null) {
       throw new ApiException(400, "Missing the required parameter 'submissionId' when calling getExampleResultForTutor");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/exercises/{exerciseId}/submissions/{submissionId}/example-result"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()))
-      .replaceAll("\\{" + "submissionId" + "\\}", apiClient.escapeString(submissionId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()))
+            .replaceAll("\\{submissionId}", apiClient.escapeString(submissionId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<Result> localVarReturnType = new GenericType<Result>() {};
-
-    return apiClient.invokeAPI("TextAssessmentResourceApi.getExampleResultForTutor", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("TextAssessmentResourceApi.getExampleResultForTutor", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -485,52 +360,31 @@ public class TextAssessmentResourceApi {
      </table>
    */
   public ApiResponse<CleanupBuildPlan200Response> retrieveParticipationForSubmissionWithHttpInfo(Long participationId, Long submissionId, Integer correctionRound, Long resultId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'participationId' is set
+    // Check required parameters
     if (participationId == null) {
       throw new ApiException(400, "Missing the required parameter 'participationId' when calling retrieveParticipationForSubmission");
     }
-    
-    // verify the required parameter 'submissionId' is set
     if (submissionId == null) {
       throw new ApiException(400, "Missing the required parameter 'submissionId' when calling retrieveParticipationForSubmission");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/participations/{participationId}/submissions/{submissionId}/for-text-assessment"
-      .replaceAll("\\{" + "participationId" + "\\}", apiClient.escapeString(participationId.toString()))
-      .replaceAll("\\{" + "submissionId" + "\\}", apiClient.escapeString(submissionId.toString()));
+            .replaceAll("\\{participationId}", apiClient.escapeString(participationId.toString()))
+            .replaceAll("\\{submissionId}", apiClient.escapeString(submissionId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "correction-round", correctionRound));
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "correction-round", correctionRound)
+    );
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "resultId", resultId));
 
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<CleanupBuildPlan200Response> localVarReturnType = new GenericType<CleanupBuildPlan200Response>() {};
-
-    return apiClient.invokeAPI("TextAssessmentResourceApi.retrieveParticipationForSubmission", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("TextAssessmentResourceApi.retrieveParticipationForSubmission", localVarPath, "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -567,55 +421,28 @@ public class TextAssessmentResourceApi {
      </table>
    */
   public ApiResponse<Result> saveTextAssessmentWithHttpInfo(Long participationId, Long resultId, TextAssessmentDTO textAssessmentDTO) throws ApiException {
-    Object localVarPostBody = textAssessmentDTO;
-    
-    // verify the required parameter 'participationId' is set
+    // Check required parameters
     if (participationId == null) {
       throw new ApiException(400, "Missing the required parameter 'participationId' when calling saveTextAssessment");
     }
-    
-    // verify the required parameter 'resultId' is set
     if (resultId == null) {
       throw new ApiException(400, "Missing the required parameter 'resultId' when calling saveTextAssessment");
     }
-    
-    // verify the required parameter 'textAssessmentDTO' is set
     if (textAssessmentDTO == null) {
       throw new ApiException(400, "Missing the required parameter 'textAssessmentDTO' when calling saveTextAssessment");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/participations/{participationId}/results/{resultId}/text-assessment"
-      .replaceAll("\\{" + "participationId" + "\\}", apiClient.escapeString(participationId.toString()))
-      .replaceAll("\\{" + "resultId" + "\\}", apiClient.escapeString(resultId.toString()));
+            .replaceAll("\\{participationId}", apiClient.escapeString(participationId.toString()))
+            .replaceAll("\\{resultId}", apiClient.escapeString(resultId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<Result> localVarReturnType = new GenericType<Result>() {};
-
-    return apiClient.invokeAPI("TextAssessmentResourceApi.saveTextAssessment", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("TextAssessmentResourceApi.saveTextAssessment", localVarPath, "PUT", new ArrayList<>(), textAssessmentDTO,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -652,55 +479,28 @@ public class TextAssessmentResourceApi {
      </table>
    */
   public ApiResponse<Result> saveTextExampleAssessmentWithHttpInfo(Long exerciseId, Long exampleSubmissionId, TextAssessmentDTO textAssessmentDTO) throws ApiException {
-    Object localVarPostBody = textAssessmentDTO;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling saveTextExampleAssessment");
     }
-    
-    // verify the required parameter 'exampleSubmissionId' is set
     if (exampleSubmissionId == null) {
       throw new ApiException(400, "Missing the required parameter 'exampleSubmissionId' when calling saveTextExampleAssessment");
     }
-    
-    // verify the required parameter 'textAssessmentDTO' is set
     if (textAssessmentDTO == null) {
       throw new ApiException(400, "Missing the required parameter 'textAssessmentDTO' when calling saveTextExampleAssessment");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/exercises/{exerciseId}/example-submissions/{exampleSubmissionId}/example-text-assessment"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()))
-      .replaceAll("\\{" + "exampleSubmissionId" + "\\}", apiClient.escapeString(exampleSubmissionId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()))
+            .replaceAll("\\{exampleSubmissionId}", apiClient.escapeString(exampleSubmissionId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<Result> localVarReturnType = new GenericType<Result>() {};
-
-    return apiClient.invokeAPI("TextAssessmentResourceApi.saveTextExampleAssessment", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("TextAssessmentResourceApi.saveTextExampleAssessment", localVarPath, "PUT", new ArrayList<>(), textAssessmentDTO,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -735,50 +535,25 @@ public class TextAssessmentResourceApi {
      </table>
    */
   public ApiResponse<FeedbackConflict> solveFeedbackConflictWithHttpInfo(Long exerciseId, Long feedbackConflictId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling solveFeedbackConflict");
     }
-    
-    // verify the required parameter 'feedbackConflictId' is set
     if (feedbackConflictId == null) {
       throw new ApiException(400, "Missing the required parameter 'feedbackConflictId' when calling solveFeedbackConflict");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/exercises/{exerciseId}/feedback-conflicts/{feedbackConflictId}/solve"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()))
-      .replaceAll("\\{" + "feedbackConflictId" + "\\}", apiClient.escapeString(feedbackConflictId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()))
+            .replaceAll("\\{feedbackConflictId}", apiClient.escapeString(feedbackConflictId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<FeedbackConflict> localVarReturnType = new GenericType<FeedbackConflict>() {};
-
-    return apiClient.invokeAPI("TextAssessmentResourceApi.solveFeedbackConflict", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("TextAssessmentResourceApi.solveFeedbackConflict", localVarPath, "POST", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -815,55 +590,28 @@ public class TextAssessmentResourceApi {
      </table>
    */
   public ApiResponse<Result> submitTextAssessmentWithHttpInfo(Long participationId, Long resultId, TextAssessmentDTO textAssessmentDTO) throws ApiException {
-    Object localVarPostBody = textAssessmentDTO;
-    
-    // verify the required parameter 'participationId' is set
+    // Check required parameters
     if (participationId == null) {
       throw new ApiException(400, "Missing the required parameter 'participationId' when calling submitTextAssessment");
     }
-    
-    // verify the required parameter 'resultId' is set
     if (resultId == null) {
       throw new ApiException(400, "Missing the required parameter 'resultId' when calling submitTextAssessment");
     }
-    
-    // verify the required parameter 'textAssessmentDTO' is set
     if (textAssessmentDTO == null) {
       throw new ApiException(400, "Missing the required parameter 'textAssessmentDTO' when calling submitTextAssessment");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/participations/{participationId}/results/{resultId}/submit-text-assessment"
-      .replaceAll("\\{" + "participationId" + "\\}", apiClient.escapeString(participationId.toString()))
-      .replaceAll("\\{" + "resultId" + "\\}", apiClient.escapeString(resultId.toString()));
+            .replaceAll("\\{participationId}", apiClient.escapeString(participationId.toString()))
+            .replaceAll("\\{resultId}", apiClient.escapeString(resultId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<Result> localVarReturnType = new GenericType<Result>() {};
-
-    return apiClient.invokeAPI("TextAssessmentResourceApi.submitTextAssessment", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("TextAssessmentResourceApi.submitTextAssessment", localVarPath, "POST", new ArrayList<>(), textAssessmentDTO,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -900,54 +648,27 @@ public class TextAssessmentResourceApi {
      </table>
    */
   public ApiResponse<Result> updateTextAssessmentAfterComplaintWithHttpInfo(Long participationId, Long submissionId, TextAssessmentUpdateDTO textAssessmentUpdateDTO) throws ApiException {
-    Object localVarPostBody = textAssessmentUpdateDTO;
-    
-    // verify the required parameter 'participationId' is set
+    // Check required parameters
     if (participationId == null) {
       throw new ApiException(400, "Missing the required parameter 'participationId' when calling updateTextAssessmentAfterComplaint");
     }
-    
-    // verify the required parameter 'submissionId' is set
     if (submissionId == null) {
       throw new ApiException(400, "Missing the required parameter 'submissionId' when calling updateTextAssessmentAfterComplaint");
     }
-    
-    // verify the required parameter 'textAssessmentUpdateDTO' is set
     if (textAssessmentUpdateDTO == null) {
       throw new ApiException(400, "Missing the required parameter 'textAssessmentUpdateDTO' when calling updateTextAssessmentAfterComplaint");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/participations/{participationId}/submissions/{submissionId}/text-assessment-after-complaint"
-      .replaceAll("\\{" + "participationId" + "\\}", apiClient.escapeString(participationId.toString()))
-      .replaceAll("\\{" + "submissionId" + "\\}", apiClient.escapeString(submissionId.toString()));
+            .replaceAll("\\{participationId}", apiClient.escapeString(participationId.toString()))
+            .replaceAll("\\{submissionId}", apiClient.escapeString(submissionId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<Result> localVarReturnType = new GenericType<Result>() {};
-
-    return apiClient.invokeAPI("TextAssessmentResourceApi.updateTextAssessmentAfterComplaint", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("TextAssessmentResourceApi.updateTextAssessmentAfterComplaint", localVarPath, "PUT", new ArrayList<>(), textAssessmentUpdateDTO,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

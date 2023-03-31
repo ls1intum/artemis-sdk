@@ -13,10 +13,11 @@ import java.util.Set;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class NotificationSettingsResourceApi {
   private ApiClient apiClient;
 
@@ -75,38 +76,12 @@ public class NotificationSettingsResourceApi {
      </table>
    */
   public ApiResponse<Set<NotificationSetting>> getNotificationSettingsForCurrentUserWithHttpInfo() throws ApiException {
-    Object localVarPostBody = null;
-    
-    // create path and map variables
-    String localVarPath = "/api/notification-settings";
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<Set<NotificationSetting>> localVarReturnType = new GenericType<Set<NotificationSetting>>() {};
-
-    return apiClient.invokeAPI("NotificationSettingsResourceApi.getNotificationSettingsForCurrentUser", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("NotificationSettingsResourceApi.getNotificationSettingsForCurrentUser", "/api/notification-settings", "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -139,42 +114,16 @@ public class NotificationSettingsResourceApi {
      </table>
    */
   public ApiResponse<List<NotificationSetting>> saveNotificationSettingsForCurrentUserWithHttpInfo(List<NotificationSetting> notificationSetting) throws ApiException {
-    Object localVarPostBody = notificationSetting;
-    
-    // verify the required parameter 'notificationSetting' is set
+    // Check required parameters
     if (notificationSetting == null) {
       throw new ApiException(400, "Missing the required parameter 'notificationSetting' when calling saveNotificationSettingsForCurrentUser");
     }
-    
-    // create path and map variables
-    String localVarPath = "/api/notification-settings";
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<List<NotificationSetting>> localVarReturnType = new GenericType<List<NotificationSetting>>() {};
-
-    return apiClient.invokeAPI("NotificationSettingsResourceApi.saveNotificationSettingsForCurrentUser", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("NotificationSettingsResourceApi.saveNotificationSettingsForCurrentUser", "/api/notification-settings", "PUT", new ArrayList<>(), notificationSetting,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

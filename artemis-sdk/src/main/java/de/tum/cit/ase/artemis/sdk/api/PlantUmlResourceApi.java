@@ -11,10 +11,11 @@ import jakarta.ws.rs.core.GenericType;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class PlantUmlResourceApi {
   private ApiClient apiClient;
 
@@ -77,45 +78,23 @@ public class PlantUmlResourceApi {
      </table>
    */
   public ApiResponse<List<byte[]>> generatePngWithHttpInfo(String plantuml, Boolean useDarkTheme) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'plantuml' is set
+    // Check required parameters
     if (plantuml == null) {
       throw new ApiException(400, "Missing the required parameter 'plantuml' when calling generatePng");
     }
-    
-    // create path and map variables
-    String localVarPath = "/api/plantuml/png";
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "plantuml", plantuml));
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "plantuml", plantuml)
+    );
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "useDarkTheme", useDarkTheme));
 
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<byte[]>> localVarReturnType = new GenericType<List<byte[]>>() {};
-
-    return apiClient.invokeAPI("PlantUmlResourceApi.generatePng", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("PlantUmlResourceApi.generatePng", "/api/plantuml/png", "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -150,44 +129,22 @@ public class PlantUmlResourceApi {
      </table>
    */
   public ApiResponse<String> generateSvgWithHttpInfo(String plantuml, Boolean useDarkTheme) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'plantuml' is set
+    // Check required parameters
     if (plantuml == null) {
       throw new ApiException(400, "Missing the required parameter 'plantuml' when calling generateSvg");
     }
-    
-    // create path and map variables
-    String localVarPath = "/api/plantuml/svg";
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "plantuml", plantuml));
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "plantuml", plantuml)
+    );
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "useDarkTheme", useDarkTheme));
 
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<String> localVarReturnType = new GenericType<String>() {};
-
-    return apiClient.invokeAPI("PlantUmlResourceApi.generateSvg", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("PlantUmlResourceApi.generateSvg", "/api/plantuml/svg", "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

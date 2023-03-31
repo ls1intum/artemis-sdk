@@ -22,8 +22,8 @@
 |**testCaseCount** | **Integer** |  |  [optional] |
 |**passedTestCaseCount** | **Integer** |  |  [optional] |
 |**codeIssueCount** | **Integer** |  |  [optional] |
-|**feedbackType** | [**Feedback**](Feedback.md) |  |  [optional] |
 |**coverageFileReportsByTestCaseName** | **Map&lt;String, Set&lt;CoverageFileReport&gt;&gt;** |  |  [optional] |
+|**feedbackType** | [**Feedback**](Feedback.md) |  |  [optional] |
 
 
 

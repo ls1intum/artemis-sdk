@@ -64,7 +64,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import de.tum.cit.ase.artemis.sdk.JSON;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 @JsonDeserialize(using = GetConversationsOfUser200ResponseInner.GetConversationsOfUser200ResponseInnerDeserializer.class)
 @JsonSerialize(using = GetConversationsOfUser200ResponseInner.GetConversationsOfUser200ResponseInnerSerializer.class)
 public class GetConversationsOfUser200ResponseInner extends AbstractOpenApiSchema {
@@ -223,7 +223,7 @@ public class GetConversationsOfUser200ResponseInner extends AbstractOpenApiSchem
     }
 
     // store a list of schema names defined in oneOf
-    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+    public static final Map<String, GenericType> schemas = new HashMap<>();
 
     public GetConversationsOfUser200ResponseInner() {
         super("oneOf", Boolean.FALSE);
@@ -260,7 +260,7 @@ public class GetConversationsOfUser200ResponseInner extends AbstractOpenApiSchem
         });
         JSON.registerDescendants(GetConversationsOfUser200ResponseInner.class, Collections.unmodifiableMap(schemas));
         // Initialize and register the discriminator mappings.
-        Map<String, Class<?>> mappings = new HashMap<String, Class<?>>();
+        Map<String, Class<?>> mappings = new HashMap<>();
         mappings.put("ChannelDTO", ChannelDTO.class);
         mappings.put("ConversationDTO", ConversationDTO.class);
         mappings.put("GroupChatDTO", GroupChatDTO.class);
@@ -284,22 +284,22 @@ public class GetConversationsOfUser200ResponseInner extends AbstractOpenApiSchem
      */
     @Override
     public void setActualInstance(Object instance) {
-        if (JSON.isInstanceOf(ChannelDTO.class, instance, new HashSet<Class<?>>())) {
+        if (JSON.isInstanceOf(ChannelDTO.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (JSON.isInstanceOf(ConversationDTO.class, instance, new HashSet<Class<?>>())) {
+        if (JSON.isInstanceOf(ConversationDTO.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (JSON.isInstanceOf(GroupChatDTO.class, instance, new HashSet<Class<?>>())) {
+        if (JSON.isInstanceOf(GroupChatDTO.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (JSON.isInstanceOf(OneToOneChatDTO.class, instance, new HashSet<Class<?>>())) {
+        if (JSON.isInstanceOf(OneToOneChatDTO.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }

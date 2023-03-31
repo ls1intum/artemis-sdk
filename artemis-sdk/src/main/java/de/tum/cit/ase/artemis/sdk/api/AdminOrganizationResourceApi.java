@@ -14,10 +14,11 @@ import java.util.Set;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class AdminOrganizationResourceApi {
   private ApiClient apiClient;
 
@@ -79,48 +80,24 @@ public class AdminOrganizationResourceApi {
      </table>
    */
   public ApiResponse<Void> addCourseToOrganizationWithHttpInfo(Long courseId, Long organizationId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling addCourseToOrganization");
     }
-    
-    // verify the required parameter 'organizationId' is set
     if (organizationId == null) {
       throw new ApiException(400, "Missing the required parameter 'organizationId' when calling addCourseToOrganization");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/admin/organizations/{organizationId}/courses/{courseId}"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{organizationId}", apiClient.escapeString(organizationId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("AdminOrganizationResourceApi.addCourseToOrganization", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("AdminOrganizationResourceApi.addCourseToOrganization", localVarPath, "POST", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -153,43 +130,17 @@ public class AdminOrganizationResourceApi {
      </table>
    */
   public ApiResponse<Organization> addOrganizationWithHttpInfo(Organization organization) throws ApiException {
-    Object localVarPostBody = organization;
-    
-    // verify the required parameter 'organization' is set
+    // Check required parameters
     if (organization == null) {
       throw new ApiException(400, "Missing the required parameter 'organization' when calling addOrganization");
     }
-    
-    // create path and map variables
-    String localVarPath = "/api/admin/organizations";
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<Organization> localVarReturnType = new GenericType<Organization>() {};
-
-    return apiClient.invokeAPI("AdminOrganizationResourceApi.addOrganization", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AdminOrganizationResourceApi.addOrganization", "/api/admin/organizations", "POST", new ArrayList<>(), organization,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -223,48 +174,24 @@ public class AdminOrganizationResourceApi {
      </table>
    */
   public ApiResponse<Void> addUserToOrganizationWithHttpInfo(String userLogin, Long organizationId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'userLogin' is set
+    // Check required parameters
     if (userLogin == null) {
       throw new ApiException(400, "Missing the required parameter 'userLogin' when calling addUserToOrganization");
     }
-    
-    // verify the required parameter 'organizationId' is set
     if (organizationId == null) {
       throw new ApiException(400, "Missing the required parameter 'organizationId' when calling addUserToOrganization");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/admin/organizations/{organizationId}/users/{userLogin}"
-      .replaceAll("\\{" + "userLogin" + "\\}", apiClient.escapeString(userLogin.toString()))
-      .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()));
+            .replaceAll("\\{userLogin}", apiClient.escapeString(userLogin))
+            .replaceAll("\\{organizationId}", apiClient.escapeString(organizationId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("AdminOrganizationResourceApi.addUserToOrganization", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("AdminOrganizationResourceApi.addUserToOrganization", localVarPath, "POST", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -296,42 +223,20 @@ public class AdminOrganizationResourceApi {
      </table>
    */
   public ApiResponse<Void> deleteOrganizationWithHttpInfo(Long organizationId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'organizationId' is set
+    // Check required parameters
     if (organizationId == null) {
       throw new ApiException(400, "Missing the required parameter 'organizationId' when calling deleteOrganization");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/admin/organizations/{organizationId}"
-      .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()));
+            .replaceAll("\\{organizationId}", apiClient.escapeString(organizationId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("AdminOrganizationResourceApi.deleteOrganization", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("AdminOrganizationResourceApi.deleteOrganization", localVarPath, "DELETE", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -362,38 +267,12 @@ public class AdminOrganizationResourceApi {
      </table>
    */
   public ApiResponse<List<Organization>> getAllOrganizationsWithHttpInfo() throws ApiException {
-    Object localVarPostBody = null;
-    
-    // create path and map variables
-    String localVarPath = "/api/admin/organizations";
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<Organization>> localVarReturnType = new GenericType<List<Organization>>() {};
-
-    return apiClient.invokeAPI("AdminOrganizationResourceApi.getAllOrganizations", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AdminOrganizationResourceApi.getAllOrganizations", "/api/admin/organizations", "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -426,44 +305,21 @@ public class AdminOrganizationResourceApi {
      </table>
    */
   public ApiResponse<Set<Organization>> getAllOrganizationsByUserWithHttpInfo(Long userId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
+    // Check required parameters
     if (userId == null) {
       throw new ApiException(400, "Missing the required parameter 'userId' when calling getAllOrganizationsByUser");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/admin/organizations/users/{userId}"
-      .replaceAll("\\{" + "userId" + "\\}", apiClient.escapeString(userId.toString()));
+            .replaceAll("\\{userId}", apiClient.escapeString(userId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<Set<Organization>> localVarReturnType = new GenericType<Set<Organization>>() {};
-
-    return apiClient.invokeAPI("AdminOrganizationResourceApi.getAllOrganizationsByUser", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AdminOrganizationResourceApi.getAllOrganizationsByUser", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -496,44 +352,21 @@ public class AdminOrganizationResourceApi {
      </table>
    */
   public ApiResponse<OrganizationCountDTO> getNumberOfUsersAndCoursesByOrganizationWithHttpInfo(Long organizationId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'organizationId' is set
+    // Check required parameters
     if (organizationId == null) {
       throw new ApiException(400, "Missing the required parameter 'organizationId' when calling getNumberOfUsersAndCoursesByOrganization");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/admin/organizations/{organizationId}/count"
-      .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()));
+            .replaceAll("\\{organizationId}", apiClient.escapeString(organizationId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<OrganizationCountDTO> localVarReturnType = new GenericType<OrganizationCountDTO>() {};
-
-    return apiClient.invokeAPI("AdminOrganizationResourceApi.getNumberOfUsersAndCoursesByOrganization", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AdminOrganizationResourceApi.getNumberOfUsersAndCoursesByOrganization", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -564,38 +397,12 @@ public class AdminOrganizationResourceApi {
      </table>
    */
   public ApiResponse<List<OrganizationCountDTO>> getNumberOfUsersAndCoursesOfAllOrganizationsWithHttpInfo() throws ApiException {
-    Object localVarPostBody = null;
-    
-    // create path and map variables
-    String localVarPath = "/api/admin/organizations/count-all";
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<OrganizationCountDTO>> localVarReturnType = new GenericType<List<OrganizationCountDTO>>() {};
-
-    return apiClient.invokeAPI("AdminOrganizationResourceApi.getNumberOfUsersAndCoursesOfAllOrganizations", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AdminOrganizationResourceApi.getNumberOfUsersAndCoursesOfAllOrganizations", "/api/admin/organizations/count-all", "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -628,44 +435,21 @@ public class AdminOrganizationResourceApi {
      </table>
    */
   public ApiResponse<Organization> getOrganizationByIdWithHttpInfo(Long organizationId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'organizationId' is set
+    // Check required parameters
     if (organizationId == null) {
       throw new ApiException(400, "Missing the required parameter 'organizationId' when calling getOrganizationById");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/admin/organizations/{organizationId}"
-      .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()));
+            .replaceAll("\\{organizationId}", apiClient.escapeString(organizationId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<Organization> localVarReturnType = new GenericType<Organization>() {};
-
-    return apiClient.invokeAPI("AdminOrganizationResourceApi.getOrganizationById", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AdminOrganizationResourceApi.getOrganizationById", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -698,44 +482,21 @@ public class AdminOrganizationResourceApi {
      </table>
    */
   public ApiResponse<Organization> getOrganizationByIdWithUsersAndCoursesWithHttpInfo(Long organizationId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'organizationId' is set
+    // Check required parameters
     if (organizationId == null) {
       throw new ApiException(400, "Missing the required parameter 'organizationId' when calling getOrganizationByIdWithUsersAndCourses");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/admin/organizations/{organizationId}/full"
-      .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()));
+            .replaceAll("\\{organizationId}", apiClient.escapeString(organizationId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<Organization> localVarReturnType = new GenericType<Organization>() {};
-
-    return apiClient.invokeAPI("AdminOrganizationResourceApi.getOrganizationByIdWithUsersAndCourses", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AdminOrganizationResourceApi.getOrganizationByIdWithUsersAndCourses", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -768,44 +529,21 @@ public class AdminOrganizationResourceApi {
      </table>
    */
   public ApiResponse<String> getOrganizationTitleWithHttpInfo(Long organizationId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'organizationId' is set
+    // Check required parameters
     if (organizationId == null) {
       throw new ApiException(400, "Missing the required parameter 'organizationId' when calling getOrganizationTitle");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/admin/organizations/{organizationId}/title"
-      .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()));
+            .replaceAll("\\{organizationId}", apiClient.escapeString(organizationId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<String> localVarReturnType = new GenericType<String>() {};
-
-    return apiClient.invokeAPI("AdminOrganizationResourceApi.getOrganizationTitle", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AdminOrganizationResourceApi.getOrganizationTitle", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -839,48 +577,24 @@ public class AdminOrganizationResourceApi {
      </table>
    */
   public ApiResponse<Void> removeCourseFromOrganizationWithHttpInfo(Long courseId, Long organizationId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling removeCourseFromOrganization");
     }
-    
-    // verify the required parameter 'organizationId' is set
     if (organizationId == null) {
       throw new ApiException(400, "Missing the required parameter 'organizationId' when calling removeCourseFromOrganization");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/admin/organizations/{organizationId}/courses/{courseId}"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{organizationId}", apiClient.escapeString(organizationId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("AdminOrganizationResourceApi.removeCourseFromOrganization", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("AdminOrganizationResourceApi.removeCourseFromOrganization", localVarPath, "DELETE", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -914,48 +628,24 @@ public class AdminOrganizationResourceApi {
      </table>
    */
   public ApiResponse<Void> removeUserFromOrganizationWithHttpInfo(String userLogin, Long organizationId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'userLogin' is set
+    // Check required parameters
     if (userLogin == null) {
       throw new ApiException(400, "Missing the required parameter 'userLogin' when calling removeUserFromOrganization");
     }
-    
-    // verify the required parameter 'organizationId' is set
     if (organizationId == null) {
       throw new ApiException(400, "Missing the required parameter 'organizationId' when calling removeUserFromOrganization");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/admin/organizations/{organizationId}/users/{userLogin}"
-      .replaceAll("\\{" + "userLogin" + "\\}", apiClient.escapeString(userLogin.toString()))
-      .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()));
+            .replaceAll("\\{userLogin}", apiClient.escapeString(userLogin))
+            .replaceAll("\\{organizationId}", apiClient.escapeString(organizationId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("AdminOrganizationResourceApi.removeUserFromOrganization", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("AdminOrganizationResourceApi.removeUserFromOrganization", localVarPath, "DELETE", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -990,48 +680,23 @@ public class AdminOrganizationResourceApi {
      </table>
    */
   public ApiResponse<Organization> updateOrganizationWithHttpInfo(Long organizationId, Organization organization) throws ApiException {
-    Object localVarPostBody = organization;
-    
-    // verify the required parameter 'organizationId' is set
+    // Check required parameters
     if (organizationId == null) {
       throw new ApiException(400, "Missing the required parameter 'organizationId' when calling updateOrganization");
     }
-    
-    // verify the required parameter 'organization' is set
     if (organization == null) {
       throw new ApiException(400, "Missing the required parameter 'organization' when calling updateOrganization");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/admin/organizations/{organizationId}"
-      .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()));
+            .replaceAll("\\{organizationId}", apiClient.escapeString(organizationId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<Organization> localVarReturnType = new GenericType<Organization>() {};
-
-    return apiClient.invokeAPI("AdminOrganizationResourceApi.updateOrganization", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AdminOrganizationResourceApi.updateOrganization", localVarPath, "PUT", new ArrayList<>(), organization,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

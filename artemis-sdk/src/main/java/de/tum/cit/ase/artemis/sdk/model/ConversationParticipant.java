@@ -40,7 +40,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ConversationParticipant.JSON_PROPERTY_LAST_READ,
   ConversationParticipant.JSON_PROPERTY_UNREAD_MESSAGES_COUNT
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class ConversationParticipant {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;

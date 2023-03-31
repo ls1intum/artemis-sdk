@@ -48,7 +48,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   IPAddressSectionInetAddress.JSON_PROPERTY_MCORG_LOCAL
 })
 @JsonTypeName("IPAddressSection_inetAddress")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class IPAddressSectionInetAddress {
   public static final String JSON_PROPERTY_CANONICAL_HOST_NAME = "canonicalHostName";
   private String canonicalHostName;
@@ -57,7 +57,7 @@ public class IPAddressSectionInetAddress {
   private String hostAddress;
 
   public static final String JSON_PROPERTY_ADDRESS = "address";
-  private List<byte[]> address = new ArrayList<>();
+  private List<byte[]> address;
 
   public static final String JSON_PROPERTY_HOST_NAME = "hostName";
   private String hostName;

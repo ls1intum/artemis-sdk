@@ -51,7 +51,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   StatsForDashboardDTO.JSON_PROPERTY_TUTOR_LEADERBOARD_ENTRIES,
   StatsForDashboardDTO.JSON_PROPERTY_NUMBER_OF_RATINGS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class StatsForDashboardDTO {
   public static final String JSON_PROPERTY_NUMBER_OF_STUDENTS = "numberOfStudents";
   private Long numberOfStudents;
@@ -72,10 +72,10 @@ public class StatsForDashboardDTO {
   private Boolean feedbackRequestEnabled;
 
   public static final String JSON_PROPERTY_NUMBER_OF_ASSESSMENTS_OF_CORRECTION_ROUNDS = "numberOfAssessmentsOfCorrectionRounds";
-  private List<DueDateStat> numberOfAssessmentsOfCorrectionRounds = new ArrayList<>();
+  private List<DueDateStat> numberOfAssessmentsOfCorrectionRounds;
 
   public static final String JSON_PROPERTY_NUMBER_OF_LOCKED_ASSESSMENT_BY_OTHER_TUTORS_OF_CORRECTION_ROUND = "numberOfLockedAssessmentByOtherTutorsOfCorrectionRound";
-  private List<DueDateStat> numberOfLockedAssessmentByOtherTutorsOfCorrectionRound = new ArrayList<>();
+  private List<DueDateStat> numberOfLockedAssessmentByOtherTutorsOfCorrectionRound;
 
   public static final String JSON_PROPERTY_NUMBER_OF_AUTOMATIC_ASSISTED_ASSESSMENTS = "numberOfAutomaticAssistedAssessments";
   private DueDateStat numberOfAutomaticAssistedAssessments;
@@ -96,7 +96,7 @@ public class StatsForDashboardDTO {
   private Long numberOfAssessmentLocks;
 
   public static final String JSON_PROPERTY_TUTOR_LEADERBOARD_ENTRIES = "tutorLeaderboardEntries";
-  private List<TutorLeaderboardDTO> tutorLeaderboardEntries = new ArrayList<>();
+  private List<TutorLeaderboardDTO> tutorLeaderboardEntries;
 
   public static final String JSON_PROPERTY_NUMBER_OF_RATINGS = "numberOfRatings";
   private Long numberOfRatings;

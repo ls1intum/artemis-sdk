@@ -89,7 +89,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   IPAddressSection.JSON_PROPERTY_ZERO_RANGE_SEGMENTS,
   IPAddressSection.JSON_PROPERTY_INET_ADDRESS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class IPAddressSection {
   public static final String JSON_PROPERTY_NETWORK = "network";
   private IPAddressNetworkObjectObjectObjectObjectObject network;
@@ -164,7 +164,7 @@ public class IPAddressSection {
   private Integer minPrefixLengthForBlock;
 
   public static final String JSON_PROPERTY_SEGMENT_STRINGS = "segmentStrings";
-  private List<String> segmentStrings = new ArrayList<>();
+  private List<String> segmentStrings;
 
   public static final String JSON_PROPERTY_FULL_RANGE = "fullRange";
   private Boolean fullRange;
@@ -220,7 +220,7 @@ public class IPAddressSection {
   private IPAddressSection networkSection;
 
   public static final String JSON_PROPERTY_SEGMENTS = "segments";
-  private List<IPAddressSegment> segments = new ArrayList<>();
+  private List<IPAddressSegment> segments;
 
   public static final String JSON_PROPERTY_NETWORK_PREFIX_LENGTH = "networkPrefixLength";
   private Integer networkPrefixLength;
@@ -241,13 +241,13 @@ public class IPAddressSection {
   private Boolean sequential;
 
   public static final String JSON_PROPERTY_DIVISION_STRINGS = "divisionStrings";
-  private List<String> divisionStrings = new ArrayList<>();
+  private List<String> divisionStrings;
 
   public static final String JSON_PROPERTY_PREFIX_COUNT = "prefixCount";
   private Integer prefixCount;
 
   public static final String JSON_PROPERTY_BYTES = "bytes";
-  private List<byte[]> bytes = new ArrayList<>();
+  private List<byte[]> bytes;
 
   public static final String JSON_PROPERTY_VALUE = "value";
   private Integer value;
@@ -256,7 +256,7 @@ public class IPAddressSection {
   private Boolean zero;
 
   public static final String JSON_PROPERTY_UPPER_BYTES = "upperBytes";
-  private List<byte[]> upperBytes = new ArrayList<>();
+  private List<byte[]> upperBytes;
 
   public static final String JSON_PROPERTY_UPPER_VALUE = "upperValue";
   private Integer upperValue;

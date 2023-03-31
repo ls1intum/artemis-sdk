@@ -42,16 +42,16 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ShortAnswerQuestionAllOf.JSON_PROPERTY_MATCH_LETTER_CASE
 })
 @JsonTypeName("ShortAnswerQuestion_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class ShortAnswerQuestionAllOf {
   public static final String JSON_PROPERTY_SPOTS = "spots";
-  private List<ShortAnswerSpot> spots = new ArrayList<>();
+  private List<ShortAnswerSpot> spots;
 
   public static final String JSON_PROPERTY_SOLUTIONS = "solutions";
-  private List<ShortAnswerSolution> solutions = new ArrayList<>();
+  private List<ShortAnswerSolution> solutions;
 
   public static final String JSON_PROPERTY_CORRECT_MAPPINGS = "correctMappings";
-  private List<ShortAnswerMapping> correctMappings = new ArrayList<>();
+  private List<ShortAnswerMapping> correctMappings;
 
   public static final String JSON_PROPERTY_SIMILARITY_VALUE = "similarityValue";
   private Integer similarityValue;

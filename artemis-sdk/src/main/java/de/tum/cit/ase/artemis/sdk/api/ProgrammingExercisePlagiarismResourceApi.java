@@ -13,10 +13,11 @@ import de.tum.cit.ase.artemis.sdk.model.TextPlagiarismResult;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class ProgrammingExercisePlagiarismResourceApi {
   private ApiClient apiClient;
 
@@ -81,56 +82,33 @@ public class ProgrammingExercisePlagiarismResourceApi {
      </table>
    */
   public ApiResponse<TextPlagiarismResult> checkPlagiarism1WithHttpInfo(Long exerciseId, Float similarityThreshold, Integer minimumScore) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling checkPlagiarism1");
     }
-    
-    // verify the required parameter 'similarityThreshold' is set
     if (similarityThreshold == null) {
       throw new ApiException(400, "Missing the required parameter 'similarityThreshold' when calling checkPlagiarism1");
     }
-    
-    // verify the required parameter 'minimumScore' is set
     if (minimumScore == null) {
       throw new ApiException(400, "Missing the required parameter 'minimumScore' when calling checkPlagiarism1");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/programming-exercises/{exerciseId}/check-plagiarism"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "similarityThreshold", similarityThreshold));
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "similarityThreshold", similarityThreshold)
+    );
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "minimumScore", minimumScore));
 
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<TextPlagiarismResult> localVarReturnType = new GenericType<TextPlagiarismResult>() {};
-
-    return apiClient.invokeAPI("ProgrammingExercisePlagiarismResourceApi.checkPlagiarism1", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ProgrammingExercisePlagiarismResourceApi.checkPlagiarism1", localVarPath, "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -167,56 +145,33 @@ public class ProgrammingExercisePlagiarismResourceApi {
      </table>
    */
   public ApiResponse<File> checkPlagiarismWithJPlagReportWithHttpInfo(Long exerciseId, Float similarityThreshold, Integer minimumScore) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling checkPlagiarismWithJPlagReport");
     }
-    
-    // verify the required parameter 'similarityThreshold' is set
     if (similarityThreshold == null) {
       throw new ApiException(400, "Missing the required parameter 'similarityThreshold' when calling checkPlagiarismWithJPlagReport");
     }
-    
-    // verify the required parameter 'minimumScore' is set
     if (minimumScore == null) {
       throw new ApiException(400, "Missing the required parameter 'minimumScore' when calling checkPlagiarismWithJPlagReport");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/programming-exercises/{exerciseId}/check-plagiarism-jplag-report"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "similarityThreshold", similarityThreshold));
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "similarityThreshold", similarityThreshold)
+    );
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "minimumScore", minimumScore));
 
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<File> localVarReturnType = new GenericType<File>() {};
-
-    return apiClient.invokeAPI("ProgrammingExercisePlagiarismResourceApi.checkPlagiarismWithJPlagReport", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ProgrammingExercisePlagiarismResourceApi.checkPlagiarismWithJPlagReport", localVarPath, "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -249,43 +204,20 @@ public class ProgrammingExercisePlagiarismResourceApi {
      </table>
    */
   public ApiResponse<TextPlagiarismResult> getPlagiarismResult1WithHttpInfo(Long exerciseId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling getPlagiarismResult1");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/programming-exercises/{exerciseId}/plagiarism-result"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<TextPlagiarismResult> localVarReturnType = new GenericType<TextPlagiarismResult>() {};
-
-    return apiClient.invokeAPI("ProgrammingExercisePlagiarismResourceApi.getPlagiarismResult1", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("ProgrammingExercisePlagiarismResourceApi.getPlagiarismResult1", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

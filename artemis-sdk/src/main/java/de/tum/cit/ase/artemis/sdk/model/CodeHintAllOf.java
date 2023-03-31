@@ -37,10 +37,10 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   CodeHintAllOf.JSON_PROPERTY_SOLUTION_ENTRIES
 })
 @JsonTypeName("CodeHint_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class CodeHintAllOf {
   public static final String JSON_PROPERTY_SOLUTION_ENTRIES = "solutionEntries";
-  private Set<ProgrammingExerciseSolutionEntry> solutionEntries = new LinkedHashSet<>();
+  private Set<ProgrammingExerciseSolutionEntry> solutionEntries;
 
   public CodeHintAllOf() { 
   }

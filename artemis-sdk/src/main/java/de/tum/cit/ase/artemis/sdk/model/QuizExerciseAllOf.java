@@ -52,7 +52,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   QuizExerciseAllOf.JSON_PROPERTY_QUIZ_ENDED
 })
 @JsonTypeName("QuizExercise_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class QuizExerciseAllOf {
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
@@ -116,10 +116,10 @@ public class QuizExerciseAllOf {
   private QuizPointStatistic quizPointStatistic;
 
   public static final String JSON_PROPERTY_QUIZ_QUESTIONS = "quizQuestions";
-  private List<QuizQuestion> quizQuestions = new ArrayList<>();
+  private List<QuizQuestion> quizQuestions;
 
   public static final String JSON_PROPERTY_QUIZ_BATCHES = "quizBatches";
-  private Set<QuizBatch> quizBatches = new LinkedHashSet<>();
+  private Set<QuizBatch> quizBatches;
 
   public static final String JSON_PROPERTY_QUIZ_STARTED = "quizStarted";
   private Boolean quizStarted;

@@ -44,7 +44,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   PlagiarismComparisonModelingSubmissionElement.JSON_PROPERTY_SIMILARITY,
   PlagiarismComparisonModelingSubmissionElement.JSON_PROPERTY_STATUS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class PlagiarismComparisonModelingSubmissionElement {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -59,7 +59,7 @@ public class PlagiarismComparisonModelingSubmissionElement {
   private PlagiarismSubmissionModelingSubmissionElement submissionB;
 
   public static final String JSON_PROPERTY_MATCHES = "matches";
-  private Set<PlagiarismMatch> matches = new LinkedHashSet<>();
+  private Set<PlagiarismMatch> matches;
 
   public static final String JSON_PROPERTY_SIMILARITY = "similarity";
   private Double similarity;

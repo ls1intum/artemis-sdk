@@ -11,10 +11,11 @@ import jakarta.ws.rs.core.GenericType;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class AdminStatisticsResourceApi {
   private ApiClient apiClient;
 
@@ -79,55 +80,29 @@ public class AdminStatisticsResourceApi {
      </table>
    */
   public ApiResponse<List<Integer>> getChartData1WithHttpInfo(String span, Integer periodIndex, String graphType) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'span' is set
+    // Check required parameters
     if (span == null) {
       throw new ApiException(400, "Missing the required parameter 'span' when calling getChartData1");
     }
-    
-    // verify the required parameter 'periodIndex' is set
     if (periodIndex == null) {
       throw new ApiException(400, "Missing the required parameter 'periodIndex' when calling getChartData1");
     }
-    
-    // verify the required parameter 'graphType' is set
     if (graphType == null) {
       throw new ApiException(400, "Missing the required parameter 'graphType' when calling getChartData1");
     }
-    
-    // create path and map variables
-    String localVarPath = "/api/admin/management/statistics/data";
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "span", span));
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "span", span)
+    );
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "periodIndex", periodIndex));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "graphType", graphType));
 
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<Integer>> localVarReturnType = new GenericType<List<Integer>>() {};
-
-    return apiClient.invokeAPI("AdminStatisticsResourceApi.getChartData1", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("AdminStatisticsResourceApi.getChartData1", "/api/admin/management/statistics/data", "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

@@ -13,10 +13,11 @@ import de.tum.cit.ase.artemis.sdk.model.PlagiarismComparisonStatusDTO;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class PlagiarismResourceApi {
   private ApiClient apiClient;
 
@@ -80,54 +81,32 @@ public class PlagiarismResourceApi {
      </table>
    */
   public ApiResponse<Void> deletePlagiarismComparisonsWithHttpInfo(Long exerciseId, Long plagiarismResultId, Boolean deleteAll) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'exerciseId' is set
+    // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling deletePlagiarismComparisons");
     }
-    
-    // verify the required parameter 'plagiarismResultId' is set
     if (plagiarismResultId == null) {
       throw new ApiException(400, "Missing the required parameter 'plagiarismResultId' when calling deletePlagiarismComparisons");
     }
-    
-    // verify the required parameter 'deleteAll' is set
     if (deleteAll == null) {
       throw new ApiException(400, "Missing the required parameter 'deleteAll' when calling deletePlagiarismComparisons");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/exercises/{exerciseId}/plagiarism-results/{plagiarismResultId}/plagiarism-comparisons"
-      .replaceAll("\\{" + "exerciseId" + "\\}", apiClient.escapeString(exerciseId.toString()))
-      .replaceAll("\\{" + "plagiarismResultId" + "\\}", apiClient.escapeString(plagiarismResultId.toString()));
+            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()))
+            .replaceAll("\\{plagiarismResultId}", apiClient.escapeString(plagiarismResultId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "deleteAll", deleteAll)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "deleteAll", deleteAll));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("PlagiarismResourceApi.deletePlagiarismComparisons", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    return apiClient.invokeAPI("PlagiarismResourceApi.deletePlagiarismComparisons", localVarPath, "DELETE", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
   /**
    * 
@@ -162,50 +141,25 @@ public class PlagiarismResourceApi {
      </table>
    */
   public ApiResponse<PlagiarismComparisonObject> getPlagiarismComparisonForSplitViewWithHttpInfo(Long courseId, Long comparisonId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getPlagiarismComparisonForSplitView");
     }
-    
-    // verify the required parameter 'comparisonId' is set
     if (comparisonId == null) {
       throw new ApiException(400, "Missing the required parameter 'comparisonId' when calling getPlagiarismComparisonForSplitView");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/plagiarism-comparisons/{comparisonId}/for-split-view"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "comparisonId" + "\\}", apiClient.escapeString(comparisonId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{comparisonId}", apiClient.escapeString(comparisonId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<PlagiarismComparisonObject> localVarReturnType = new GenericType<PlagiarismComparisonObject>() {};
-
-    return apiClient.invokeAPI("PlagiarismResourceApi.getPlagiarismComparisonForSplitView", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("PlagiarismResourceApi.getPlagiarismComparisonForSplitView", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -241,52 +195,26 @@ public class PlagiarismResourceApi {
      </table>
    */
   public ApiResponse<Void> updatePlagiarismComparisonStatusWithHttpInfo(Long courseId, Long comparisonId, PlagiarismComparisonStatusDTO plagiarismComparisonStatusDTO) throws ApiException {
-    Object localVarPostBody = plagiarismComparisonStatusDTO;
-    
-    // verify the required parameter 'courseId' is set
+    // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling updatePlagiarismComparisonStatus");
     }
-    
-    // verify the required parameter 'comparisonId' is set
     if (comparisonId == null) {
       throw new ApiException(400, "Missing the required parameter 'comparisonId' when calling updatePlagiarismComparisonStatus");
     }
-    
-    // verify the required parameter 'plagiarismComparisonStatusDTO' is set
     if (plagiarismComparisonStatusDTO == null) {
       throw new ApiException(400, "Missing the required parameter 'plagiarismComparisonStatusDTO' when calling updatePlagiarismComparisonStatus");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/courses/{courseId}/plagiarism-comparisons/{comparisonId}/status"
-      .replaceAll("\\{" + "courseId" + "\\}", apiClient.escapeString(courseId.toString()))
-      .replaceAll("\\{" + "comparisonId" + "\\}", apiClient.escapeString(comparisonId.toString()));
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()))
+            .replaceAll("\\{comparisonId}", apiClient.escapeString(comparisonId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("PlagiarismResourceApi.updatePlagiarismComparisonStatus", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
+    return apiClient.invokeAPI("PlagiarismResourceApi.updatePlagiarismComparisonStatus", localVarPath, "PUT", new ArrayList<>(), plagiarismComparisonStatusDTO,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, null, false);
   }
 }

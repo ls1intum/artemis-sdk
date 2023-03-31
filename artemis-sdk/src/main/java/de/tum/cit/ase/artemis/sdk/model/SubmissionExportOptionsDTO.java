@@ -36,7 +36,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   SubmissionExportOptionsDTO.JSON_PROPERTY_FILTER_LATE_SUBMISSIONS_DATE,
   SubmissionExportOptionsDTO.JSON_PROPERTY_PARTICIPANT_IDENTIFIER_LIST
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class SubmissionExportOptionsDTO {
   public static final String JSON_PROPERTY_EXPORT_ALL_PARTICIPANTS = "exportAllParticipants";
   private Boolean exportAllParticipants;

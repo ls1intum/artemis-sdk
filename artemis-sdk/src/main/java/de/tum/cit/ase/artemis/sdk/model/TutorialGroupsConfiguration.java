@@ -41,7 +41,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   TutorialGroupsConfiguration.JSON_PROPERTY_USE_PUBLIC_TUTORIAL_GROUP_CHANNELS,
   TutorialGroupsConfiguration.JSON_PROPERTY_TUTORIAL_GROUP_FREE_PERIODS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class TutorialGroupsConfiguration {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -59,7 +59,7 @@ public class TutorialGroupsConfiguration {
   private Boolean usePublicTutorialGroupChannels;
 
   public static final String JSON_PROPERTY_TUTORIAL_GROUP_FREE_PERIODS = "tutorialGroupFreePeriods";
-  private Set<TutorialGroupFreePeriod> tutorialGroupFreePeriods = new LinkedHashSet<>();
+  private Set<TutorialGroupFreePeriod> tutorialGroupFreePeriods;
 
   public TutorialGroupsConfiguration() { 
   }

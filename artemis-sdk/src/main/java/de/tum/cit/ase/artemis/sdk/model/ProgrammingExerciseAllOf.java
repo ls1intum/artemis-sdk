@@ -74,13 +74,13 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ProgrammingExerciseAllOf.JSON_PROPERTY_CHECKOUT_SOLUTION_REPOSITORY
 })
 @JsonTypeName("ProgrammingExercise_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class ProgrammingExerciseAllOf {
   public static final String JSON_PROPERTY_TEST_REPOSITORY_URL = "testRepositoryUrl";
   private String testRepositoryUrl;
 
   public static final String JSON_PROPERTY_AUXILIARY_REPOSITORIES = "auxiliaryRepositories";
-  private List<AuxiliaryRepository> auxiliaryRepositories = new ArrayList<>();
+  private List<AuxiliaryRepository> auxiliaryRepositories;
 
   public static final String JSON_PROPERTY_PUBLISH_BUILD_PLAN_URL = "publishBuildPlanUrl";
   private Boolean publishBuildPlanUrl;
@@ -179,13 +179,13 @@ public class ProgrammingExerciseAllOf {
   private SolutionProgrammingExerciseParticipation solutionParticipation;
 
   public static final String JSON_PROPERTY_TEST_CASES = "testCases";
-  private Set<ProgrammingExerciseTestCase> testCases = new LinkedHashSet<>();
+  private Set<ProgrammingExerciseTestCase> testCases;
 
   public static final String JSON_PROPERTY_TASKS = "tasks";
-  private List<ProgrammingExerciseTask> tasks = new ArrayList<>();
+  private List<ProgrammingExerciseTask> tasks;
 
   public static final String JSON_PROPERTY_STATIC_CODE_ANALYSIS_CATEGORIES = "staticCodeAnalysisCategories";
-  private Set<StaticCodeAnalysisCategory> staticCodeAnalysisCategories = new LinkedHashSet<>();
+  private Set<StaticCodeAnalysisCategory> staticCodeAnalysisCategories;
 
   public static final String JSON_PROPERTY_SUBMISSION_POLICY = "submissionPolicy";
   private SubmissionPolicy submissionPolicy;
@@ -241,7 +241,7 @@ public class ProgrammingExerciseAllOf {
   private ProjectTypeEnum projectType;
 
   public static final String JSON_PROPERTY_EXERCISE_HINTS = "exerciseHints";
-  private Set<ExerciseHint> exerciseHints = new LinkedHashSet<>();
+  private Set<ExerciseHint> exerciseHints;
 
   public static final String JSON_PROPERTY_TESTWISE_COVERAGE_ENABLED = "testwiseCoverageEnabled";
   private Boolean testwiseCoverageEnabled;

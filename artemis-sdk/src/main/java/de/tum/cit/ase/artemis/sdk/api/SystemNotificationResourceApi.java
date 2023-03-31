@@ -13,10 +13,11 @@ import de.tum.cit.ase.artemis.sdk.model.SystemNotification;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class SystemNotificationResourceApi {
   private ApiClient apiClient;
 
@@ -75,38 +76,12 @@ public class SystemNotificationResourceApi {
      </table>
    */
   public ApiResponse<List<SystemNotification>> getActiveAndFutureSystemNotificationsWithHttpInfo() throws ApiException {
-    Object localVarPostBody = null;
-    
-    // create path and map variables
-    String localVarPath = "/api/system-notifications/active";
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<SystemNotification>> localVarReturnType = new GenericType<List<SystemNotification>>() {};
-
-    return apiClient.invokeAPI("SystemNotificationResourceApi.getActiveAndFutureSystemNotifications", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("SystemNotificationResourceApi.getActiveAndFutureSystemNotifications", "/api/system-notifications/active", "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -139,44 +114,22 @@ public class SystemNotificationResourceApi {
      </table>
    */
   public ApiResponse<List<SystemNotification>> getAllSystemNotificationsWithHttpInfo(Pageable pageable) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'pageable' is set
+    // Check required parameters
     if (pageable == null) {
       throw new ApiException(400, "Missing the required parameter 'pageable' when calling getAllSystemNotifications");
     }
-    
-    // create path and map variables
-    String localVarPath = "/api/system-notifications";
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "pageable", pageable)
+    );
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "pageable", pageable));
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<SystemNotification>> localVarReturnType = new GenericType<List<SystemNotification>>() {};
-
-    return apiClient.invokeAPI("SystemNotificationResourceApi.getAllSystemNotifications", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("SystemNotificationResourceApi.getAllSystemNotifications", "/api/system-notifications", "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -209,43 +162,20 @@ public class SystemNotificationResourceApi {
      </table>
    */
   public ApiResponse<SystemNotification> getSystemNotificationWithHttpInfo(Long notificationId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'notificationId' is set
+    // Check required parameters
     if (notificationId == null) {
       throw new ApiException(400, "Missing the required parameter 'notificationId' when calling getSystemNotification");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/system-notifications/{notificationId}"
-      .replaceAll("\\{" + "notificationId" + "\\}", apiClient.escapeString(notificationId.toString()));
+            .replaceAll("\\{notificationId}", apiClient.escapeString(notificationId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<SystemNotification> localVarReturnType = new GenericType<SystemNotification>() {};
-
-    return apiClient.invokeAPI("SystemNotificationResourceApi.getSystemNotification", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("SystemNotificationResourceApi.getSystemNotification", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }

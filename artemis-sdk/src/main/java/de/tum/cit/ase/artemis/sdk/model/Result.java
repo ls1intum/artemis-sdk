@@ -56,10 +56,10 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   Result.JSON_PROPERTY_TEST_CASE_COUNT,
   Result.JSON_PROPERTY_PASSED_TEST_CASE_COUNT,
   Result.JSON_PROPERTY_CODE_ISSUE_COUNT,
-  Result.JSON_PROPERTY_FEEDBACK_TYPE,
-  Result.JSON_PROPERTY_COVERAGE_FILE_REPORTS_BY_TEST_CASE_NAME
+  Result.JSON_PROPERTY_COVERAGE_FILE_REPORTS_BY_TEST_CASE_NAME,
+  Result.JSON_PROPERTY_FEEDBACK_TYPE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class Result {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -80,7 +80,7 @@ public class Result {
   private GetAllTextSubmissions200ResponseInner submission;
 
   public static final String JSON_PROPERTY_FEEDBACKS = "feedbacks";
-  private List<Feedback> feedbacks = new ArrayList<>();
+  private List<Feedback> feedbacks;
 
   public static final String JSON_PROPERTY_PARTICIPATION = "participation";
   private CleanupBuildPlan200Response participation;
@@ -143,11 +143,11 @@ public class Result {
   public static final String JSON_PROPERTY_CODE_ISSUE_COUNT = "codeIssueCount";
   private Integer codeIssueCount;
 
-  public static final String JSON_PROPERTY_FEEDBACK_TYPE = "feedbackType";
-  private Feedback feedbackType;
-
   public static final String JSON_PROPERTY_COVERAGE_FILE_REPORTS_BY_TEST_CASE_NAME = "coverageFileReportsByTestCaseName";
   private Map<String, Set<CoverageFileReport>> coverageFileReportsByTestCaseName = new HashMap<>();
+
+  public static final String JSON_PROPERTY_FEEDBACK_TYPE = "feedbackType";
+  private Feedback feedbackType;
 
   public Result() { 
   }
@@ -535,31 +535,6 @@ public class Result {
   }
 
 
-  public Result feedbackType(Feedback feedbackType) {
-    this.feedbackType = feedbackType;
-    return this;
-  }
-
-   /**
-   * Get feedbackType
-   * @return feedbackType
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FEEDBACK_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Feedback getFeedbackType() {
-    return feedbackType;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_FEEDBACK_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFeedbackType(Feedback feedbackType) {
-    this.feedbackType = feedbackType;
-  }
-
-
   public Result coverageFileReportsByTestCaseName(Map<String, Set<CoverageFileReport>> coverageFileReportsByTestCaseName) {
     this.coverageFileReportsByTestCaseName = coverageFileReportsByTestCaseName;
     return this;
@@ -593,6 +568,31 @@ public class Result {
   }
 
 
+  public Result feedbackType(Feedback feedbackType) {
+    this.feedbackType = feedbackType;
+    return this;
+  }
+
+   /**
+   * Get feedbackType
+   * @return feedbackType
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_FEEDBACK_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Feedback getFeedbackType() {
+    return feedbackType;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_FEEDBACK_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setFeedbackType(Feedback feedbackType) {
+    this.feedbackType = feedbackType;
+  }
+
+
   /**
    * Return true if this Result object is equal to o.
    */
@@ -620,13 +620,13 @@ public class Result {
         Objects.equals(this.testCaseCount, result.testCaseCount) &&
         Objects.equals(this.passedTestCaseCount, result.passedTestCaseCount) &&
         Objects.equals(this.codeIssueCount, result.codeIssueCount) &&
-        Objects.equals(this.feedbackType, result.feedbackType) &&
-        Objects.equals(this.coverageFileReportsByTestCaseName, result.coverageFileReportsByTestCaseName);
+        Objects.equals(this.coverageFileReportsByTestCaseName, result.coverageFileReportsByTestCaseName) &&
+        Objects.equals(this.feedbackType, result.feedbackType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, completionDate, successful, score, rated, submission, feedbacks, participation, assessor, assessmentType, hasComplaint, exampleResult, testCaseCount, passedTestCaseCount, codeIssueCount, feedbackType, coverageFileReportsByTestCaseName);
+    return Objects.hash(id, completionDate, successful, score, rated, submission, feedbacks, participation, assessor, assessmentType, hasComplaint, exampleResult, testCaseCount, passedTestCaseCount, codeIssueCount, coverageFileReportsByTestCaseName, feedbackType);
   }
 
   @Override
@@ -648,8 +648,8 @@ public class Result {
     sb.append("    testCaseCount: ").append(toIndentedString(testCaseCount)).append("\n");
     sb.append("    passedTestCaseCount: ").append(toIndentedString(passedTestCaseCount)).append("\n");
     sb.append("    codeIssueCount: ").append(toIndentedString(codeIssueCount)).append("\n");
-    sb.append("    feedbackType: ").append(toIndentedString(feedbackType)).append("\n");
     sb.append("    coverageFileReportsByTestCaseName: ").append(toIndentedString(coverageFileReportsByTestCaseName)).append("\n");
+    sb.append("    feedbackType: ").append(toIndentedString(feedbackType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

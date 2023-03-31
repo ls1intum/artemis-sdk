@@ -92,7 +92,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   IPAddress.JSON_PROPERTY_MACADDRESS,
   IPAddress.JSON_PROPERTY_MULTICAST
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class IPAddress {
   public static final String JSON_PROPERTY_LOOPBACK = "loopback";
   private Boolean loopback;
@@ -223,7 +223,7 @@ public class IPAddress {
   private IPAddressSection networkSection;
 
   public static final String JSON_PROPERTY_SEGMENTS = "segments";
-  private List<IPAddressSegment> segments = new ArrayList<>();
+  private List<IPAddressSegment> segments;
 
   public static final String JSON_PROPERTY_COUNT = "count";
   private Integer count;
@@ -247,13 +247,13 @@ public class IPAddress {
   private Boolean singlePrefixBlock;
 
   public static final String JSON_PROPERTY_DIVISION_STRINGS = "divisionStrings";
-  private List<String> divisionStrings = new ArrayList<>();
+  private List<String> divisionStrings;
 
   public static final String JSON_PROPERTY_PREFIX_COUNT = "prefixCount";
   private Integer prefixCount;
 
   public static final String JSON_PROPERTY_BYTES = "bytes";
-  private List<byte[]> bytes = new ArrayList<>();
+  private List<byte[]> bytes;
 
   public static final String JSON_PROPERTY_VALUE = "value";
   private Integer value;
@@ -271,7 +271,7 @@ public class IPAddress {
   private Boolean fullRange;
 
   public static final String JSON_PROPERTY_UPPER_BYTES = "upperBytes";
-  private List<byte[]> upperBytes = new ArrayList<>();
+  private List<byte[]> upperBytes;
 
   public static final String JSON_PROPERTY_UPPER_VALUE = "upperValue";
   private Integer upperValue;
@@ -289,7 +289,7 @@ public class IPAddress {
   private Integer segmentCount;
 
   public static final String JSON_PROPERTY_SEGMENT_STRINGS = "segmentStrings";
-  private List<String> segmentStrings = new ArrayList<>();
+  private List<String> segmentStrings;
 
   public static final String JSON_PROPERTY_MACADDRESS = "macaddress";
   private Boolean macaddress;

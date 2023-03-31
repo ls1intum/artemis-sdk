@@ -39,7 +39,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   FileUploadSubmissionAllOf.JSON_PROPERTY_RESULTS
 })
 @JsonTypeName("FileUploadSubmission_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class FileUploadSubmissionAllOf {
   public static final String JSON_PROPERTY_PARTICIPATION = "participation";
   private Participation participation;
@@ -48,7 +48,7 @@ public class FileUploadSubmissionAllOf {
   private String filePath;
 
   public static final String JSON_PROPERTY_RESULTS = "results";
-  private List<Result> results = new ArrayList<>();
+  private List<Result> results;
 
   public FileUploadSubmissionAllOf() { 
   }

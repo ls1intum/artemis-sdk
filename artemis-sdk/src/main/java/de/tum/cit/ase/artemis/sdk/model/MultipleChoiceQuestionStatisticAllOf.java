@@ -37,10 +37,10 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   MultipleChoiceQuestionStatisticAllOf.JSON_PROPERTY_ANSWER_COUNTERS
 })
 @JsonTypeName("MultipleChoiceQuestionStatistic_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class MultipleChoiceQuestionStatisticAllOf {
   public static final String JSON_PROPERTY_ANSWER_COUNTERS = "answerCounters";
-  private Set<AnswerCounter> answerCounters = new LinkedHashSet<>();
+  private Set<AnswerCounter> answerCounters;
 
   public MultipleChoiceQuestionStatisticAllOf() { 
   }

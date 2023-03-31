@@ -12,10 +12,11 @@ import de.tum.cit.ase.artemis.sdk.model.VideoUnit;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-30T13:56:33.435320Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
 public class VideoUnitResourceApi {
   private ApiClient apiClient;
 
@@ -78,49 +79,24 @@ public class VideoUnitResourceApi {
      </table>
    */
   public ApiResponse<VideoUnit> createVideoUnitWithHttpInfo(Long lectureId, VideoUnit videoUnit) throws ApiException {
-    Object localVarPostBody = videoUnit;
-    
-    // verify the required parameter 'lectureId' is set
+    // Check required parameters
     if (lectureId == null) {
       throw new ApiException(400, "Missing the required parameter 'lectureId' when calling createVideoUnit");
     }
-    
-    // verify the required parameter 'videoUnit' is set
     if (videoUnit == null) {
       throw new ApiException(400, "Missing the required parameter 'videoUnit' when calling createVideoUnit");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/lectures/{lectureId}/video-units"
-      .replaceAll("\\{" + "lectureId" + "\\}", apiClient.escapeString(lectureId.toString()));
+            .replaceAll("\\{lectureId}", apiClient.escapeString(lectureId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<VideoUnit> localVarReturnType = new GenericType<VideoUnit>() {};
-
-    return apiClient.invokeAPI("VideoUnitResourceApi.createVideoUnit", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("VideoUnitResourceApi.createVideoUnit", localVarPath, "POST", new ArrayList<>(), videoUnit,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -155,50 +131,25 @@ public class VideoUnitResourceApi {
      </table>
    */
   public ApiResponse<VideoUnit> getVideoUnitWithHttpInfo(Long videoUnitId, Long lectureId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'videoUnitId' is set
+    // Check required parameters
     if (videoUnitId == null) {
       throw new ApiException(400, "Missing the required parameter 'videoUnitId' when calling getVideoUnit");
     }
-    
-    // verify the required parameter 'lectureId' is set
     if (lectureId == null) {
       throw new ApiException(400, "Missing the required parameter 'lectureId' when calling getVideoUnit");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/lectures/{lectureId}/video-units/{videoUnitId}"
-      .replaceAll("\\{" + "videoUnitId" + "\\}", apiClient.escapeString(videoUnitId.toString()))
-      .replaceAll("\\{" + "lectureId" + "\\}", apiClient.escapeString(lectureId.toString()));
+            .replaceAll("\\{videoUnitId}", apiClient.escapeString(videoUnitId.toString()))
+            .replaceAll("\\{lectureId}", apiClient.escapeString(lectureId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<VideoUnit> localVarReturnType = new GenericType<VideoUnit>() {};
-
-    return apiClient.invokeAPI("VideoUnitResourceApi.getVideoUnit", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("VideoUnitResourceApi.getVideoUnit", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
   /**
    * 
@@ -233,48 +184,23 @@ public class VideoUnitResourceApi {
      </table>
    */
   public ApiResponse<VideoUnit> updateVideoUnitWithHttpInfo(Long lectureId, VideoUnit videoUnit) throws ApiException {
-    Object localVarPostBody = videoUnit;
-    
-    // verify the required parameter 'lectureId' is set
+    // Check required parameters
     if (lectureId == null) {
       throw new ApiException(400, "Missing the required parameter 'lectureId' when calling updateVideoUnit");
     }
-    
-    // verify the required parameter 'videoUnit' is set
     if (videoUnit == null) {
       throw new ApiException(400, "Missing the required parameter 'videoUnit' when calling updateVideoUnit");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/api/lectures/{lectureId}/video-units"
-      .replaceAll("\\{" + "lectureId" + "\\}", apiClient.escapeString(lectureId.toString()));
+            .replaceAll("\\{lectureId}", apiClient.escapeString(lectureId.toString()));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    
-    final String[] localVarAccepts = {
-      "*/*"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<VideoUnit> localVarReturnType = new GenericType<VideoUnit>() {};
-
-    return apiClient.invokeAPI("VideoUnitResourceApi.updateVideoUnit", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
+    return apiClient.invokeAPI("VideoUnitResourceApi.updateVideoUnit", localVarPath, "PUT", new ArrayList<>(), videoUnit,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
   }
 }
