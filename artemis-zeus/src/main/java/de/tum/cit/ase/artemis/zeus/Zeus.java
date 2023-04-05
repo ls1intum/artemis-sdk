@@ -65,6 +65,9 @@ public class Zeus {
     private static final FileResourceApi fileResourceApi = new FileResourceApi(Zeus.getDefaultClient());
     public static FileResourceApi getFileResourceApi() { return fileResourceApi; }
 
+    private static final ProgrammingExerciseResourceApi programmingExerciseResourceApi = new ProgrammingExerciseResourceApi(Zeus.getDefaultClient());
+    public static ProgrammingExerciseResourceApi getProgrammingExerciseResourceApi() { return programmingExerciseResourceApi; }
+
 
     private static String authenticateAndGetCookie(String username, String password) {
         LoginVM login = new LoginVM().password(password).username(username).rememberMe(false);

@@ -280,6 +280,38 @@ public class CreationCourseWithExercises implements Callable<Integer> {
                 .teamMode(false);
         quizExercise = Zeus.getQuizExerciseResourceApi().createQuizExercise(quizExercise);
 
+        //create programming exercise
+        String programmingExerciseTitle = pregeneratedTitlePrefix + "Programming Exercise";
+        ProgrammingExercise programmingExercise = (ProgrammingExercise) new ProgrammingExercise()
+                .allowOfflineIde(true)
+                .allowOnlineEditor(true)
+                .checkoutSolutionRepository(false)
+                .packageName(programmingExerciseTitle.replaceAll("\\s", "_"))
+                .programmingLanguage(ProgrammingExercise.ProgrammingLanguageEnum.JAVA)
+                .projectType(ProgrammingExercise.ProjectTypeEnum.PLAIN_GRADLE)
+                .publishBuildPlanUrl(false)
+                .showTestNamesToStudents(false)
+                .solutionParticipation(new SolutionProgrammingExerciseParticipation())
+                .staticCodeAnalysisEnabled(false)
+                .templateParticipation(new TemplateProgrammingExerciseParticipation())
+                .testwiseCoverageEnabled(false)
+                .title(programmingExerciseTitle)
+                .course(course)
+                .maxPoints(5.0)
+                .allowComplaintsForAutomaticAssessments(false)
+                .allowManualFeedbackRequests(false)
+                .assessmentType(Exercise.AssessmentTypeEnum.AUTOMATIC)
+                .bonusPoints(0.0)
+                .includedInOverallScore(Exercise.IncludedInOverallScoreEnum.INCLUDED_COMPLETELY)
+                .mode(Exercise.ModeEnum.INDIVIDUAL)
+                .numberOfAssessmentsOfCorrectionRounds(quizExerciseDueDateStats)
+                .presentationScoreEnabled(false)
+                .secondCorrectionEnabled(false)
+                .shortName("gpe")
+                .studentAssignedTeamIdComputed(false)
+                .teamMode(false);
+        programmingExercise = Zeus.getProgrammingExerciseResourceApi().createProgrammingExercise(programmingExercise);
+
         return 0;
     }
 }
