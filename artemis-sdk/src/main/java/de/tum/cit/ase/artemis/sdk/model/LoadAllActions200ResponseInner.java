@@ -64,7 +64,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import de.tum.cit.ase.artemis.sdk.JSON;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
 @JsonDeserialize(using = LoadAllActions200ResponseInner.LoadAllActions200ResponseInnerDeserializer.class)
 @JsonSerialize(using = LoadAllActions200ResponseInner.LoadAllActions200ResponseInnerSerializer.class)
 public class LoadAllActions200ResponseInner extends AbstractOpenApiSchema {

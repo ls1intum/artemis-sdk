@@ -35,7 +35,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   SystemNotificationAllOf.JSON_PROPERTY_TYPE
 })
 @JsonTypeName("SystemNotification_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
 public class SystemNotificationAllOf {
   public static final String JSON_PROPERTY_EXPIRE_DATE = "expireDate";
   private OffsetDateTime expireDate;

@@ -41,7 +41,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ExerciseManagementStatisticsDTO.JSON_PROPERTY_NUMBER_OF_POSTS,
   ExerciseManagementStatisticsDTO.JSON_PROPERTY_NUMBER_OF_RESOLVED_POSTS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
 public class ExerciseManagementStatisticsDTO {
   public static final String JSON_PROPERTY_AVERAGE_SCORE_OF_EXERCISE = "averageScoreOfExercise";
   private Double averageScoreOfExercise;

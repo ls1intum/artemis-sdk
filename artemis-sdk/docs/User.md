@@ -25,9 +25,9 @@
 |**organizations** | [**Set&lt;Organization&gt;**](Organization.md) |  |  [optional] |
 |**tutorialGroupRegistrations** | [**Set&lt;TutorialGroupRegistration&gt;**](TutorialGroupRegistration.md) |  |  [optional] |
 |**name** | **String** |  |  [optional] |
+|**internal** | **Boolean** |  |  [optional] |
 |**participantIdentifier** | **String** |  |  [optional] |
 |**visibleRegistrationNumber** | **String** |  |  [optional] |
-|**internal** | **Boolean** |  |  [optional] |
 
 
 

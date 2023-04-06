@@ -41,7 +41,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   StudentExamWithGradeDTO.JSON_PROPERTY_STUDENT_RESULT,
   StudentExamWithGradeDTO.JSON_PROPERTY_ACHIEVED_POINTS_PER_EXERCISE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
 public class StudentExamWithGradeDTO {
   public static final String JSON_PROPERTY_MAX_POINTS = "maxPoints";
   private Double maxPoints;

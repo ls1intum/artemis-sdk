@@ -69,7 +69,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import de.tum.cit.ase.artemis.sdk.JSON;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
 @JsonDeserialize(using = CleanupBuildPlan200Response.CleanupBuildPlan200ResponseDeserializer.class)
 @JsonSerialize(using = CleanupBuildPlan200Response.CleanupBuildPlan200ResponseSerializer.class)
 public class CleanupBuildPlan200Response extends AbstractOpenApiSchema {
@@ -266,9 +266,13 @@ public class CleanupBuildPlan200Response extends AbstractOpenApiSchema {
         JSON.registerDescendants(CleanupBuildPlan200Response.class, Collections.unmodifiableMap(schemas));
         // Initialize and register the discriminator mappings.
         Map<String, Class<?>> mappings = new HashMap<>();
+        mappings.put("PESP", ProgrammingExerciseStudentParticipation.class);
         mappings.put("ProgrammingExerciseStudentParticipation", ProgrammingExerciseStudentParticipation.class);
+        mappings.put("SP", StudentParticipation.class);
+        mappings.put("SPEP", SolutionProgrammingExerciseParticipation.class);
         mappings.put("SolutionProgrammingExerciseParticipation", SolutionProgrammingExerciseParticipation.class);
         mappings.put("StudentParticipation", StudentParticipation.class);
+        mappings.put("TPEP", TemplateProgrammingExerciseParticipation.class);
         mappings.put("TemplateProgrammingExerciseParticipation", TemplateProgrammingExerciseParticipation.class);
         mappings.put("cleanupBuildPlan_200_response", CleanupBuildPlan200Response.class);
         JSON.registerDiscriminator(CleanupBuildPlan200Response.class, "type", mappings);

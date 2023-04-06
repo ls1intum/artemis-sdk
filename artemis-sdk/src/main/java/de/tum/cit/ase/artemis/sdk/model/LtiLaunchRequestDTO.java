@@ -55,7 +55,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   LtiLaunchRequestDTO.JSON_PROPERTY_OAUTH_CONSUMER_KEY,
   LtiLaunchRequestDTO.JSON_PROPERTY_OAUTH_SIGNATURE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
 public class LtiLaunchRequestDTO {
   public static final String JSON_PROPERTY_LIS_PERSON_SOURCEDID = "lis_person_sourcedid";
   private String lisPersonSourcedid;

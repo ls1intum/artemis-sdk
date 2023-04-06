@@ -41,7 +41,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   CourseManagementOverviewExerciseStatisticsDTO.JSON_PROPERTY_NO_OF_SUBMISSIONS_IN_TIME,
   CourseManagementOverviewExerciseStatisticsDTO.JSON_PROPERTY_NO_OF_ASSESSMENTS_DONE_IN_PERCENT
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
 public class CourseManagementOverviewExerciseStatisticsDTO {
   public static final String JSON_PROPERTY_EXERCISE_ID = "exerciseId";
   private Long exerciseId;

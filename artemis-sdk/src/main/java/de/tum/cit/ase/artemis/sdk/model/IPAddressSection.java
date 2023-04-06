@@ -42,8 +42,8 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   IPAddressSection.JSON_PROPERTY_HOST_MASK_PREFIX,
   IPAddressSection.JSON_PROPERTY_NETWORK_MASK_PREFIX,
   IPAddressSection.JSON_PROPERTY_ENTIRE_ADDRESS,
-  IPAddressSection.JSON_PROPERTY_SEGMENT_COUNT,
   IPAddressSection.JSON_PROPERTY_IPV4,
+  IPAddressSection.JSON_PROPERTY_SEGMENT_COUNT,
   IPAddressSection.JSON_PROPERTY_MAX_SEGMENT_VALUE,
   IPAddressSection.JSON_PROPERTY_NON_ZERO_HOST_COUNT,
   IPAddressSection.JSON_PROPERTY_BYTE_COUNT,
@@ -89,7 +89,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   IPAddressSection.JSON_PROPERTY_ZERO_RANGE_SEGMENTS,
   IPAddressSection.JSON_PROPERTY_INET_ADDRESS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
 public class IPAddressSection {
   public static final String JSON_PROPERTY_NETWORK = "network";
   private IPAddressNetworkObjectObjectObjectObjectObject network;
@@ -112,11 +112,11 @@ public class IPAddressSection {
   public static final String JSON_PROPERTY_ENTIRE_ADDRESS = "entireAddress";
   private Boolean entireAddress;
 
-  public static final String JSON_PROPERTY_SEGMENT_COUNT = "segmentCount";
-  private Integer segmentCount;
-
   public static final String JSON_PROPERTY_IPV4 = "ipv4";
   private Boolean ipv4;
+
+  public static final String JSON_PROPERTY_SEGMENT_COUNT = "segmentCount";
+  private Integer segmentCount;
 
   public static final String JSON_PROPERTY_MAX_SEGMENT_VALUE = "maxSegmentValue";
   private Integer maxSegmentValue;
@@ -463,31 +463,6 @@ public class IPAddressSection {
   }
 
 
-  public IPAddressSection segmentCount(Integer segmentCount) {
-    this.segmentCount = segmentCount;
-    return this;
-  }
-
-   /**
-   * Get segmentCount
-   * @return segmentCount
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SEGMENT_COUNT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Integer getSegmentCount() {
-    return segmentCount;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_SEGMENT_COUNT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSegmentCount(Integer segmentCount) {
-    this.segmentCount = segmentCount;
-  }
-
-
   public IPAddressSection ipv4(Boolean ipv4) {
     this.ipv4 = ipv4;
     return this;
@@ -510,6 +485,31 @@ public class IPAddressSection {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIpv4(Boolean ipv4) {
     this.ipv4 = ipv4;
+  }
+
+
+  public IPAddressSection segmentCount(Integer segmentCount) {
+    this.segmentCount = segmentCount;
+    return this;
+  }
+
+   /**
+   * Get segmentCount
+   * @return segmentCount
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_SEGMENT_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getSegmentCount() {
+    return segmentCount;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SEGMENT_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSegmentCount(Integer segmentCount) {
+    this.segmentCount = segmentCount;
   }
 
 
@@ -1672,8 +1672,8 @@ public class IPAddressSection {
         Objects.equals(this.hostMaskPrefix, ipAddressSection.hostMaskPrefix) &&
         Objects.equals(this.networkMaskPrefix, ipAddressSection.networkMaskPrefix) &&
         Objects.equals(this.entireAddress, ipAddressSection.entireAddress) &&
-        Objects.equals(this.segmentCount, ipAddressSection.segmentCount) &&
         Objects.equals(this.ipv4, ipAddressSection.ipv4) &&
+        Objects.equals(this.segmentCount, ipAddressSection.segmentCount) &&
         Objects.equals(this.maxSegmentValue, ipAddressSection.maxSegmentValue) &&
         Objects.equals(this.nonZeroHostCount, ipAddressSection.nonZeroHostCount) &&
         Objects.equals(this.byteCount, ipAddressSection.byteCount) &&
@@ -1722,7 +1722,7 @@ public class IPAddressSection {
 
   @Override
   public int hashCode() {
-    return Objects.hash(network, lower, upper, countImpl, hostMaskPrefix, networkMaskPrefix, entireAddress, segmentCount, ipv4, maxSegmentValue, nonZeroHostCount, byteCount, bitCount, lowerNonZeroHost, sequentialBlockCount, iterable, zeroHost, hostMask, networkMask, singleNetwork, prefixLength, singlePrefixBlock, prefixLengthForSingleBlock, minPrefixLengthForBlock, segmentStrings, fullRange, ipv6, hostSection, section, ipversion, networkSection, segments, networkPrefixLength, count, prefixed, prefixBlock, sequentialBlockIndex, sequential, divisionStrings, prefixCount, bytes, value, zero, upperBytes, upperValue, max, multiple, divisionCount, bytesPerSegment, bitsPerSegment, zeroSegments, zeroRangeSegments, inetAddress);
+    return Objects.hash(network, lower, upper, countImpl, hostMaskPrefix, networkMaskPrefix, entireAddress, ipv4, segmentCount, maxSegmentValue, nonZeroHostCount, byteCount, bitCount, lowerNonZeroHost, sequentialBlockCount, iterable, zeroHost, hostMask, networkMask, singleNetwork, prefixLength, singlePrefixBlock, prefixLengthForSingleBlock, minPrefixLengthForBlock, segmentStrings, fullRange, ipv6, hostSection, section, ipversion, networkSection, segments, networkPrefixLength, count, prefixed, prefixBlock, sequentialBlockIndex, sequential, divisionStrings, prefixCount, bytes, value, zero, upperBytes, upperValue, max, multiple, divisionCount, bytesPerSegment, bitsPerSegment, zeroSegments, zeroRangeSegments, inetAddress);
   }
 
   @Override
@@ -1736,8 +1736,8 @@ public class IPAddressSection {
     sb.append("    hostMaskPrefix: ").append(toIndentedString(hostMaskPrefix)).append("\n");
     sb.append("    networkMaskPrefix: ").append(toIndentedString(networkMaskPrefix)).append("\n");
     sb.append("    entireAddress: ").append(toIndentedString(entireAddress)).append("\n");
-    sb.append("    segmentCount: ").append(toIndentedString(segmentCount)).append("\n");
     sb.append("    ipv4: ").append(toIndentedString(ipv4)).append("\n");
+    sb.append("    segmentCount: ").append(toIndentedString(segmentCount)).append("\n");
     sb.append("    maxSegmentValue: ").append(toIndentedString(maxSegmentValue)).append("\n");
     sb.append("    nonZeroHostCount: ").append(toIndentedString(nonZeroHostCount)).append("\n");
     sb.append("    byteCount: ").append(toIndentedString(byteCount)).append("\n");

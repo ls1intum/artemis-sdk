@@ -35,7 +35,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   CourseLearningGoalProgressDTO.JSON_PROPERTY_NUMBER_OF_MASTERED_STUDENTS,
   CourseLearningGoalProgressDTO.JSON_PROPERTY_AVERAGE_STUDENT_SCORE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
 public class CourseLearningGoalProgressDTO {
   public static final String JSON_PROPERTY_LEARNING_GOAL_ID = "learningGoalId";
   private Long learningGoalId;

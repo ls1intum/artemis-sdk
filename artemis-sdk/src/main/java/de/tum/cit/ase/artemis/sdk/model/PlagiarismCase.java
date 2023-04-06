@@ -52,7 +52,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   PlagiarismCase.JSON_PROPERTY_VERDICT_DATE,
   PlagiarismCase.JSON_PROPERTY_VERDICT_POINT_DEDUCTION
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-31T15:20:01.980101Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
 public class PlagiarismCase {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
