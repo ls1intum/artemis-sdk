@@ -7,8 +7,14 @@
    -o /local \
    -c /local/openapi-generator-config.yaml
 
-3) manually check the following files for changes
-(TODO: think about using mustache template but not sure how to update them? for now use the patch and keep it updated!)
+3) Cherry pick commits after a newly generated code got committed. First tried patches but that didn't work out as I
+couldn't resolve conflicts nicely that way.
+(TODO: think about using mustache template but not sure how to update them? Maybe a different approach then
+cherry picking works?!)
+   491d246
+   bfe34ce
+   259719f
+
 * pom.xml: jakarta.annotation no scope provided necessary
 * ApiClient.java: MediaType JSON for MultiPart document
 * ApiClient.java: allow selfsigned certificates in customizeClientBuilder
