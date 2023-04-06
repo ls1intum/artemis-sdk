@@ -58,10 +58,10 @@ import de.tum.cit.ase.artemis.sdk.JSON;
 )
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = true)
 @JsonSubTypes({
-  @JsonSubTypes.Type(value = ProgrammingExerciseStudentParticipation.class, name = "PESP"),
-  @JsonSubTypes.Type(value = StudentParticipation.class, name = "SP"),
-  @JsonSubTypes.Type(value = SolutionProgrammingExerciseParticipation.class, name = "SPEP"),
-  @JsonSubTypes.Type(value = TemplateProgrammingExerciseParticipation.class, name = "TPEP"),
+  @JsonSubTypes.Type(value = ProgrammingExerciseStudentParticipation.class, name = "programming"),
+  @JsonSubTypes.Type(value = StudentParticipation.class, name = "student"),
+  @JsonSubTypes.Type(value = SolutionProgrammingExerciseParticipation.class, name = "solution"),
+  @JsonSubTypes.Type(value = TemplateProgrammingExerciseParticipation.class, name = "template"),
 })
 
 public class Participation {
