@@ -1,7 +1,8 @@
 plugins {
     id 'java'
+    id 'java-library'
     id 'application'
-    id 'org.graalvm.buildtools.native' version '0.9.12'
+    id 'org.graalvm.buildtools.native' version '0.9.21'
     id 'com.github.johnrengelman.shadow' version '7.1.2'
 }
 
@@ -18,6 +19,7 @@ repositories {
 jar {
     manifest {
         attributes 'Main-Class': 'de.tum.cit.ase.artemis.zeus.Zeus'
+        // this fixed a version related problem with the Logging framework
         attributes 'Multi-Release': 'true'
     }
 }
@@ -47,7 +49,7 @@ ext {
     jersey_version = "3.0.4"
     junit_version = "5.8.2"
     picocli_version = "4.7.1"
-    log4j_version = "2.16.0"
+    log4j_version = "2.17.1"
 }
 
 //TODO: use gradle shadow jar instead of duplicate dependencies from artemis-client-sdk, at least for development
