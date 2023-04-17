@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'application'
     id 'org.graalvm.buildtools.native' version '0.9.12'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
 }
 
 group = 'de.tum.cit.ase.artemis'
@@ -17,7 +18,12 @@ repositories {
 jar {
     manifest {
         attributes 'Main-Class': 'de.tum.cit.ase.artemis.zeus.Zeus'
+        attributes 'Multi-Release': 'true'
     }
+}
+
+dependencies {
+    implementation files('libs/artemis-client-sdk-v0.jar')
 }
 
 graalvmNative {
