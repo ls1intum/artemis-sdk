@@ -12,13 +12,12 @@ import org.apache.logging.log4j.Logger;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.io.File;
+import java.io.*;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.Callable;
-import java.net.URL;
-import java.io.IOException;
 import java.time.OffsetDateTime;
 
 @Command(name = "courseWithExercises", description = "creates an Artemis course with exercises",
@@ -35,7 +34,7 @@ public class CreationCourseWithExercises implements Callable<Integer> {
     @Mixin LoggingMixin loggingMixin;
 
     @Override
-    public Integer call() {
+    public Integer call() throws URISyntaxException {
         Zeus.prepareRestClient();
         // create a course
         //TODO: extract this to a function in other class to avoid duplicate code?
@@ -171,8 +170,7 @@ public class CreationCourseWithExercises implements Callable<Integer> {
                 .text("A longer more detailed question");
         quizQuestions.add(multipleChoiceQuestion);
         // create Drag and Drop question (Data partly extracted from Cypress tests)
-        URL url = Zeus.class.getClassLoader().getResource("testdata/DragAndDropQuiz/background.jpg");
-        File backgroundImage = new File(url.getPath());
+        File backgroundImage = new File(getClass().getResource("/testdata/DragAndDropQuiz/background.jpg").toURI());
         String backgroundImagePathJSON = Zeus.getFileResourceApi().saveFile(backgroundImage, false);
         // TODO: rethink if it's possible to extract the path in a nicer way than extracting it here?!
         String backgroundImagePath = null;
