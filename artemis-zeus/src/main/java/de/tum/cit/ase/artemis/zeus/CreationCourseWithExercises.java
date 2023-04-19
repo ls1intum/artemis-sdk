@@ -39,12 +39,37 @@ public class CreationCourseWithExercises implements Callable<Integer> {
     private static Logger logger = LogManager.getLogger();
     @Mixin LoggingMixin loggingMixin;
 
+    private String pregeneratedTitlePrefix = "";
+    private long startTimeCourseCreation;
+
     @Override
     public Integer call() {
         Zeus.prepareRestClient();
-        // create a course
-        //TODO: extract this to a function in other class to avoid duplicate code?
-        //TODO: extract default values into constructor with default values maybe instead of empty one?
+
+        //TODO: extract default values from all used classes from the UI and
+        // get them into the openapi generated sdk client to have less boilerplate here
+
+        Course course = createCourse();
+
+        // start a timer for the course creation. workaround to be sure the CI and VCS groups exist in the default
+        // atlassian stack
+        startTimeCourseCreation = System.currentTimeMillis();
+
+        // default values used in multiple exercises
+        pregeneratedTitlePrefix = title + " pre-generated ";
+        List<DueDateStat> quizExerciseDueDateStats = createDefaultDueDateStatList();
+
+        // create the exercises for the course
+        TextExercise textExercise = createTextExercise(course, quizExerciseDueDateStats);
+        ModelingExercise modelingExercise = createModelingExercise(course, quizExerciseDueDateStats);
+        FileUploadExercise fileUploadExercise = createFileUploadExercise(course, quizExerciseDueDateStats);
+        QuizExercise quizExercise = createQuizExercise(course, quizExerciseDueDateStats);
+        ProgrammingExercise programmingExercise = createProgrammingExercise(course, quizExerciseDueDateStats);
+
+        return 0;
+    }
+
+    private Course createCourse() {
         Course course = new Course()
                 .testCourse(true)
                 .shortName(shortName)
@@ -64,18 +89,19 @@ public class CreationCourseWithExercises implements Callable<Integer> {
                 .maxRequestMoreFeedbackTimeDays(7)
                 .courseInformationSharingConfiguration(Course.CourseInformationSharingConfigurationEnum.DISABLED);
         course = Zeus.getAdminCourseResourceApi().createCourse(course, null);
+        return course;
+    }
 
-        long startTimeCourseCreation = System.currentTimeMillis();
-
-        // values used in multiple exercises
-        String pregeneratedTitlePrefix = title + " pre-generated ";
+    private List<DueDateStat> createDefaultDueDateStatList() {
         DueDateStat zeroDueDateStat = new DueDateStat()
                 .late(0L)
                 .inTime(0L);
         List<DueDateStat> quizExerciseDueDateStats = new ArrayList<DueDateStat>(1);
         quizExerciseDueDateStats.add(zeroDueDateStat);
+        return quizExerciseDueDateStats;
+    }
 
-        // create a Text Exercise inside the course
+    private TextExercise createTextExercise(Course course, List<DueDateStat> quizExerciseDueDateStats) {
         TextExercise textExercise = (TextExercise) new TextExercise()
                 .title(pregeneratedTitlePrefix + "Text Exercise")
                 .maxPoints(5.0)
@@ -94,8 +120,10 @@ public class CreationCourseWithExercises implements Callable<Integer> {
                 .studentAssignedTeamIdComputed(false)
                 .teamMode(false);
         textExercise = Zeus.getTextExerciseResourceApi().createTextExercise(textExercise);
+        return textExercise;
+    }
 
-        // create a Modeling Exercise inside the course
+    private ModelingExercise createModelingExercise(Course course, List<DueDateStat> quizExerciseDueDateStats) {
         ModelingExercise modelingExercise = (ModelingExercise) new ModelingExercise()
                 .diagramType(ModelingExercise.DiagramTypeEnum.CLASSDIAGRAM)
                 .exampleSolutionExplanation("Example Solution Explanation")
@@ -115,8 +143,10 @@ public class CreationCourseWithExercises implements Callable<Integer> {
                 .studentAssignedTeamIdComputed(false)
                 .teamMode(false);
         modelingExercise = Zeus.getModelingExerciseResourceApi().createModelingExercise(modelingExercise);
+        return  modelingExercise;
+    }
 
-        // create a File Upload Exercise inside the course
+    private FileUploadExercise createFileUploadExercise(Course course, List<DueDateStat> quizExerciseDueDateStats) {
         FileUploadExercise fileUploadExercise = (FileUploadExercise) new FileUploadExercise()
                 .filePattern("png, pdf")
                 .exampleSolution("Example Solution")
@@ -135,7 +165,10 @@ public class CreationCourseWithExercises implements Callable<Integer> {
                 .studentAssignedTeamIdComputed(false)
                 .teamMode(false);
         fileUploadExercise = Zeus.getFileUploadExerciseResourceApi().createFileUploadExercise(fileUploadExercise);
+        return  fileUploadExercise;
+    }
 
+    private QuizExercise createQuizExercise(Course course, List<DueDateStat> quizExerciseDueDateStats) {
         // create a Quiz Exercise with all three different Quiz Question types inside the course
         List<QuizQuestion> quizQuestions = new ArrayList<QuizQuestion>(3);
         // create Multiple Choice question
@@ -294,8 +327,10 @@ public class CreationCourseWithExercises implements Callable<Integer> {
                 .secondCorrectionEnabled(false)
                 .teamMode(false);
         quizExercise = Zeus.getQuizExerciseResourceApi().createQuizExercise(quizExercise);
+        return  quizExercise;
+    }
 
-        //create programming exercise
+    private ProgrammingExercise createProgrammingExercise(Course course, List<DueDateStat> quizExerciseDueDateStats) {
         /* first check if two minutes have passed since the course creation as this is the default time in the Atlassian
            stack to sync users and groups which were created for the course
            TODO: maybe check somehow if the groups have been created and not wait for a fixed time
@@ -397,7 +432,6 @@ public class CreationCourseWithExercises implements Callable<Integer> {
                 .studentAssignedTeamIdComputed(false)
                 .teamMode(false);
         programmingExercise = Zeus.getProgrammingExerciseResourceApi().createProgrammingExercise(programmingExercise);
-
-        return 0;
+        return  programmingExercise;
     }
 }
