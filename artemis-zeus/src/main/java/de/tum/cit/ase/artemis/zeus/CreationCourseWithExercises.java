@@ -12,12 +12,18 @@ import org.apache.logging.log4j.Logger;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.io.*;
-import java.net.URISyntaxException;
+import java.io.File;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.Callable;
+import java.util.UUID;
+
 import java.time.OffsetDateTime;
 
 @Command(name = "courseWithExercises", description = "creates an Artemis course with exercises",
@@ -34,7 +40,7 @@ public class CreationCourseWithExercises implements Callable<Integer> {
     @Mixin LoggingMixin loggingMixin;
 
     @Override
-    public Integer call() throws URISyntaxException {
+    public Integer call() {
         Zeus.prepareRestClient();
         // create a course
         //TODO: extract this to a function in other class to avoid duplicate code?
@@ -170,8 +176,17 @@ public class CreationCourseWithExercises implements Callable<Integer> {
                 .text("A longer more detailed question");
         quizQuestions.add(multipleChoiceQuestion);
         // create Drag and Drop question (Data partly extracted from Cypress tests)
-        File backgroundImage = new File(getClass().getResource("/testdata/DragAndDropQuiz/background.jpg").toURI());
+        // TODO: there is probably a nicer way to load a file from either a jar or source
+        // use getResourceAsStream as this works inside a jar and from the source
+        InputStream backgroundImageInputStream = getClass().getResourceAsStream("/testdata/DragAndDropQuiz/background.jpg");
+        File backgroundImage = new File("background" + UUID.randomUUID().toString() + ".tmp.jpg");
+        try (OutputStream output = new FileOutputStream(backgroundImage)) {
+            backgroundImageInputStream.transferTo(output);
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
         String backgroundImagePathJSON = Zeus.getFileResourceApi().saveFile(backgroundImage, false);
+        backgroundImage.delete();
         // TODO: rethink if it's possible to extract the path in a nicer way than extracting it here?!
         String backgroundImagePath = null;
         try {

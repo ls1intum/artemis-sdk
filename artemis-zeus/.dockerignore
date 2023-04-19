@@ -1,0 +1,7 @@
+build
+.gitignore
+Dockerfile
+.dockerignore
+docs
+.idea
+.gradle
