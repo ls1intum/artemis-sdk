@@ -103,11 +103,12 @@ public class CreationCourseWithExercises implements Callable<Integer> {
 
     private TextExercise createTextExercise(Course course, List<DueDateStat> quizExerciseDueDateStats) {
         TextExercise textExercise = (TextExercise) new TextExercise()
+                .exampleSolution("Once upon a time ...")
                 .title(pregeneratedTitlePrefix + "Text Exercise")
                 .maxPoints(5.0)
                 .course(course)
-                .problemStatement("Cypress Problem Statement")
-                .gradingInstructions("Cypress Assessment Instructions")
+                .problemStatement("The problem is ...")
+                .gradingInstructions("Assessment Instructions")
                 .allowComplaintsForAutomaticAssessments(false)
                 .allowManualFeedbackRequests(false)
                 .assessmentType(Exercise.AssessmentTypeEnum.MANUAL)
@@ -128,6 +129,7 @@ public class CreationCourseWithExercises implements Callable<Integer> {
                 .diagramType(ModelingExercise.DiagramTypeEnum.CLASSDIAGRAM)
                 .exampleSolutionExplanation("Example Solution Explanation")
                 .exampleSolutionModel("{\"version\":\"2.0.0\",\"type\":\"ClassDiagram\",\"size\":{\"width\":640,\"height\":600},\"interactive\":{\"elements\":[],\"relationships\":[]},\"elements\":[{\"id\":\"6e1f57c6-cbc7-4b97-9df9-c5741dc905fa\",\"name\":\"Package\",\"type\":\"Package\",\"owner\":null,\"bounds\":{\"x\":230,\"y\":0,\"width\":200,\"height\":100}},{\"id\":\"ff7e3be0-9765-4301-baf5-cf9cf2f17c3c\",\"name\":\"Class\",\"type\":\"Class\",\"owner\":null,\"bounds\":{\"x\":0,\"y\":220,\"width\":200,\"height\":100},\"attributes\":[\"de2d464b-f969-4cf3-ac0d-2f300b3a6497\"],\"methods\":[\"084a59b9-3009-4ebd-885c-159b436581d9\"]},{\"id\":\"de2d464b-f969-4cf3-ac0d-2f300b3a6497\",\"name\":\"+ attribute: Type\",\"type\":\"ClassAttribute\",\"owner\":\"ff7e3be0-9765-4301-baf5-cf9cf2f17c3c\",\"bounds\":{\"x\":0,\"y\":260,\"width\":200,\"height\":30}},{\"id\":\"084a59b9-3009-4ebd-885c-159b436581d9\",\"name\":\"+ method()\",\"type\":\"ClassMethod\",\"owner\":\"ff7e3be0-9765-4301-baf5-cf9cf2f17c3c\",\"bounds\":{\"x\":0,\"y\":290,\"width\":200,\"height\":30}},{\"id\":\"1ad94aff-ee37-494f-8b99-9d861dc58e4a\",\"name\":\"Abstract\",\"type\":\"AbstractClass\",\"owner\":null,\"bounds\":{\"x\":380,\"y\":220,\"width\":200,\"height\":110},\"attributes\":[\"4d58287c-d4c0-42d1-9d02-ad239b701de6\"],\"methods\":[\"2de2a7c3-19c9-4534-8a71-f6607e93556c\"]},{\"id\":\"4d58287c-d4c0-42d1-9d02-ad239b701de6\",\"name\":\"+ attribute: Type\",\"type\":\"ClassAttribute\",\"owner\":\"1ad94aff-ee37-494f-8b99-9d861dc58e4a\",\"bounds\":{\"x\":380,\"y\":270,\"width\":200,\"height\":30}},{\"id\":\"2de2a7c3-19c9-4534-8a71-f6607e93556c\",\"name\":\"+ method()\",\"type\":\"ClassMethod\",\"owner\":\"1ad94aff-ee37-494f-8b99-9d861dc58e4a\",\"bounds\":{\"x\":380,\"y\":300,\"width\":200,\"height\":30}}],\"relationships\":[],\"assessments\":[]}")
+                .problemStatement("Model XYZ with the help of a class diagram.")
                 .title(pregeneratedTitlePrefix + "Modeling Exercise")
                 .maxPoints(5.0)
                 .course(course)
@@ -171,6 +173,7 @@ public class CreationCourseWithExercises implements Callable<Integer> {
     private QuizExercise createQuizExercise(Course course, List<DueDateStat> quizExerciseDueDateStats) {
         // create a Quiz Exercise with all three different Quiz Question types inside the course
         List<QuizQuestion> quizQuestions = new ArrayList<QuizQuestion>(3);
+
         // create Multiple Choice question
         List<AnswerOption> mcAnswerOptions = new ArrayList<AnswerOption>(4);
         AnswerOption answerOptionCorrect1 = new AnswerOption()
@@ -182,8 +185,6 @@ public class CreationCourseWithExercises implements Callable<Integer> {
         AnswerOption answerOptionCorrect2 = new AnswerOption()
                 .text("Correct answer 2")
                 .isCorrect(true)
-                .hint("A hint")
-                .explanation("Explanation for why this is correct")
                 .invalid(false);
         AnswerOption answerOptionWrong1 = new AnswerOption()
                 .text("Wrong answer 1")
@@ -194,8 +195,6 @@ public class CreationCourseWithExercises implements Callable<Integer> {
         AnswerOption answerOptionWrong2 = new AnswerOption()
                 .text("Wrong answer 2")
                 .isCorrect(false)
-                .hint("A hint")
-                .explanation("Explanation for why this is wrong")
                 .invalid(false);
         Collections.addAll(mcAnswerOptions, answerOptionCorrect1, answerOptionCorrect2, answerOptionWrong1, answerOptionWrong2);
         MultipleChoiceQuestion multipleChoiceQuestion = (MultipleChoiceQuestion) new MultipleChoiceQuestion()
@@ -203,11 +202,13 @@ public class CreationCourseWithExercises implements Callable<Integer> {
                 .title(pregeneratedTitlePrefix + "Multiple Choice Question")
                 .points(5)
                 .hint("A general hint")
+                .explanation("This is the explanation. Hope you didn't expect more!")
                 .invalid(false)
                 .randomizeOrder(true)
                 .scoringType(QuizQuestion.ScoringTypeEnum.ALL_OR_NOTHING)
                 .text("A longer more detailed question");
         quizQuestions.add(multipleChoiceQuestion);
+
         // create Drag and Drop question (Data partly extracted from Cypress tests)
         String backgroundImagePath = uploadAndReceiveDragAndDropExerciseImage();
         List<DropLocation> daDDropLocations = new ArrayList<DropLocation>(1);
@@ -239,11 +240,13 @@ public class CreationCourseWithExercises implements Callable<Integer> {
                 .title(pregeneratedTitlePrefix + "Drag and Drop Question")
                 .text("Who is never going to give you up?")
                 .hint("His first name is Rick")
+                .explanation("This is the explanation. Hope you didn't expect more!\"")
                 .points(5)
                 .randomizeOrder(true)
                 .scoringType(QuizQuestion.ScoringTypeEnum.PROPORTIONAL_WITH_PENALTY)
                 .invalid(false);
         quizQuestions.add(dragAndDropQuestion);
+
         // create Short Answer question
         List<ShortAnswerSpot> saShortAnswerSpots = new ArrayList<>(6);
         ShortAnswerSpot saSpotGive = new ShortAnswerSpot().spotNr(1).width(15).tempID(5788504999638874L).invalid(false);
@@ -289,6 +292,7 @@ public class CreationCourseWithExercises implements Callable<Integer> {
                 .randomizeOrder(true)
                 .scoringType(QuizQuestion.ScoringTypeEnum.PROPORTIONAL_WITHOUT_PENALTY);
         quizQuestions.add(shortAnswerQuestion);
+
         //create quiz exercise
         QuizExercise quizExercise = (QuizExercise) new QuizExercise()
                 .quizQuestions(quizQuestions)
