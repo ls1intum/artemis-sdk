@@ -209,27 +209,7 @@ public class CreationCourseWithExercises implements Callable<Integer> {
                 .text("A longer more detailed question");
         quizQuestions.add(multipleChoiceQuestion);
         // create Drag and Drop question (Data partly extracted from Cypress tests)
-        // TODO: there is probably a nicer way to load a file from either a jar or source
-        // use getResourceAsStream as this works inside a jar and from the source
-        InputStream backgroundImageInputStream = getClass().getResourceAsStream("/testdata/DragAndDropQuiz/background.jpg");
-        File backgroundImage = new File("background" + UUID.randomUUID().toString() + ".tmp.jpg");
-        try (OutputStream output = new FileOutputStream(backgroundImage)) {
-            backgroundImageInputStream.transferTo(output);
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
-        }
-        String backgroundImagePathJSON = Zeus.getFileResourceApi().saveFile(backgroundImage, false);
-        backgroundImage.delete();
-        // TODO: rethink if it's possible to extract the path in a nicer way than extracting it here?!
-        String backgroundImagePath = null;
-        try {
-            ObjectMapper mapper = new ObjectMapper();
-            JsonNode node = mapper.readTree(backgroundImagePathJSON);
-            backgroundImagePath = node.get("path").asText();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        logger.debug(backgroundImagePath);
+        String backgroundImagePath = uploadAndReceiveDragAndDropExerciseImage();
         List<DropLocation> daDDropLocations = new ArrayList<DropLocation>(1);
         DropLocation dropLocationRick = new DropLocation()
                 .height(48.0)
@@ -328,6 +308,30 @@ public class CreationCourseWithExercises implements Callable<Integer> {
                 .teamMode(false);
         quizExercise = Zeus.getQuizExerciseResourceApi().createQuizExercise(quizExercise);
         return  quizExercise;
+    }
+
+    private String uploadAndReceiveDragAndDropExerciseImage() {
+        // TODO: there is probably a nicer way to load a file from either a jar or source
+        // use getResourceAsStream as this works inside a jar and from the source
+        InputStream backgroundImageInputStream = getClass().getResourceAsStream("/testdata/DragAndDropQuiz/background.jpg");
+        File backgroundImage = new File("background" + UUID.randomUUID().toString() + ".tmp.jpg");
+        try (OutputStream output = new FileOutputStream(backgroundImage)) {
+            backgroundImageInputStream.transferTo(output);
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
+        String backgroundImagePathJSON = Zeus.getFileResourceApi().saveFile(backgroundImage, false);
+        backgroundImage.delete();
+        // TODO: rethink if it's possible to extract the path in a nicer way than extracting it here?!
+        String backgroundImagePath = null;
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            JsonNode node = mapper.readTree(backgroundImagePathJSON);
+            backgroundImagePath = node.get("path").asText();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return backgroundImagePath;
     }
 
     private ProgrammingExercise createProgrammingExercise(Course course, List<DueDateStat> quizExerciseDueDateStats) {
