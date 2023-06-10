@@ -28,7 +28,7 @@ public class CreationCourse implements Callable<Integer> {
     @Override
     public Integer call() {
         Zeus.prepareRestClient();
-        Course course = new Course().testCourse(true).shortName(shortName).title(title).registrationEnabled(false).presentationScore(0);
+        Course course = new Course().testCourse(true).shortName(shortName).title(title).enrollmentEnabled(false).presentationScore(0);
         Zeus.getAdminCourseResourceApi().createCourse(course, null);
         return 0;
     }

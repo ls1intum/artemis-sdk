@@ -74,7 +74,7 @@ public class CreationCourseWithExercises implements Callable<Integer> {
                 .testCourse(true)
                 .shortName(shortName)
                 .title(title)
-                .registrationEnabled(false)
+                .enrollmentEnabled(false)
                 .presentationScore(0)
                 .testCourse(true)
                 .onlineCourse(false)
