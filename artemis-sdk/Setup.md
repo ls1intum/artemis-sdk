@@ -1,7 +1,7 @@
 1) generate OpenAPI spec inside the artemis project and use it for the code generation (copy the file openapi.json to the root of this project)
 2) generate the client code:
    docker run --rm --user 1000:1000 \                                          
-   -v ${PWD}:/local openapitools/openapi-generator-cli generate \
+   -v ${PWD}:/local openapitools/openapi-generator-cli:latest-release generate \
    -i /local/openapi.json \
    -g java \
    -o /local \
