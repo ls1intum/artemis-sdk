@@ -9,6 +9,7 @@ import de.tum.cit.ase.artemis.sdk.Pair;
 import jakarta.ws.rs.core.GenericType;
 
 import de.tum.cit.ase.artemis.sdk.model.Course;
+import de.tum.cit.ase.artemis.sdk.model.CourseForDashboardDTO;
 import de.tum.cit.ase.artemis.sdk.model.CourseManagementDetailViewDTO;
 import de.tum.cit.ase.artemis.sdk.model.CourseManagementOverviewStatisticsDTO;
 import java.io.File;
@@ -27,7 +28,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class CourseResourceApi {
   private ApiClient apiClient;
 
@@ -377,8 +378,8 @@ public class CourseResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public File cleanup1(Long courseId) throws ApiException {
-    return cleanup1WithHttpInfo(courseId).getData();
+  public File cleanup(Long courseId) throws ApiException {
+    return cleanupWithHttpInfo(courseId).getData();
   }
 
   /**
@@ -394,10 +395,10 @@ public class CourseResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<File> cleanup1WithHttpInfo(Long courseId) throws ApiException {
+  public ApiResponse<File> cleanupWithHttpInfo(Long courseId) throws ApiException {
     // Check required parameters
     if (courseId == null) {
-      throw new ApiException(400, "Missing the required parameter 'courseId' when calling cleanup1");
+      throw new ApiException(400, "Missing the required parameter 'courseId' when calling cleanup");
     }
 
     // Path parameters
@@ -407,7 +408,7 @@ public class CourseResourceApi {
     String localVarAccept = apiClient.selectHeaderAccept("*/*");
     String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<File> localVarReturnType = new GenericType<File>() {};
-    return apiClient.invokeAPI("CourseResourceApi.cleanup1", localVarPath, "DELETE", new ArrayList<>(), null,
+    return apiClient.invokeAPI("CourseResourceApi.cleanup", localVarPath, "DELETE", new ArrayList<>(), null,
                                new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                null, localVarReturnType, false);
   }
@@ -455,6 +456,53 @@ public class CourseResourceApi {
     String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<File> localVarReturnType = new GenericType<File>() {};
     return apiClient.invokeAPI("CourseResourceApi.downloadCourseArchive", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
+  }
+  /**
+   * 
+   * 
+   * @param courseId  (required)
+   * @return User
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
+       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public User enrollInCourse(Long courseId) throws ApiException {
+    return enrollInCourseWithHttpInfo(courseId).getData();
+  }
+
+  /**
+   * 
+   * 
+   * @param courseId  (required)
+   * @return ApiResponse&lt;User&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
+       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public ApiResponse<User> enrollInCourseWithHttpInfo(Long courseId) throws ApiException {
+    // Check required parameters
+    if (courseId == null) {
+      throw new ApiException(400, "Missing the required parameter 'courseId' when calling enrollInCourse");
+    }
+
+    // Path parameters
+    String localVarPath = "/api/courses/{courseId}/enroll"
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
+
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    GenericType<User> localVarReturnType = new GenericType<User>() {};
+    return apiClient.invokeAPI("CourseResourceApi.enrollInCourse", localVarPath, "POST", new ArrayList<>(), null,
                                new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                null, localVarReturnType, false);
   }
@@ -608,6 +656,42 @@ public class CourseResourceApi {
   /**
    * 
    * 
+   * @return List&lt;CourseForDashboardDTO&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
+       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public List<CourseForDashboardDTO> getAllCoursesForDashboard() throws ApiException {
+    return getAllCoursesForDashboardWithHttpInfo().getData();
+  }
+
+  /**
+   * 
+   * 
+   * @return ApiResponse&lt;List&lt;CourseForDashboardDTO&gt;&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
+       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public ApiResponse<List<CourseForDashboardDTO>> getAllCoursesForDashboardWithHttpInfo() throws ApiException {
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    GenericType<List<CourseForDashboardDTO>> localVarReturnType = new GenericType<List<CourseForDashboardDTO>>() {};
+    return apiClient.invokeAPI("CourseResourceApi.getAllCoursesForDashboard", "/api/courses/for-dashboard", "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
+  }
+  /**
+   * 
+   * 
    * @return List&lt;Course&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -617,8 +701,8 @@ public class CourseResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public List<Course> getAllCoursesForDashboard() throws ApiException {
-    return getAllCoursesForDashboardWithHttpInfo().getData();
+  public List<Course> getAllCoursesForEnrollment() throws ApiException {
+    return getAllCoursesForEnrollmentWithHttpInfo().getData();
   }
 
   /**
@@ -633,11 +717,11 @@ public class CourseResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<List<Course>> getAllCoursesForDashboardWithHttpInfo() throws ApiException {
+  public ApiResponse<List<Course>> getAllCoursesForEnrollmentWithHttpInfo() throws ApiException {
     String localVarAccept = apiClient.selectHeaderAccept("*/*");
     String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<Course>> localVarReturnType = new GenericType<List<Course>>() {};
-    return apiClient.invokeAPI("CourseResourceApi.getAllCoursesForDashboard", "/api/courses/for-dashboard", "GET", new ArrayList<>(), null,
+    return apiClient.invokeAPI("CourseResourceApi.getAllCoursesForEnrollment", "/api/courses/for-enrollment", "GET", new ArrayList<>(), null,
                                new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                null, localVarReturnType, false);
   }
@@ -687,7 +771,7 @@ public class CourseResourceApi {
   /**
    * 
    * 
-   * @return List&lt;Course&gt;
+   * @return Set&lt;Course&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -696,14 +780,14 @@ public class CourseResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public List<Course> getAllCoursesForNotifications() throws ApiException {
+  public Set<Course> getAllCoursesForNotifications() throws ApiException {
     return getAllCoursesForNotificationsWithHttpInfo().getData();
   }
 
   /**
    * 
    * 
-   * @return ApiResponse&lt;List&lt;Course&gt;&gt;
+   * @return ApiResponse&lt;Set&lt;Course&gt;&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -712,47 +796,11 @@ public class CourseResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<List<Course>> getAllCoursesForNotificationsWithHttpInfo() throws ApiException {
+  public ApiResponse<Set<Course>> getAllCoursesForNotificationsWithHttpInfo() throws ApiException {
     String localVarAccept = apiClient.selectHeaderAccept("*/*");
     String localVarContentType = apiClient.selectHeaderContentType();
-    GenericType<List<Course>> localVarReturnType = new GenericType<List<Course>>() {};
+    GenericType<Set<Course>> localVarReturnType = new GenericType<Set<Course>>() {};
     return apiClient.invokeAPI("CourseResourceApi.getAllCoursesForNotifications", "/api/courses/for-notifications", "GET", new ArrayList<>(), null,
-                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
-                               null, localVarReturnType, false);
-  }
-  /**
-   * 
-   * 
-   * @return List&lt;Course&gt;
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
-       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-   */
-  public List<Course> getAllCoursesToRegister() throws ApiException {
-    return getAllCoursesToRegisterWithHttpInfo().getData();
-  }
-
-  /**
-   * 
-   * 
-   * @return ApiResponse&lt;List&lt;Course&gt;&gt;
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
-       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-   */
-  public ApiResponse<List<Course>> getAllCoursesToRegisterWithHttpInfo() throws ApiException {
-    String localVarAccept = apiClient.selectHeaderAccept("*/*");
-    String localVarContentType = apiClient.selectHeaderContentType();
-    GenericType<List<Course>> localVarReturnType = new GenericType<List<Course>>() {};
-    return apiClient.invokeAPI("CourseResourceApi.getAllCoursesToRegister", "/api/courses/for-registration", "GET", new ArrayList<>(), null,
                                new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                null, localVarReturnType, false);
   }
@@ -879,6 +927,42 @@ public class CourseResourceApi {
     String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<User>> localVarReturnType = new GenericType<List<User>>() {};
     return apiClient.invokeAPI("CourseResourceApi.getAllEditorsInCourse", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
+  }
+  /**
+   * 
+   * 
+   * @return Set&lt;String&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
+       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public Set<String> getAllGroupsForAllCourses() throws ApiException {
+    return getAllGroupsForAllCoursesWithHttpInfo().getData();
+  }
+
+  /**
+   * 
+   * 
+   * @return ApiResponse&lt;Set&lt;String&gt;&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
+       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public ApiResponse<Set<String>> getAllGroupsForAllCoursesWithHttpInfo() throws ApiException {
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    GenericType<Set<String>> localVarReturnType = new GenericType<Set<String>>() {};
+    return apiClient.invokeAPI("CourseResourceApi.getAllGroupsForAllCourses", "/api/courses/groups", "GET", new ArrayList<>(), null,
                                new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                null, localVarReturnType, false);
   }
@@ -1216,7 +1300,7 @@ public class CourseResourceApi {
    * 
    * @param courseId  (required)
    * @param refresh  (optional, default to false)
-   * @return Course
+   * @return CourseForDashboardDTO
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -1225,7 +1309,7 @@ public class CourseResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public Course getCourseForDashboard(Long courseId, Boolean refresh) throws ApiException {
+  public CourseForDashboardDTO getCourseForDashboard(Long courseId, Boolean refresh) throws ApiException {
     return getCourseForDashboardWithHttpInfo(courseId, refresh).getData();
   }
 
@@ -1234,7 +1318,7 @@ public class CourseResourceApi {
    * 
    * @param courseId  (required)
    * @param refresh  (optional, default to false)
-   * @return ApiResponse&lt;Course&gt;
+   * @return ApiResponse&lt;CourseForDashboardDTO&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -1243,7 +1327,7 @@ public class CourseResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<Course> getCourseForDashboardWithHttpInfo(Long courseId, Boolean refresh) throws ApiException {
+  public ApiResponse<CourseForDashboardDTO> getCourseForDashboardWithHttpInfo(Long courseId, Boolean refresh) throws ApiException {
     // Check required parameters
     if (courseId == null) {
       throw new ApiException(400, "Missing the required parameter 'courseId' when calling getCourseForDashboard");
@@ -1260,8 +1344,55 @@ public class CourseResourceApi {
 
     String localVarAccept = apiClient.selectHeaderAccept("*/*");
     String localVarContentType = apiClient.selectHeaderContentType();
-    GenericType<Course> localVarReturnType = new GenericType<Course>() {};
+    GenericType<CourseForDashboardDTO> localVarReturnType = new GenericType<CourseForDashboardDTO>() {};
     return apiClient.invokeAPI("CourseResourceApi.getCourseForDashboard", localVarPath, "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
+  }
+  /**
+   * 
+   * 
+   * @param courseId  (required)
+   * @return Course
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
+       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public Course getCourseForEnrollment(Long courseId) throws ApiException {
+    return getCourseForEnrollmentWithHttpInfo(courseId).getData();
+  }
+
+  /**
+   * 
+   * 
+   * @param courseId  (required)
+   * @return ApiResponse&lt;Course&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
+       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public ApiResponse<Course> getCourseForEnrollmentWithHttpInfo(Long courseId) throws ApiException {
+    // Check required parameters
+    if (courseId == null) {
+      throw new ApiException(400, "Missing the required parameter 'courseId' when calling getCourseForEnrollment");
+    }
+
+    // Path parameters
+    String localVarPath = "/api/courses/{courseId}/for-enrollment"
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
+
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    GenericType<Course> localVarReturnType = new GenericType<Course>() {};
+    return apiClient.invokeAPI("CourseResourceApi.getCourseForEnrollment", localVarPath, "GET", new ArrayList<>(), null,
                                new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                null, localVarReturnType, false);
   }
@@ -1583,53 +1714,6 @@ public class CourseResourceApi {
     String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<StatsForDashboardDTO> localVarReturnType = new GenericType<StatsForDashboardDTO>() {};
     return apiClient.invokeAPI("CourseResourceApi.getStatsForAssessmentDashboard", localVarPath, "GET", new ArrayList<>(), null,
-                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
-                               null, localVarReturnType, false);
-  }
-  /**
-   * 
-   * 
-   * @param courseId  (required)
-   * @return User
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
-       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-   */
-  public User registerForCourse(Long courseId) throws ApiException {
-    return registerForCourseWithHttpInfo(courseId).getData();
-  }
-
-  /**
-   * 
-   * 
-   * @param courseId  (required)
-   * @return ApiResponse&lt;User&gt;
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
-       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-   */
-  public ApiResponse<User> registerForCourseWithHttpInfo(Long courseId) throws ApiException {
-    // Check required parameters
-    if (courseId == null) {
-      throw new ApiException(400, "Missing the required parameter 'courseId' when calling registerForCourse");
-    }
-
-    // Path parameters
-    String localVarPath = "/api/courses/{courseId}/register"
-            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
-
-    String localVarAccept = apiClient.selectHeaderAccept("*/*");
-    String localVarContentType = apiClient.selectHeaderContentType();
-    GenericType<User> localVarReturnType = new GenericType<User>() {};
-    return apiClient.invokeAPI("CourseResourceApi.registerForCourse", localVarPath, "POST", new ArrayList<>(), null,
                                new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                null, localVarReturnType, false);
   }

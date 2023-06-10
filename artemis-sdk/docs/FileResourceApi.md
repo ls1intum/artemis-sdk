@@ -5,6 +5,7 @@ All URIs are relative to *http://localhost:8080*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**getAttachmentUnitAttachment**](FileResourceApi.md#getAttachmentUnitAttachment) | **GET** /api/files/attachments/attachment-unit/{attachmentUnitId}/{filename} |  |
+| [**getAttachmentUnitAttachmentSlide**](FileResourceApi.md#getAttachmentUnitAttachmentSlide) | **GET** /api/files/attachments/attachment-unit/{attachmentUnitId}/slide/{slideNumber} |  |
 | [**getCourseIcon**](FileResourceApi.md#getCourseIcon) | **GET** /api/files/course/icons/{courseId}/{filename} |  |
 | [**getDragAndDropBackgroundFile**](FileResourceApi.md#getDragAndDropBackgroundFile) | **GET** /api/files/drag-and-drop/backgrounds/{questionId}/{filename} |  |
 | [**getDragItemFile**](FileResourceApi.md#getDragItemFile) | **GET** /api/files/drag-and-drop/drag-items/{dragItemId}/{filename} |  |
@@ -68,6 +69,72 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **attachmentUnitId** | **Long**|  | |
 | **filename** | **String**|  | |
+
+### Return type
+
+**List&lt;byte[]&gt;**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **503** | Service Unavailable |  -  |
+| **200** | OK |  -  |
+
+
+## getAttachmentUnitAttachmentSlide
+
+> List&lt;byte[]&gt; getAttachmentUnitAttachmentSlide(attachmentUnitId, slideNumber)
+
+
+
+### Example
+
+```java
+// Import classes:
+import de.tum.cit.ase.artemis.sdk.ApiClient;
+import de.tum.cit.ase.artemis.sdk.ApiException;
+import de.tum.cit.ase.artemis.sdk.Configuration;
+import de.tum.cit.ase.artemis.sdk.model.*;
+import de.tum.cit.ase.artemis.sdk.api.FileResourceApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8080");
+
+        FileResourceApi apiInstance = new FileResourceApi(defaultClient);
+        Long attachmentUnitId = 56L; // Long | 
+        String slideNumber = "slideNumber_example"; // String | 
+        try {
+            List<byte[]> result = apiInstance.getAttachmentUnitAttachmentSlide(attachmentUnitId, slideNumber);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling FileResourceApi#getAttachmentUnitAttachmentSlide");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **attachmentUnitId** | **Long**|  | |
+| **slideNumber** | **String**|  | |
 
 ### Return type
 

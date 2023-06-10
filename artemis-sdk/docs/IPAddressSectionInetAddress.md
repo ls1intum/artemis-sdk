@@ -7,7 +7,6 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**canonicalHostName** | **String** |  |  [optional] |
 |**hostAddress** | **String** |  |  [optional] |
 |**address** | **List&lt;byte[]&gt;** |  |  [optional] |
 |**hostName** | **String** |  |  [optional] |
@@ -21,6 +20,7 @@
 |**mclinkLocal** | **Boolean** |  |  [optional] |
 |**mcsiteLocal** | **Boolean** |  |  [optional] |
 |**mcorgLocal** | **Boolean** |  |  [optional] |
+|**canonicalHostName** | **String** |  |  [optional] |
 
 
 

@@ -41,14 +41,6 @@ public class IPAddressSegmentTest {
     }
 
     /**
-     * Test the property 'upperBytes'
-     */
-    @Test
-    public void upperBytesTest() {
-        // TODO: test upperBytes
-    }
-
-    /**
      * Test the property 'value'
      */
     @Test
@@ -121,11 +113,11 @@ public class IPAddressSegmentTest {
     }
 
     /**
-     * Test the property 'prefixValueCount'
+     * Test the property 'segmentValue'
      */
     @Test
-    public void prefixValueCountTest() {
-        // TODO: test prefixValueCount
+    public void segmentValueTest() {
+        // TODO: test segmentValue
     }
 
     /**
@@ -185,19 +177,11 @@ public class IPAddressSegmentTest {
     }
 
     /**
-     * Test the property 'segmentValue'
+     * Test the property 'prefixValueCount'
      */
     @Test
-    public void segmentValueTest() {
-        // TODO: test segmentValue
-    }
-
-    /**
-     * Test the property 'ipv6'
-     */
-    @Test
-    public void ipv6Test() {
-        // TODO: test ipv6
+    public void prefixValueCountTest() {
+        // TODO: test prefixValueCount
     }
 
     /**
@@ -206,6 +190,14 @@ public class IPAddressSegmentTest {
     @Test
     public void maxValueTest() {
         // TODO: test maxValue
+    }
+
+    /**
+     * Test the property 'ipv6'
+     */
+    @Test
+    public void ipv6Test() {
+        // TODO: test ipv6
     }
 
     /**
@@ -270,6 +262,14 @@ public class IPAddressSegmentTest {
     @Test
     public void fullRangeTest() {
         // TODO: test fullRange
+    }
+
+    /**
+     * Test the property 'upperBytes'
+     */
+    @Test
+    public void upperBytesTest() {
+        // TODO: test upperBytes
     }
 
     /**

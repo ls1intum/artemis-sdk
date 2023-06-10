@@ -34,7 +34,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ConsistencyErrorDTO.JSON_PROPERTY_PROGRAMMING_EXERCISE,
   ConsistencyErrorDTO.JSON_PROPERTY_TYPE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class ConsistencyErrorDTO {
   public static final String JSON_PROPERTY_PROGRAMMING_EXERCISE = "programmingExercise";
   private ProgrammingExercise programmingExercise;
@@ -43,8 +43,6 @@ public class ConsistencyErrorDTO {
    * Gets or Sets type
    */
   public enum TypeEnum {
-    IS_LOCAL_SIMULATION("IS_LOCAL_SIMULATION"),
-    
     VCS_PROJECT_MISSING("VCS_PROJECT_MISSING"),
     
     TEMPLATE_REPO_MISSING("TEMPLATE_REPO_MISSING"),

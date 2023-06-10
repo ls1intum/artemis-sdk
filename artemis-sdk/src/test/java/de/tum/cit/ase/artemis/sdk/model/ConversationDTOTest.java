@@ -21,10 +21,7 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import de.tum.cit.ase.artemis.sdk.model.ChannelDTO;
 import de.tum.cit.ase.artemis.sdk.model.ConversationUserDTO;
-import de.tum.cit.ase.artemis.sdk.model.GroupChatDTO;
-import de.tum.cit.ase.artemis.sdk.model.OneToOneChatDTO;
 import java.time.OffsetDateTime;
 
 import org.junit.jupiter.api.Assertions;

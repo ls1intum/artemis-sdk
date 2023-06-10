@@ -15,7 +15,7 @@ package de.tum.cit.ase.artemis.sdk.api;
 
 import de.tum.cit.ase.artemis.sdk.*;
 import de.tum.cit.ase.artemis.sdk.auth.*;
-import de.tum.cit.ase.artemis.sdk.model.CleanupBuildPlan200Response;
+import de.tum.cit.ase.artemis.sdk.model.ProgrammingExerciseStudentParticipation;
 import de.tum.cit.ase.artemis.sdk.model.ProgrammingSubmission;
 import de.tum.cit.ase.artemis.sdk.model.Result;
 
@@ -83,7 +83,7 @@ public class ProgrammingExerciseParticipationResourceApiTest {
     @Test
     public void getParticipationWithLatestResultForStudentParticipationTest() throws ApiException {
         //Long participationId = null;
-        //CleanupBuildPlan200Response response = api.getParticipationWithLatestResultForStudentParticipation(participationId);
+        //ProgrammingExerciseStudentParticipation response = api.getParticipationWithLatestResultForStudentParticipation(participationId);
         // TODO: test validations
     }
 

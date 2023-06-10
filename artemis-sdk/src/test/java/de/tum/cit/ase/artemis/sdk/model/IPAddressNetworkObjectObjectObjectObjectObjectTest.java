@@ -41,19 +41,19 @@ public class IPAddressNetworkObjectObjectObjectObjectObjectTest {
     }
 
     /**
-     * Test the property 'loopback'
-     */
-    @Test
-    public void loopbackTest() {
-        // TODO: test loopback
-    }
-
-    /**
      * Test the property 'addressCreator'
      */
     @Test
     public void addressCreatorTest() {
         // TODO: test addressCreator
+    }
+
+    /**
+     * Test the property 'loopback'
+     */
+    @Test
+    public void loopbackTest() {
+        // TODO: test loopback
     }
 
     /**

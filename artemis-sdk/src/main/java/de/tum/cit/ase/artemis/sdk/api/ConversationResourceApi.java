@@ -9,6 +9,7 @@ import de.tum.cit.ase.artemis.sdk.Pair;
 import jakarta.ws.rs.core.GenericType;
 
 import de.tum.cit.ase.artemis.sdk.model.ConversationUserDTO;
+import de.tum.cit.ase.artemis.sdk.model.GetAllConversationsForNotifications200ResponseInner;
 import de.tum.cit.ase.artemis.sdk.model.GetConversationsOfUser200ResponseInner;
 import de.tum.cit.ase.artemis.sdk.model.Pageable;
 
@@ -18,7 +19,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class ConversationResourceApi {
   private ApiClient apiClient;
 
@@ -112,6 +113,42 @@ public class ConversationResourceApi {
   /**
    * 
    * 
+   * @return List&lt;GetAllConversationsForNotifications200ResponseInner&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
+       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public List<GetAllConversationsForNotifications200ResponseInner> getAllConversationsForNotifications() throws ApiException {
+    return getAllConversationsForNotificationsWithHttpInfo().getData();
+  }
+
+  /**
+   * 
+   * 
+   * @return ApiResponse&lt;List&lt;GetAllConversationsForNotifications200ResponseInner&gt;&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
+       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public ApiResponse<List<GetAllConversationsForNotifications200ResponseInner>> getAllConversationsForNotificationsWithHttpInfo() throws ApiException {
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    GenericType<List<GetAllConversationsForNotifications200ResponseInner>> localVarReturnType = new GenericType<List<GetAllConversationsForNotifications200ResponseInner>>() {};
+    return apiClient.invokeAPI("ConversationResourceApi.getAllConversationsForNotifications", "/api/courses/conversations-for-notifications", "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
+  }
+  /**
+   * 
+   * 
    * @param courseId  (required)
    * @return List&lt;GetConversationsOfUser200ResponseInner&gt;
    * @throws ApiException if fails to make API call
@@ -153,6 +190,53 @@ public class ConversationResourceApi {
     String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<GetConversationsOfUser200ResponseInner>> localVarReturnType = new GenericType<List<GetConversationsOfUser200ResponseInner>>() {};
     return apiClient.invokeAPI("ConversationResourceApi.getConversationsOfUser", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
+  }
+  /**
+   * 
+   * 
+   * @param courseId  (required)
+   * @return Boolean
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
+       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public Boolean hasUnreadMessages(Long courseId) throws ApiException {
+    return hasUnreadMessagesWithHttpInfo(courseId).getData();
+  }
+
+  /**
+   * 
+   * 
+   * @param courseId  (required)
+   * @return ApiResponse&lt;Boolean&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
+       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public ApiResponse<Boolean> hasUnreadMessagesWithHttpInfo(Long courseId) throws ApiException {
+    // Check required parameters
+    if (courseId == null) {
+      throw new ApiException(400, "Missing the required parameter 'courseId' when calling hasUnreadMessages");
+    }
+
+    // Path parameters
+    String localVarPath = "/api/courses/{courseId}/unread-messages"
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
+
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    GenericType<Boolean> localVarReturnType = new GenericType<Boolean>() {};
+    return apiClient.invokeAPI("ConversationResourceApi.hasUnreadMessages", localVarPath, "GET", new ArrayList<>(), null,
                                new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                null, localVarReturnType, false);
   }

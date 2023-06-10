@@ -23,6 +23,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import de.tum.cit.ase.artemis.sdk.model.Attachment;
+import de.tum.cit.ase.artemis.sdk.model.Slide;
+import java.util.ArrayList;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import de.tum.cit.ase.artemis.sdk.JSON;
 
@@ -32,16 +35,20 @@ import de.tum.cit.ase.artemis.sdk.JSON;
  */
 @JsonPropertyOrder({
   AttachmentUnitAllOf.JSON_PROPERTY_DESCRIPTION,
-  AttachmentUnitAllOf.JSON_PROPERTY_ATTACHMENT
+  AttachmentUnitAllOf.JSON_PROPERTY_ATTACHMENT,
+  AttachmentUnitAllOf.JSON_PROPERTY_SLIDES
 })
 @JsonTypeName("AttachmentUnit_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class AttachmentUnitAllOf {
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   private String description;
 
   public static final String JSON_PROPERTY_ATTACHMENT = "attachment";
   private Attachment attachment;
+
+  public static final String JSON_PROPERTY_SLIDES = "slides";
+  private List<Slide> slides;
 
   public AttachmentUnitAllOf() { 
   }
@@ -96,6 +103,39 @@ public class AttachmentUnitAllOf {
   }
 
 
+  public AttachmentUnitAllOf slides(List<Slide> slides) {
+    this.slides = slides;
+    return this;
+  }
+
+  public AttachmentUnitAllOf addSlidesItem(Slide slidesItem) {
+    if (this.slides == null) {
+      this.slides = new ArrayList<>();
+    }
+    this.slides.add(slidesItem);
+    return this;
+  }
+
+   /**
+   * Get slides
+   * @return slides
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_SLIDES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<Slide> getSlides() {
+    return slides;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SLIDES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSlides(List<Slide> slides) {
+    this.slides = slides;
+  }
+
+
   /**
    * Return true if this AttachmentUnit_allOf object is equal to o.
    */
@@ -109,12 +149,13 @@ public class AttachmentUnitAllOf {
     }
     AttachmentUnitAllOf attachmentUnitAllOf = (AttachmentUnitAllOf) o;
     return Objects.equals(this.description, attachmentUnitAllOf.description) &&
-        Objects.equals(this.attachment, attachmentUnitAllOf.attachment);
+        Objects.equals(this.attachment, attachmentUnitAllOf.attachment) &&
+        Objects.equals(this.slides, attachmentUnitAllOf.slides);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, attachment);
+    return Objects.hash(description, attachment, slides);
   }
 
   @Override
@@ -123,6 +164,7 @@ public class AttachmentUnitAllOf {
     sb.append("class AttachmentUnitAllOf {\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    attachment: ").append(toIndentedString(attachment)).append("\n");
+    sb.append("    slides: ").append(toIndentedString(slides)).append("\n");
     sb.append("}");
     return sb.toString();
   }

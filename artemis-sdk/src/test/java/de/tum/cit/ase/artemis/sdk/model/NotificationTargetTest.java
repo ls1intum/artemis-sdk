@@ -109,4 +109,12 @@ public class NotificationTargetTest {
         // TODO: test lecture
     }
 
+    /**
+     * Test the property 'conversation'
+     */
+    @Test
+    public void conversationTest() {
+        // TODO: test conversation
+    }
+
 }

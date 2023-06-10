@@ -3,6 +3,7 @@
 # CreateSystemNotification200Response
 
 ## oneOf schemas
+* [ConversationNotification](ConversationNotification.md)
 * [GroupNotification](GroupNotification.md)
 * [SingleUserNotification](SingleUserNotification.md)
 * [SystemNotification](SystemNotification.md)
@@ -11,6 +12,7 @@
 ```java
 // Import classes:
 import de.tum.cit.ase.artemis.sdk.model.CreateSystemNotification200Response;
+import de.tum.cit.ase.artemis.sdk.model.ConversationNotification;
 import de.tum.cit.ase.artemis.sdk.model.GroupNotification;
 import de.tum.cit.ase.artemis.sdk.model.SingleUserNotification;
 import de.tum.cit.ase.artemis.sdk.model.SystemNotification;
@@ -18,6 +20,13 @@ import de.tum.cit.ase.artemis.sdk.model.SystemNotification;
 public class Example {
     public static void main(String[] args) {
         CreateSystemNotification200Response exampleCreateSystemNotification200Response = new CreateSystemNotification200Response();
+
+        // create a new ConversationNotification
+        ConversationNotification exampleConversationNotification = new ConversationNotification();
+        // set CreateSystemNotification200Response to ConversationNotification
+        exampleCreateSystemNotification200Response.setActualInstance(exampleConversationNotification);
+        // to get back the ConversationNotification set earlier
+        ConversationNotification testConversationNotification = (ConversationNotification) exampleCreateSystemNotification200Response.getActualInstance();
 
         // create a new GroupNotification
         GroupNotification exampleGroupNotification = new GroupNotification();

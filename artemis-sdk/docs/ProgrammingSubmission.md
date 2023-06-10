@@ -12,6 +12,7 @@
 |**buildFailed** | **Boolean** |  |  [optional] |
 |**buildArtifact** | **Boolean** |  |  [optional] |
 |**buildLogEntries** | [**List&lt;BuildLogEntry&gt;**](BuildLogEntry.md) |  |  [optional] |
+|**submissionExerciseType** | **String** |  |  [optional] |
 |**results** | [**List&lt;Result&gt;**](Result.md) |  |  [optional] [readonly] |
 
 

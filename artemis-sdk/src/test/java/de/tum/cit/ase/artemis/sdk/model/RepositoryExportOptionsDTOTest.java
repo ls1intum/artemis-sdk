@@ -71,6 +71,14 @@ public class RepositoryExportOptionsDTOTest {
     }
 
     /**
+     * Test the property 'excludePracticeSubmissions'
+     */
+    @Test
+    public void excludePracticeSubmissionsTest() {
+        // TODO: test excludePracticeSubmissions
+    }
+
+    /**
      * Test the property 'addParticipantName'
      */
     @Test

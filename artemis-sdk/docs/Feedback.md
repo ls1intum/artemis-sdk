@@ -21,8 +21,7 @@
 |**suggestedFeedbackReference** | **String** |  |  [optional] |
 |**suggestedFeedbackOriginSubmissionReference** | **Long** |  |  [optional] |
 |**suggestedFeedbackParticipationReference** | **Long** |  |  [optional] |
-|**firstConflicts** | [**List&lt;FeedbackConflict&gt;**](FeedbackConflict.md) |  |  [optional] |
-|**secondConflicts** | [**List&lt;FeedbackConflict&gt;**](FeedbackConflict.md) |  |  [optional] |
+|**detailTextTruncated** | **String** |  |  [optional] |
 
 
 

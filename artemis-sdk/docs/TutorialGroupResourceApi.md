@@ -12,6 +12,7 @@ All URIs are relative to *http://localhost:8080*
 | [**getOneOfCourse**](TutorialGroupResourceApi.md#getOneOfCourse) | **GET** /api/courses/{courseId}/tutorial-groups/{tutorialGroupId} |  |
 | [**getTitle**](TutorialGroupResourceApi.md#getTitle) | **GET** /api/tutorial-groups/{tutorialGroupId}/title |  |
 | [**getUniqueCampusValues**](TutorialGroupResourceApi.md#getUniqueCampusValues) | **GET** /api/courses/{courseId}/tutorial-groups/campus-values |  |
+| [**getUniqueLanguageValues**](TutorialGroupResourceApi.md#getUniqueLanguageValues) | **GET** /api/courses/{courseId}/tutorial-groups/language-values |  |
 | [**importRegistrations**](TutorialGroupResourceApi.md#importRegistrations) | **POST** /api/courses/{courseId}/tutorial-groups/import |  |
 | [**registerMultipleStudentsToTutorialGroup**](TutorialGroupResourceApi.md#registerMultipleStudentsToTutorialGroup) | **POST** /api/courses/{courseId}/tutorial-groups/{tutorialGroupId}/register-multiple |  |
 | [**registerStudent**](TutorialGroupResourceApi.md#registerStudent) | **POST** /api/courses/{courseId}/tutorial-groups/{tutorialGroupId}/register/{studentLogin} |  |
@@ -499,6 +500,70 @@ public class Example {
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling TutorialGroupResourceApi#getUniqueCampusValues");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **courseId** | **Long**|  | |
+
+### Return type
+
+**Set&lt;String&gt;**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **503** | Service Unavailable |  -  |
+| **200** | OK |  -  |
+
+
+## getUniqueLanguageValues
+
+> Set&lt;String&gt; getUniqueLanguageValues(courseId)
+
+
+
+### Example
+
+```java
+// Import classes:
+import de.tum.cit.ase.artemis.sdk.ApiClient;
+import de.tum.cit.ase.artemis.sdk.ApiException;
+import de.tum.cit.ase.artemis.sdk.Configuration;
+import de.tum.cit.ase.artemis.sdk.model.*;
+import de.tum.cit.ase.artemis.sdk.api.TutorialGroupResourceApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8080");
+
+        TutorialGroupResourceApi apiInstance = new TutorialGroupResourceApi(defaultClient);
+        Long courseId = 56L; // Long | 
+        try {
+            Set<String> result = apiInstance.getUniqueLanguageValues(courseId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TutorialGroupResourceApi#getUniqueLanguageValues");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());

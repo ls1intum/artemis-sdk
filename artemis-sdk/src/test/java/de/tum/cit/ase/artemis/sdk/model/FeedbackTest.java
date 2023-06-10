@@ -18,11 +18,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import de.tum.cit.ase.artemis.sdk.model.FeedbackConflict;
 import de.tum.cit.ase.artemis.sdk.model.GradingInstruction;
 import de.tum.cit.ase.artemis.sdk.model.Result;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
@@ -64,6 +61,14 @@ public class FeedbackTest {
     @Test
     public void detailTextTest() {
         // TODO: test detailText
+    }
+
+    /**
+     * Test the property 'hasLongFeedbackText'
+     */
+    @Test
+    public void hasLongFeedbackTextTest() {
+        // TODO: test hasLongFeedbackText
     }
 
     /**
@@ -147,19 +152,11 @@ public class FeedbackTest {
     }
 
     /**
-     * Test the property 'firstConflicts'
+     * Test the property 'detailTextTruncated'
      */
     @Test
-    public void firstConflictsTest() {
-        // TODO: test firstConflicts
-    }
-
-    /**
-     * Test the property 'secondConflicts'
-     */
-    @Test
-    public void secondConflictsTest() {
-        // TODO: test secondConflicts
+    public void detailTextTruncatedTest() {
+        // TODO: test detailTextTruncated
     }
 
 }

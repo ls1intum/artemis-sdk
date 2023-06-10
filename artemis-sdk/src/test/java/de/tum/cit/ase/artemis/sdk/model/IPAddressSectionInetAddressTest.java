@@ -40,14 +40,6 @@ public class IPAddressSectionInetAddressTest {
     }
 
     /**
-     * Test the property 'canonicalHostName'
-     */
-    @Test
-    public void canonicalHostNameTest() {
-        // TODO: test canonicalHostName
-    }
-
-    /**
      * Test the property 'hostAddress'
      */
     @Test
@@ -149,6 +141,14 @@ public class IPAddressSectionInetAddressTest {
     @Test
     public void mcorgLocalTest() {
         // TODO: test mcorgLocal
+    }
+
+    /**
+     * Test the property 'canonicalHostName'
+     */
+    @Test
+    public void canonicalHostNameTest() {
+        // TODO: test canonicalHostName
     }
 
 }

@@ -15,7 +15,6 @@ package de.tum.cit.ase.artemis.sdk.api;
 
 import de.tum.cit.ase.artemis.sdk.*;
 import de.tum.cit.ase.artemis.sdk.auth.*;
-import java.io.File;
 import de.tum.cit.ase.artemis.sdk.model.GetExercise200Response;
 import java.time.OffsetDateTime;
 import de.tum.cit.ase.artemis.sdk.model.StatsForDashboardDTO;
@@ -35,17 +34,6 @@ import java.util.Map;
 public class ExerciseResourceApiTest {
 
     private final ExerciseResourceApi api = new ExerciseResourceApi();
-
-    /**
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void cleanupTest() throws ApiException {
-        //Long exerciseId = null;
-        //Boolean deleteRepositories = null;
-        //File response = api.cleanup(exerciseId, deleteRepositories);
-        // TODO: test validations
-    }
 
     /**
      * @throws ApiException if the Api call fails
@@ -121,9 +109,9 @@ public class ExerciseResourceApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void resetTest() throws ApiException {
+    public void reset1Test() throws ApiException {
         //Long exerciseId = null;
-        //api.reset(exerciseId);
+        //api.reset1(exerciseId);
         // TODO: test validations
     }
 

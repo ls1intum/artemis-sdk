@@ -41,7 +41,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   TutorialGroupsConfiguration.JSON_PROPERTY_USE_PUBLIC_TUTORIAL_GROUP_CHANNELS,
   TutorialGroupsConfiguration.JSON_PROPERTY_TUTORIAL_GROUP_FREE_PERIODS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class TutorialGroupsConfiguration {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;

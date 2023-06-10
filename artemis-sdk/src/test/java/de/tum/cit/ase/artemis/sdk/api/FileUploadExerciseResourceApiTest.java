@@ -17,6 +17,8 @@ import de.tum.cit.ase.artemis.sdk.*;
 import de.tum.cit.ase.artemis.sdk.auth.*;
 import java.io.File;
 import de.tum.cit.ase.artemis.sdk.model.FileUploadExercise;
+import de.tum.cit.ase.artemis.sdk.model.PageableSearchDTOString;
+import de.tum.cit.ase.artemis.sdk.model.SearchResultPageDTOFileUploadExercise;
 import de.tum.cit.ase.artemis.sdk.model.SubmissionExportOptionsDTO;
 
 import org.junit.jupiter.api.Assertions;
@@ -70,6 +72,18 @@ public class FileUploadExerciseResourceApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
+    public void getAllExercisesOnPage4Test() throws ApiException {
+        //PageableSearchDTOString search = null;
+        //Boolean isCourseFilter = null;
+        //Boolean isExamFilter = null;
+        //SearchResultPageDTOFileUploadExercise response = api.getAllExercisesOnPage4(search, isCourseFilter, isExamFilter);
+        // TODO: test validations
+    }
+
+    /**
+     * @throws ApiException if the Api call fails
+     */
+    @Test
     public void getFileUploadExerciseTest() throws ApiException {
         //Long exerciseId = null;
         //FileUploadExercise response = api.getFileUploadExercise(exerciseId);
@@ -83,6 +97,17 @@ public class FileUploadExerciseResourceApiTest {
     public void getFileUploadExercisesForCourseTest() throws ApiException {
         //Long courseId = null;
         //List<FileUploadExercise> response = api.getFileUploadExercisesForCourse(courseId);
+        // TODO: test validations
+    }
+
+    /**
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void importFileUploadExerciseTest() throws ApiException {
+        //Long sourceId = null;
+        //FileUploadExercise fileUploadExercise = null;
+        //FileUploadExercise response = api.importFileUploadExercise(sourceId, fileUploadExercise);
         // TODO: test validations
     }
 

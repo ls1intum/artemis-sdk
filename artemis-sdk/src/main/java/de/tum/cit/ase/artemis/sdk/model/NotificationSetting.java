@@ -35,9 +35,10 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   NotificationSetting.JSON_PROPERTY_SETTING_ID,
   NotificationSetting.JSON_PROPERTY_WEBAPP,
   NotificationSetting.JSON_PROPERTY_EMAIL,
+  NotificationSetting.JSON_PROPERTY_PUSH,
   NotificationSetting.JSON_PROPERTY_USER
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class NotificationSetting {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -50,6 +51,9 @@ public class NotificationSetting {
 
   public static final String JSON_PROPERTY_EMAIL = "email";
   private Boolean email;
+
+  public static final String JSON_PROPERTY_PUSH = "push";
+  private Boolean push;
 
   public static final String JSON_PROPERTY_USER = "user";
   private User user;
@@ -157,6 +161,31 @@ public class NotificationSetting {
   }
 
 
+  public NotificationSetting push(Boolean push) {
+    this.push = push;
+    return this;
+  }
+
+   /**
+   * Get push
+   * @return push
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PUSH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getPush() {
+    return push;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_PUSH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPush(Boolean push) {
+    this.push = push;
+  }
+
+
   public NotificationSetting user(User user) {
     this.user = user;
     return this;
@@ -198,12 +227,13 @@ public class NotificationSetting {
         Objects.equals(this.settingId, notificationSetting.settingId) &&
         Objects.equals(this.webapp, notificationSetting.webapp) &&
         Objects.equals(this.email, notificationSetting.email) &&
+        Objects.equals(this.push, notificationSetting.push) &&
         Objects.equals(this.user, notificationSetting.user);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, settingId, webapp, email, user);
+    return Objects.hash(id, settingId, webapp, email, push, user);
   }
 
   @Override
@@ -214,6 +244,7 @@ public class NotificationSetting {
     sb.append("    settingId: ").append(toIndentedString(settingId)).append("\n");
     sb.append("    webapp: ").append(toIndentedString(webapp)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    push: ").append(toIndentedString(push)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("}");
     return sb.toString();

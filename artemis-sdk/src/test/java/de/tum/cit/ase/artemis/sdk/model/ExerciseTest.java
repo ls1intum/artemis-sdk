@@ -27,17 +27,12 @@ import de.tum.cit.ase.artemis.sdk.model.Course;
 import de.tum.cit.ase.artemis.sdk.model.DueDateStat;
 import de.tum.cit.ase.artemis.sdk.model.ExampleSubmission;
 import de.tum.cit.ase.artemis.sdk.model.ExerciseGroup;
-import de.tum.cit.ase.artemis.sdk.model.FileUploadExercise;
 import de.tum.cit.ase.artemis.sdk.model.GradingCriterion;
-import de.tum.cit.ase.artemis.sdk.model.ModelingExercise;
 import de.tum.cit.ase.artemis.sdk.model.PlagiarismCase;
 import de.tum.cit.ase.artemis.sdk.model.Post;
-import de.tum.cit.ase.artemis.sdk.model.ProgrammingExercise;
-import de.tum.cit.ase.artemis.sdk.model.QuizExercise;
 import de.tum.cit.ase.artemis.sdk.model.StudentParticipation;
 import de.tum.cit.ase.artemis.sdk.model.Team;
 import de.tum.cit.ase.artemis.sdk.model.TeamAssignmentConfig;
-import de.tum.cit.ase.artemis.sdk.model.TextExercise;
 import de.tum.cit.ase.artemis.sdk.model.TutorParticipation;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -320,6 +315,14 @@ public class ExerciseTest {
     }
 
     /**
+     * Test the property 'exerciseType'
+     */
+    @Test
+    public void exerciseTypeTest() {
+        // TODO: test exerciseType
+    }
+
+    /**
      * Test the property 'numberOfAssessmentsOfCorrectionRounds'
      */
     @Test
@@ -392,14 +395,6 @@ public class ExerciseTest {
     }
 
     /**
-     * Test the property 'exerciseType'
-     */
-    @Test
-    public void exerciseTypeTest() {
-        // TODO: test exerciseType
-    }
-
-    /**
      * Test the property 'studentAssignedTeamId'
      */
     @Test
@@ -437,14 +432,6 @@ public class ExerciseTest {
     @Test
     public void exampleSolutionPublishedTest() {
         // TODO: test exampleSolutionPublished
-    }
-
-    /**
-     * Test the property 'released'
-     */
-    @Test
-    public void releasedTest() {
-        // TODO: test released
     }
 
     /**

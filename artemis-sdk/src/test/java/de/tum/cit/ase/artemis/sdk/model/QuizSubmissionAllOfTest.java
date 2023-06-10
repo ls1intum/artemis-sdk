@@ -62,6 +62,14 @@ public class QuizSubmissionAllOfTest {
     }
 
     /**
+     * Test the property 'submittedAnswers'
+     */
+    @Test
+    public void submittedAnswersTest() {
+        // TODO: test submittedAnswers
+    }
+
+    /**
      * Test the property 'quizBatch'
      */
     @Test
@@ -70,11 +78,11 @@ public class QuizSubmissionAllOfTest {
     }
 
     /**
-     * Test the property 'submittedAnswers'
+     * Test the property 'submissionExerciseType'
      */
     @Test
-    public void submittedAnswersTest() {
-        // TODO: test submittedAnswers
+    public void submissionExerciseTypeTest() {
+        // TODO: test submissionExerciseType
     }
 
     /**

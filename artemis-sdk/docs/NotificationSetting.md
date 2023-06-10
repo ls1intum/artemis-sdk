@@ -11,6 +11,7 @@
 |**settingId** | **String** |  |  [optional] |
 |**webapp** | **Boolean** |  |  [optional] |
 |**email** | **Boolean** |  |  [optional] |
+|**push** | **Boolean** |  |  [optional] |
 |**user** | [**User**](User.md) |  |  [optional] |
 
 

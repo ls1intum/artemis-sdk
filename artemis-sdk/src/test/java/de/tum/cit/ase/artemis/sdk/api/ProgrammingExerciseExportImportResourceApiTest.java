@@ -16,6 +16,7 @@ package de.tum.cit.ase.artemis.sdk.api;
 import de.tum.cit.ase.artemis.sdk.*;
 import de.tum.cit.ase.artemis.sdk.auth.*;
 import java.io.File;
+import de.tum.cit.ase.artemis.sdk.model.ImportProgrammingExerciseFromFileRequest;
 import de.tum.cit.ase.artemis.sdk.model.ProgrammingExercise;
 import de.tum.cit.ase.artemis.sdk.model.RepositoryExportOptionsDTO;
 
@@ -112,6 +113,17 @@ public class ProgrammingExerciseExportImportResourceApiTest {
         //Boolean recreateBuildPlans = null;
         //Boolean updateTemplate = null;
         //ProgrammingExercise response = api.importProgrammingExercise(sourceExerciseId, programmingExercise, recreateBuildPlans, updateTemplate);
+        // TODO: test validations
+    }
+
+    /**
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void importProgrammingExerciseFromFileTest() throws ApiException {
+        //Long courseId = null;
+        //ImportProgrammingExerciseFromFileRequest importProgrammingExerciseFromFileRequest = null;
+        //ProgrammingExercise response = api.importProgrammingExerciseFromFile(courseId, importProgrammingExerciseFromFileRequest);
         // TODO: test validations
     }
 

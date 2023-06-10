@@ -8,7 +8,7 @@ import de.tum.cit.ase.artemis.sdk.Pair;
 
 import jakarta.ws.rs.core.GenericType;
 
-import de.tum.cit.ase.artemis.sdk.model.CleanupBuildPlan200Response;
+import de.tum.cit.ase.artemis.sdk.model.ProgrammingExerciseStudentParticipation;
 import de.tum.cit.ase.artemis.sdk.model.ProgrammingSubmission;
 import de.tum.cit.ase.artemis.sdk.model.Result;
 
@@ -18,7 +18,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class ProgrammingExerciseParticipationResourceApi {
   private ApiClient apiClient;
 
@@ -254,7 +254,7 @@ public class ProgrammingExerciseParticipationResourceApi {
    * 
    * 
    * @param participationId  (required)
-   * @return CleanupBuildPlan200Response
+   * @return ProgrammingExerciseStudentParticipation
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -263,7 +263,7 @@ public class ProgrammingExerciseParticipationResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public CleanupBuildPlan200Response getParticipationWithLatestResultForStudentParticipation(Long participationId) throws ApiException {
+  public ProgrammingExerciseStudentParticipation getParticipationWithLatestResultForStudentParticipation(Long participationId) throws ApiException {
     return getParticipationWithLatestResultForStudentParticipationWithHttpInfo(participationId).getData();
   }
 
@@ -271,7 +271,7 @@ public class ProgrammingExerciseParticipationResourceApi {
    * 
    * 
    * @param participationId  (required)
-   * @return ApiResponse&lt;CleanupBuildPlan200Response&gt;
+   * @return ApiResponse&lt;ProgrammingExerciseStudentParticipation&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -280,7 +280,7 @@ public class ProgrammingExerciseParticipationResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<CleanupBuildPlan200Response> getParticipationWithLatestResultForStudentParticipationWithHttpInfo(Long participationId) throws ApiException {
+  public ApiResponse<ProgrammingExerciseStudentParticipation> getParticipationWithLatestResultForStudentParticipationWithHttpInfo(Long participationId) throws ApiException {
     // Check required parameters
     if (participationId == null) {
       throw new ApiException(400, "Missing the required parameter 'participationId' when calling getParticipationWithLatestResultForStudentParticipation");
@@ -292,7 +292,7 @@ public class ProgrammingExerciseParticipationResourceApi {
 
     String localVarAccept = apiClient.selectHeaderAccept("*/*");
     String localVarContentType = apiClient.selectHeaderContentType();
-    GenericType<CleanupBuildPlan200Response> localVarReturnType = new GenericType<CleanupBuildPlan200Response>() {};
+    GenericType<ProgrammingExerciseStudentParticipation> localVarReturnType = new GenericType<ProgrammingExerciseStudentParticipation>() {};
     return apiClient.invokeAPI("ProgrammingExerciseParticipationResourceApi.getParticipationWithLatestResultForStudentParticipation", localVarPath, "GET", new ArrayList<>(), null,
                                new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                null, localVarReturnType, false);

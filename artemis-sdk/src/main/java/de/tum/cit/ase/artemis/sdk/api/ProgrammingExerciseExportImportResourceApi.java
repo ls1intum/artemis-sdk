@@ -9,6 +9,7 @@ import de.tum.cit.ase.artemis.sdk.Pair;
 import jakarta.ws.rs.core.GenericType;
 
 import java.io.File;
+import de.tum.cit.ase.artemis.sdk.model.ImportProgrammingExerciseFromFileRequest;
 import de.tum.cit.ase.artemis.sdk.model.ProgrammingExercise;
 import de.tum.cit.ase.artemis.sdk.model.RepositoryExportOptionsDTO;
 
@@ -18,7 +19,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class ProgrammingExerciseExportImportResourceApi {
   private ApiClient apiClient;
 
@@ -433,6 +434,55 @@ public class ProgrammingExerciseExportImportResourceApi {
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<ProgrammingExercise> localVarReturnType = new GenericType<ProgrammingExercise>() {};
     return apiClient.invokeAPI("ProgrammingExerciseExportImportResourceApi.importProgrammingExercise", localVarPath, "POST", localVarQueryParams, programmingExercise,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
+  }
+  /**
+   * 
+   * 
+   * @param courseId  (required)
+   * @param importProgrammingExerciseFromFileRequest  (optional)
+   * @return ProgrammingExercise
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
+       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public ProgrammingExercise importProgrammingExerciseFromFile(Long courseId, ImportProgrammingExerciseFromFileRequest importProgrammingExerciseFromFileRequest) throws ApiException {
+    return importProgrammingExerciseFromFileWithHttpInfo(courseId, importProgrammingExerciseFromFileRequest).getData();
+  }
+
+  /**
+   * 
+   * 
+   * @param courseId  (required)
+   * @param importProgrammingExerciseFromFileRequest  (optional)
+   * @return ApiResponse&lt;ProgrammingExercise&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
+       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public ApiResponse<ProgrammingExercise> importProgrammingExerciseFromFileWithHttpInfo(Long courseId, ImportProgrammingExerciseFromFileRequest importProgrammingExerciseFromFileRequest) throws ApiException {
+    // Check required parameters
+    if (courseId == null) {
+      throw new ApiException(400, "Missing the required parameter 'courseId' when calling importProgrammingExerciseFromFile");
+    }
+
+    // Path parameters
+    String localVarPath = "/api/courses/{courseId}/programming-exercises/import-from-file"
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
+
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
+    GenericType<ProgrammingExercise> localVarReturnType = new GenericType<ProgrammingExercise>() {};
+    return apiClient.invokeAPI("ProgrammingExerciseExportImportResourceApi.importProgrammingExerciseFromFile", localVarPath, "POST", new ArrayList<>(), importProgrammingExerciseFromFileRequest,
                                new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                null, localVarReturnType, false);
   }

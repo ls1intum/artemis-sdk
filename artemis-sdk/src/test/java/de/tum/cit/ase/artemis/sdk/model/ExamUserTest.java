@@ -20,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import de.tum.cit.ase.artemis.sdk.model.Exam;
 import de.tum.cit.ase.artemis.sdk.model.User;
+import java.time.OffsetDateTime;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
@@ -45,6 +46,14 @@ public class ExamUserTest {
     @Test
     public void idTest() {
         // TODO: test id
+    }
+
+    /**
+     * Test the property 'createdDate'
+     */
+    @Test
+    public void createdDateTest() {
+        // TODO: test createdDate
     }
 
     /**

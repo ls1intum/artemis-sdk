@@ -125,6 +125,16 @@ public class TutorialGroupResourceApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
+    public void getUniqueLanguageValuesTest() throws ApiException {
+        //Long courseId = null;
+        //Set<String> response = api.getUniqueLanguageValues(courseId);
+        // TODO: test validations
+    }
+
+    /**
+     * @throws ApiException if the Api call fails
+     */
+    @Test
     public void importRegistrationsTest() throws ApiException {
         //Long courseId = null;
         //Set<TutorialGroupRegistrationImportDTO> tutorialGroupRegistrationImportDTO = null;

@@ -22,11 +22,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import de.tum.cit.ase.artemis.sdk.model.AnswerOption;
-import de.tum.cit.ase.artemis.sdk.model.DragAndDropQuestion;
-import de.tum.cit.ase.artemis.sdk.model.MultipleChoiceQuestion;
 import de.tum.cit.ase.artemis.sdk.model.QuizQuestion;
 import de.tum.cit.ase.artemis.sdk.model.QuizQuestionStatistic;
-import de.tum.cit.ase.artemis.sdk.model.ShortAnswerQuestion;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -17,7 +17,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class FileResourceApi {
   private ApiClient apiClient;
 
@@ -97,6 +97,59 @@ public class FileResourceApi {
     String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<List<byte[]>> localVarReturnType = new GenericType<List<byte[]>>() {};
     return apiClient.invokeAPI("FileResourceApi.getAttachmentUnitAttachment", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
+  }
+  /**
+   * 
+   * 
+   * @param attachmentUnitId  (required)
+   * @param slideNumber  (required)
+   * @return List&lt;byte[]&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
+       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public List<byte[]> getAttachmentUnitAttachmentSlide(Long attachmentUnitId, String slideNumber) throws ApiException {
+    return getAttachmentUnitAttachmentSlideWithHttpInfo(attachmentUnitId, slideNumber).getData();
+  }
+
+  /**
+   * 
+   * 
+   * @param attachmentUnitId  (required)
+   * @param slideNumber  (required)
+   * @return ApiResponse&lt;List&lt;byte[]&gt;&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
+       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public ApiResponse<List<byte[]>> getAttachmentUnitAttachmentSlideWithHttpInfo(Long attachmentUnitId, String slideNumber) throws ApiException {
+    // Check required parameters
+    if (attachmentUnitId == null) {
+      throw new ApiException(400, "Missing the required parameter 'attachmentUnitId' when calling getAttachmentUnitAttachmentSlide");
+    }
+    if (slideNumber == null) {
+      throw new ApiException(400, "Missing the required parameter 'slideNumber' when calling getAttachmentUnitAttachmentSlide");
+    }
+
+    // Path parameters
+    String localVarPath = "/api/files/attachments/attachment-unit/{attachmentUnitId}/slide/{slideNumber}"
+            .replaceAll("\\{attachmentUnitId}", apiClient.escapeString(attachmentUnitId.toString()))
+            .replaceAll("\\{slideNumber}", apiClient.escapeString(slideNumber));
+
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    GenericType<List<byte[]>> localVarReturnType = new GenericType<List<byte[]>>() {};
+    return apiClient.invokeAPI("FileResourceApi.getAttachmentUnitAttachmentSlide", localVarPath, "GET", new ArrayList<>(), null,
                                new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                null, localVarReturnType, false);
   }

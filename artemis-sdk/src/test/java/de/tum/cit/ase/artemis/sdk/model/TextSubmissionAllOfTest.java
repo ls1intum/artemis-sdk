@@ -78,6 +78,14 @@ public class TextSubmissionAllOfTest {
     }
 
     /**
+     * Test the property 'submissionExerciseType'
+     */
+    @Test
+    public void submissionExerciseTypeTest() {
+        // TODO: test submissionExerciseType
+    }
+
+    /**
      * Test the property 'results'
      */
     @Test

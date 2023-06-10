@@ -13,8 +13,10 @@
 
 package de.tum.cit.ase.artemis.sdk;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class Configuration {
+    public static final String VERSION = "v0";
+
     private static ApiClient defaultApiClient = new ApiClient();
 
     /**

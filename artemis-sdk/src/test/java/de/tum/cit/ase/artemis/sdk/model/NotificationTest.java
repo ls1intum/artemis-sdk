@@ -21,10 +21,7 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import de.tum.cit.ase.artemis.sdk.model.GroupNotification;
 import de.tum.cit.ase.artemis.sdk.model.NotificationTarget;
-import de.tum.cit.ase.artemis.sdk.model.SingleUserNotification;
-import de.tum.cit.ase.artemis.sdk.model.SystemNotification;
 import de.tum.cit.ase.artemis.sdk.model.User;
 import java.time.OffsetDateTime;
 
@@ -71,6 +68,22 @@ public class NotificationTest {
     }
 
     /**
+     * Test the property 'textIsPlaceholder'
+     */
+    @Test
+    public void textIsPlaceholderTest() {
+        // TODO: test textIsPlaceholder
+    }
+
+    /**
+     * Test the property 'placeholderValues'
+     */
+    @Test
+    public void placeholderValuesTest() {
+        // TODO: test placeholderValues
+    }
+
+    /**
      * Test the property 'notificationDate'
      */
     @Test
@@ -84,14 +97,6 @@ public class NotificationTest {
     @Test
     public void targetTest() {
         // TODO: test target
-    }
-
-    /**
-     * Test the property 'targetTransient'
-     */
-    @Test
-    public void targetTransientTest() {
-        // TODO: test targetTransient
     }
 
     /**
@@ -116,6 +121,14 @@ public class NotificationTest {
     @Test
     public void authorTest() {
         // TODO: test author
+    }
+
+    /**
+     * Test the property 'targetTransient'
+     */
+    @Test
+    public void targetTransientTest() {
+        // TODO: test targetTransient
     }
 
     /**

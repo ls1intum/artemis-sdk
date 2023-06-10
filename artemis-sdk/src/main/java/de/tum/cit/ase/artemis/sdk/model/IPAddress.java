@@ -64,9 +64,9 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   IPAddress.JSON_PROPERTY_SINGLE_NETWORK,
   IPAddress.JSON_PROPERTY_PREFIX_LENGTH,
   IPAddress.JSON_PROPERTY_IPV6,
-  IPAddress.JSON_PROPERTY_HOST_SECTION,
   IPAddress.JSON_PROPERTY_NETWORK_SECTION,
   IPAddress.JSON_PROPERTY_SEGMENTS,
+  IPAddress.JSON_PROPERTY_HOST_SECTION,
   IPAddress.JSON_PROPERTY_COUNT,
   IPAddress.JSON_PROPERTY_BIT_COUNT,
   IPAddress.JSON_PROPERTY_PREFIXED,
@@ -92,7 +92,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   IPAddress.JSON_PROPERTY_MACADDRESS,
   IPAddress.JSON_PROPERTY_MULTICAST
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class IPAddress {
   public static final String JSON_PROPERTY_LOOPBACK = "loopback";
   private Boolean loopback;
@@ -216,14 +216,14 @@ public class IPAddress {
   public static final String JSON_PROPERTY_IPV6 = "ipv6";
   private Boolean ipv6;
 
-  public static final String JSON_PROPERTY_HOST_SECTION = "hostSection";
-  private IPAddressSection hostSection;
-
   public static final String JSON_PROPERTY_NETWORK_SECTION = "networkSection";
   private IPAddressSection networkSection;
 
   public static final String JSON_PROPERTY_SEGMENTS = "segments";
   private List<IPAddressSegment> segments;
+
+  public static final String JSON_PROPERTY_HOST_SECTION = "hostSection";
+  private IPAddressSection hostSection;
 
   public static final String JSON_PROPERTY_COUNT = "count";
   private Integer count;
@@ -1025,31 +1025,6 @@ public class IPAddress {
   }
 
 
-  public IPAddress hostSection(IPAddressSection hostSection) {
-    this.hostSection = hostSection;
-    return this;
-  }
-
-   /**
-   * Get hostSection
-   * @return hostSection
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_HOST_SECTION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public IPAddressSection getHostSection() {
-    return hostSection;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_HOST_SECTION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setHostSection(IPAddressSection hostSection) {
-    this.hostSection = hostSection;
-  }
-
-
   public IPAddress networkSection(IPAddressSection networkSection) {
     this.networkSection = networkSection;
     return this;
@@ -1105,6 +1080,31 @@ public class IPAddress {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSegments(List<IPAddressSegment> segments) {
     this.segments = segments;
+  }
+
+
+  public IPAddress hostSection(IPAddressSection hostSection) {
+    this.hostSection = hostSection;
+    return this;
+  }
+
+   /**
+   * Get hostSection
+   * @return hostSection
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_HOST_SECTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public IPAddressSection getHostSection() {
+    return hostSection;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_HOST_SECTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setHostSection(IPAddressSection hostSection) {
+    this.hostSection = hostSection;
   }
 
 
@@ -1781,9 +1781,9 @@ public class IPAddress {
         Objects.equals(this.singleNetwork, ipAddress.singleNetwork) &&
         Objects.equals(this.prefixLength, ipAddress.prefixLength) &&
         Objects.equals(this.ipv6, ipAddress.ipv6) &&
-        Objects.equals(this.hostSection, ipAddress.hostSection) &&
         Objects.equals(this.networkSection, ipAddress.networkSection) &&
         Objects.equals(this.segments, ipAddress.segments) &&
+        Objects.equals(this.hostSection, ipAddress.hostSection) &&
         Objects.equals(this.count, ipAddress.count) &&
         Objects.equals(this.bitCount, ipAddress.bitCount) &&
         Objects.equals(this.prefixed, ipAddress.prefixed) &&
@@ -1812,7 +1812,7 @@ public class IPAddress {
 
   @Override
   public int hashCode() {
-    return Objects.hash(loopback, networkPrefixLength, lower, upper, local, ipv4, network, section, maxSegmentValue, nonZeroHostCount, bytesPerSegment, bitsPerSegment, byteCount, lowerNonZeroHost, sequentialBlockCount, iterable, ipaddress, ipversion, ipv4Convertible, ipv6Convertible, linkLocal, unspecified, anyLocal, zeroHost, hostMask, networkMask, singleNetwork, prefixLength, ipv6, hostSection, networkSection, segments, count, bitCount, prefixed, prefixBlock, sequentialBlockIndex, sequential, singlePrefixBlock, divisionStrings, prefixCount, bytes, value, zero, prefixLengthForSingleBlock, minPrefixLengthForBlock, fullRange, upperBytes, upperValue, max, multiple, divisionCount, segmentCount, segmentStrings, macaddress, multicast);
+    return Objects.hash(loopback, networkPrefixLength, lower, upper, local, ipv4, network, section, maxSegmentValue, nonZeroHostCount, bytesPerSegment, bitsPerSegment, byteCount, lowerNonZeroHost, sequentialBlockCount, iterable, ipaddress, ipversion, ipv4Convertible, ipv6Convertible, linkLocal, unspecified, anyLocal, zeroHost, hostMask, networkMask, singleNetwork, prefixLength, ipv6, networkSection, segments, hostSection, count, bitCount, prefixed, prefixBlock, sequentialBlockIndex, sequential, singlePrefixBlock, divisionStrings, prefixCount, bytes, value, zero, prefixLengthForSingleBlock, minPrefixLengthForBlock, fullRange, upperBytes, upperValue, max, multiple, divisionCount, segmentCount, segmentStrings, macaddress, multicast);
   }
 
   @Override
@@ -1848,9 +1848,9 @@ public class IPAddress {
     sb.append("    singleNetwork: ").append(toIndentedString(singleNetwork)).append("\n");
     sb.append("    prefixLength: ").append(toIndentedString(prefixLength)).append("\n");
     sb.append("    ipv6: ").append(toIndentedString(ipv6)).append("\n");
-    sb.append("    hostSection: ").append(toIndentedString(hostSection)).append("\n");
     sb.append("    networkSection: ").append(toIndentedString(networkSection)).append("\n");
     sb.append("    segments: ").append(toIndentedString(segments)).append("\n");
+    sb.append("    hostSection: ").append(toIndentedString(hostSection)).append("\n");
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
     sb.append("    bitCount: ").append(toIndentedString(bitCount)).append("\n");
     sb.append("    prefixed: ").append(toIndentedString(prefixed)).append("\n");

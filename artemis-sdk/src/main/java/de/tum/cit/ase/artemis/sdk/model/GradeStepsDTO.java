@@ -39,9 +39,11 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   GradeStepsDTO.JSON_PROPERTY_GRADE_STEPS,
   GradeStepsDTO.JSON_PROPERTY_MAX_POINTS,
   GradeStepsDTO.JSON_PROPERTY_PLAGIARISM_GRADE,
-  GradeStepsDTO.JSON_PROPERTY_NO_PARTICIPATION_GRADE
+  GradeStepsDTO.JSON_PROPERTY_NO_PARTICIPATION_GRADE,
+  GradeStepsDTO.JSON_PROPERTY_PRESENTATIONS_NUMBER,
+  GradeStepsDTO.JSON_PROPERTY_PRESENTATIONS_WEIGHT
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class GradeStepsDTO {
   public static final String JSON_PROPERTY_TITLE = "title";
   private String title;
@@ -97,6 +99,12 @@ public class GradeStepsDTO {
 
   public static final String JSON_PROPERTY_NO_PARTICIPATION_GRADE = "noParticipationGrade";
   private String noParticipationGrade;
+
+  public static final String JSON_PROPERTY_PRESENTATIONS_NUMBER = "presentationsNumber";
+  private Integer presentationsNumber;
+
+  public static final String JSON_PROPERTY_PRESENTATIONS_WEIGHT = "presentationsWeight";
+  private Double presentationsWeight;
 
   public GradeStepsDTO() { 
   }
@@ -260,6 +268,56 @@ public class GradeStepsDTO {
   }
 
 
+  public GradeStepsDTO presentationsNumber(Integer presentationsNumber) {
+    this.presentationsNumber = presentationsNumber;
+    return this;
+  }
+
+   /**
+   * Get presentationsNumber
+   * @return presentationsNumber
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PRESENTATIONS_NUMBER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getPresentationsNumber() {
+    return presentationsNumber;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_PRESENTATIONS_NUMBER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPresentationsNumber(Integer presentationsNumber) {
+    this.presentationsNumber = presentationsNumber;
+  }
+
+
+  public GradeStepsDTO presentationsWeight(Double presentationsWeight) {
+    this.presentationsWeight = presentationsWeight;
+    return this;
+  }
+
+   /**
+   * Get presentationsWeight
+   * @return presentationsWeight
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PRESENTATIONS_WEIGHT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Double getPresentationsWeight() {
+    return presentationsWeight;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_PRESENTATIONS_WEIGHT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPresentationsWeight(Double presentationsWeight) {
+    this.presentationsWeight = presentationsWeight;
+  }
+
+
   /**
    * Return true if this GradeStepsDTO object is equal to o.
    */
@@ -277,12 +335,14 @@ public class GradeStepsDTO {
         Objects.equals(this.gradeSteps, gradeStepsDTO.gradeSteps) &&
         Objects.equals(this.maxPoints, gradeStepsDTO.maxPoints) &&
         Objects.equals(this.plagiarismGrade, gradeStepsDTO.plagiarismGrade) &&
-        Objects.equals(this.noParticipationGrade, gradeStepsDTO.noParticipationGrade);
+        Objects.equals(this.noParticipationGrade, gradeStepsDTO.noParticipationGrade) &&
+        Objects.equals(this.presentationsNumber, gradeStepsDTO.presentationsNumber) &&
+        Objects.equals(this.presentationsWeight, gradeStepsDTO.presentationsWeight);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, gradeType, gradeSteps, maxPoints, plagiarismGrade, noParticipationGrade);
+    return Objects.hash(title, gradeType, gradeSteps, maxPoints, plagiarismGrade, noParticipationGrade, presentationsNumber, presentationsWeight);
   }
 
   @Override
@@ -295,6 +355,8 @@ public class GradeStepsDTO {
     sb.append("    maxPoints: ").append(toIndentedString(maxPoints)).append("\n");
     sb.append("    plagiarismGrade: ").append(toIndentedString(plagiarismGrade)).append("\n");
     sb.append("    noParticipationGrade: ").append(toIndentedString(noParticipationGrade)).append("\n");
+    sb.append("    presentationsNumber: ").append(toIndentedString(presentationsNumber)).append("\n");
+    sb.append("    presentationsWeight: ").append(toIndentedString(presentationsWeight)).append("\n");
     sb.append("}");
     return sb.toString();
   }

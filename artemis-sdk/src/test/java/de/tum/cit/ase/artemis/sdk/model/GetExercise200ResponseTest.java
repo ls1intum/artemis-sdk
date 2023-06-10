@@ -331,6 +331,14 @@ public class GetExercise200ResponseTest {
     }
 
     /**
+     * Test the property 'exerciseType'
+     */
+    @Test
+    public void exerciseTypeTest() {
+        // TODO: test exerciseType
+    }
+
+    /**
      * Test the property 'numberOfAssessmentsOfCorrectionRounds'
      */
     @Test
@@ -403,14 +411,6 @@ public class GetExercise200ResponseTest {
     }
 
     /**
-     * Test the property 'exerciseType'
-     */
-    @Test
-    public void exerciseTypeTest() {
-        // TODO: test exerciseType
-    }
-
-    /**
      * Test the property 'studentAssignedTeamId'
      */
     @Test
@@ -448,14 +448,6 @@ public class GetExercise200ResponseTest {
     @Test
     public void exampleSolutionPublishedTest() {
         // TODO: test exampleSolutionPublished
-    }
-
-    /**
-     * Test the property 'released'
-     */
-    @Test
-    public void releasedTest() {
-        // TODO: test released
     }
 
     /**
@@ -528,14 +520,6 @@ public class GetExercise200ResponseTest {
     @Test
     public void exampleSolutionExplanationTest() {
         // TODO: test exampleSolutionExplanation
-    }
-
-    /**
-     * Test the property 'clusterBuildDate'
-     */
-    @Test
-    public void clusterBuildDateTest() {
-        // TODO: test clusterBuildDate
     }
 
     /**
@@ -731,27 +715,11 @@ public class GetExercise200ResponseTest {
     }
 
     /**
-     * Test the property 'branch'
-     */
-    @Test
-    public void branchTest() {
-        // TODO: test branch
-    }
-
-    /**
      * Test the property 'releaseTestsWithExampleSolution'
      */
     @Test
     public void releaseTestsWithExampleSolutionTest() {
         // TODO: test releaseTestsWithExampleSolution
-    }
-
-    /**
-     * Test the property 'isLocalSimulation'
-     */
-    @Test
-    public void isLocalSimulationTest() {
-        // TODO: test isLocalSimulation
     }
 
     /**
@@ -848,6 +816,14 @@ public class GetExercise200ResponseTest {
     @Test
     public void quizEndedTest() {
         // TODO: test quizEnded
+    }
+
+    /**
+     * Test the property 'questionParent'
+     */
+    @Test
+    public void questionParentTest() {
+        // TODO: test questionParent
     }
 
     /**

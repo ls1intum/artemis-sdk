@@ -26,6 +26,7 @@ import de.tum.cit.ase.artemis.sdk.model.Exercise;
 import de.tum.cit.ase.artemis.sdk.model.PlagiarismComparisonObject;
 import de.tum.cit.ase.artemis.sdk.model.PlagiarismResultModelingSubmissionElement;
 import de.tum.cit.ase.artemis.sdk.model.PlagiarismResultObject;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -55,6 +56,14 @@ public class TextPlagiarismResultTest {
     @Test
     public void idTest() {
         // TODO: test id
+    }
+
+    /**
+     * Test the property 'createdDate'
+     */
+    @Test
+    public void createdDateTest() {
+        // TODO: test createdDate
     }
 
     /**

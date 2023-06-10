@@ -30,12 +30,16 @@ import de.tum.cit.ase.artemis.sdk.JSON;
  * FileUploadExerciseAllOf
  */
 @JsonPropertyOrder({
+  FileUploadExerciseAllOf.JSON_PROPERTY_TYPE,
   FileUploadExerciseAllOf.JSON_PROPERTY_EXAMPLE_SOLUTION,
   FileUploadExerciseAllOf.JSON_PROPERTY_FILE_PATTERN
 })
 @JsonTypeName("FileUploadExercise_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class FileUploadExerciseAllOf {
+  public static final String JSON_PROPERTY_TYPE = "type";
+  private String type;
+
   public static final String JSON_PROPERTY_EXAMPLE_SOLUTION = "exampleSolution";
   private String exampleSolution;
 
@@ -44,6 +48,31 @@ public class FileUploadExerciseAllOf {
 
   public FileUploadExerciseAllOf() { 
   }
+
+  public FileUploadExerciseAllOf type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Get type
+   * @return type
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getType() {
+    return type;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setType(String type) {
+    this.type = type;
+  }
+
 
   public FileUploadExerciseAllOf exampleSolution(String exampleSolution) {
     this.exampleSolution = exampleSolution;
@@ -107,19 +136,21 @@ public class FileUploadExerciseAllOf {
       return false;
     }
     FileUploadExerciseAllOf fileUploadExerciseAllOf = (FileUploadExerciseAllOf) o;
-    return Objects.equals(this.exampleSolution, fileUploadExerciseAllOf.exampleSolution) &&
+    return Objects.equals(this.type, fileUploadExerciseAllOf.type) &&
+        Objects.equals(this.exampleSolution, fileUploadExerciseAllOf.exampleSolution) &&
         Objects.equals(this.filePattern, fileUploadExerciseAllOf.filePattern);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(exampleSolution, filePattern);
+    return Objects.hash(type, exampleSolution, filePattern);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class FileUploadExerciseAllOf {\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    exampleSolution: ").append(toIndentedString(exampleSolution)).append("\n");
     sb.append("    filePattern: ").append(toIndentedString(filePattern)).append("\n");
     sb.append("}");

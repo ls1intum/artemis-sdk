@@ -49,6 +49,14 @@ public class ComplaintResponseTest {
     }
 
     /**
+     * Test the property 'createdDate'
+     */
+    @Test
+    public void createdDateTest() {
+        // TODO: test createdDate
+    }
+
+    /**
      * Test the property 'responseText'
      */
     @Test

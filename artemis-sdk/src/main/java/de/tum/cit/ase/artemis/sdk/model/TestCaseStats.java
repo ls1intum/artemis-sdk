@@ -33,7 +33,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   TestCaseStats.JSON_PROPERTY_NUM_PASSED,
   TestCaseStats.JSON_PROPERTY_NUM_FAILED
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class TestCaseStats {
   public static final String JSON_PROPERTY_NUM_PASSED = "numPassed";
   private Integer numPassed;

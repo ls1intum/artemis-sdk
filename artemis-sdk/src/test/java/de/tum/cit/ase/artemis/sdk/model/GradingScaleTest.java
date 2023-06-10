@@ -101,6 +101,22 @@ public class GradingScaleTest {
     }
 
     /**
+     * Test the property 'presentationsNumber'
+     */
+    @Test
+    public void presentationsNumberTest() {
+        // TODO: test presentationsNumber
+    }
+
+    /**
+     * Test the property 'presentationsWeight'
+     */
+    @Test
+    public void presentationsWeightTest() {
+        // TODO: test presentationsWeight
+    }
+
+    /**
      * Test the property 'gradeSteps'
      */
     @Test

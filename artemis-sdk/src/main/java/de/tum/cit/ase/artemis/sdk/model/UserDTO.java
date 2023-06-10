@@ -58,7 +58,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   UserDTO.JSON_PROPERTY_VCS_ACCESS_TOKEN,
   UserDTO.JSON_PROPERTY_INTERNAL
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class UserDTO {
   public static final String JSON_PROPERTY_CREATED_BY = "createdBy";
   private String createdBy;

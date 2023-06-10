@@ -33,7 +33,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   DueDateStat.JSON_PROPERTY_IN_TIME,
   DueDateStat.JSON_PROPERTY_LATE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class DueDateStat {
   public static final String JSON_PROPERTY_IN_TIME = "inTime";
   private Long inTime;

@@ -33,8 +33,8 @@ import de.tum.cit.ase.artemis.sdk.JSON;
  * IPAddressNetworkObjectObjectObjectObjectObject
  */
 @JsonPropertyOrder({
-  IPAddressNetworkObjectObjectObjectObjectObject.JSON_PROPERTY_LOOPBACK,
   IPAddressNetworkObjectObjectObjectObjectObject.JSON_PROPERTY_ADDRESS_CREATOR,
+  IPAddressNetworkObjectObjectObjectObjectObject.JSON_PROPERTY_LOOPBACK,
   IPAddressNetworkObjectObjectObjectObjectObject.JSON_PROPERTY_STANDARD_LOOPBACK_STRINGS,
   IPAddressNetworkObjectObjectObjectObjectObject.JSON_PROPERTY_IPV4,
   IPAddressNetworkObjectObjectObjectObjectObject.JSON_PROPERTY_IPVERSION,
@@ -42,13 +42,13 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   IPAddressNetworkObjectObjectObjectObjectObject.JSON_PROPERTY_SEGMENT_CACHING,
   IPAddressNetworkObjectObjectObjectObjectObject.JSON_PROPERTY_PREFIX_CONFIGURATION
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class IPAddressNetworkObjectObjectObjectObjectObject {
-  public static final String JSON_PROPERTY_LOOPBACK = "loopback";
-  private Object loopback;
-
   public static final String JSON_PROPERTY_ADDRESS_CREATOR = "addressCreator";
   private IPAddressCreatorObjectObjectObjectObjectObject addressCreator;
+
+  public static final String JSON_PROPERTY_LOOPBACK = "loopback";
+  private Object loopback;
 
   public static final String JSON_PROPERTY_STANDARD_LOOPBACK_STRINGS = "standardLoopbackStrings";
   private List<String> standardLoopbackStrings;
@@ -143,31 +143,6 @@ public class IPAddressNetworkObjectObjectObjectObjectObject {
   public IPAddressNetworkObjectObjectObjectObjectObject() { 
   }
 
-  public IPAddressNetworkObjectObjectObjectObjectObject loopback(Object loopback) {
-    this.loopback = loopback;
-    return this;
-  }
-
-   /**
-   * Get loopback
-   * @return loopback
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LOOPBACK)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Object getLoopback() {
-    return loopback;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_LOOPBACK)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLoopback(Object loopback) {
-    this.loopback = loopback;
-  }
-
-
   public IPAddressNetworkObjectObjectObjectObjectObject addressCreator(IPAddressCreatorObjectObjectObjectObjectObject addressCreator) {
     this.addressCreator = addressCreator;
     return this;
@@ -190,6 +165,31 @@ public class IPAddressNetworkObjectObjectObjectObjectObject {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAddressCreator(IPAddressCreatorObjectObjectObjectObjectObject addressCreator) {
     this.addressCreator = addressCreator;
+  }
+
+
+  public IPAddressNetworkObjectObjectObjectObjectObject loopback(Object loopback) {
+    this.loopback = loopback;
+    return this;
+  }
+
+   /**
+   * Get loopback
+   * @return loopback
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_LOOPBACK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Object getLoopback() {
+    return loopback;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_LOOPBACK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setLoopback(Object loopback) {
+    this.loopback = loopback;
   }
 
 
@@ -363,8 +363,8 @@ public class IPAddressNetworkObjectObjectObjectObjectObject {
       return false;
     }
     IPAddressNetworkObjectObjectObjectObjectObject ipAddressNetworkObjectObjectObjectObjectObject = (IPAddressNetworkObjectObjectObjectObjectObject) o;
-    return Objects.equals(this.loopback, ipAddressNetworkObjectObjectObjectObjectObject.loopback) &&
-        Objects.equals(this.addressCreator, ipAddressNetworkObjectObjectObjectObjectObject.addressCreator) &&
+    return Objects.equals(this.addressCreator, ipAddressNetworkObjectObjectObjectObjectObject.addressCreator) &&
+        Objects.equals(this.loopback, ipAddressNetworkObjectObjectObjectObjectObject.loopback) &&
         Objects.equals(this.standardLoopbackStrings, ipAddressNetworkObjectObjectObjectObjectObject.standardLoopbackStrings) &&
         Objects.equals(this.ipv4, ipAddressNetworkObjectObjectObjectObjectObject.ipv4) &&
         Objects.equals(this.ipversion, ipAddressNetworkObjectObjectObjectObjectObject.ipversion) &&
@@ -375,15 +375,15 @@ public class IPAddressNetworkObjectObjectObjectObjectObject {
 
   @Override
   public int hashCode() {
-    return Objects.hash(loopback, addressCreator, standardLoopbackStrings, ipv4, ipversion, ipv6, segmentCaching, prefixConfiguration);
+    return Objects.hash(addressCreator, loopback, standardLoopbackStrings, ipv4, ipversion, ipv6, segmentCaching, prefixConfiguration);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IPAddressNetworkObjectObjectObjectObjectObject {\n");
-    sb.append("    loopback: ").append(toIndentedString(loopback)).append("\n");
     sb.append("    addressCreator: ").append(toIndentedString(addressCreator)).append("\n");
+    sb.append("    loopback: ").append(toIndentedString(loopback)).append("\n");
     sb.append("    standardLoopbackStrings: ").append(toIndentedString(standardLoopbackStrings)).append("\n");
     sb.append("    ipv4: ").append(toIndentedString(ipv4)).append("\n");
     sb.append("    ipversion: ").append(toIndentedString(ipversion)).append("\n");

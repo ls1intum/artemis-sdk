@@ -58,7 +58,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   TutorialGroup.JSON_PROPERTY_TUTORIAL_GROUP_SCHEDULE,
   TutorialGroup.JSON_PROPERTY_TUTORIAL_GROUP_SESSIONS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class TutorialGroup {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -81,43 +81,8 @@ public class TutorialGroup {
   public static final String JSON_PROPERTY_CAMPUS = "campus";
   private String campus;
 
-  /**
-   * Gets or Sets language
-   */
-  public enum LanguageEnum {
-    ENGLISH("ENGLISH"),
-    
-    GERMAN("GERMAN");
-
-    private String value;
-
-    LanguageEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static LanguageEnum fromValue(String value) {
-      for (LanguageEnum b : LanguageEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
   public static final String JSON_PROPERTY_LANGUAGE = "language";
-  private LanguageEnum language;
+  private String language;
 
   public static final String JSON_PROPERTY_TEACHING_ASSISTANT = "teachingAssistant";
   private User teachingAssistant;
@@ -331,7 +296,7 @@ public class TutorialGroup {
   }
 
 
-  public TutorialGroup language(LanguageEnum language) {
+  public TutorialGroup language(String language) {
     this.language = language;
     return this;
   }
@@ -344,14 +309,14 @@ public class TutorialGroup {
   @JsonProperty(JSON_PROPERTY_LANGUAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LanguageEnum getLanguage() {
+  public String getLanguage() {
     return language;
   }
 
 
   @JsonProperty(JSON_PROPERTY_LANGUAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLanguage(LanguageEnum language) {
+  public void setLanguage(String language) {
     this.language = language;
   }
 

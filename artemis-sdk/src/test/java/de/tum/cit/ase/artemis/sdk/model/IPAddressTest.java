@@ -91,19 +91,19 @@ public class IPAddressTest {
     }
 
     /**
-     * Test the property 'section'
-     */
-    @Test
-    public void sectionTest() {
-        // TODO: test section
-    }
-
-    /**
      * Test the property 'network'
      */
     @Test
     public void networkTest() {
         // TODO: test network
+    }
+
+    /**
+     * Test the property 'section'
+     */
+    @Test
+    public void sectionTest() {
+        // TODO: test section
     }
 
     /**
@@ -275,14 +275,6 @@ public class IPAddressTest {
     }
 
     /**
-     * Test the property 'hostSection'
-     */
-    @Test
-    public void hostSectionTest() {
-        // TODO: test hostSection
-    }
-
-    /**
      * Test the property 'networkSection'
      */
     @Test
@@ -296,6 +288,14 @@ public class IPAddressTest {
     @Test
     public void segmentsTest() {
         // TODO: test segments
+    }
+
+    /**
+     * Test the property 'hostSection'
+     */
+    @Test
+    public void hostSectionTest() {
+        // TODO: test hostSection
     }
 
     /**

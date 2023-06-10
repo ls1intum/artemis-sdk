@@ -5,6 +5,7 @@ All URIs are relative to *http://localhost:8080*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**addSubmissionPolicyToProgrammingExercise**](SubmissionPolicyResourceApi.md#addSubmissionPolicyToProgrammingExercise) | **POST** /api/programming-exercises/{exerciseId}/submission-policy |  |
+| [**getParticipationSubmissionCount**](SubmissionPolicyResourceApi.md#getParticipationSubmissionCount) | **GET** /api/participations/{participationId}/submission-count |  |
 | [**getSubmissionPolicyOfExercise**](SubmissionPolicyResourceApi.md#getSubmissionPolicyOfExercise) | **GET** /api/programming-exercises/{exerciseId}/submission-policy |  |
 | [**removeSubmissionPolicyFromProgrammingExercise**](SubmissionPolicyResourceApi.md#removeSubmissionPolicyFromProgrammingExercise) | **DELETE** /api/programming-exercises/{exerciseId}/submission-policy |  |
 | [**toggleSubmissionPolicy**](SubmissionPolicyResourceApi.md#toggleSubmissionPolicy) | **PUT** /api/programming-exercises/{exerciseId}/submission-policy |  |
@@ -69,6 +70,70 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **503** | Service Unavailable |  -  |
+| **200** | OK |  -  |
+
+
+## getParticipationSubmissionCount
+
+> Integer getParticipationSubmissionCount(participationId)
+
+
+
+### Example
+
+```java
+// Import classes:
+import de.tum.cit.ase.artemis.sdk.ApiClient;
+import de.tum.cit.ase.artemis.sdk.ApiException;
+import de.tum.cit.ase.artemis.sdk.Configuration;
+import de.tum.cit.ase.artemis.sdk.model.*;
+import de.tum.cit.ase.artemis.sdk.api.SubmissionPolicyResourceApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8080");
+
+        SubmissionPolicyResourceApi apiInstance = new SubmissionPolicyResourceApi(defaultClient);
+        Long participationId = 56L; // Long | 
+        try {
+            Integer result = apiInstance.getParticipationSubmissionCount(participationId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SubmissionPolicyResourceApi#getParticipationSubmissionCount");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **participationId** | **Long**|  | |
+
+### Return type
+
+**Integer**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: */*
 
 ### HTTP response details

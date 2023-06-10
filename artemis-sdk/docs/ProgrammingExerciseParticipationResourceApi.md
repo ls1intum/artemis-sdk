@@ -275,7 +275,7 @@ No authorization required
 
 ## getParticipationWithLatestResultForStudentParticipation
 
-> CleanupBuildPlan200Response getParticipationWithLatestResultForStudentParticipation(participationId)
+> ProgrammingExerciseStudentParticipation getParticipationWithLatestResultForStudentParticipation(participationId)
 
 
 
@@ -297,7 +297,7 @@ public class Example {
         ProgrammingExerciseParticipationResourceApi apiInstance = new ProgrammingExerciseParticipationResourceApi(defaultClient);
         Long participationId = 56L; // Long | 
         try {
-            CleanupBuildPlan200Response result = apiInstance.getParticipationWithLatestResultForStudentParticipation(participationId);
+            ProgrammingExerciseStudentParticipation result = apiInstance.getParticipationWithLatestResultForStudentParticipation(participationId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ProgrammingExerciseParticipationResourceApi#getParticipationWithLatestResultForStudentParticipation");
@@ -319,7 +319,7 @@ public class Example {
 
 ### Return type
 
-[**CleanupBuildPlan200Response**](CleanupBuildPlan200Response.md)
+[**ProgrammingExerciseStudentParticipation**](ProgrammingExerciseStudentParticipation.md)
 
 ### Authorization
 

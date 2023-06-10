@@ -31,14 +31,14 @@
 |**singlePrefixBlock** | **Boolean** |  |  [optional] |
 |**prefixLengthForSingleBlock** | **Integer** |  |  [optional] |
 |**minPrefixLengthForBlock** | **Integer** |  |  [optional] |
-|**segmentStrings** | **List&lt;String&gt;** |  |  [optional] |
 |**fullRange** | **Boolean** |  |  [optional] |
+|**segmentStrings** | **List&lt;String&gt;** |  |  [optional] |
 |**ipv6** | **Boolean** |  |  [optional] |
-|**hostSection** | [**IPAddressSection**](IPAddressSection.md) |  |  [optional] |
 |**section** | [**IPAddressSection**](IPAddressSection.md) |  |  [optional] |
 |**ipversion** | [**IpversionEnum**](#IpversionEnum) |  |  [optional] |
 |**networkSection** | [**IPAddressSection**](IPAddressSection.md) |  |  [optional] |
 |**segments** | [**List&lt;IPAddressSegment&gt;**](IPAddressSegment.md) |  |  [optional] |
+|**hostSection** | [**IPAddressSection**](IPAddressSection.md) |  |  [optional] |
 |**networkPrefixLength** | **Integer** |  |  [optional] |
 |**count** | **Integer** |  |  [optional] |
 |**prefixed** | **Boolean** |  |  [optional] |

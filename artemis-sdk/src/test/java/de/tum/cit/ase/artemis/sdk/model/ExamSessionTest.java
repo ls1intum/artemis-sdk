@@ -20,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import de.tum.cit.ase.artemis.sdk.model.IPAddress;
 import de.tum.cit.ase.artemis.sdk.model.StudentExam;
+import java.time.OffsetDateTime;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
@@ -45,6 +46,14 @@ public class ExamSessionTest {
     @Test
     public void idTest() {
         // TODO: test id
+    }
+
+    /**
+     * Test the property 'createdDate'
+     */
+    @Test
+    public void createdDateTest() {
+        // TODO: test createdDate
     }
 
     /**
@@ -93,6 +102,14 @@ public class ExamSessionTest {
     @Test
     public void ipAddressTest() {
         // TODO: test ipAddress
+    }
+
+    /**
+     * Test the property 'ipAddressFromIpAddress'
+     */
+    @Test
+    public void ipAddressFromIpAddressTest() {
+        // TODO: test ipAddressFromIpAddress
     }
 
     /**

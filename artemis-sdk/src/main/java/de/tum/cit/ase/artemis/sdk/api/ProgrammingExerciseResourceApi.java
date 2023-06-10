@@ -12,6 +12,7 @@ import de.tum.cit.ase.artemis.sdk.model.AuxiliaryRepository;
 import de.tum.cit.ase.artemis.sdk.model.BuildLogStatisticsDTO;
 import de.tum.cit.ase.artemis.sdk.model.PageableSearchDTOString;
 import de.tum.cit.ase.artemis.sdk.model.ProgrammingExercise;
+import de.tum.cit.ase.artemis.sdk.model.ProgrammingExerciseResetOptionsDTO;
 import de.tum.cit.ase.artemis.sdk.model.ProgrammingExerciseTestCaseStateDTO;
 import de.tum.cit.ase.artemis.sdk.model.SearchResultPageDTOProgrammingExercise;
 
@@ -21,7 +22,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class ProgrammingExerciseResourceApi {
   private ApiClient apiClient;
 
@@ -844,6 +845,7 @@ public class ProgrammingExerciseResourceApi {
    * 
    * 
    * @param exerciseId  (required)
+   * @param programmingExerciseResetOptionsDTO  (required)
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -852,14 +854,15 @@ public class ProgrammingExerciseResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public void recreateBuildPlans(Long exerciseId) throws ApiException {
-    recreateBuildPlansWithHttpInfo(exerciseId);
+  public void reset(Long exerciseId, ProgrammingExerciseResetOptionsDTO programmingExerciseResetOptionsDTO) throws ApiException {
+    resetWithHttpInfo(exerciseId, programmingExerciseResetOptionsDTO);
   }
 
   /**
    * 
    * 
    * @param exerciseId  (required)
+   * @param programmingExerciseResetOptionsDTO  (required)
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -869,19 +872,22 @@ public class ProgrammingExerciseResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<Void> recreateBuildPlansWithHttpInfo(Long exerciseId) throws ApiException {
+  public ApiResponse<Void> resetWithHttpInfo(Long exerciseId, ProgrammingExerciseResetOptionsDTO programmingExerciseResetOptionsDTO) throws ApiException {
     // Check required parameters
     if (exerciseId == null) {
-      throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling recreateBuildPlans");
+      throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling reset");
+    }
+    if (programmingExerciseResetOptionsDTO == null) {
+      throw new ApiException(400, "Missing the required parameter 'programmingExerciseResetOptionsDTO' when calling reset");
     }
 
     // Path parameters
-    String localVarPath = "/api/programming-exercises/{exerciseId}/recreate-build-plans"
+    String localVarPath = "/api/programming-exercises/{exerciseId}/reset"
             .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
 
     String localVarAccept = apiClient.selectHeaderAccept("*/*");
-    String localVarContentType = apiClient.selectHeaderContentType();
-    return apiClient.invokeAPI("ProgrammingExerciseResourceApi.recreateBuildPlans", localVarPath, "PUT", new ArrayList<>(), null,
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
+    return apiClient.invokeAPI("ProgrammingExerciseResourceApi.reset", localVarPath, "PUT", new ArrayList<>(), programmingExerciseResetOptionsDTO,
                                new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                null, null, false);
   }

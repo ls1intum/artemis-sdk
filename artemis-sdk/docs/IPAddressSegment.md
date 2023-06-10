@@ -7,7 +7,6 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**upperBytes** | **List&lt;byte[]&gt;** |  |  [optional] |
 |**value** | **Integer** |  |  [optional] |
 |**upperValue** | **Integer** |  |  [optional] |
 |**count** | **Integer** |  |  [optional] |
@@ -17,16 +16,16 @@
 |**upperDivisionValue** | **Long** |  |  [optional] |
 |**divisionValue** | **Long** |  |  [optional] |
 |**valueCount** | **Integer** |  |  [optional] |
-|**prefixValueCount** | **Integer** |  |  [optional] |
-|**ipv4** | **Boolean** |  |  [optional] |
-|**maxValue** | **Long** |  |  [optional] |
 |**segmentValue** | **Integer** |  |  [optional] |
+|**ipv4** | **Boolean** |  |  [optional] |
 |**network** | [**IPAddressNetworkObjectObjectObjectObjectObject**](IPAddressNetworkObjectObjectObjectObjectObject.md) |  |  [optional] |
 |**iterable** | **Object** |  |  [optional] |
 |**ipversion** | [**IpversionEnum**](#IpversionEnum) |  |  [optional] |
 |**prefixBlock** | **Boolean** |  |  [optional] |
 |**segmentPrefixLength** | **Integer** |  |  [optional] |
 |**minPrefixLengthForBlock** | **Integer** |  |  [optional] |
+|**prefixValueCount** | **Integer** |  |  [optional] |
+|**maxValue** | **Long** |  |  [optional] |
 |**ipv6** | **Boolean** |  |  [optional] |
 |**multiple** | **Boolean** |  |  [optional] |
 |**maxSegmentValue** | **Integer** |  |  [optional] |
@@ -36,6 +35,7 @@
 |**bitCount** | **Integer** |  |  [optional] |
 |**prefixLengthForSingleBlock** | **Integer** |  |  [optional] |
 |**fullRange** | **Boolean** |  |  [optional] |
+|**upperBytes** | **List&lt;byte[]&gt;** |  |  [optional] |
 |**max** | **Boolean** |  |  [optional] |
 |**string** | **String** |  |  [optional] |
 |**divisionPrefixLength** | **Integer** |  |  [optional] |

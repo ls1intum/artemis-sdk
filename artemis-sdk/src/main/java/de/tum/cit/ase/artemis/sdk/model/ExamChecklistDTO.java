@@ -42,7 +42,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ExamChecklistDTO.JSON_PROPERTY_NUMBER_OF_ALL_COMPLAINTS_DONE,
   ExamChecklistDTO.JSON_PROPERTY_ALL_EXAM_EXERCISES_ALL_STUDENTS_PREPARED
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class ExamChecklistDTO {
   public static final String JSON_PROPERTY_NUMBER_OF_GENERATED_STUDENT_EXAMS = "numberOfGeneratedStudentExams";
   private Long numberOfGeneratedStudentExams;

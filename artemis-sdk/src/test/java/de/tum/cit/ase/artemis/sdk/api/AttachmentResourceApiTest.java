@@ -16,6 +16,7 @@ package de.tum.cit.ase.artemis.sdk.api;
 import de.tum.cit.ase.artemis.sdk.*;
 import de.tum.cit.ase.artemis.sdk.auth.*;
 import de.tum.cit.ase.artemis.sdk.model.Attachment;
+import java.io.File;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
@@ -39,7 +40,8 @@ public class AttachmentResourceApiTest {
     @Test
     public void createAttachmentTest() throws ApiException {
         //Attachment attachment = null;
-        //Attachment response = api.createAttachment(attachment);
+        //File _file = null;
+        //Attachment response = api.createAttachment(attachment, _file);
         // TODO: test validations
     }
 
@@ -48,8 +50,8 @@ public class AttachmentResourceApiTest {
      */
     @Test
     public void deleteAttachmentTest() throws ApiException {
-        //Long id = null;
-        //api.deleteAttachment(id);
+        //Long attachmentId = null;
+        //api.deleteAttachment(attachmentId);
         // TODO: test validations
     }
 
@@ -78,9 +80,11 @@ public class AttachmentResourceApiTest {
      */
     @Test
     public void updateAttachmentTest() throws ApiException {
+        //Long attachmentId = null;
         //Attachment attachment = null;
         //String notificationText = null;
-        //Attachment response = api.updateAttachment(attachment, notificationText);
+        //File _file = null;
+        //Attachment response = api.updateAttachment(attachmentId, attachment, notificationText, _file);
         // TODO: test validations
     }
 

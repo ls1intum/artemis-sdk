@@ -316,6 +316,14 @@ public class ModelingExerciseTest {
     }
 
     /**
+     * Test the property 'exerciseType'
+     */
+    @Test
+    public void exerciseTypeTest() {
+        // TODO: test exerciseType
+    }
+
+    /**
      * Test the property 'numberOfAssessmentsOfCorrectionRounds'
      */
     @Test
@@ -388,14 +396,6 @@ public class ModelingExerciseTest {
     }
 
     /**
-     * Test the property 'exerciseType'
-     */
-    @Test
-    public void exerciseTypeTest() {
-        // TODO: test exerciseType
-    }
-
-    /**
      * Test the property 'studentAssignedTeamId'
      */
     @Test
@@ -433,14 +433,6 @@ public class ModelingExerciseTest {
     @Test
     public void exampleSolutionPublishedTest() {
         // TODO: test exampleSolutionPublished
-    }
-
-    /**
-     * Test the property 'released'
-     */
-    @Test
-    public void releasedTest() {
-        // TODO: test released
     }
 
     /**
@@ -497,14 +489,6 @@ public class ModelingExerciseTest {
     @Test
     public void exampleSolutionExplanationTest() {
         // TODO: test exampleSolutionExplanation
-    }
-
-    /**
-     * Test the property 'clusterBuildDate'
-     */
-    @Test
-    public void clusterBuildDateTest() {
-        // TODO: test clusterBuildDate
     }
 
 }

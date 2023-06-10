@@ -23,9 +23,8 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import de.tum.cit.ase.artemis.sdk.model.Exercise;
-import de.tum.cit.ase.artemis.sdk.model.ModelingPlagiarismResult;
 import de.tum.cit.ase.artemis.sdk.model.PlagiarismComparisonObject;
-import de.tum.cit.ase.artemis.sdk.model.TextPlagiarismResult;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -55,6 +54,14 @@ public class PlagiarismResultObjectTest {
     @Test
     public void idTest() {
         // TODO: test id
+    }
+
+    /**
+     * Test the property 'createdDate'
+     */
+    @Test
+    public void createdDateTest() {
+        // TODO: test createdDate
     }
 
     /**

@@ -59,14 +59,14 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   IPAddressSection.JSON_PROPERTY_SINGLE_PREFIX_BLOCK,
   IPAddressSection.JSON_PROPERTY_PREFIX_LENGTH_FOR_SINGLE_BLOCK,
   IPAddressSection.JSON_PROPERTY_MIN_PREFIX_LENGTH_FOR_BLOCK,
-  IPAddressSection.JSON_PROPERTY_SEGMENT_STRINGS,
   IPAddressSection.JSON_PROPERTY_FULL_RANGE,
+  IPAddressSection.JSON_PROPERTY_SEGMENT_STRINGS,
   IPAddressSection.JSON_PROPERTY_IPV6,
-  IPAddressSection.JSON_PROPERTY_HOST_SECTION,
   IPAddressSection.JSON_PROPERTY_SECTION,
   IPAddressSection.JSON_PROPERTY_IPVERSION,
   IPAddressSection.JSON_PROPERTY_NETWORK_SECTION,
   IPAddressSection.JSON_PROPERTY_SEGMENTS,
+  IPAddressSection.JSON_PROPERTY_HOST_SECTION,
   IPAddressSection.JSON_PROPERTY_NETWORK_PREFIX_LENGTH,
   IPAddressSection.JSON_PROPERTY_COUNT,
   IPAddressSection.JSON_PROPERTY_PREFIXED,
@@ -89,7 +89,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   IPAddressSection.JSON_PROPERTY_ZERO_RANGE_SEGMENTS,
   IPAddressSection.JSON_PROPERTY_INET_ADDRESS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class IPAddressSection {
   public static final String JSON_PROPERTY_NETWORK = "network";
   private IPAddressNetworkObjectObjectObjectObjectObject network;
@@ -163,17 +163,14 @@ public class IPAddressSection {
   public static final String JSON_PROPERTY_MIN_PREFIX_LENGTH_FOR_BLOCK = "minPrefixLengthForBlock";
   private Integer minPrefixLengthForBlock;
 
-  public static final String JSON_PROPERTY_SEGMENT_STRINGS = "segmentStrings";
-  private List<String> segmentStrings;
-
   public static final String JSON_PROPERTY_FULL_RANGE = "fullRange";
   private Boolean fullRange;
 
+  public static final String JSON_PROPERTY_SEGMENT_STRINGS = "segmentStrings";
+  private List<String> segmentStrings;
+
   public static final String JSON_PROPERTY_IPV6 = "ipv6";
   private Boolean ipv6;
-
-  public static final String JSON_PROPERTY_HOST_SECTION = "hostSection";
-  private IPAddressSection hostSection;
 
   public static final String JSON_PROPERTY_SECTION = "section";
   private IPAddressSection section;
@@ -221,6 +218,9 @@ public class IPAddressSection {
 
   public static final String JSON_PROPERTY_SEGMENTS = "segments";
   private List<IPAddressSegment> segments;
+
+  public static final String JSON_PROPERTY_HOST_SECTION = "hostSection";
+  private IPAddressSection hostSection;
 
   public static final String JSON_PROPERTY_NETWORK_PREFIX_LENGTH = "networkPrefixLength";
   private Integer networkPrefixLength;
@@ -888,6 +888,31 @@ public class IPAddressSection {
   }
 
 
+  public IPAddressSection fullRange(Boolean fullRange) {
+    this.fullRange = fullRange;
+    return this;
+  }
+
+   /**
+   * Get fullRange
+   * @return fullRange
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_FULL_RANGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getFullRange() {
+    return fullRange;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_FULL_RANGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setFullRange(Boolean fullRange) {
+    this.fullRange = fullRange;
+  }
+
+
   public IPAddressSection segmentStrings(List<String> segmentStrings) {
     this.segmentStrings = segmentStrings;
     return this;
@@ -921,31 +946,6 @@ public class IPAddressSection {
   }
 
 
-  public IPAddressSection fullRange(Boolean fullRange) {
-    this.fullRange = fullRange;
-    return this;
-  }
-
-   /**
-   * Get fullRange
-   * @return fullRange
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FULL_RANGE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getFullRange() {
-    return fullRange;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_FULL_RANGE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFullRange(Boolean fullRange) {
-    this.fullRange = fullRange;
-  }
-
-
   public IPAddressSection ipv6(Boolean ipv6) {
     this.ipv6 = ipv6;
     return this;
@@ -968,31 +968,6 @@ public class IPAddressSection {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIpv6(Boolean ipv6) {
     this.ipv6 = ipv6;
-  }
-
-
-  public IPAddressSection hostSection(IPAddressSection hostSection) {
-    this.hostSection = hostSection;
-    return this;
-  }
-
-   /**
-   * Get hostSection
-   * @return hostSection
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_HOST_SECTION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public IPAddressSection getHostSection() {
-    return hostSection;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_HOST_SECTION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setHostSection(IPAddressSection hostSection) {
-    this.hostSection = hostSection;
   }
 
 
@@ -1101,6 +1076,31 @@ public class IPAddressSection {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSegments(List<IPAddressSegment> segments) {
     this.segments = segments;
+  }
+
+
+  public IPAddressSection hostSection(IPAddressSection hostSection) {
+    this.hostSection = hostSection;
+    return this;
+  }
+
+   /**
+   * Get hostSection
+   * @return hostSection
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_HOST_SECTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public IPAddressSection getHostSection() {
+    return hostSection;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_HOST_SECTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setHostSection(IPAddressSection hostSection) {
+    this.hostSection = hostSection;
   }
 
 
@@ -1689,14 +1689,14 @@ public class IPAddressSection {
         Objects.equals(this.singlePrefixBlock, ipAddressSection.singlePrefixBlock) &&
         Objects.equals(this.prefixLengthForSingleBlock, ipAddressSection.prefixLengthForSingleBlock) &&
         Objects.equals(this.minPrefixLengthForBlock, ipAddressSection.minPrefixLengthForBlock) &&
-        Objects.equals(this.segmentStrings, ipAddressSection.segmentStrings) &&
         Objects.equals(this.fullRange, ipAddressSection.fullRange) &&
+        Objects.equals(this.segmentStrings, ipAddressSection.segmentStrings) &&
         Objects.equals(this.ipv6, ipAddressSection.ipv6) &&
-        Objects.equals(this.hostSection, ipAddressSection.hostSection) &&
         Objects.equals(this.section, ipAddressSection.section) &&
         Objects.equals(this.ipversion, ipAddressSection.ipversion) &&
         Objects.equals(this.networkSection, ipAddressSection.networkSection) &&
         Objects.equals(this.segments, ipAddressSection.segments) &&
+        Objects.equals(this.hostSection, ipAddressSection.hostSection) &&
         Objects.equals(this.networkPrefixLength, ipAddressSection.networkPrefixLength) &&
         Objects.equals(this.count, ipAddressSection.count) &&
         Objects.equals(this.prefixed, ipAddressSection.prefixed) &&
@@ -1722,7 +1722,7 @@ public class IPAddressSection {
 
   @Override
   public int hashCode() {
-    return Objects.hash(network, lower, upper, countImpl, hostMaskPrefix, networkMaskPrefix, entireAddress, ipv4, segmentCount, maxSegmentValue, nonZeroHostCount, byteCount, bitCount, lowerNonZeroHost, sequentialBlockCount, iterable, zeroHost, hostMask, networkMask, singleNetwork, prefixLength, singlePrefixBlock, prefixLengthForSingleBlock, minPrefixLengthForBlock, segmentStrings, fullRange, ipv6, hostSection, section, ipversion, networkSection, segments, networkPrefixLength, count, prefixed, prefixBlock, sequentialBlockIndex, sequential, divisionStrings, prefixCount, bytes, value, zero, upperBytes, upperValue, max, multiple, divisionCount, bytesPerSegment, bitsPerSegment, zeroSegments, zeroRangeSegments, inetAddress);
+    return Objects.hash(network, lower, upper, countImpl, hostMaskPrefix, networkMaskPrefix, entireAddress, ipv4, segmentCount, maxSegmentValue, nonZeroHostCount, byteCount, bitCount, lowerNonZeroHost, sequentialBlockCount, iterable, zeroHost, hostMask, networkMask, singleNetwork, prefixLength, singlePrefixBlock, prefixLengthForSingleBlock, minPrefixLengthForBlock, fullRange, segmentStrings, ipv6, section, ipversion, networkSection, segments, hostSection, networkPrefixLength, count, prefixed, prefixBlock, sequentialBlockIndex, sequential, divisionStrings, prefixCount, bytes, value, zero, upperBytes, upperValue, max, multiple, divisionCount, bytesPerSegment, bitsPerSegment, zeroSegments, zeroRangeSegments, inetAddress);
   }
 
   @Override
@@ -1753,14 +1753,14 @@ public class IPAddressSection {
     sb.append("    singlePrefixBlock: ").append(toIndentedString(singlePrefixBlock)).append("\n");
     sb.append("    prefixLengthForSingleBlock: ").append(toIndentedString(prefixLengthForSingleBlock)).append("\n");
     sb.append("    minPrefixLengthForBlock: ").append(toIndentedString(minPrefixLengthForBlock)).append("\n");
-    sb.append("    segmentStrings: ").append(toIndentedString(segmentStrings)).append("\n");
     sb.append("    fullRange: ").append(toIndentedString(fullRange)).append("\n");
+    sb.append("    segmentStrings: ").append(toIndentedString(segmentStrings)).append("\n");
     sb.append("    ipv6: ").append(toIndentedString(ipv6)).append("\n");
-    sb.append("    hostSection: ").append(toIndentedString(hostSection)).append("\n");
     sb.append("    section: ").append(toIndentedString(section)).append("\n");
     sb.append("    ipversion: ").append(toIndentedString(ipversion)).append("\n");
     sb.append("    networkSection: ").append(toIndentedString(networkSection)).append("\n");
     sb.append("    segments: ").append(toIndentedString(segments)).append("\n");
+    sb.append("    hostSection: ").append(toIndentedString(hostSection)).append("\n");
     sb.append("    networkPrefixLength: ").append(toIndentedString(networkPrefixLength)).append("\n");
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
     sb.append("    prefixed: ").append(toIndentedString(prefixed)).append("\n");

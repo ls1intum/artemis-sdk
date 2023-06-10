@@ -42,7 +42,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   RepositoryExportOptionsDTO.JSON_PROPERTY_NORMALIZE_CODE_STYLE,
   RepositoryExportOptionsDTO.JSON_PROPERTY_HIDE_STUDENT_NAME_IN_ZIPPED_FOLDER
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class RepositoryExportOptionsDTO {
   public static final String JSON_PROPERTY_EXPORT_ALL_PARTICIPANTS = "exportAllParticipants";
   private Boolean exportAllParticipants;

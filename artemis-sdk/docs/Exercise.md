@@ -54,7 +54,6 @@
 |**gradingInstructionFeedbackUsed** | **Boolean** |  |  [optional] |
 |**numberOfParticipations** | **Long** |  |  [optional] |
 |**exampleSolutionPublished** | **Boolean** |  |  [optional] |
-|**released** | **Boolean** |  |  [optional] |
 |**testRunParticipationsExist** | **Boolean** |  |  [optional] |
 |**teamMode** | **Boolean** |  |  [optional] |
 |**visibleToStudents** | **Boolean** |  |  [optional] |

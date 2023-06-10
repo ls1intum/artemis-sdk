@@ -51,8 +51,8 @@ public class LectureResourceApiTest {
      */
     @Test
     public void deleteLectureTest() throws ApiException {
-        //Long id = null;
-        //api.deleteLecture(id);
+        //Long lectureId = null;
+        //api.deleteLecture(lectureId);
         // TODO: test validations
     }
 
@@ -100,10 +100,30 @@ public class LectureResourceApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
+    public void getLectureWithDetailsAndSlidesTest() throws ApiException {
+        //Long lectureId = null;
+        //Lecture response = api.getLectureWithDetailsAndSlides(lectureId);
+        // TODO: test validations
+    }
+
+    /**
+     * @throws ApiException if the Api call fails
+     */
+    @Test
     public void getLecturesForCourseTest() throws ApiException {
         //Long courseId = null;
         //Boolean withLectureUnits = null;
         //Set<Lecture> response = api.getLecturesForCourse(courseId, withLectureUnits);
+        // TODO: test validations
+    }
+
+    /**
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getLecturesWithSlidesForCourseTest() throws ApiException {
+        //Long courseId = null;
+        //Set<Lecture> response = api.getLecturesWithSlidesForCourse(courseId);
         // TODO: test validations
     }
 

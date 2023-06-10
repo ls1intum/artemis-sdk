@@ -18,7 +18,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.time.OffsetDateTime;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
@@ -36,6 +35,14 @@ public class ModelingExerciseAllOfTest {
     @Test
     public void testModelingExerciseAllOf() {
         // TODO: test ModelingExerciseAllOf
+    }
+
+    /**
+     * Test the property 'type'
+     */
+    @Test
+    public void typeTest() {
+        // TODO: test type
     }
 
     /**
@@ -60,14 +67,6 @@ public class ModelingExerciseAllOfTest {
     @Test
     public void exampleSolutionExplanationTest() {
         // TODO: test exampleSolutionExplanation
-    }
-
-    /**
-     * Test the property 'clusterBuildDate'
-     */
-    @Test
-    public void clusterBuildDateTest() {
-        // TODO: test clusterBuildDate
     }
 
 }

@@ -11,6 +11,7 @@ All URIs are relative to *http://localhost:8080*
 | [**exportSubmissionsByParticipationIds**](ProgrammingExerciseExportImportResourceApi.md#exportSubmissionsByParticipationIds) | **POST** /api/programming-exercises/{exerciseId}/export-repos-by-participation-ids/{participationIds} |  |
 | [**exportSubmissionsByStudentLogins**](ProgrammingExerciseExportImportResourceApi.md#exportSubmissionsByStudentLogins) | **POST** /api/programming-exercises/{exerciseId}/export-repos-by-participant-identifiers/{participantIdentifiers} |  |
 | [**importProgrammingExercise**](ProgrammingExerciseExportImportResourceApi.md#importProgrammingExercise) | **POST** /api/programming-exercises/import/{sourceExerciseId} |  |
+| [**importProgrammingExerciseFromFile**](ProgrammingExerciseExportImportResourceApi.md#importProgrammingExerciseFromFile) | **POST** /api/courses/{courseId}/programming-exercises/import-from-file |  |
 
 
 
@@ -461,6 +462,72 @@ public class Example {
 | **programmingExercise** | [**ProgrammingExercise**](ProgrammingExercise.md)|  | |
 | **recreateBuildPlans** | **Boolean**|  | [optional] [default to false] |
 | **updateTemplate** | **Boolean**|  | [optional] [default to false] |
+
+### Return type
+
+[**ProgrammingExercise**](ProgrammingExercise.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **503** | Service Unavailable |  -  |
+| **200** | OK |  -  |
+
+
+## importProgrammingExerciseFromFile
+
+> ProgrammingExercise importProgrammingExerciseFromFile(courseId, importProgrammingExerciseFromFileRequest)
+
+
+
+### Example
+
+```java
+// Import classes:
+import de.tum.cit.ase.artemis.sdk.ApiClient;
+import de.tum.cit.ase.artemis.sdk.ApiException;
+import de.tum.cit.ase.artemis.sdk.Configuration;
+import de.tum.cit.ase.artemis.sdk.model.*;
+import de.tum.cit.ase.artemis.sdk.api.ProgrammingExerciseExportImportResourceApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8080");
+
+        ProgrammingExerciseExportImportResourceApi apiInstance = new ProgrammingExerciseExportImportResourceApi(defaultClient);
+        Long courseId = 56L; // Long | 
+        ImportProgrammingExerciseFromFileRequest importProgrammingExerciseFromFileRequest = new ImportProgrammingExerciseFromFileRequest(); // ImportProgrammingExerciseFromFileRequest | 
+        try {
+            ProgrammingExercise result = apiInstance.importProgrammingExerciseFromFile(courseId, importProgrammingExerciseFromFileRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ProgrammingExerciseExportImportResourceApi#importProgrammingExerciseFromFile");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **courseId** | **Long**|  | |
+| **importProgrammingExerciseFromFileRequest** | [**ImportProgrammingExerciseFromFileRequest**](ImportProgrammingExerciseFromFileRequest.md)|  | [optional] |
 
 ### Return type
 

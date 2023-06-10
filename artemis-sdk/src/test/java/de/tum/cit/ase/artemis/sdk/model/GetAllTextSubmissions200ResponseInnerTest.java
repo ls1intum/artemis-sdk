@@ -218,19 +218,19 @@ public class GetAllTextSubmissions200ResponseInnerTest {
     }
 
     /**
-     * Test the property 'quizBatch'
-     */
-    @Test
-    public void quizBatchTest() {
-        // TODO: test quizBatch
-    }
-
-    /**
      * Test the property 'submittedAnswers'
      */
     @Test
     public void submittedAnswersTest() {
         // TODO: test submittedAnswers
+    }
+
+    /**
+     * Test the property 'quizBatch'
+     */
+    @Test
+    public void quizBatchTest() {
+        // TODO: test quizBatch
     }
 
     /**

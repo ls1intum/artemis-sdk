@@ -15,9 +15,6 @@ package de.tum.cit.ase.artemis.sdk.api;
 
 import de.tum.cit.ase.artemis.sdk.*;
 import de.tum.cit.ase.artemis.sdk.auth.*;
-import de.tum.cit.ase.artemis.sdk.model.Pageable;
-import de.tum.cit.ase.artemis.sdk.model.ParticipantScoreAverageDTO;
-import de.tum.cit.ase.artemis.sdk.model.ParticipantScoreDTO;
 import de.tum.cit.ase.artemis.sdk.model.ScoreDTO;
 
 import org.junit.jupiter.api.Assertions;
@@ -35,72 +32,6 @@ import java.util.Map;
 public class ParticipantScoreResourceApiTest {
 
     private final ParticipantScoreResourceApi api = new ParticipantScoreResourceApi();
-
-    /**
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getAverageScoreOfCourseTest() throws ApiException {
-        //Long courseId = null;
-        //Boolean onlyConsiderRatedScores = null;
-        //Double response = api.getAverageScoreOfCourse(courseId, onlyConsiderRatedScores);
-        // TODO: test validations
-    }
-
-    /**
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getAverageScoreOfExamTest() throws ApiException {
-        //Long examId = null;
-        //Boolean onlyConsiderRatedScores = null;
-        //Double response = api.getAverageScoreOfExam(examId, onlyConsiderRatedScores);
-        // TODO: test validations
-    }
-
-    /**
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getAverageScoreOfParticipantInCourseTest() throws ApiException {
-        //Long courseId = null;
-        //List<ParticipantScoreAverageDTO> response = api.getAverageScoreOfParticipantInCourse(courseId);
-        // TODO: test validations
-    }
-
-    /**
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getAverageScoreOfParticipantInExamTest() throws ApiException {
-        //Long examId = null;
-        //List<ParticipantScoreAverageDTO> response = api.getAverageScoreOfParticipantInExam(examId);
-        // TODO: test validations
-    }
-
-    /**
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getParticipantScoresOfCourseTest() throws ApiException {
-        //Long courseId = null;
-        //Pageable pageable = null;
-        //Boolean getUnpaged = null;
-        //List<ParticipantScoreDTO> response = api.getParticipantScoresOfCourse(courseId, pageable, getUnpaged);
-        // TODO: test validations
-    }
-
-    /**
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getParticipantScoresOfExamTest() throws ApiException {
-        //Long examId = null;
-        //Pageable pageable = null;
-        //Boolean getUnpaged = null;
-        //List<ParticipantScoreDTO> response = api.getParticipantScoresOfExam(examId, pageable, getUnpaged);
-        // TODO: test validations
-    }
 
     /**
      * @throws ApiException if the Api call fails

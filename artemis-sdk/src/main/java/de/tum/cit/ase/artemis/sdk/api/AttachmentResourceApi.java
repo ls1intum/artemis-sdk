@@ -9,6 +9,7 @@ import de.tum.cit.ase.artemis.sdk.Pair;
 import jakarta.ws.rs.core.GenericType;
 
 import de.tum.cit.ase.artemis.sdk.model.Attachment;
+import java.io.File;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,7 +17,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class AttachmentResourceApi {
   private ApiClient apiClient;
 
@@ -50,6 +51,7 @@ public class AttachmentResourceApi {
    * 
    * 
    * @param attachment  (required)
+   * @param _file  (required)
    * @return Attachment
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -59,14 +61,15 @@ public class AttachmentResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public Attachment createAttachment(Attachment attachment) throws ApiException {
-    return createAttachmentWithHttpInfo(attachment).getData();
+  public Attachment createAttachment(Attachment attachment, File _file) throws ApiException {
+    return createAttachmentWithHttpInfo(attachment, _file).getData();
   }
 
   /**
    * 
    * 
    * @param attachment  (required)
+   * @param _file  (required)
    * @return ApiResponse&lt;Attachment&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -76,17 +79,25 @@ public class AttachmentResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<Attachment> createAttachmentWithHttpInfo(Attachment attachment) throws ApiException {
+  public ApiResponse<Attachment> createAttachmentWithHttpInfo(Attachment attachment, File _file) throws ApiException {
     // Check required parameters
     if (attachment == null) {
       throw new ApiException(400, "Missing the required parameter 'attachment' when calling createAttachment");
     }
+    if (_file == null) {
+      throw new ApiException(400, "Missing the required parameter '_file' when calling createAttachment");
+    }
+
+    // Form parameters
+    Map<String, Object> localVarFormParams = new LinkedHashMap<>();
+    localVarFormParams.put("attachment", attachment);
+    localVarFormParams.put("file", _file);
 
     String localVarAccept = apiClient.selectHeaderAccept("*/*");
-    String localVarContentType = apiClient.selectHeaderContentType("application/json");
+    String localVarContentType = apiClient.selectHeaderContentType("multipart/form-data");
     GenericType<Attachment> localVarReturnType = new GenericType<Attachment>() {};
-    return apiClient.invokeAPI("AttachmentResourceApi.createAttachment", "/api/attachments", "POST", new ArrayList<>(), attachment,
-                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+    return apiClient.invokeAPI("AttachmentResourceApi.createAttachment", "/api/attachments", "POST", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), localVarFormParams, localVarAccept, localVarContentType,
                                null, localVarReturnType, false);
   }
   /**
@@ -231,8 +242,10 @@ public class AttachmentResourceApi {
   /**
    * 
    * 
+   * @param attachmentId  (required)
    * @param attachment  (required)
    * @param notificationText  (optional)
+   * @param _file  (optional)
    * @return Attachment
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -242,15 +255,17 @@ public class AttachmentResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public Attachment updateAttachment(Attachment attachment, String notificationText) throws ApiException {
-    return updateAttachmentWithHttpInfo(attachment, notificationText).getData();
+  public Attachment updateAttachment(Long attachmentId, Attachment attachment, String notificationText, File _file) throws ApiException {
+    return updateAttachmentWithHttpInfo(attachmentId, attachment, notificationText, _file).getData();
   }
 
   /**
    * 
    * 
+   * @param attachmentId  (required)
    * @param attachment  (required)
    * @param notificationText  (optional)
+   * @param _file  (optional)
    * @return ApiResponse&lt;Attachment&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -260,22 +275,36 @@ public class AttachmentResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<Attachment> updateAttachmentWithHttpInfo(Attachment attachment, String notificationText) throws ApiException {
+  public ApiResponse<Attachment> updateAttachmentWithHttpInfo(Long attachmentId, Attachment attachment, String notificationText, File _file) throws ApiException {
     // Check required parameters
+    if (attachmentId == null) {
+      throw new ApiException(400, "Missing the required parameter 'attachmentId' when calling updateAttachment");
+    }
     if (attachment == null) {
       throw new ApiException(400, "Missing the required parameter 'attachment' when calling updateAttachment");
     }
+
+    // Path parameters
+    String localVarPath = "/api/attachments/{attachmentId}"
+            .replaceAll("\\{attachmentId}", apiClient.escapeString(attachmentId.toString()));
 
     // Query parameters
     List<Pair> localVarQueryParams = new ArrayList<>(
             apiClient.parameterToPairs("", "notificationText", notificationText)
     );
 
+    // Form parameters
+    Map<String, Object> localVarFormParams = new LinkedHashMap<>();
+    localVarFormParams.put("attachment", attachment);
+    if (_file != null) {
+      localVarFormParams.put("file", _file);
+    }
+
     String localVarAccept = apiClient.selectHeaderAccept("*/*");
-    String localVarContentType = apiClient.selectHeaderContentType("application/json");
+    String localVarContentType = apiClient.selectHeaderContentType("multipart/form-data");
     GenericType<Attachment> localVarReturnType = new GenericType<Attachment>() {};
-    return apiClient.invokeAPI("AttachmentResourceApi.updateAttachment", "/api/attachments", "PUT", localVarQueryParams, attachment,
-                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+    return apiClient.invokeAPI("AttachmentResourceApi.updateAttachment", localVarPath, "PUT", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), localVarFormParams, localVarAccept, localVarContentType,
                                null, localVarReturnType, false);
   }
 }

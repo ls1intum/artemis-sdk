@@ -20,7 +20,7 @@ All URIs are relative to *http://localhost:8080*
 | [**hasAtLeastOneStudentResult**](ProgrammingExerciseResourceApi.md#hasAtLeastOneStudentResult) | **GET** /api/programming-exercises/{exerciseId}/test-case-state |  |
 | [**lockAllRepositories**](ProgrammingExerciseResourceApi.md#lockAllRepositories) | **PUT** /api/programming-exercises/{exerciseId}/lock-all-repositories |  |
 | [**reEvaluateAndUpdateProgrammingExercise**](ProgrammingExerciseResourceApi.md#reEvaluateAndUpdateProgrammingExercise) | **PUT** /api/programming-exercises/{exerciseId}/re-evaluate |  |
-| [**recreateBuildPlans**](ProgrammingExerciseResourceApi.md#recreateBuildPlans) | **PUT** /api/programming-exercises/{exerciseId}/recreate-build-plans |  |
+| [**reset**](ProgrammingExerciseResourceApi.md#reset) | **PUT** /api/programming-exercises/{exerciseId}/reset |  |
 | [**unlockAllRepositories**](ProgrammingExerciseResourceApi.md#unlockAllRepositories) | **PUT** /api/programming-exercises/{exerciseId}/unlock-all-repositories |  |
 | [**updateProblemStatement**](ProgrammingExerciseResourceApi.md#updateProblemStatement) | **PATCH** /api/programming-exercises/{exerciseId}/problem-statement |  |
 | [**updateProgrammingExercise**](ProgrammingExerciseResourceApi.md#updateProgrammingExercise) | **PUT** /api/programming-exercises |  |
@@ -1068,9 +1068,9 @@ No authorization required
 | **200** | OK |  -  |
 
 
-## recreateBuildPlans
+## reset
 
-> recreateBuildPlans(exerciseId)
+> reset(exerciseId, programmingExerciseResetOptionsDTO)
 
 
 
@@ -1091,10 +1091,11 @@ public class Example {
 
         ProgrammingExerciseResourceApi apiInstance = new ProgrammingExerciseResourceApi(defaultClient);
         Long exerciseId = 56L; // Long | 
+        ProgrammingExerciseResetOptionsDTO programmingExerciseResetOptionsDTO = new ProgrammingExerciseResetOptionsDTO(); // ProgrammingExerciseResetOptionsDTO | 
         try {
-            apiInstance.recreateBuildPlans(exerciseId);
+            apiInstance.reset(exerciseId, programmingExerciseResetOptionsDTO);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ProgrammingExerciseResourceApi#recreateBuildPlans");
+            System.err.println("Exception when calling ProgrammingExerciseResourceApi#reset");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1110,6 +1111,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **exerciseId** | **Long**|  | |
+| **programmingExerciseResetOptionsDTO** | [**ProgrammingExerciseResetOptionsDTO**](ProgrammingExerciseResetOptionsDTO.md)|  | |
 
 ### Return type
 
@@ -1121,7 +1123,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: */*
 
 ### HTTP response details

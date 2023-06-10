@@ -7,10 +7,10 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**type** | **String** |  |  |
 |**diagramType** | [**DiagramTypeEnum**](#DiagramTypeEnum) |  |  [optional] |
 |**exampleSolutionModel** | **String** |  |  [optional] |
 |**exampleSolutionExplanation** | **String** |  |  [optional] |
-|**clusterBuildDate** | **OffsetDateTime** |  |  [optional] |
 
 
 

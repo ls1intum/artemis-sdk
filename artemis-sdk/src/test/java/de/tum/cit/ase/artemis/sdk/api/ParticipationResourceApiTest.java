@@ -88,8 +88,8 @@ public class ParticipationResourceApiTest {
     @Test
     public void getAllParticipationsForExerciseTest() throws ApiException {
         //Long exerciseId = null;
-        //Boolean withLatestResult = null;
-        //Set<StudentParticipation> response = api.getAllParticipationsForExercise(exerciseId, withLatestResult);
+        //Boolean withLatestResults = null;
+        //Set<StudentParticipation> response = api.getAllParticipationsForExercise(exerciseId, withLatestResults);
         // TODO: test validations
     }
 

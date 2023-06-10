@@ -40,7 +40,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   BonusResultDTO.JSON_PROPERTY_ACHIEVED_PRESENTATION_SCORE,
   BonusResultDTO.JSON_PROPERTY_PRESENTATION_SCORE_THRESHOLD
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class BonusResultDTO {
   /**
    * Gets or Sets bonusStrategy

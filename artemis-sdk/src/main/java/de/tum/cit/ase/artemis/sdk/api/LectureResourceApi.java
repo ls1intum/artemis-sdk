@@ -19,7 +19,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class LectureResourceApi {
   private ApiClient apiClient;
 
@@ -329,6 +329,53 @@ public class LectureResourceApi {
   /**
    * 
    * 
+   * @param lectureId  (required)
+   * @return Lecture
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
+       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public Lecture getLectureWithDetailsAndSlides(Long lectureId) throws ApiException {
+    return getLectureWithDetailsAndSlidesWithHttpInfo(lectureId).getData();
+  }
+
+  /**
+   * 
+   * 
+   * @param lectureId  (required)
+   * @return ApiResponse&lt;Lecture&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
+       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public ApiResponse<Lecture> getLectureWithDetailsAndSlidesWithHttpInfo(Long lectureId) throws ApiException {
+    // Check required parameters
+    if (lectureId == null) {
+      throw new ApiException(400, "Missing the required parameter 'lectureId' when calling getLectureWithDetailsAndSlides");
+    }
+
+    // Path parameters
+    String localVarPath = "/api/lectures/{lectureId}/details-with-slides"
+            .replaceAll("\\{lectureId}", apiClient.escapeString(lectureId.toString()));
+
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    GenericType<Lecture> localVarReturnType = new GenericType<Lecture>() {};
+    return apiClient.invokeAPI("LectureResourceApi.getLectureWithDetailsAndSlides", localVarPath, "GET", new ArrayList<>(), null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
+  }
+  /**
+   * 
+   * 
    * @param courseId  (required)
    * @param withLectureUnits  (optional, default to false)
    * @return Set&lt;Lecture&gt;
@@ -377,6 +424,53 @@ public class LectureResourceApi {
     String localVarContentType = apiClient.selectHeaderContentType();
     GenericType<Set<Lecture>> localVarReturnType = new GenericType<Set<Lecture>>() {};
     return apiClient.invokeAPI("LectureResourceApi.getLecturesForCourse", localVarPath, "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
+  }
+  /**
+   * 
+   * 
+   * @param courseId  (required)
+   * @return Set&lt;Lecture&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
+       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public Set<Lecture> getLecturesWithSlidesForCourse(Long courseId) throws ApiException {
+    return getLecturesWithSlidesForCourseWithHttpInfo(courseId).getData();
+  }
+
+  /**
+   * 
+   * 
+   * @param courseId  (required)
+   * @return ApiResponse&lt;Set&lt;Lecture&gt;&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
+       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public ApiResponse<Set<Lecture>> getLecturesWithSlidesForCourseWithHttpInfo(Long courseId) throws ApiException {
+    // Check required parameters
+    if (courseId == null) {
+      throw new ApiException(400, "Missing the required parameter 'courseId' when calling getLecturesWithSlidesForCourse");
+    }
+
+    // Path parameters
+    String localVarPath = "/api/courses/{courseId}/lectures-with-slides"
+            .replaceAll("\\{courseId}", apiClient.escapeString(courseId.toString()));
+
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    GenericType<Set<Lecture>> localVarReturnType = new GenericType<Set<Lecture>>() {};
+    return apiClient.invokeAPI("LectureResourceApi.getLecturesWithSlidesForCourse", localVarPath, "GET", new ArrayList<>(), null,
                                new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                null, localVarReturnType, false);
   }

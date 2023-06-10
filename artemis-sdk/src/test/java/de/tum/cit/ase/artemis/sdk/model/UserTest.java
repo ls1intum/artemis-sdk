@@ -54,6 +54,14 @@ public class UserTest {
     }
 
     /**
+     * Test the property 'createdDate'
+     */
+    @Test
+    public void createdDateTest() {
+        // TODO: test createdDate
+    }
+
+    /**
      * Test the property 'login'
      */
     @Test
@@ -134,14 +142,6 @@ public class UserTest {
     }
 
     /**
-     * Test the property 'vcsAccessToken'
-     */
-    @Test
-    public void vcsAccessTokenTest() {
-        // TODO: test vcsAccessToken
-    }
-
-    /**
      * Test the property 'groups'
      */
     @Test
@@ -190,14 +190,6 @@ public class UserTest {
     }
 
     /**
-     * Test the property 'internal'
-     */
-    @Test
-    public void internalTest() {
-        // TODO: test internal
-    }
-
-    /**
      * Test the property 'participantIdentifier'
      */
     @Test
@@ -211,6 +203,14 @@ public class UserTest {
     @Test
     public void visibleRegistrationNumberTest() {
         // TODO: test visibleRegistrationNumber
+    }
+
+    /**
+     * Test the property 'internal'
+     */
+    @Test
+    public void internalTest() {
+        // TODO: test internal
     }
 
 }

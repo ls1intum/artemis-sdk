@@ -21,7 +21,6 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import de.tum.cit.ase.artemis.sdk.model.CodeHint;
 import de.tum.cit.ase.artemis.sdk.model.ProgrammingExercise;
 import de.tum.cit.ase.artemis.sdk.model.ProgrammingExerciseTask;
 

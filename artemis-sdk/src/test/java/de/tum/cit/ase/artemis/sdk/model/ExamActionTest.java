@@ -21,13 +21,6 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import de.tum.cit.ase.artemis.sdk.model.ConnectionUpdatedAction;
-import de.tum.cit.ase.artemis.sdk.model.ContinuedAfterHandedInEarlyAction;
-import de.tum.cit.ase.artemis.sdk.model.EndedExamAction;
-import de.tum.cit.ase.artemis.sdk.model.HandedInEarlyAction;
-import de.tum.cit.ase.artemis.sdk.model.SavedExerciseAction;
-import de.tum.cit.ase.artemis.sdk.model.StartedExamAction;
-import de.tum.cit.ase.artemis.sdk.model.SwitchedExerciseAction;
 import java.time.OffsetDateTime;
 
 import org.junit.jupiter.api.Assertions;

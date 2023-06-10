@@ -38,9 +38,10 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   NotificationTarget.JSON_PROPERTY_COURSE,
   NotificationTarget.JSON_PROPERTY_EXERCISE,
   NotificationTarget.JSON_PROPERTY_EXAM,
-  NotificationTarget.JSON_PROPERTY_LECTURE
+  NotificationTarget.JSON_PROPERTY_LECTURE,
+  NotificationTarget.JSON_PROPERTY_CONVERSATION
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class NotificationTarget {
   public static final String JSON_PROPERTY_MESSAGE = "message";
   private String message;
@@ -68,6 +69,9 @@ public class NotificationTarget {
 
   public static final String JSON_PROPERTY_LECTURE = "lecture";
   private Long lecture;
+
+  public static final String JSON_PROPERTY_CONVERSATION = "conversation";
+  private Long conversation;
 
   public NotificationTarget() { 
   }
@@ -297,6 +301,31 @@ public class NotificationTarget {
   }
 
 
+  public NotificationTarget conversation(Long conversation) {
+    this.conversation = conversation;
+    return this;
+  }
+
+   /**
+   * Get conversation
+   * @return conversation
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CONVERSATION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Long getConversation() {
+    return conversation;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CONVERSATION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setConversation(Long conversation) {
+    this.conversation = conversation;
+  }
+
+
   /**
    * Return true if this NotificationTarget object is equal to o.
    */
@@ -317,12 +346,13 @@ public class NotificationTarget {
         Objects.equals(this.course, notificationTarget.course) &&
         Objects.equals(this.exercise, notificationTarget.exercise) &&
         Objects.equals(this.exam, notificationTarget.exam) &&
-        Objects.equals(this.lecture, notificationTarget.lecture);
+        Objects.equals(this.lecture, notificationTarget.lecture) &&
+        Objects.equals(this.conversation, notificationTarget.conversation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(message, entity, mainPage, problemStatement, id, course, exercise, exam, lecture);
+    return Objects.hash(message, entity, mainPage, problemStatement, id, course, exercise, exam, lecture, conversation);
   }
 
   @Override
@@ -338,6 +368,7 @@ public class NotificationTarget {
     sb.append("    exercise: ").append(toIndentedString(exercise)).append("\n");
     sb.append("    exam: ").append(toIndentedString(exam)).append("\n");
     sb.append("    lecture: ").append(toIndentedString(lecture)).append("\n");
+    sb.append("    conversation: ").append(toIndentedString(conversation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

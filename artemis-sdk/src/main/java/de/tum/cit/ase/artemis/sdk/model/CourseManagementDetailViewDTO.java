@@ -50,7 +50,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   CourseManagementDetailViewDTO.JSON_PROPERTY_CURRENT_MAX_AVERAGE_SCORE,
   CourseManagementDetailViewDTO.JSON_PROPERTY_ACTIVE_STUDENTS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class CourseManagementDetailViewDTO {
   public static final String JSON_PROPERTY_NUMBER_OF_STUDENTS_IN_COURSE = "numberOfStudentsInCourse";
   private Integer numberOfStudentsInCourse;

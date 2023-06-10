@@ -66,6 +66,22 @@ public class TutorialGroupsConfigurationTest {
     }
 
     /**
+     * Test the property 'useTutorialGroupChannels'
+     */
+    @Test
+    public void useTutorialGroupChannelsTest() {
+        // TODO: test useTutorialGroupChannels
+    }
+
+    /**
+     * Test the property 'usePublicTutorialGroupChannels'
+     */
+    @Test
+    public void usePublicTutorialGroupChannelsTest() {
+        // TODO: test usePublicTutorialGroupChannels
+    }
+
+    /**
      * Test the property 'tutorialGroupFreePeriods'
      */
     @Test

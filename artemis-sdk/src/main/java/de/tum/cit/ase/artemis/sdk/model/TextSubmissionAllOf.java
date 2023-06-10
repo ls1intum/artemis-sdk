@@ -42,10 +42,11 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   TextSubmissionAllOf.JSON_PROPERTY_TEXT,
   TextSubmissionAllOf.JSON_PROPERTY_LANGUAGE,
   TextSubmissionAllOf.JSON_PROPERTY_BLOCKS,
+  TextSubmissionAllOf.JSON_PROPERTY_SUBMISSION_EXERCISE_TYPE,
   TextSubmissionAllOf.JSON_PROPERTY_RESULTS
 })
 @JsonTypeName("TextSubmission_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class TextSubmissionAllOf {
   public static final String JSON_PROPERTY_PARTICIPATION = "participation";
   private Participation participation;
@@ -93,6 +94,9 @@ public class TextSubmissionAllOf {
 
   public static final String JSON_PROPERTY_BLOCKS = "blocks";
   private Set<TextBlock> blocks;
+
+  public static final String JSON_PROPERTY_SUBMISSION_EXERCISE_TYPE = "submissionExerciseType";
+  private String submissionExerciseType;
 
   public static final String JSON_PROPERTY_RESULTS = "results";
   private List<Result> results;
@@ -217,6 +221,31 @@ public class TextSubmissionAllOf {
   }
 
 
+  public TextSubmissionAllOf submissionExerciseType(String submissionExerciseType) {
+    this.submissionExerciseType = submissionExerciseType;
+    return this;
+  }
+
+   /**
+   * Get submissionExerciseType
+   * @return submissionExerciseType
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_SUBMISSION_EXERCISE_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getSubmissionExerciseType() {
+    return submissionExerciseType;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SUBMISSION_EXERCISE_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSubmissionExerciseType(String submissionExerciseType) {
+    this.submissionExerciseType = submissionExerciseType;
+  }
+
+
    /**
    * Get results
    * @return results
@@ -248,12 +277,13 @@ public class TextSubmissionAllOf {
         Objects.equals(this.text, textSubmissionAllOf.text) &&
         Objects.equals(this.language, textSubmissionAllOf.language) &&
         Objects.equals(this.blocks, textSubmissionAllOf.blocks) &&
+        Objects.equals(this.submissionExerciseType, textSubmissionAllOf.submissionExerciseType) &&
         Objects.equals(this.results, textSubmissionAllOf.results);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(participation, text, language, blocks, results);
+    return Objects.hash(participation, text, language, blocks, submissionExerciseType, results);
   }
 
   @Override
@@ -264,6 +294,7 @@ public class TextSubmissionAllOf {
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    blocks: ").append(toIndentedString(blocks)).append("\n");
+    sb.append("    submissionExerciseType: ").append(toIndentedString(submissionExerciseType)).append("\n");
     sb.append("    results: ").append(toIndentedString(results)).append("\n");
     sb.append("}");
     return sb.toString();

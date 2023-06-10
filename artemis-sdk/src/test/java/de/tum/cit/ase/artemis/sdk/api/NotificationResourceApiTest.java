@@ -15,7 +15,7 @@ package de.tum.cit.ase.artemis.sdk.api;
 
 import de.tum.cit.ase.artemis.sdk.*;
 import de.tum.cit.ase.artemis.sdk.auth.*;
-import de.tum.cit.ase.artemis.sdk.model.GetAllNotificationsForCurrentUserFilteredBySettings200ResponseInner;
+import de.tum.cit.ase.artemis.sdk.model.CreateSystemNotification200Response;
 import de.tum.cit.ase.artemis.sdk.model.Pageable;
 
 import org.junit.jupiter.api.Assertions;
@@ -38,49 +38,9 @@ public class NotificationResourceApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void createNotificationTest() throws ApiException {
-        //GetAllNotificationsForCurrentUserFilteredBySettings200ResponseInner getAllNotificationsForCurrentUserFilteredBySettings200ResponseInner = null;
-        //GetAllNotificationsForCurrentUserFilteredBySettings200ResponseInner response = api.createNotification(getAllNotificationsForCurrentUserFilteredBySettings200ResponseInner);
-        // TODO: test validations
-    }
-
-    /**
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void deleteNotificationTest() throws ApiException {
-        //Long id = null;
-        //api.deleteNotification(id);
-        // TODO: test validations
-    }
-
-    /**
-     * @throws ApiException if the Api call fails
-     */
-    @Test
     public void getAllNotificationsForCurrentUserFilteredBySettingsTest() throws ApiException {
         //Pageable pageable = null;
-        //List<GetAllNotificationsForCurrentUserFilteredBySettings200ResponseInner> response = api.getAllNotificationsForCurrentUserFilteredBySettings(pageable);
-        // TODO: test validations
-    }
-
-    /**
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getNotificationTest() throws ApiException {
-        //Long id = null;
-        //GetAllNotificationsForCurrentUserFilteredBySettings200ResponseInner response = api.getNotification(id);
-        // TODO: test validations
-    }
-
-    /**
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void updateNotificationTest() throws ApiException {
-        //GetAllNotificationsForCurrentUserFilteredBySettings200ResponseInner getAllNotificationsForCurrentUserFilteredBySettings200ResponseInner = null;
-        //GetAllNotificationsForCurrentUserFilteredBySettings200ResponseInner response = api.updateNotification(getAllNotificationsForCurrentUserFilteredBySettings200ResponseInner);
+        //List<CreateSystemNotification200Response> response = api.getAllNotificationsForCurrentUserFilteredBySettings(pageable);
         // TODO: test validations
     }
 

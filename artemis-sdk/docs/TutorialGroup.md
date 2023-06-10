@@ -14,7 +14,7 @@
 |**capacity** | **Integer** |  |  [optional] |
 |**isOnline** | **Boolean** |  |  |
 |**campus** | **String** |  |  [optional] |
-|**language** | [**LanguageEnum**](#LanguageEnum) |  |  [optional] |
+|**language** | **String** |  |  [optional] |
 |**teachingAssistant** | [**User**](User.md) |  |  [optional] |
 |**isUserRegistered** | **Boolean** |  |  [optional] |
 |**isUserTutor** | **Boolean** |  |  [optional] |
@@ -26,15 +26,6 @@
 |**averageAttendance** | **Integer** |  |  [optional] |
 |**tutorialGroupSchedule** | [**TutorialGroupSchedule**](TutorialGroupSchedule.md) |  |  [optional] |
 |**tutorialGroupSessions** | [**Set&lt;TutorialGroupSession&gt;**](TutorialGroupSession.md) |  |  [optional] |
-
-
-
-## Enum: LanguageEnum
-
-| Name | Value |
-|---- | -----|
-| ENGLISH | &quot;ENGLISH&quot; |
-| GERMAN | &quot;GERMAN&quot; |
 
 
 

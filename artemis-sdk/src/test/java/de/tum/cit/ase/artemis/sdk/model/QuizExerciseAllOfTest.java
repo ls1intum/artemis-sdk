@@ -46,6 +46,14 @@ public class QuizExerciseAllOfTest {
     }
 
     /**
+     * Test the property 'type'
+     */
+    @Test
+    public void typeTest() {
+        // TODO: test type
+    }
+
+    /**
      * Test the property 'randomizeQuestionOrder'
      */
     @Test
@@ -118,14 +126,6 @@ public class QuizExerciseAllOfTest {
     }
 
     /**
-     * Test the property 'type'
-     */
-    @Test
-    public void typeTest() {
-        // TODO: test type
-    }
-
-    /**
      * Test the property 'quizStarted'
      */
     @Test
@@ -139,6 +139,14 @@ public class QuizExerciseAllOfTest {
     @Test
     public void quizEndedTest() {
         // TODO: test quizEnded
+    }
+
+    /**
+     * Test the property 'questionParent'
+     */
+    @Test
+    public void questionParentTest() {
+        // TODO: test questionParent
     }
 
 }

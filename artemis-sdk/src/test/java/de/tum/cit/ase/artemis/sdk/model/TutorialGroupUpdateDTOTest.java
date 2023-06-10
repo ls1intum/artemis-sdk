@@ -54,4 +54,12 @@ public class TutorialGroupUpdateDTOTest {
         // TODO: test notificationText
     }
 
+    /**
+     * Test the property 'updateTutorialGroupChannelName'
+     */
+    @Test
+    public void updateTutorialGroupChannelNameTest() {
+        // TODO: test updateTutorialGroupChannelName
+    }
+
 }

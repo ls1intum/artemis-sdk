@@ -19,6 +19,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import de.tum.cit.ase.artemis.sdk.model.ChannelDTO;
 import de.tum.cit.ase.artemis.sdk.model.Course;
 import de.tum.cit.ase.artemis.sdk.model.TutorialGroupSchedule;
 import de.tum.cit.ase.artemis.sdk.model.TutorialGroupSession;
@@ -162,6 +163,22 @@ public class TutorialGroupTest {
     @Test
     public void nextSessionTest() {
         // TODO: test nextSession
+    }
+
+    /**
+     * Test the property 'channel'
+     */
+    @Test
+    public void channelTest() {
+        // TODO: test channel
+    }
+
+    /**
+     * Test the property 'averageAttendance'
+     */
+    @Test
+    public void averageAttendanceTest() {
+        // TODO: test averageAttendance
     }
 
     /**

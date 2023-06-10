@@ -15,7 +15,7 @@ package de.tum.cit.ase.artemis.sdk.api;
 
 import de.tum.cit.ase.artemis.sdk.*;
 import de.tum.cit.ase.artemis.sdk.auth.*;
-import de.tum.cit.ase.artemis.sdk.model.GetAllNotificationsForCurrentUserFilteredBySettings200ResponseInner;
+import de.tum.cit.ase.artemis.sdk.model.CreateSystemNotification200Response;
 import de.tum.cit.ase.artemis.sdk.model.SystemNotification;
 
 import org.junit.jupiter.api.Assertions;
@@ -40,7 +40,7 @@ public class AdminSystemNotificationResourceApiTest {
     @Test
     public void createSystemNotificationTest() throws ApiException {
         //SystemNotification systemNotification = null;
-        //GetAllNotificationsForCurrentUserFilteredBySettings200ResponseInner response = api.createSystemNotification(systemNotification);
+        //CreateSystemNotification200Response response = api.createSystemNotification(systemNotification);
         // TODO: test validations
     }
 
@@ -49,8 +49,8 @@ public class AdminSystemNotificationResourceApiTest {
      */
     @Test
     public void deleteSystemNotificationTest() throws ApiException {
-        //Long id = null;
-        //api.deleteSystemNotification(id);
+        //Long notificationId = null;
+        //api.deleteSystemNotification(notificationId);
         // TODO: test validations
     }
 

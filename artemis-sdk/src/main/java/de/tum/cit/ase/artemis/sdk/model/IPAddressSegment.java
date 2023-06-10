@@ -33,7 +33,6 @@ import de.tum.cit.ase.artemis.sdk.JSON;
  * IPAddressSegment
  */
 @JsonPropertyOrder({
-  IPAddressSegment.JSON_PROPERTY_UPPER_BYTES,
   IPAddressSegment.JSON_PROPERTY_VALUE,
   IPAddressSegment.JSON_PROPERTY_UPPER_VALUE,
   IPAddressSegment.JSON_PROPERTY_COUNT,
@@ -43,16 +42,16 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   IPAddressSegment.JSON_PROPERTY_UPPER_DIVISION_VALUE,
   IPAddressSegment.JSON_PROPERTY_DIVISION_VALUE,
   IPAddressSegment.JSON_PROPERTY_VALUE_COUNT,
-  IPAddressSegment.JSON_PROPERTY_PREFIX_VALUE_COUNT,
-  IPAddressSegment.JSON_PROPERTY_IPV4,
-  IPAddressSegment.JSON_PROPERTY_MAX_VALUE,
   IPAddressSegment.JSON_PROPERTY_SEGMENT_VALUE,
+  IPAddressSegment.JSON_PROPERTY_IPV4,
   IPAddressSegment.JSON_PROPERTY_NETWORK,
   IPAddressSegment.JSON_PROPERTY_ITERABLE,
   IPAddressSegment.JSON_PROPERTY_IPVERSION,
   IPAddressSegment.JSON_PROPERTY_PREFIX_BLOCK,
   IPAddressSegment.JSON_PROPERTY_SEGMENT_PREFIX_LENGTH,
   IPAddressSegment.JSON_PROPERTY_MIN_PREFIX_LENGTH_FOR_BLOCK,
+  IPAddressSegment.JSON_PROPERTY_PREFIX_VALUE_COUNT,
+  IPAddressSegment.JSON_PROPERTY_MAX_VALUE,
   IPAddressSegment.JSON_PROPERTY_IPV6,
   IPAddressSegment.JSON_PROPERTY_MULTIPLE,
   IPAddressSegment.JSON_PROPERTY_MAX_SEGMENT_VALUE,
@@ -62,6 +61,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   IPAddressSegment.JSON_PROPERTY_BIT_COUNT,
   IPAddressSegment.JSON_PROPERTY_PREFIX_LENGTH_FOR_SINGLE_BLOCK,
   IPAddressSegment.JSON_PROPERTY_FULL_RANGE,
+  IPAddressSegment.JSON_PROPERTY_UPPER_BYTES,
   IPAddressSegment.JSON_PROPERTY_MAX,
   IPAddressSegment.JSON_PROPERTY_STRING,
   IPAddressSegment.JSON_PROPERTY_DIVISION_PREFIX_LENGTH,
@@ -69,11 +69,8 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   IPAddressSegment.JSON_PROPERTY_PREFIXED,
   IPAddressSegment.JSON_PROPERTY_SINGLE_PREFIX_BLOCK
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class IPAddressSegment {
-  public static final String JSON_PROPERTY_UPPER_BYTES = "upperBytes";
-  private List<byte[]> upperBytes;
-
   public static final String JSON_PROPERTY_VALUE = "value";
   private Integer value;
 
@@ -101,17 +98,11 @@ public class IPAddressSegment {
   public static final String JSON_PROPERTY_VALUE_COUNT = "valueCount";
   private Integer valueCount;
 
-  public static final String JSON_PROPERTY_PREFIX_VALUE_COUNT = "prefixValueCount";
-  private Integer prefixValueCount;
+  public static final String JSON_PROPERTY_SEGMENT_VALUE = "segmentValue";
+  private Integer segmentValue;
 
   public static final String JSON_PROPERTY_IPV4 = "ipv4";
   private Boolean ipv4;
-
-  public static final String JSON_PROPERTY_MAX_VALUE = "maxValue";
-  private Long maxValue;
-
-  public static final String JSON_PROPERTY_SEGMENT_VALUE = "segmentValue";
-  private Integer segmentValue;
 
   public static final String JSON_PROPERTY_NETWORK = "network";
   private IPAddressNetworkObjectObjectObjectObjectObject network;
@@ -166,6 +157,12 @@ public class IPAddressSegment {
   public static final String JSON_PROPERTY_MIN_PREFIX_LENGTH_FOR_BLOCK = "minPrefixLengthForBlock";
   private Integer minPrefixLengthForBlock;
 
+  public static final String JSON_PROPERTY_PREFIX_VALUE_COUNT = "prefixValueCount";
+  private Integer prefixValueCount;
+
+  public static final String JSON_PROPERTY_MAX_VALUE = "maxValue";
+  private Long maxValue;
+
   public static final String JSON_PROPERTY_IPV6 = "ipv6";
   private Boolean ipv6;
 
@@ -193,6 +190,9 @@ public class IPAddressSegment {
   public static final String JSON_PROPERTY_FULL_RANGE = "fullRange";
   private Boolean fullRange;
 
+  public static final String JSON_PROPERTY_UPPER_BYTES = "upperBytes";
+  private List<byte[]> upperBytes;
+
   public static final String JSON_PROPERTY_MAX = "max";
   private Boolean max;
 
@@ -213,39 +213,6 @@ public class IPAddressSegment {
 
   public IPAddressSegment() { 
   }
-
-  public IPAddressSegment upperBytes(List<byte[]> upperBytes) {
-    this.upperBytes = upperBytes;
-    return this;
-  }
-
-  public IPAddressSegment addUpperBytesItem(byte[] upperBytesItem) {
-    if (this.upperBytes == null) {
-      this.upperBytes = new ArrayList<>();
-    }
-    this.upperBytes.add(upperBytesItem);
-    return this;
-  }
-
-   /**
-   * Get upperBytes
-   * @return upperBytes
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_UPPER_BYTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public List<byte[]> getUpperBytes() {
-    return upperBytes;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_UPPER_BYTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUpperBytes(List<byte[]> upperBytes) {
-    this.upperBytes = upperBytes;
-  }
-
 
   public IPAddressSegment value(Integer value) {
     this.value = value;
@@ -472,28 +439,28 @@ public class IPAddressSegment {
   }
 
 
-  public IPAddressSegment prefixValueCount(Integer prefixValueCount) {
-    this.prefixValueCount = prefixValueCount;
+  public IPAddressSegment segmentValue(Integer segmentValue) {
+    this.segmentValue = segmentValue;
     return this;
   }
 
    /**
-   * Get prefixValueCount
-   * @return prefixValueCount
+   * Get segmentValue
+   * @return segmentValue
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PREFIX_VALUE_COUNT)
+  @JsonProperty(JSON_PROPERTY_SEGMENT_VALUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getPrefixValueCount() {
-    return prefixValueCount;
+  public Integer getSegmentValue() {
+    return segmentValue;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PREFIX_VALUE_COUNT)
+  @JsonProperty(JSON_PROPERTY_SEGMENT_VALUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPrefixValueCount(Integer prefixValueCount) {
-    this.prefixValueCount = prefixValueCount;
+  public void setSegmentValue(Integer segmentValue) {
+    this.segmentValue = segmentValue;
   }
 
 
@@ -519,56 +486,6 @@ public class IPAddressSegment {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIpv4(Boolean ipv4) {
     this.ipv4 = ipv4;
-  }
-
-
-  public IPAddressSegment maxValue(Long maxValue) {
-    this.maxValue = maxValue;
-    return this;
-  }
-
-   /**
-   * Get maxValue
-   * @return maxValue
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MAX_VALUE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Long getMaxValue() {
-    return maxValue;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MAX_VALUE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMaxValue(Long maxValue) {
-    this.maxValue = maxValue;
-  }
-
-
-  public IPAddressSegment segmentValue(Integer segmentValue) {
-    this.segmentValue = segmentValue;
-    return this;
-  }
-
-   /**
-   * Get segmentValue
-   * @return segmentValue
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SEGMENT_VALUE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Integer getSegmentValue() {
-    return segmentValue;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_SEGMENT_VALUE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSegmentValue(Integer segmentValue) {
-    this.segmentValue = segmentValue;
   }
 
 
@@ -719,6 +636,56 @@ public class IPAddressSegment {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMinPrefixLengthForBlock(Integer minPrefixLengthForBlock) {
     this.minPrefixLengthForBlock = minPrefixLengthForBlock;
+  }
+
+
+  public IPAddressSegment prefixValueCount(Integer prefixValueCount) {
+    this.prefixValueCount = prefixValueCount;
+    return this;
+  }
+
+   /**
+   * Get prefixValueCount
+   * @return prefixValueCount
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PREFIX_VALUE_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getPrefixValueCount() {
+    return prefixValueCount;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_PREFIX_VALUE_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPrefixValueCount(Integer prefixValueCount) {
+    this.prefixValueCount = prefixValueCount;
+  }
+
+
+  public IPAddressSegment maxValue(Long maxValue) {
+    this.maxValue = maxValue;
+    return this;
+  }
+
+   /**
+   * Get maxValue
+   * @return maxValue
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_MAX_VALUE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Long getMaxValue() {
+    return maxValue;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_MAX_VALUE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMaxValue(Long maxValue) {
+    this.maxValue = maxValue;
   }
 
 
@@ -955,6 +922,39 @@ public class IPAddressSegment {
   }
 
 
+  public IPAddressSegment upperBytes(List<byte[]> upperBytes) {
+    this.upperBytes = upperBytes;
+    return this;
+  }
+
+  public IPAddressSegment addUpperBytesItem(byte[] upperBytesItem) {
+    if (this.upperBytes == null) {
+      this.upperBytes = new ArrayList<>();
+    }
+    this.upperBytes.add(upperBytesItem);
+    return this;
+  }
+
+   /**
+   * Get upperBytes
+   * @return upperBytes
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_UPPER_BYTES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<byte[]> getUpperBytes() {
+    return upperBytes;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_UPPER_BYTES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setUpperBytes(List<byte[]> upperBytes) {
+    this.upperBytes = upperBytes;
+  }
+
+
   public IPAddressSegment max(Boolean max) {
     this.max = max;
     return this;
@@ -1117,8 +1117,7 @@ public class IPAddressSegment {
       return false;
     }
     IPAddressSegment ipAddressSegment = (IPAddressSegment) o;
-    return Objects.equals(this.upperBytes, ipAddressSegment.upperBytes) &&
-        Objects.equals(this.value, ipAddressSegment.value) &&
+    return Objects.equals(this.value, ipAddressSegment.value) &&
         Objects.equals(this.upperValue, ipAddressSegment.upperValue) &&
         Objects.equals(this.count, ipAddressSegment.count) &&
         Objects.equals(this.lower, ipAddressSegment.lower) &&
@@ -1127,16 +1126,16 @@ public class IPAddressSegment {
         Objects.equals(this.upperDivisionValue, ipAddressSegment.upperDivisionValue) &&
         Objects.equals(this.divisionValue, ipAddressSegment.divisionValue) &&
         Objects.equals(this.valueCount, ipAddressSegment.valueCount) &&
-        Objects.equals(this.prefixValueCount, ipAddressSegment.prefixValueCount) &&
-        Objects.equals(this.ipv4, ipAddressSegment.ipv4) &&
-        Objects.equals(this.maxValue, ipAddressSegment.maxValue) &&
         Objects.equals(this.segmentValue, ipAddressSegment.segmentValue) &&
+        Objects.equals(this.ipv4, ipAddressSegment.ipv4) &&
         Objects.equals(this.network, ipAddressSegment.network) &&
         Objects.equals(this.iterable, ipAddressSegment.iterable) &&
         Objects.equals(this.ipversion, ipAddressSegment.ipversion) &&
         Objects.equals(this.prefixBlock, ipAddressSegment.prefixBlock) &&
         Objects.equals(this.segmentPrefixLength, ipAddressSegment.segmentPrefixLength) &&
         Objects.equals(this.minPrefixLengthForBlock, ipAddressSegment.minPrefixLengthForBlock) &&
+        Objects.equals(this.prefixValueCount, ipAddressSegment.prefixValueCount) &&
+        Objects.equals(this.maxValue, ipAddressSegment.maxValue) &&
         Objects.equals(this.ipv6, ipAddressSegment.ipv6) &&
         Objects.equals(this.multiple, ipAddressSegment.multiple) &&
         Objects.equals(this.maxSegmentValue, ipAddressSegment.maxSegmentValue) &&
@@ -1146,6 +1145,7 @@ public class IPAddressSegment {
         Objects.equals(this.bitCount, ipAddressSegment.bitCount) &&
         Objects.equals(this.prefixLengthForSingleBlock, ipAddressSegment.prefixLengthForSingleBlock) &&
         Objects.equals(this.fullRange, ipAddressSegment.fullRange) &&
+        Objects.equals(this.upperBytes, ipAddressSegment.upperBytes) &&
         Objects.equals(this.max, ipAddressSegment.max) &&
         Objects.equals(this.string, ipAddressSegment.string) &&
         Objects.equals(this.divisionPrefixLength, ipAddressSegment.divisionPrefixLength) &&
@@ -1156,14 +1156,13 @@ public class IPAddressSegment {
 
   @Override
   public int hashCode() {
-    return Objects.hash(upperBytes, value, upperValue, count, lower, upper, upperSegmentValue, upperDivisionValue, divisionValue, valueCount, prefixValueCount, ipv4, maxValue, segmentValue, network, iterable, ipversion, prefixBlock, segmentPrefixLength, minPrefixLengthForBlock, ipv6, multiple, maxSegmentValue, bytes, zero, byteCount, bitCount, prefixLengthForSingleBlock, fullRange, max, string, divisionPrefixLength, wildcardString, prefixed, singlePrefixBlock);
+    return Objects.hash(value, upperValue, count, lower, upper, upperSegmentValue, upperDivisionValue, divisionValue, valueCount, segmentValue, ipv4, network, iterable, ipversion, prefixBlock, segmentPrefixLength, minPrefixLengthForBlock, prefixValueCount, maxValue, ipv6, multiple, maxSegmentValue, bytes, zero, byteCount, bitCount, prefixLengthForSingleBlock, fullRange, upperBytes, max, string, divisionPrefixLength, wildcardString, prefixed, singlePrefixBlock);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IPAddressSegment {\n");
-    sb.append("    upperBytes: ").append(toIndentedString(upperBytes)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    upperValue: ").append(toIndentedString(upperValue)).append("\n");
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
@@ -1173,16 +1172,16 @@ public class IPAddressSegment {
     sb.append("    upperDivisionValue: ").append(toIndentedString(upperDivisionValue)).append("\n");
     sb.append("    divisionValue: ").append(toIndentedString(divisionValue)).append("\n");
     sb.append("    valueCount: ").append(toIndentedString(valueCount)).append("\n");
-    sb.append("    prefixValueCount: ").append(toIndentedString(prefixValueCount)).append("\n");
-    sb.append("    ipv4: ").append(toIndentedString(ipv4)).append("\n");
-    sb.append("    maxValue: ").append(toIndentedString(maxValue)).append("\n");
     sb.append("    segmentValue: ").append(toIndentedString(segmentValue)).append("\n");
+    sb.append("    ipv4: ").append(toIndentedString(ipv4)).append("\n");
     sb.append("    network: ").append(toIndentedString(network)).append("\n");
     sb.append("    iterable: ").append(toIndentedString(iterable)).append("\n");
     sb.append("    ipversion: ").append(toIndentedString(ipversion)).append("\n");
     sb.append("    prefixBlock: ").append(toIndentedString(prefixBlock)).append("\n");
     sb.append("    segmentPrefixLength: ").append(toIndentedString(segmentPrefixLength)).append("\n");
     sb.append("    minPrefixLengthForBlock: ").append(toIndentedString(minPrefixLengthForBlock)).append("\n");
+    sb.append("    prefixValueCount: ").append(toIndentedString(prefixValueCount)).append("\n");
+    sb.append("    maxValue: ").append(toIndentedString(maxValue)).append("\n");
     sb.append("    ipv6: ").append(toIndentedString(ipv6)).append("\n");
     sb.append("    multiple: ").append(toIndentedString(multiple)).append("\n");
     sb.append("    maxSegmentValue: ").append(toIndentedString(maxSegmentValue)).append("\n");
@@ -1192,6 +1191,7 @@ public class IPAddressSegment {
     sb.append("    bitCount: ").append(toIndentedString(bitCount)).append("\n");
     sb.append("    prefixLengthForSingleBlock: ").append(toIndentedString(prefixLengthForSingleBlock)).append("\n");
     sb.append("    fullRange: ").append(toIndentedString(fullRange)).append("\n");
+    sb.append("    upperBytes: ").append(toIndentedString(upperBytes)).append("\n");
     sb.append("    max: ").append(toIndentedString(max)).append("\n");
     sb.append("    string: ").append(toIndentedString(string)).append("\n");
     sb.append("    divisionPrefixLength: ").append(toIndentedString(divisionPrefixLength)).append("\n");

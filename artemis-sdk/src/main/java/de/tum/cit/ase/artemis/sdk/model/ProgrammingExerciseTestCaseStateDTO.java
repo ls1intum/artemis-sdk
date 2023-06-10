@@ -36,7 +36,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ProgrammingExerciseTestCaseStateDTO.JSON_PROPERTY_TEST_CASES_CHANGED,
   ProgrammingExerciseTestCaseStateDTO.JSON_PROPERTY_BUILD_AND_TEST_STUDENT_SUBMISSIONS_AFTER_DUE_DATE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class ProgrammingExerciseTestCaseStateDTO {
   public static final String JSON_PROPERTY_RELEASED = "released";
   private Boolean released;

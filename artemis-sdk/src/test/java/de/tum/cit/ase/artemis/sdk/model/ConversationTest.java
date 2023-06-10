@@ -23,6 +23,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import de.tum.cit.ase.artemis.sdk.model.ConversationParticipant;
+import de.tum.cit.ase.artemis.sdk.model.Post;
 import de.tum.cit.ase.artemis.sdk.model.User;
 import java.time.OffsetDateTime;
 import java.util.LinkedHashSet;
@@ -68,6 +69,14 @@ public class ConversationTest {
     @Test
     public void conversationParticipantsTest() {
         // TODO: test conversationParticipants
+    }
+
+    /**
+     * Test the property 'posts'
+     */
+    @Test
+    public void postsTest() {
+        // TODO: test posts
     }
 
     /**

@@ -203,4 +203,20 @@ public class ChannelDTOTest {
         // TODO: test isChannelModerator
     }
 
+    /**
+     * Test the property 'tutorialGroupId'
+     */
+    @Test
+    public void tutorialGroupIdTest() {
+        // TODO: test tutorialGroupId
+    }
+
+    /**
+     * Test the property 'tutorialGroupTitle'
+     */
+    @Test
+    public void tutorialGroupTitleTest() {
+        // TODO: test tutorialGroupTitle
+    }
+
 }

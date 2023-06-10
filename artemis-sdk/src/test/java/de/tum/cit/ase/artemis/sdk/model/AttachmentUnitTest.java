@@ -23,11 +23,14 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import de.tum.cit.ase.artemis.sdk.model.Attachment;
-import de.tum.cit.ase.artemis.sdk.model.LearningGoal;
+import de.tum.cit.ase.artemis.sdk.model.Competency;
 import de.tum.cit.ase.artemis.sdk.model.Lecture;
 import de.tum.cit.ase.artemis.sdk.model.LectureUnit;
+import de.tum.cit.ase.artemis.sdk.model.Slide;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.junit.jupiter.api.Assertions;
@@ -73,14 +76,6 @@ public class AttachmentUnitTest {
     }
 
     /**
-     * Test the property 'order'
-     */
-    @Test
-    public void orderTest() {
-        // TODO: test order
-    }
-
-    /**
      * Test the property 'lecture'
      */
     @Test
@@ -89,19 +84,11 @@ public class AttachmentUnitTest {
     }
 
     /**
-     * Test the property 'learningGoals'
+     * Test the property 'competencies'
      */
     @Test
-    public void learningGoalsTest() {
-        // TODO: test learningGoals
-    }
-
-    /**
-     * Test the property 'visibleToStudents'
-     */
-    @Test
-    public void visibleToStudentsTest() {
-        // TODO: test visibleToStudents
+    public void competenciesTest() {
+        // TODO: test competencies
     }
 
     /**
@@ -110,6 +97,14 @@ public class AttachmentUnitTest {
     @Test
     public void completedTest() {
         // TODO: test completed
+    }
+
+    /**
+     * Test the property 'visibleToStudents'
+     */
+    @Test
+    public void visibleToStudentsTest() {
+        // TODO: test visibleToStudents
     }
 
     /**
@@ -134,6 +129,14 @@ public class AttachmentUnitTest {
     @Test
     public void attachmentTest() {
         // TODO: test attachment
+    }
+
+    /**
+     * Test the property 'slides'
+     */
+    @Test
+    public void slidesTest() {
+        // TODO: test slides
     }
 
 }

@@ -22,11 +22,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import de.tum.cit.ase.artemis.sdk.model.FeedbackConflict;
 import de.tum.cit.ase.artemis.sdk.model.GradingInstruction;
 import de.tum.cit.ase.artemis.sdk.model.Result;
-import java.util.ArrayList;
-import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import de.tum.cit.ase.artemis.sdk.JSON;
 
@@ -49,10 +46,9 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   Feedback.JSON_PROPERTY_SUGGESTED_FEEDBACK_REFERENCE,
   Feedback.JSON_PROPERTY_SUGGESTED_FEEDBACK_ORIGIN_SUBMISSION_REFERENCE,
   Feedback.JSON_PROPERTY_SUGGESTED_FEEDBACK_PARTICIPATION_REFERENCE,
-  Feedback.JSON_PROPERTY_FIRST_CONFLICTS,
-  Feedback.JSON_PROPERTY_SECOND_CONFLICTS
+  Feedback.JSON_PROPERTY_DETAIL_TEXT_TRUNCATED
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class Feedback {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -172,11 +168,8 @@ public class Feedback {
   public static final String JSON_PROPERTY_SUGGESTED_FEEDBACK_PARTICIPATION_REFERENCE = "suggestedFeedbackParticipationReference";
   private Long suggestedFeedbackParticipationReference;
 
-  public static final String JSON_PROPERTY_FIRST_CONFLICTS = "firstConflicts";
-  private List<FeedbackConflict> firstConflicts;
-
-  public static final String JSON_PROPERTY_SECOND_CONFLICTS = "secondConflicts";
-  private List<FeedbackConflict> secondConflicts;
+  public static final String JSON_PROPERTY_DETAIL_TEXT_TRUNCATED = "detailTextTruncated";
+  private String detailTextTruncated;
 
   public Feedback() { 
   }
@@ -531,69 +524,28 @@ public class Feedback {
   }
 
 
-  public Feedback firstConflicts(List<FeedbackConflict> firstConflicts) {
-    this.firstConflicts = firstConflicts;
-    return this;
-  }
-
-  public Feedback addFirstConflictsItem(FeedbackConflict firstConflictsItem) {
-    if (this.firstConflicts == null) {
-      this.firstConflicts = new ArrayList<>();
-    }
-    this.firstConflicts.add(firstConflictsItem);
+  public Feedback detailTextTruncated(String detailTextTruncated) {
+    this.detailTextTruncated = detailTextTruncated;
     return this;
   }
 
    /**
-   * Get firstConflicts
-   * @return firstConflicts
+   * Get detailTextTruncated
+   * @return detailTextTruncated
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FIRST_CONFLICTS)
+  @JsonProperty(JSON_PROPERTY_DETAIL_TEXT_TRUNCATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<FeedbackConflict> getFirstConflicts() {
-    return firstConflicts;
+  public String getDetailTextTruncated() {
+    return detailTextTruncated;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FIRST_CONFLICTS)
+  @JsonProperty(JSON_PROPERTY_DETAIL_TEXT_TRUNCATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFirstConflicts(List<FeedbackConflict> firstConflicts) {
-    this.firstConflicts = firstConflicts;
-  }
-
-
-  public Feedback secondConflicts(List<FeedbackConflict> secondConflicts) {
-    this.secondConflicts = secondConflicts;
-    return this;
-  }
-
-  public Feedback addSecondConflictsItem(FeedbackConflict secondConflictsItem) {
-    if (this.secondConflicts == null) {
-      this.secondConflicts = new ArrayList<>();
-    }
-    this.secondConflicts.add(secondConflictsItem);
-    return this;
-  }
-
-   /**
-   * Get secondConflicts
-   * @return secondConflicts
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SECOND_CONFLICTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public List<FeedbackConflict> getSecondConflicts() {
-    return secondConflicts;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_SECOND_CONFLICTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSecondConflicts(List<FeedbackConflict> secondConflicts) {
-    this.secondConflicts = secondConflicts;
+  public void setDetailTextTruncated(String detailTextTruncated) {
+    this.detailTextTruncated = detailTextTruncated;
   }
 
 
@@ -623,13 +575,12 @@ public class Feedback {
         Objects.equals(this.suggestedFeedbackReference, feedback.suggestedFeedbackReference) &&
         Objects.equals(this.suggestedFeedbackOriginSubmissionReference, feedback.suggestedFeedbackOriginSubmissionReference) &&
         Objects.equals(this.suggestedFeedbackParticipationReference, feedback.suggestedFeedbackParticipationReference) &&
-        Objects.equals(this.firstConflicts, feedback.firstConflicts) &&
-        Objects.equals(this.secondConflicts, feedback.secondConflicts);
+        Objects.equals(this.detailTextTruncated, feedback.detailTextTruncated);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, text, detailText, hasLongFeedbackText, reference, credits, positive, type, visibility, result, gradingInstruction, suggestedFeedbackReference, suggestedFeedbackOriginSubmissionReference, suggestedFeedbackParticipationReference, firstConflicts, secondConflicts);
+    return Objects.hash(id, text, detailText, hasLongFeedbackText, reference, credits, positive, type, visibility, result, gradingInstruction, suggestedFeedbackReference, suggestedFeedbackOriginSubmissionReference, suggestedFeedbackParticipationReference, detailTextTruncated);
   }
 
   @Override
@@ -650,8 +601,7 @@ public class Feedback {
     sb.append("    suggestedFeedbackReference: ").append(toIndentedString(suggestedFeedbackReference)).append("\n");
     sb.append("    suggestedFeedbackOriginSubmissionReference: ").append(toIndentedString(suggestedFeedbackOriginSubmissionReference)).append("\n");
     sb.append("    suggestedFeedbackParticipationReference: ").append(toIndentedString(suggestedFeedbackParticipationReference)).append("\n");
-    sb.append("    firstConflicts: ").append(toIndentedString(firstConflicts)).append("\n");
-    sb.append("    secondConflicts: ").append(toIndentedString(secondConflicts)).append("\n");
+    sb.append("    detailTextTruncated: ").append(toIndentedString(detailTextTruncated)).append("\n");
     sb.append("}");
     return sb.toString();
   }

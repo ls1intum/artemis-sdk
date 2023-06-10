@@ -67,7 +67,7 @@ public class StudentExamResourceApiTest {
         //Long courseId = null;
         //Long examId = null;
         //Long testRunId = null;
-        //StudentExam response = api.deleteTestRun(courseId, examId, testRunId);
+        //api.deleteTestRun(courseId, examId, testRunId);
         // TODO: test validations
     }
 

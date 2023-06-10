@@ -21,9 +21,12 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import de.tum.cit.ase.artemis.sdk.model.Conversation;
+import de.tum.cit.ase.artemis.sdk.model.ConversationNotification;
 import de.tum.cit.ase.artemis.sdk.model.Course;
 import de.tum.cit.ase.artemis.sdk.model.GroupNotification;
 import de.tum.cit.ase.artemis.sdk.model.NotificationTarget;
+import de.tum.cit.ase.artemis.sdk.model.Post;
 import de.tum.cit.ase.artemis.sdk.model.SingleUserNotification;
 import de.tum.cit.ase.artemis.sdk.model.SystemNotification;
 import de.tum.cit.ase.artemis.sdk.model.User;
@@ -72,6 +75,22 @@ public class CreateSystemNotification200ResponseTest {
     }
 
     /**
+     * Test the property 'textIsPlaceholder'
+     */
+    @Test
+    public void textIsPlaceholderTest() {
+        // TODO: test textIsPlaceholder
+    }
+
+    /**
+     * Test the property 'placeholderValues'
+     */
+    @Test
+    public void placeholderValuesTest() {
+        // TODO: test placeholderValues
+    }
+
+    /**
      * Test the property 'notificationDate'
      */
     @Test
@@ -85,14 +104,6 @@ public class CreateSystemNotification200ResponseTest {
     @Test
     public void targetTest() {
         // TODO: test target
-    }
-
-    /**
-     * Test the property 'targetTransient'
-     */
-    @Test
-    public void targetTransientTest() {
-        // TODO: test targetTransient
     }
 
     /**
@@ -120,6 +131,14 @@ public class CreateSystemNotification200ResponseTest {
     }
 
     /**
+     * Test the property 'targetTransient'
+     */
+    @Test
+    public void targetTransientTest() {
+        // TODO: test targetTransient
+    }
+
+    /**
      * Test the property 'transientAndStringTarget'
      */
     @Test
@@ -136,6 +155,30 @@ public class CreateSystemNotification200ResponseTest {
     }
 
     /**
+     * Test the property 'message'
+     */
+    @Test
+    public void messageTest() {
+        // TODO: test message
+    }
+
+    /**
+     * Test the property 'conversation'
+     */
+    @Test
+    public void conversationTest() {
+        // TODO: test conversation
+    }
+
+    /**
+     * Test the property 'topic'
+     */
+    @Test
+    public void topicTest() {
+        // TODO: test topic
+    }
+
+    /**
      * Test the property 'type'
      */
     @Test
@@ -149,14 +192,6 @@ public class CreateSystemNotification200ResponseTest {
     @Test
     public void courseTest() {
         // TODO: test course
-    }
-
-    /**
-     * Test the property 'topic'
-     */
-    @Test
-    public void topicTest() {
-        // TODO: test topic
     }
 
     /**

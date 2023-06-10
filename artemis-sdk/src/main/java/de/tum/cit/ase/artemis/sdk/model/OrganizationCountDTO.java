@@ -34,7 +34,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   OrganizationCountDTO.JSON_PROPERTY_NUMBER_OF_USERS,
   OrganizationCountDTO.JSON_PROPERTY_NUMBER_OF_COURSES
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class OrganizationCountDTO {
   public static final String JSON_PROPERTY_ORGANIZATION_ID = "organizationId";
   private Long organizationId;

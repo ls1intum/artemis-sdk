@@ -21,8 +21,6 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import de.tum.cit.ase.artemis.sdk.model.LockRepositoryPolicy;
-import de.tum.cit.ase.artemis.sdk.model.SubmissionPenaltyPolicy;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;

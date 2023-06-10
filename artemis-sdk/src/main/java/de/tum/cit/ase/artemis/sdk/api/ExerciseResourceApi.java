@@ -8,7 +8,6 @@ import de.tum.cit.ase.artemis.sdk.Pair;
 
 import jakarta.ws.rs.core.GenericType;
 
-import java.io.File;
 import de.tum.cit.ase.artemis.sdk.model.GetExercise200Response;
 import java.time.OffsetDateTime;
 import de.tum.cit.ase.artemis.sdk.model.StatsForDashboardDTO;
@@ -19,7 +18,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class ExerciseResourceApi {
   private ApiClient apiClient;
 
@@ -49,60 +48,6 @@ public class ExerciseResourceApi {
     this.apiClient = apiClient;
   }
 
-  /**
-   * 
-   * 
-   * @param exerciseId  (required)
-   * @param deleteRepositories  (optional, default to false)
-   * @return File
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
-       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-   */
-  public File cleanup(Long exerciseId, Boolean deleteRepositories) throws ApiException {
-    return cleanupWithHttpInfo(exerciseId, deleteRepositories).getData();
-  }
-
-  /**
-   * 
-   * 
-   * @param exerciseId  (required)
-   * @param deleteRepositories  (optional, default to false)
-   * @return ApiResponse&lt;File&gt;
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
-       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-   */
-  public ApiResponse<File> cleanupWithHttpInfo(Long exerciseId, Boolean deleteRepositories) throws ApiException {
-    // Check required parameters
-    if (exerciseId == null) {
-      throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling cleanup");
-    }
-
-    // Path parameters
-    String localVarPath = "/api/exercises/{exerciseId}/cleanup"
-            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()));
-
-    // Query parameters
-    List<Pair> localVarQueryParams = new ArrayList<>(
-            apiClient.parameterToPairs("", "deleteRepositories", deleteRepositories)
-    );
-
-    String localVarAccept = apiClient.selectHeaderAccept("*/*");
-    String localVarContentType = apiClient.selectHeaderContentType();
-    GenericType<File> localVarReturnType = new GenericType<File>() {};
-    return apiClient.invokeAPI("ExerciseResourceApi.cleanup", localVarPath, "DELETE", localVarQueryParams, null,
-                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
-                               null, localVarReturnType, false);
-  }
   /**
    * 
    * 
@@ -444,8 +389,8 @@ public class ExerciseResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public void reset(Long exerciseId) throws ApiException {
-    resetWithHttpInfo(exerciseId);
+  public void reset1(Long exerciseId) throws ApiException {
+    reset1WithHttpInfo(exerciseId);
   }
 
   /**
@@ -461,10 +406,10 @@ public class ExerciseResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<Void> resetWithHttpInfo(Long exerciseId) throws ApiException {
+  public ApiResponse<Void> reset1WithHttpInfo(Long exerciseId) throws ApiException {
     // Check required parameters
     if (exerciseId == null) {
-      throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling reset");
+      throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling reset1");
     }
 
     // Path parameters
@@ -473,7 +418,7 @@ public class ExerciseResourceApi {
 
     String localVarAccept = apiClient.selectHeaderAccept("*/*");
     String localVarContentType = apiClient.selectHeaderContentType();
-    return apiClient.invokeAPI("ExerciseResourceApi.reset", localVarPath, "DELETE", new ArrayList<>(), null,
+    return apiClient.invokeAPI("ExerciseResourceApi.reset1", localVarPath, "DELETE", new ArrayList<>(), null,
                                new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                null, null, false);
   }

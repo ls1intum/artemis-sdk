@@ -44,6 +44,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
  * ProgrammingExerciseAllOf
  */
 @JsonPropertyOrder({
+  ProgrammingExerciseAllOf.JSON_PROPERTY_TYPE,
   ProgrammingExerciseAllOf.JSON_PROPERTY_TEST_REPOSITORY_URL,
   ProgrammingExerciseAllOf.JSON_PROPERTY_AUXILIARY_REPOSITORIES,
   ProgrammingExerciseAllOf.JSON_PROPERTY_PUBLISH_BUILD_PLAN_URL,
@@ -68,14 +69,15 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ProgrammingExerciseAllOf.JSON_PROPERTY_PROJECT_TYPE,
   ProgrammingExerciseAllOf.JSON_PROPERTY_EXERCISE_HINTS,
   ProgrammingExerciseAllOf.JSON_PROPERTY_TESTWISE_COVERAGE_ENABLED,
-  ProgrammingExerciseAllOf.JSON_PROPERTY_BRANCH,
   ProgrammingExerciseAllOf.JSON_PROPERTY_RELEASE_TESTS_WITH_EXAMPLE_SOLUTION,
-  ProgrammingExerciseAllOf.JSON_PROPERTY_IS_LOCAL_SIMULATION,
   ProgrammingExerciseAllOf.JSON_PROPERTY_CHECKOUT_SOLUTION_REPOSITORY
 })
 @JsonTypeName("ProgrammingExercise_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class ProgrammingExerciseAllOf {
+  public static final String JSON_PROPERTY_TYPE = "type";
+  private String type;
+
   public static final String JSON_PROPERTY_TEST_REPOSITORY_URL = "testRepositoryUrl";
   private String testRepositoryUrl;
 
@@ -246,20 +248,39 @@ public class ProgrammingExerciseAllOf {
   public static final String JSON_PROPERTY_TESTWISE_COVERAGE_ENABLED = "testwiseCoverageEnabled";
   private Boolean testwiseCoverageEnabled;
 
-  public static final String JSON_PROPERTY_BRANCH = "branch";
-  private String branch;
-
   public static final String JSON_PROPERTY_RELEASE_TESTS_WITH_EXAMPLE_SOLUTION = "releaseTestsWithExampleSolution";
   private Boolean releaseTestsWithExampleSolution;
-
-  public static final String JSON_PROPERTY_IS_LOCAL_SIMULATION = "isLocalSimulation";
-  private Boolean isLocalSimulation;
 
   public static final String JSON_PROPERTY_CHECKOUT_SOLUTION_REPOSITORY = "checkoutSolutionRepository";
   private Boolean checkoutSolutionRepository;
 
   public ProgrammingExerciseAllOf() { 
   }
+
+  public ProgrammingExerciseAllOf type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Get type
+   * @return type
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getType() {
+    return type;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setType(String type) {
+    this.type = type;
+  }
+
 
   public ProgrammingExerciseAllOf testRepositoryUrl(String testRepositoryUrl) {
     this.testRepositoryUrl = testRepositoryUrl;
@@ -904,31 +925,6 @@ public class ProgrammingExerciseAllOf {
   }
 
 
-  public ProgrammingExerciseAllOf branch(String branch) {
-    this.branch = branch;
-    return this;
-  }
-
-   /**
-   * Get branch
-   * @return branch
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_BRANCH)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getBranch() {
-    return branch;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_BRANCH)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBranch(String branch) {
-    this.branch = branch;
-  }
-
-
   public ProgrammingExerciseAllOf releaseTestsWithExampleSolution(Boolean releaseTestsWithExampleSolution) {
     this.releaseTestsWithExampleSolution = releaseTestsWithExampleSolution;
     return this;
@@ -951,31 +947,6 @@ public class ProgrammingExerciseAllOf {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReleaseTestsWithExampleSolution(Boolean releaseTestsWithExampleSolution) {
     this.releaseTestsWithExampleSolution = releaseTestsWithExampleSolution;
-  }
-
-
-  public ProgrammingExerciseAllOf isLocalSimulation(Boolean isLocalSimulation) {
-    this.isLocalSimulation = isLocalSimulation;
-    return this;
-  }
-
-   /**
-   * Get isLocalSimulation
-   * @return isLocalSimulation
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_IS_LOCAL_SIMULATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getIsLocalSimulation() {
-    return isLocalSimulation;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_IS_LOCAL_SIMULATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setIsLocalSimulation(Boolean isLocalSimulation) {
-    this.isLocalSimulation = isLocalSimulation;
   }
 
 
@@ -1016,7 +987,8 @@ public class ProgrammingExerciseAllOf {
       return false;
     }
     ProgrammingExerciseAllOf programmingExerciseAllOf = (ProgrammingExerciseAllOf) o;
-    return Objects.equals(this.testRepositoryUrl, programmingExerciseAllOf.testRepositoryUrl) &&
+    return Objects.equals(this.type, programmingExerciseAllOf.type) &&
+        Objects.equals(this.testRepositoryUrl, programmingExerciseAllOf.testRepositoryUrl) &&
         Objects.equals(this.auxiliaryRepositories, programmingExerciseAllOf.auxiliaryRepositories) &&
         Objects.equals(this.publishBuildPlanUrl, programmingExerciseAllOf.publishBuildPlanUrl) &&
         Objects.equals(this.allowOnlineEditor, programmingExerciseAllOf.allowOnlineEditor) &&
@@ -1040,21 +1012,20 @@ public class ProgrammingExerciseAllOf {
         Objects.equals(this.projectType, programmingExerciseAllOf.projectType) &&
         Objects.equals(this.exerciseHints, programmingExerciseAllOf.exerciseHints) &&
         Objects.equals(this.testwiseCoverageEnabled, programmingExerciseAllOf.testwiseCoverageEnabled) &&
-        Objects.equals(this.branch, programmingExerciseAllOf.branch) &&
         Objects.equals(this.releaseTestsWithExampleSolution, programmingExerciseAllOf.releaseTestsWithExampleSolution) &&
-        Objects.equals(this.isLocalSimulation, programmingExerciseAllOf.isLocalSimulation) &&
         Objects.equals(this.checkoutSolutionRepository, programmingExerciseAllOf.checkoutSolutionRepository);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(testRepositoryUrl, auxiliaryRepositories, publishBuildPlanUrl, allowOnlineEditor, allowOfflineIde, staticCodeAnalysisEnabled, maxStaticCodeAnalysisPenalty, programmingLanguage, packageName, sequentialTestRuns, showTestNamesToStudents, buildAndTestStudentSubmissionsAfterDueDate, testCasesChanged, projectKey, buildPlanAccessSecret, templateParticipation, solutionParticipation, testCases, tasks, staticCodeAnalysisCategories, submissionPolicy, projectType, exerciseHints, testwiseCoverageEnabled, branch, releaseTestsWithExampleSolution, isLocalSimulation, checkoutSolutionRepository);
+    return Objects.hash(type, testRepositoryUrl, auxiliaryRepositories, publishBuildPlanUrl, allowOnlineEditor, allowOfflineIde, staticCodeAnalysisEnabled, maxStaticCodeAnalysisPenalty, programmingLanguage, packageName, sequentialTestRuns, showTestNamesToStudents, buildAndTestStudentSubmissionsAfterDueDate, testCasesChanged, projectKey, buildPlanAccessSecret, templateParticipation, solutionParticipation, testCases, tasks, staticCodeAnalysisCategories, submissionPolicy, projectType, exerciseHints, testwiseCoverageEnabled, releaseTestsWithExampleSolution, checkoutSolutionRepository);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ProgrammingExerciseAllOf {\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    testRepositoryUrl: ").append(toIndentedString(testRepositoryUrl)).append("\n");
     sb.append("    auxiliaryRepositories: ").append(toIndentedString(auxiliaryRepositories)).append("\n");
     sb.append("    publishBuildPlanUrl: ").append(toIndentedString(publishBuildPlanUrl)).append("\n");
@@ -1079,9 +1050,7 @@ public class ProgrammingExerciseAllOf {
     sb.append("    projectType: ").append(toIndentedString(projectType)).append("\n");
     sb.append("    exerciseHints: ").append(toIndentedString(exerciseHints)).append("\n");
     sb.append("    testwiseCoverageEnabled: ").append(toIndentedString(testwiseCoverageEnabled)).append("\n");
-    sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
     sb.append("    releaseTestsWithExampleSolution: ").append(toIndentedString(releaseTestsWithExampleSolution)).append("\n");
-    sb.append("    isLocalSimulation: ").append(toIndentedString(isLocalSimulation)).append("\n");
     sb.append("    checkoutSolutionRepository: ").append(toIndentedString(checkoutSolutionRepository)).append("\n");
     sb.append("}");
     return sb.toString();

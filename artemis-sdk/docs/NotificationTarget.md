@@ -16,6 +16,7 @@
 |**exercise** | **Long** |  |  [optional] |
 |**exam** | **Long** |  |  [optional] |
 |**lecture** | **Long** |  |  [optional] |
+|**conversation** | **Long** |  |  [optional] |
 
 
 

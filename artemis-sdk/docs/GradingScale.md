@@ -14,6 +14,8 @@
 |**noParticipationGrade** | **String** |  |  [optional] |
 |**course** | [**Course**](Course.md) |  |  [optional] |
 |**exam** | [**Exam**](Exam.md) |  |  [optional] |
+|**presentationsNumber** | **Integer** |  |  [optional] |
+|**presentationsWeight** | **Double** |  |  [optional] |
 |**gradeSteps** | [**Set&lt;GradeStep&gt;**](GradeStep.md) |  |  [optional] |
 |**bonusFrom** | [**Set&lt;Bonus&gt;**](Bonus.md) |  |  [optional] |
 

@@ -30,12 +30,16 @@ import de.tum.cit.ase.artemis.sdk.JSON;
  * TextExerciseAllOf
  */
 @JsonPropertyOrder({
+  TextExerciseAllOf.JSON_PROPERTY_TYPE,
   TextExerciseAllOf.JSON_PROPERTY_EXAMPLE_SOLUTION,
   TextExerciseAllOf.JSON_PROPERTY_AUTOMATIC_ASSESSMENT_ENABLED
 })
 @JsonTypeName("TextExercise_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class TextExerciseAllOf {
+  public static final String JSON_PROPERTY_TYPE = "type";
+  private String type;
+
   public static final String JSON_PROPERTY_EXAMPLE_SOLUTION = "exampleSolution";
   private String exampleSolution;
 
@@ -44,6 +48,31 @@ public class TextExerciseAllOf {
 
   public TextExerciseAllOf() { 
   }
+
+  public TextExerciseAllOf type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Get type
+   * @return type
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getType() {
+    return type;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setType(String type) {
+    this.type = type;
+  }
+
 
   public TextExerciseAllOf exampleSolution(String exampleSolution) {
     this.exampleSolution = exampleSolution;
@@ -107,19 +136,21 @@ public class TextExerciseAllOf {
       return false;
     }
     TextExerciseAllOf textExerciseAllOf = (TextExerciseAllOf) o;
-    return Objects.equals(this.exampleSolution, textExerciseAllOf.exampleSolution) &&
+    return Objects.equals(this.type, textExerciseAllOf.type) &&
+        Objects.equals(this.exampleSolution, textExerciseAllOf.exampleSolution) &&
         Objects.equals(this.automaticAssessmentEnabled, textExerciseAllOf.automaticAssessmentEnabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(exampleSolution, automaticAssessmentEnabled);
+    return Objects.hash(type, exampleSolution, automaticAssessmentEnabled);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TextExerciseAllOf {\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    exampleSolution: ").append(toIndentedString(exampleSolution)).append("\n");
     sb.append("    automaticAssessmentEnabled: ").append(toIndentedString(automaticAssessmentEnabled)).append("\n");
     sb.append("}");

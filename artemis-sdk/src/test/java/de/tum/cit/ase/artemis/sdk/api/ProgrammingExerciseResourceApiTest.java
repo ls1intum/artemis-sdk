@@ -19,6 +19,7 @@ import de.tum.cit.ase.artemis.sdk.model.AuxiliaryRepository;
 import de.tum.cit.ase.artemis.sdk.model.BuildLogStatisticsDTO;
 import de.tum.cit.ase.artemis.sdk.model.PageableSearchDTOString;
 import de.tum.cit.ase.artemis.sdk.model.ProgrammingExercise;
+import de.tum.cit.ase.artemis.sdk.model.ProgrammingExerciseResetOptionsDTO;
 import de.tum.cit.ase.artemis.sdk.model.ProgrammingExerciseTestCaseStateDTO;
 import de.tum.cit.ase.artemis.sdk.model.SearchResultPageDTOProgrammingExercise;
 
@@ -212,9 +213,10 @@ public class ProgrammingExerciseResourceApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void recreateBuildPlansTest() throws ApiException {
+    public void resetTest() throws ApiException {
         //Long exerciseId = null;
-        //api.recreateBuildPlans(exerciseId);
+        //ProgrammingExerciseResetOptionsDTO programmingExerciseResetOptionsDTO = null;
+        //api.reset(exerciseId, programmingExerciseResetOptionsDTO);
         // TODO: test validations
     }
 

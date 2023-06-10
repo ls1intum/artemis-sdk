@@ -19,6 +19,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import de.tum.cit.ase.artemis.sdk.model.Attachment;
+import de.tum.cit.ase.artemis.sdk.model.Slide;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
@@ -52,6 +55,14 @@ public class AttachmentUnitAllOfTest {
     @Test
     public void attachmentTest() {
         // TODO: test attachment
+    }
+
+    /**
+     * Test the property 'slides'
+     */
+    @Test
+    public void slidesTest() {
+        // TODO: test slides
     }
 
 }

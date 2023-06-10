@@ -210,6 +210,22 @@ public class GetConversationsOfUser200ResponseInnerTest {
     }
 
     /**
+     * Test the property 'tutorialGroupId'
+     */
+    @Test
+    public void tutorialGroupIdTest() {
+        // TODO: test tutorialGroupId
+    }
+
+    /**
+     * Test the property 'tutorialGroupTitle'
+     */
+    @Test
+    public void tutorialGroupTitleTest() {
+        // TODO: test tutorialGroupTitle
+    }
+
+    /**
      * Test the property 'members'
      */
     @Test

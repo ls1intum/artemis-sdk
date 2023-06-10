@@ -10,18 +10,20 @@ All URIs are relative to *http://localhost:8080*
 | [**addTutorToCourse**](CourseResourceApi.md#addTutorToCourse) | **POST** /api/courses/{courseId}/tutors/{tutorLogin} |  |
 | [**addUsersToCourseGroup**](CourseResourceApi.md#addUsersToCourseGroup) | **POST** /api/courses/{courseId}/{courseGroup} |  |
 | [**archiveCourse**](CourseResourceApi.md#archiveCourse) | **PUT** /api/courses/{courseId}/archive |  |
-| [**cleanup1**](CourseResourceApi.md#cleanup1) | **DELETE** /api/courses/{courseId}/cleanup |  |
+| [**cleanup**](CourseResourceApi.md#cleanup) | **DELETE** /api/courses/{courseId}/cleanup |  |
 | [**downloadCourseArchive**](CourseResourceApi.md#downloadCourseArchive) | **GET** /api/courses/{courseId}/download-archive |  |
+| [**enrollInCourse**](CourseResourceApi.md#enrollInCourse) | **POST** /api/courses/{courseId}/enroll |  |
 | [**getActiveStudentsForCourseDetailView**](CourseResourceApi.md#getActiveStudentsForCourseDetailView) | **GET** /api/courses/{courseId}/statistics |  |
 | [**getActiveStudentsForCourseLiveTime**](CourseResourceApi.md#getActiveStudentsForCourseLiveTime) | **GET** /api/courses/{courseId}/statistics-lifetime-overview |  |
 | [**getAllCourses**](CourseResourceApi.md#getAllCourses) | **GET** /api/courses |  |
 | [**getAllCoursesForDashboard**](CourseResourceApi.md#getAllCoursesForDashboard) | **GET** /api/courses/for-dashboard |  |
+| [**getAllCoursesForEnrollment**](CourseResourceApi.md#getAllCoursesForEnrollment) | **GET** /api/courses/for-enrollment |  |
 | [**getAllCoursesForManagementOverview**](CourseResourceApi.md#getAllCoursesForManagementOverview) | **GET** /api/courses/course-management-overview |  |
 | [**getAllCoursesForNotifications**](CourseResourceApi.md#getAllCoursesForNotifications) | **GET** /api/courses/for-notifications |  |
-| [**getAllCoursesToRegister**](CourseResourceApi.md#getAllCoursesToRegister) | **GET** /api/courses/for-registration |  |
 | [**getAllCoursesWithQuizExercises**](CourseResourceApi.md#getAllCoursesWithQuizExercises) | **GET** /api/courses/courses-with-quiz |  |
 | [**getAllCoursesWithUserStats**](CourseResourceApi.md#getAllCoursesWithUserStats) | **GET** /api/courses/with-user-stats |  |
 | [**getAllEditorsInCourse**](CourseResourceApi.md#getAllEditorsInCourse) | **GET** /api/courses/{courseId}/editors |  |
+| [**getAllGroupsForAllCourses**](CourseResourceApi.md#getAllGroupsForAllCourses) | **GET** /api/courses/groups |  |
 | [**getAllInstructorsInCourse**](CourseResourceApi.md#getAllInstructorsInCourse) | **GET** /api/courses/{courseId}/instructors |  |
 | [**getAllStudentsInCourse**](CourseResourceApi.md#getAllStudentsInCourse) | **GET** /api/courses/{courseId}/students |  |
 | [**getAllTutorsInCourse**](CourseResourceApi.md#getAllTutorsInCourse) | **GET** /api/courses/{courseId}/tutors |  |
@@ -30,6 +32,7 @@ All URIs are relative to *http://localhost:8080*
 | [**getCourseDTOForDetailView**](CourseResourceApi.md#getCourseDTOForDetailView) | **GET** /api/courses/{courseId}/management-detail |  |
 | [**getCourseForAssessmentDashboard**](CourseResourceApi.md#getCourseForAssessmentDashboard) | **GET** /api/courses/{courseId}/for-assessment-dashboard |  |
 | [**getCourseForDashboard**](CourseResourceApi.md#getCourseForDashboard) | **GET** /api/courses/{courseId}/for-dashboard |  |
+| [**getCourseForEnrollment**](CourseResourceApi.md#getCourseForEnrollment) | **GET** /api/courses/{courseId}/for-enrollment |  |
 | [**getCourseTitle**](CourseResourceApi.md#getCourseTitle) | **GET** /api/courses/{courseId}/title |  |
 | [**getCourseWithExercises**](CourseResourceApi.md#getCourseWithExercises) | **GET** /api/courses/{courseId}/with-exercises |  |
 | [**getCourseWithOrganizations**](CourseResourceApi.md#getCourseWithOrganizations) | **GET** /api/courses/{courseId}/with-organizations |  |
@@ -37,7 +40,6 @@ All URIs are relative to *http://localhost:8080*
 | [**getExercisesForCourseOverview**](CourseResourceApi.md#getExercisesForCourseOverview) | **GET** /api/courses/exercises-for-management-overview |  |
 | [**getLockedSubmissionsForCourse**](CourseResourceApi.md#getLockedSubmissionsForCourse) | **GET** /api/courses/{courseId}/lockedSubmissions |  |
 | [**getStatsForAssessmentDashboard**](CourseResourceApi.md#getStatsForAssessmentDashboard) | **GET** /api/courses/{courseId}/stats-for-assessment-dashboard |  |
-| [**registerForCourse**](CourseResourceApi.md#registerForCourse) | **POST** /api/courses/{courseId}/register |  |
 | [**removeEditorFromCourse**](CourseResourceApi.md#removeEditorFromCourse) | **DELETE** /api/courses/{courseId}/editors/{editorLogin} |  |
 | [**removeInstructorFromCourse**](CourseResourceApi.md#removeInstructorFromCourse) | **DELETE** /api/courses/{courseId}/instructors/{instructorLogin} |  |
 | [**removeStudentFromCourse**](CourseResourceApi.md#removeStudentFromCourse) | **DELETE** /api/courses/{courseId}/students/{studentLogin} |  |
@@ -441,9 +443,9 @@ No authorization required
 | **200** | OK |  -  |
 
 
-## cleanup1
+## cleanup
 
-> File cleanup1(courseId)
+> File cleanup(courseId)
 
 
 
@@ -465,10 +467,10 @@ public class Example {
         CourseResourceApi apiInstance = new CourseResourceApi(defaultClient);
         Long courseId = 56L; // Long | 
         try {
-            File result = apiInstance.cleanup1(courseId);
+            File result = apiInstance.cleanup(courseId);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling CourseResourceApi#cleanup1");
+            System.err.println("Exception when calling CourseResourceApi#cleanup");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -552,6 +554,70 @@ public class Example {
 ### Return type
 
 [**File**](File.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **503** | Service Unavailable |  -  |
+| **200** | OK |  -  |
+
+
+## enrollInCourse
+
+> User enrollInCourse(courseId)
+
+
+
+### Example
+
+```java
+// Import classes:
+import de.tum.cit.ase.artemis.sdk.ApiClient;
+import de.tum.cit.ase.artemis.sdk.ApiException;
+import de.tum.cit.ase.artemis.sdk.Configuration;
+import de.tum.cit.ase.artemis.sdk.model.*;
+import de.tum.cit.ase.artemis.sdk.api.CourseResourceApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8080");
+
+        CourseResourceApi apiInstance = new CourseResourceApi(defaultClient);
+        Long courseId = 56L; // Long | 
+        try {
+            User result = apiInstance.enrollInCourse(courseId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CourseResourceApi#enrollInCourse");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **courseId** | **Long**|  | |
+
+### Return type
+
+[**User**](User.md)
 
 ### Authorization
 
@@ -765,7 +831,7 @@ No authorization required
 
 ## getAllCoursesForDashboard
 
-> List&lt;Course&gt; getAllCoursesForDashboard()
+> List&lt;CourseForDashboardDTO&gt; getAllCoursesForDashboard()
 
 
 
@@ -786,10 +852,70 @@ public class Example {
 
         CourseResourceApi apiInstance = new CourseResourceApi(defaultClient);
         try {
-            List<Course> result = apiInstance.getAllCoursesForDashboard();
+            List<CourseForDashboardDTO> result = apiInstance.getAllCoursesForDashboard();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CourseResourceApi#getAllCoursesForDashboard");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List&lt;CourseForDashboardDTO&gt;**](CourseForDashboardDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **503** | Service Unavailable |  -  |
+| **200** | OK |  -  |
+
+
+## getAllCoursesForEnrollment
+
+> List&lt;Course&gt; getAllCoursesForEnrollment()
+
+
+
+### Example
+
+```java
+// Import classes:
+import de.tum.cit.ase.artemis.sdk.ApiClient;
+import de.tum.cit.ase.artemis.sdk.ApiException;
+import de.tum.cit.ase.artemis.sdk.Configuration;
+import de.tum.cit.ase.artemis.sdk.model.*;
+import de.tum.cit.ase.artemis.sdk.api.CourseResourceApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8080");
+
+        CourseResourceApi apiInstance = new CourseResourceApi(defaultClient);
+        try {
+            List<Course> result = apiInstance.getAllCoursesForEnrollment();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CourseResourceApi#getAllCoursesForEnrollment");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -889,7 +1015,7 @@ No authorization required
 
 ## getAllCoursesForNotifications
 
-> List&lt;Course&gt; getAllCoursesForNotifications()
+> Set&lt;Course&gt; getAllCoursesForNotifications()
 
 
 
@@ -910,7 +1036,7 @@ public class Example {
 
         CourseResourceApi apiInstance = new CourseResourceApi(defaultClient);
         try {
-            List<Course> result = apiInstance.getAllCoursesForNotifications();
+            Set<Course> result = apiInstance.getAllCoursesForNotifications();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CourseResourceApi#getAllCoursesForNotifications");
@@ -929,67 +1055,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List&lt;Course&gt;**](Course.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: */*
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **503** | Service Unavailable |  -  |
-| **200** | OK |  -  |
-
-
-## getAllCoursesToRegister
-
-> List&lt;Course&gt; getAllCoursesToRegister()
-
-
-
-### Example
-
-```java
-// Import classes:
-import de.tum.cit.ase.artemis.sdk.ApiClient;
-import de.tum.cit.ase.artemis.sdk.ApiException;
-import de.tum.cit.ase.artemis.sdk.Configuration;
-import de.tum.cit.ase.artemis.sdk.model.*;
-import de.tum.cit.ase.artemis.sdk.api.CourseResourceApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://localhost:8080");
-
-        CourseResourceApi apiInstance = new CourseResourceApi(defaultClient);
-        try {
-            List<Course> result = apiInstance.getAllCoursesToRegister();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling CourseResourceApi#getAllCoursesToRegister");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**List&lt;Course&gt;**](Course.md)
+[**Set&lt;Course&gt;**](Course.md)
 
 ### Authorization
 
@@ -1178,6 +1244,66 @@ public class Example {
 ### Return type
 
 [**List&lt;User&gt;**](User.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **503** | Service Unavailable |  -  |
+| **200** | OK |  -  |
+
+
+## getAllGroupsForAllCourses
+
+> Set&lt;String&gt; getAllGroupsForAllCourses()
+
+
+
+### Example
+
+```java
+// Import classes:
+import de.tum.cit.ase.artemis.sdk.ApiClient;
+import de.tum.cit.ase.artemis.sdk.ApiException;
+import de.tum.cit.ase.artemis.sdk.Configuration;
+import de.tum.cit.ase.artemis.sdk.model.*;
+import de.tum.cit.ase.artemis.sdk.api.CourseResourceApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8080");
+
+        CourseResourceApi apiInstance = new CourseResourceApi(defaultClient);
+        try {
+            Set<String> result = apiInstance.getAllGroupsForAllCourses();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CourseResourceApi#getAllGroupsForAllCourses");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**Set&lt;String&gt;**
 
 ### Authorization
 
@@ -1645,7 +1771,7 @@ No authorization required
 
 ## getCourseForDashboard
 
-> Course getCourseForDashboard(courseId, refresh)
+> CourseForDashboardDTO getCourseForDashboard(courseId, refresh)
 
 
 
@@ -1668,7 +1794,7 @@ public class Example {
         Long courseId = 56L; // Long | 
         Boolean refresh = false; // Boolean | 
         try {
-            Course result = apiInstance.getCourseForDashboard(courseId, refresh);
+            CourseForDashboardDTO result = apiInstance.getCourseForDashboard(courseId, refresh);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CourseResourceApi#getCourseForDashboard");
@@ -1688,6 +1814,70 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **courseId** | **Long**|  | |
 | **refresh** | **Boolean**|  | [optional] [default to false] |
+
+### Return type
+
+[**CourseForDashboardDTO**](CourseForDashboardDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **503** | Service Unavailable |  -  |
+| **200** | OK |  -  |
+
+
+## getCourseForEnrollment
+
+> Course getCourseForEnrollment(courseId)
+
+
+
+### Example
+
+```java
+// Import classes:
+import de.tum.cit.ase.artemis.sdk.ApiClient;
+import de.tum.cit.ase.artemis.sdk.ApiException;
+import de.tum.cit.ase.artemis.sdk.Configuration;
+import de.tum.cit.ase.artemis.sdk.model.*;
+import de.tum.cit.ase.artemis.sdk.api.CourseResourceApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8080");
+
+        CourseResourceApi apiInstance = new CourseResourceApi(defaultClient);
+        Long courseId = 56L; // Long | 
+        try {
+            Course result = apiInstance.getCourseForEnrollment(courseId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CourseResourceApi#getCourseForEnrollment");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **courseId** | **Long**|  | |
 
 ### Return type
 
@@ -2140,70 +2330,6 @@ public class Example {
 ### Return type
 
 [**StatsForDashboardDTO**](StatsForDashboardDTO.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: */*
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **503** | Service Unavailable |  -  |
-| **200** | OK |  -  |
-
-
-## registerForCourse
-
-> User registerForCourse(courseId)
-
-
-
-### Example
-
-```java
-// Import classes:
-import de.tum.cit.ase.artemis.sdk.ApiClient;
-import de.tum.cit.ase.artemis.sdk.ApiException;
-import de.tum.cit.ase.artemis.sdk.Configuration;
-import de.tum.cit.ase.artemis.sdk.model.*;
-import de.tum.cit.ase.artemis.sdk.api.CourseResourceApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://localhost:8080");
-
-        CourseResourceApi apiInstance = new CourseResourceApi(defaultClient);
-        Long courseId = 56L; // Long | 
-        try {
-            User result = apiInstance.registerForCourse(courseId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling CourseResourceApi#registerForCourse");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **courseId** | **Long**|  | |
-
-### Return type
-
-[**User**](User.md)
 
 ### Authorization
 

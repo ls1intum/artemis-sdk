@@ -69,6 +69,22 @@ public class SingleUserNotificationTest {
     }
 
     /**
+     * Test the property 'textIsPlaceholder'
+     */
+    @Test
+    public void textIsPlaceholderTest() {
+        // TODO: test textIsPlaceholder
+    }
+
+    /**
+     * Test the property 'placeholderValues'
+     */
+    @Test
+    public void placeholderValuesTest() {
+        // TODO: test placeholderValues
+    }
+
+    /**
      * Test the property 'notificationDate'
      */
     @Test
@@ -82,14 +98,6 @@ public class SingleUserNotificationTest {
     @Test
     public void targetTest() {
         // TODO: test target
-    }
-
-    /**
-     * Test the property 'targetTransient'
-     */
-    @Test
-    public void targetTransientTest() {
-        // TODO: test targetTransient
     }
 
     /**
@@ -114,6 +122,14 @@ public class SingleUserNotificationTest {
     @Test
     public void authorTest() {
         // TODO: test author
+    }
+
+    /**
+     * Test the property 'targetTransient'
+     */
+    @Test
+    public void targetTransientTest() {
+        // TODO: test targetTransient
     }
 
     /**

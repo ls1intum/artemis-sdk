@@ -21,7 +21,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class ParticipationResourceApi {
   private ApiClient apiClient;
 
@@ -259,7 +259,7 @@ public class ParticipationResourceApi {
    * 
    * 
    * @param exerciseId  (required)
-   * @param withLatestResult  (optional, default to false)
+   * @param withLatestResults  (optional, default to false)
    * @return Set&lt;StudentParticipation&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -269,15 +269,15 @@ public class ParticipationResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public Set<StudentParticipation> getAllParticipationsForExercise(Long exerciseId, Boolean withLatestResult) throws ApiException {
-    return getAllParticipationsForExerciseWithHttpInfo(exerciseId, withLatestResult).getData();
+  public Set<StudentParticipation> getAllParticipationsForExercise(Long exerciseId, Boolean withLatestResults) throws ApiException {
+    return getAllParticipationsForExerciseWithHttpInfo(exerciseId, withLatestResults).getData();
   }
 
   /**
    * 
    * 
    * @param exerciseId  (required)
-   * @param withLatestResult  (optional, default to false)
+   * @param withLatestResults  (optional, default to false)
    * @return ApiResponse&lt;Set&lt;StudentParticipation&gt;&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -287,7 +287,7 @@ public class ParticipationResourceApi {
        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<Set<StudentParticipation>> getAllParticipationsForExerciseWithHttpInfo(Long exerciseId, Boolean withLatestResult) throws ApiException {
+  public ApiResponse<Set<StudentParticipation>> getAllParticipationsForExerciseWithHttpInfo(Long exerciseId, Boolean withLatestResults) throws ApiException {
     // Check required parameters
     if (exerciseId == null) {
       throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling getAllParticipationsForExercise");
@@ -299,7 +299,7 @@ public class ParticipationResourceApi {
 
     // Query parameters
     List<Pair> localVarQueryParams = new ArrayList<>(
-            apiClient.parameterToPairs("", "withLatestResult", withLatestResult)
+            apiClient.parameterToPairs("", "withLatestResults", withLatestResults)
     );
 
     String localVarAccept = apiClient.selectHeaderAccept("*/*");

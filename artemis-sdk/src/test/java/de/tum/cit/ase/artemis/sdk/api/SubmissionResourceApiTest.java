@@ -41,8 +41,8 @@ public class SubmissionResourceApiTest {
      */
     @Test
     public void deleteSubmissionTest() throws ApiException {
-        //Long id = null;
-        //api.deleteSubmission(id);
+        //Long submissionId = null;
+        //api.deleteSubmission(submissionId);
         // TODO: test validations
     }
 

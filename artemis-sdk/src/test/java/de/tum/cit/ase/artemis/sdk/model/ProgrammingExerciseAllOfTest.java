@@ -52,6 +52,14 @@ public class ProgrammingExerciseAllOfTest {
     }
 
     /**
+     * Test the property 'type'
+     */
+    @Test
+    public void typeTest() {
+        // TODO: test type
+    }
+
+    /**
      * Test the property 'testRepositoryUrl'
      */
     @Test
@@ -244,27 +252,11 @@ public class ProgrammingExerciseAllOfTest {
     }
 
     /**
-     * Test the property 'branch'
-     */
-    @Test
-    public void branchTest() {
-        // TODO: test branch
-    }
-
-    /**
      * Test the property 'releaseTestsWithExampleSolution'
      */
     @Test
     public void releaseTestsWithExampleSolutionTest() {
         // TODO: test releaseTestsWithExampleSolution
-    }
-
-    /**
-     * Test the property 'isLocalSimulation'
-     */
-    @Test
-    public void isLocalSimulationTest() {
-        // TODO: test isLocalSimulation
     }
 
     /**

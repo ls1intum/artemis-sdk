@@ -34,7 +34,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   GradeDTO.JSON_PROPERTY_IS_PASSING_GRADE,
   GradeDTO.JSON_PROPERTY_GRADE_TYPE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class GradeDTO {
   public static final String JSON_PROPERTY_GRADE_NAME = "gradeName";
   private String gradeName;

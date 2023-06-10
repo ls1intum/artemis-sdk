@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**loopback** | **Object** |  |  [optional] |
 |**addressCreator** | [**IPAddressCreatorObjectObjectObjectObjectObject**](IPAddressCreatorObjectObjectObjectObjectObject.md) |  |  [optional] |
+|**loopback** | **Object** |  |  [optional] |
 |**standardLoopbackStrings** | **List&lt;String&gt;** |  |  [optional] |
 |**ipv4** | **Boolean** |  |  [optional] |
 |**ipversion** | [**IpversionEnum**](#IpversionEnum) |  |  [optional] |

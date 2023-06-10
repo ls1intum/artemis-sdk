@@ -22,13 +22,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import de.tum.cit.ase.artemis.sdk.model.AttachmentUnit;
-import de.tum.cit.ase.artemis.sdk.model.ExerciseUnit;
-import de.tum.cit.ase.artemis.sdk.model.LearningGoal;
+import de.tum.cit.ase.artemis.sdk.model.Competency;
 import de.tum.cit.ase.artemis.sdk.model.Lecture;
-import de.tum.cit.ase.artemis.sdk.model.OnlineUnit;
-import de.tum.cit.ase.artemis.sdk.model.TextUnit;
-import de.tum.cit.ase.artemis.sdk.model.VideoUnit;
 import java.time.OffsetDateTime;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -76,14 +71,6 @@ public class LectureUnitTest {
     }
 
     /**
-     * Test the property 'order'
-     */
-    @Test
-    public void orderTest() {
-        // TODO: test order
-    }
-
-    /**
      * Test the property 'lecture'
      */
     @Test
@@ -92,19 +79,11 @@ public class LectureUnitTest {
     }
 
     /**
-     * Test the property 'learningGoals'
+     * Test the property 'competencies'
      */
     @Test
-    public void learningGoalsTest() {
-        // TODO: test learningGoals
-    }
-
-    /**
-     * Test the property 'visibleToStudents'
-     */
-    @Test
-    public void visibleToStudentsTest() {
-        // TODO: test visibleToStudents
+    public void competenciesTest() {
+        // TODO: test competencies
     }
 
     /**
@@ -113,6 +92,14 @@ public class LectureUnitTest {
     @Test
     public void completedTest() {
         // TODO: test completed
+    }
+
+    /**
+     * Test the property 'visibleToStudents'
+     */
+    @Test
+    public void visibleToStudentsTest() {
+        // TODO: test visibleToStudents
     }
 
     /**

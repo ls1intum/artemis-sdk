@@ -13,6 +13,8 @@
 |**maxPoints** | **Integer** |  |  [optional] |
 |**plagiarismGrade** | **String** |  |  [optional] |
 |**noParticipationGrade** | **String** |  |  [optional] |
+|**presentationsNumber** | **Integer** |  |  [optional] |
+|**presentationsWeight** | **Double** |  |  [optional] |
 
 
 

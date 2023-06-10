@@ -22,8 +22,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import de.tum.cit.ase.artemis.sdk.model.Competency;
 import de.tum.cit.ase.artemis.sdk.model.Exercise;
-import de.tum.cit.ase.artemis.sdk.model.LearningGoal;
 import de.tum.cit.ase.artemis.sdk.model.Lecture;
 import de.tum.cit.ase.artemis.sdk.model.LectureUnit;
 import java.time.OffsetDateTime;
@@ -73,14 +73,6 @@ public class ExerciseUnitTest {
     }
 
     /**
-     * Test the property 'order'
-     */
-    @Test
-    public void orderTest() {
-        // TODO: test order
-    }
-
-    /**
      * Test the property 'lecture'
      */
     @Test
@@ -89,19 +81,11 @@ public class ExerciseUnitTest {
     }
 
     /**
-     * Test the property 'learningGoals'
+     * Test the property 'competencies'
      */
     @Test
-    public void learningGoalsTest() {
-        // TODO: test learningGoals
-    }
-
-    /**
-     * Test the property 'visibleToStudents'
-     */
-    @Test
-    public void visibleToStudentsTest() {
-        // TODO: test visibleToStudents
+    public void competenciesTest() {
+        // TODO: test competencies
     }
 
     /**
@@ -110,6 +94,14 @@ public class ExerciseUnitTest {
     @Test
     public void completedTest() {
         // TODO: test completed
+    }
+
+    /**
+     * Test the property 'visibleToStudents'
+     */
+    @Test
+    public void visibleToStudentsTest() {
+        // TODO: test visibleToStudents
     }
 
     /**

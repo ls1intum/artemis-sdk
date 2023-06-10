@@ -16,6 +16,7 @@ package de.tum.cit.ase.artemis.sdk.api;
 import de.tum.cit.ase.artemis.sdk.*;
 import de.tum.cit.ase.artemis.sdk.auth.*;
 import de.tum.cit.ase.artemis.sdk.model.Course;
+import de.tum.cit.ase.artemis.sdk.model.CourseForDashboardDTO;
 import de.tum.cit.ase.artemis.sdk.model.CourseManagementDetailViewDTO;
 import de.tum.cit.ase.artemis.sdk.model.CourseManagementOverviewStatisticsDTO;
 import java.io.File;
@@ -114,9 +115,9 @@ public class CourseResourceApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void cleanup1Test() throws ApiException {
+    public void cleanupTest() throws ApiException {
         //Long courseId = null;
-        //File response = api.cleanup1(courseId);
+        //File response = api.cleanup(courseId);
         // TODO: test validations
     }
 
@@ -127,6 +128,16 @@ public class CourseResourceApiTest {
     public void downloadCourseArchiveTest() throws ApiException {
         //Long courseId = null;
         //File response = api.downloadCourseArchive(courseId);
+        // TODO: test validations
+    }
+
+    /**
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void enrollInCourseTest() throws ApiException {
+        //Long courseId = null;
+        //User response = api.enrollInCourse(courseId);
         // TODO: test validations
     }
 
@@ -166,7 +177,16 @@ public class CourseResourceApiTest {
      */
     @Test
     public void getAllCoursesForDashboardTest() throws ApiException {
-        //List<Course> response = api.getAllCoursesForDashboard();
+        //List<CourseForDashboardDTO> response = api.getAllCoursesForDashboard();
+        // TODO: test validations
+    }
+
+    /**
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getAllCoursesForEnrollmentTest() throws ApiException {
+        //List<Course> response = api.getAllCoursesForEnrollment();
         // TODO: test validations
     }
 
@@ -185,16 +205,7 @@ public class CourseResourceApiTest {
      */
     @Test
     public void getAllCoursesForNotificationsTest() throws ApiException {
-        //List<Course> response = api.getAllCoursesForNotifications();
-        // TODO: test validations
-    }
-
-    /**
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getAllCoursesToRegisterTest() throws ApiException {
-        //List<Course> response = api.getAllCoursesToRegister();
+        //Set<Course> response = api.getAllCoursesForNotifications();
         // TODO: test validations
     }
 
@@ -224,6 +235,15 @@ public class CourseResourceApiTest {
     public void getAllEditorsInCourseTest() throws ApiException {
         //Long courseId = null;
         //List<User> response = api.getAllEditorsInCourse(courseId);
+        // TODO: test validations
+    }
+
+    /**
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getAllGroupsForAllCoursesTest() throws ApiException {
+        //Set<String> response = api.getAllGroupsForAllCourses();
         // TODO: test validations
     }
 
@@ -304,7 +324,17 @@ public class CourseResourceApiTest {
     public void getCourseForDashboardTest() throws ApiException {
         //Long courseId = null;
         //Boolean refresh = null;
-        //Course response = api.getCourseForDashboard(courseId, refresh);
+        //CourseForDashboardDTO response = api.getCourseForDashboard(courseId, refresh);
+        // TODO: test validations
+    }
+
+    /**
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getCourseForEnrollmentTest() throws ApiException {
+        //Long courseId = null;
+        //Course response = api.getCourseForEnrollment(courseId);
         // TODO: test validations
     }
 
@@ -375,16 +405,6 @@ public class CourseResourceApiTest {
     public void getStatsForAssessmentDashboardTest() throws ApiException {
         //Long courseId = null;
         //StatsForDashboardDTO response = api.getStatsForAssessmentDashboard(courseId);
-        // TODO: test validations
-    }
-
-    /**
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void registerForCourseTest() throws ApiException {
-        //Long courseId = null;
-        //User response = api.registerForCourse(courseId);
         // TODO: test validations
     }
 

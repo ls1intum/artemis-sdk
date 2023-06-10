@@ -39,10 +39,10 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   StudentParticipationAllOf.JSON_PROPERTY_PARTICIPANT_NAME
 })
 @JsonTypeName("StudentParticipation_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class StudentParticipationAllOf {
   public static final String JSON_PROPERTY_PRESENTATION_SCORE = "presentationScore";
-  private Integer presentationScore;
+  private Double presentationScore;
 
   public static final String JSON_PROPERTY_STUDENT = "student";
   private User student;
@@ -59,7 +59,7 @@ public class StudentParticipationAllOf {
   public StudentParticipationAllOf() { 
   }
 
-  public StudentParticipationAllOf presentationScore(Integer presentationScore) {
+  public StudentParticipationAllOf presentationScore(Double presentationScore) {
     this.presentationScore = presentationScore;
     return this;
   }
@@ -72,14 +72,14 @@ public class StudentParticipationAllOf {
   @JsonProperty(JSON_PROPERTY_PRESENTATION_SCORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getPresentationScore() {
+  public Double getPresentationScore() {
     return presentationScore;
   }
 
 
   @JsonProperty(JSON_PROPERTY_PRESENTATION_SCORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPresentationScore(Integer presentationScore) {
+  public void setPresentationScore(Double presentationScore) {
     this.presentationScore = presentationScore;
   }
 

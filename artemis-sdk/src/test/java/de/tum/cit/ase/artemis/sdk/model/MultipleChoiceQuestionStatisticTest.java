@@ -23,10 +23,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import de.tum.cit.ase.artemis.sdk.model.AnswerCounter;
-import de.tum.cit.ase.artemis.sdk.model.DragAndDropQuestionStatistic;
-import de.tum.cit.ase.artemis.sdk.model.MultipleChoiceQuestionStatistic;
 import de.tum.cit.ase.artemis.sdk.model.QuizQuestionStatistic;
-import de.tum.cit.ase.artemis.sdk.model.ShortAnswerQuestionStatistic;
 import java.util.LinkedHashSet;
 import java.util.Set;
 

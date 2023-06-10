@@ -28,15 +28,18 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import de.tum.cit.ase.artemis.sdk.model.Attachment;
 import de.tum.cit.ase.artemis.sdk.model.AttachmentUnit;
+import de.tum.cit.ase.artemis.sdk.model.Competency;
 import de.tum.cit.ase.artemis.sdk.model.Exercise;
 import de.tum.cit.ase.artemis.sdk.model.ExerciseUnit;
-import de.tum.cit.ase.artemis.sdk.model.LearningGoal;
 import de.tum.cit.ase.artemis.sdk.model.Lecture;
 import de.tum.cit.ase.artemis.sdk.model.OnlineUnit;
+import de.tum.cit.ase.artemis.sdk.model.Slide;
 import de.tum.cit.ase.artemis.sdk.model.TextUnit;
 import de.tum.cit.ase.artemis.sdk.model.VideoUnit;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import de.tum.cit.ase.artemis.sdk.JSON;
@@ -68,7 +71,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import de.tum.cit.ase.artemis.sdk.JSON;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 @JsonDeserialize(using = UpdateLectureUnitsOrder200ResponseInner.UpdateLectureUnitsOrder200ResponseInnerDeserializer.class)
 @JsonSerialize(using = UpdateLectureUnitsOrder200ResponseInner.UpdateLectureUnitsOrder200ResponseInnerSerializer.class)
 public class UpdateLectureUnitsOrder200ResponseInner extends AbstractOpenApiSchema {

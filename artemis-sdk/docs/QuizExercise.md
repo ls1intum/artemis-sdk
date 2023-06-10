@@ -19,6 +19,7 @@
 |**quizBatches** | [**Set&lt;QuizBatch&gt;**](QuizBatch.md) |  |  [optional] |
 |**quizStarted** | **Boolean** |  |  [optional] |
 |**quizEnded** | **Boolean** |  |  [optional] |
+|**questionParent** | [**QuizQuestion**](QuizQuestion.md) |  |  [optional] |
 
 
 

@@ -71,6 +71,14 @@ public class NotificationSettingTest {
     }
 
     /**
+     * Test the property 'push'
+     */
+    @Test
+    public void pushTest() {
+        // TODO: test push
+    }
+
+    /**
      * Test the property 'user'
      */
     @Test

@@ -36,9 +36,9 @@
 |**singleNetwork** | **Boolean** |  |  [optional] |
 |**prefixLength** | **Integer** |  |  [optional] |
 |**ipv6** | **Boolean** |  |  [optional] |
-|**hostSection** | [**IPAddressSection**](IPAddressSection.md) |  |  [optional] |
 |**networkSection** | [**IPAddressSection**](IPAddressSection.md) |  |  [optional] |
 |**segments** | [**List&lt;IPAddressSegment&gt;**](IPAddressSegment.md) |  |  [optional] |
+|**hostSection** | [**IPAddressSection**](IPAddressSection.md) |  |  [optional] |
 |**count** | **Integer** |  |  [optional] |
 |**bitCount** | **Integer** |  |  [optional] |
 |**prefixed** | **Boolean** |  |  [optional] |

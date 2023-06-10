@@ -36,7 +36,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   CreateFileUploadSubmissionRequest.JSON_PROPERTY_FILE
 })
 @JsonTypeName("createFileUploadSubmission_request")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class CreateFileUploadSubmissionRequest {
   public static final String JSON_PROPERTY_SUBMISSION = "submission";
   private FileUploadSubmission submission;

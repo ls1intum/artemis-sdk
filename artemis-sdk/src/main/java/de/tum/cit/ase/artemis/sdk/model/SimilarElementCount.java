@@ -33,7 +33,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   SimilarElementCount.JSON_PROPERTY_ELEMENT_ID,
   SimilarElementCount.JSON_PROPERTY_NUMBER_OF_OTHER_ELEMENTS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class SimilarElementCount {
   public static final String JSON_PROPERTY_ELEMENT_ID = "elementId";
   private String elementId;

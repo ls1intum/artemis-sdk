@@ -16,7 +16,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class SubmissionPolicyResourceApi {
   private ApiClient apiClient;
 
@@ -95,6 +95,53 @@ public class SubmissionPolicyResourceApi {
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     GenericType<GetSubmissionPolicyOfExercise200Response> localVarReturnType = new GenericType<GetSubmissionPolicyOfExercise200Response>() {};
     return apiClient.invokeAPI("SubmissionPolicyResourceApi.addSubmissionPolicyToProgrammingExercise", localVarPath, "POST", new ArrayList<>(), getSubmissionPolicyOfExercise200Response,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               null, localVarReturnType, false);
+  }
+  /**
+   * 
+   * 
+   * @param participationId  (required)
+   * @return Integer
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
+       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public Integer getParticipationSubmissionCount(Long participationId) throws ApiException {
+    return getParticipationSubmissionCountWithHttpInfo(participationId).getData();
+  }
+
+  /**
+   * 
+   * 
+   * @param participationId  (required)
+   * @return ApiResponse&lt;Integer&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
+       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public ApiResponse<Integer> getParticipationSubmissionCountWithHttpInfo(Long participationId) throws ApiException {
+    // Check required parameters
+    if (participationId == null) {
+      throw new ApiException(400, "Missing the required parameter 'participationId' when calling getParticipationSubmissionCount");
+    }
+
+    // Path parameters
+    String localVarPath = "/api/participations/{participationId}/submission-count"
+            .replaceAll("\\{participationId}", apiClient.escapeString(participationId.toString()));
+
+    String localVarAccept = apiClient.selectHeaderAccept("*/*");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    GenericType<Integer> localVarReturnType = new GenericType<Integer>() {};
+    return apiClient.invokeAPI("SubmissionPolicyResourceApi.getParticipationSubmissionCount", localVarPath, "GET", new ArrayList<>(), null,
                                new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                null, localVarReturnType, false);
   }

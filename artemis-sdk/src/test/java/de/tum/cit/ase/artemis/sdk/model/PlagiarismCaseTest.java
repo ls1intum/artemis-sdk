@@ -55,6 +55,14 @@ public class PlagiarismCaseTest {
     }
 
     /**
+     * Test the property 'createdDate'
+     */
+    @Test
+    public void createdDateTest() {
+        // TODO: test createdDate
+    }
+
+    /**
      * Test the property 'exercise'
      */
     @Test

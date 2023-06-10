@@ -58,8 +58,8 @@ public class SystemNotificationResourceApiTest {
      */
     @Test
     public void getSystemNotificationTest() throws ApiException {
-        //Long id = null;
-        //SystemNotification response = api.getSystemNotification(id);
+        //Long notificationId = null;
+        //SystemNotification response = api.getSystemNotification(notificationId);
         // TODO: test validations
     }
 

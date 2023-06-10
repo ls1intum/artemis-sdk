@@ -36,16 +36,20 @@ import de.tum.cit.ase.artemis.sdk.JSON;
 @JsonPropertyOrder({
   FileUploadSubmissionAllOf.JSON_PROPERTY_PARTICIPATION,
   FileUploadSubmissionAllOf.JSON_PROPERTY_FILE_PATH,
+  FileUploadSubmissionAllOf.JSON_PROPERTY_SUBMISSION_EXERCISE_TYPE,
   FileUploadSubmissionAllOf.JSON_PROPERTY_RESULTS
 })
 @JsonTypeName("FileUploadSubmission_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class FileUploadSubmissionAllOf {
   public static final String JSON_PROPERTY_PARTICIPATION = "participation";
   private Participation participation;
 
   public static final String JSON_PROPERTY_FILE_PATH = "filePath";
   private String filePath;
+
+  public static final String JSON_PROPERTY_SUBMISSION_EXERCISE_TYPE = "submissionExerciseType";
+  private String submissionExerciseType;
 
   public static final String JSON_PROPERTY_RESULTS = "results";
   private List<Result> results;
@@ -111,6 +115,31 @@ public class FileUploadSubmissionAllOf {
   }
 
 
+  public FileUploadSubmissionAllOf submissionExerciseType(String submissionExerciseType) {
+    this.submissionExerciseType = submissionExerciseType;
+    return this;
+  }
+
+   /**
+   * Get submissionExerciseType
+   * @return submissionExerciseType
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_SUBMISSION_EXERCISE_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getSubmissionExerciseType() {
+    return submissionExerciseType;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SUBMISSION_EXERCISE_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSubmissionExerciseType(String submissionExerciseType) {
+    this.submissionExerciseType = submissionExerciseType;
+  }
+
+
    /**
    * Get results
    * @return results
@@ -140,12 +169,13 @@ public class FileUploadSubmissionAllOf {
     FileUploadSubmissionAllOf fileUploadSubmissionAllOf = (FileUploadSubmissionAllOf) o;
     return Objects.equals(this.participation, fileUploadSubmissionAllOf.participation) &&
         Objects.equals(this.filePath, fileUploadSubmissionAllOf.filePath) &&
+        Objects.equals(this.submissionExerciseType, fileUploadSubmissionAllOf.submissionExerciseType) &&
         Objects.equals(this.results, fileUploadSubmissionAllOf.results);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(participation, filePath, results);
+    return Objects.hash(participation, filePath, submissionExerciseType, results);
   }
 
   @Override
@@ -154,6 +184,7 @@ public class FileUploadSubmissionAllOf {
     sb.append("class FileUploadSubmissionAllOf {\n");
     sb.append("    participation: ").append(toIndentedString(participation)).append("\n");
     sb.append("    filePath: ").append(toIndentedString(filePath)).append("\n");
+    sb.append("    submissionExerciseType: ").append(toIndentedString(submissionExerciseType)).append("\n");
     sb.append("    results: ").append(toIndentedString(results)).append("\n");
     sb.append("}");
     return sb.toString();

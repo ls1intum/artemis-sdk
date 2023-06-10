@@ -37,7 +37,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   AssessmentUpdate.JSON_PROPERTY_FEEDBACKS,
   AssessmentUpdate.JSON_PROPERTY_COMPLAINT_RESPONSE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class AssessmentUpdate {
   public static final String JSON_PROPERTY_FEEDBACKS = "feedbacks";
   private List<Feedback> feedbacks;

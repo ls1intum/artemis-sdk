@@ -44,4 +44,14 @@ public class ProgrammingExerciseTaskResourceApiTest {
         // TODO: test validations
     }
 
+    /**
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getTasksWithUnassignedTaskTest() throws ApiException {
+        //Long exerciseId = null;
+        //Set<ProgrammingExerciseTask> response = api.getTasksWithUnassignedTask(exerciseId);
+        // TODO: test validations
+    }
+
 }

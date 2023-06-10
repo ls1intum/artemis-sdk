@@ -49,10 +49,11 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   QuizExerciseAllOf.JSON_PROPERTY_QUIZ_QUESTIONS,
   QuizExerciseAllOf.JSON_PROPERTY_QUIZ_BATCHES,
   QuizExerciseAllOf.JSON_PROPERTY_QUIZ_STARTED,
-  QuizExerciseAllOf.JSON_PROPERTY_QUIZ_ENDED
+  QuizExerciseAllOf.JSON_PROPERTY_QUIZ_ENDED,
+  QuizExerciseAllOf.JSON_PROPERTY_QUESTION_PARENT
 })
 @JsonTypeName("QuizExercise_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class QuizExerciseAllOf {
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
@@ -126,6 +127,9 @@ public class QuizExerciseAllOf {
 
   public static final String JSON_PROPERTY_QUIZ_ENDED = "quizEnded";
   private Boolean quizEnded;
+
+  public static final String JSON_PROPERTY_QUESTION_PARENT = "questionParent";
+  private QuizQuestion questionParent;
 
   public QuizExerciseAllOf() { 
   }
@@ -447,6 +451,31 @@ public class QuizExerciseAllOf {
   }
 
 
+  public QuizExerciseAllOf questionParent(QuizQuestion questionParent) {
+    this.questionParent = questionParent;
+    return this;
+  }
+
+   /**
+   * Get questionParent
+   * @return questionParent
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_QUESTION_PARENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public QuizQuestion getQuestionParent() {
+    return questionParent;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_QUESTION_PARENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setQuestionParent(QuizQuestion questionParent) {
+    this.questionParent = questionParent;
+  }
+
+
   /**
    * Return true if this QuizExercise_allOf object is equal to o.
    */
@@ -470,12 +499,13 @@ public class QuizExerciseAllOf {
         Objects.equals(this.quizQuestions, quizExerciseAllOf.quizQuestions) &&
         Objects.equals(this.quizBatches, quizExerciseAllOf.quizBatches) &&
         Objects.equals(this.quizStarted, quizExerciseAllOf.quizStarted) &&
-        Objects.equals(this.quizEnded, quizExerciseAllOf.quizEnded);
+        Objects.equals(this.quizEnded, quizExerciseAllOf.quizEnded) &&
+        Objects.equals(this.questionParent, quizExerciseAllOf.questionParent);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, randomizeQuestionOrder, allowedNumberOfAttempts, remainingNumberOfAttempts, isOpenForPractice, quizMode, duration, quizPointStatistic, quizQuestions, quizBatches, quizStarted, quizEnded);
+    return Objects.hash(type, randomizeQuestionOrder, allowedNumberOfAttempts, remainingNumberOfAttempts, isOpenForPractice, quizMode, duration, quizPointStatistic, quizQuestions, quizBatches, quizStarted, quizEnded, questionParent);
   }
 
   @Override
@@ -494,6 +524,7 @@ public class QuizExerciseAllOf {
     sb.append("    quizBatches: ").append(toIndentedString(quizBatches)).append("\n");
     sb.append("    quizStarted: ").append(toIndentedString(quizStarted)).append("\n");
     sb.append("    quizEnded: ").append(toIndentedString(quizEnded)).append("\n");
+    sb.append("    questionParent: ").append(toIndentedString(questionParent)).append("\n");
     sb.append("}");
     return sb.toString();
   }

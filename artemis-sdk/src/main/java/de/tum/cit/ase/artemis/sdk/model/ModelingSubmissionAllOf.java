@@ -43,10 +43,11 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ModelingSubmissionAllOf.JSON_PROPERTY_EXPLANATION_TEXT,
   ModelingSubmissionAllOf.JSON_PROPERTY_SIMILAR_ELEMENT_COUNTS,
   ModelingSubmissionAllOf.JSON_PROPERTY_SIMILAR_ELEMENTS,
+  ModelingSubmissionAllOf.JSON_PROPERTY_SUBMISSION_EXERCISE_TYPE,
   ModelingSubmissionAllOf.JSON_PROPERTY_RESULTS
 })
 @JsonTypeName("ModelingSubmission_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class ModelingSubmissionAllOf {
   public static final String JSON_PROPERTY_PARTICIPATION = "participation";
   private Participation participation;
@@ -62,6 +63,9 @@ public class ModelingSubmissionAllOf {
 
   public static final String JSON_PROPERTY_SIMILAR_ELEMENTS = "similarElements";
   private Set<SimilarElementCount> similarElements;
+
+  public static final String JSON_PROPERTY_SUBMISSION_EXERCISE_TYPE = "submissionExerciseType";
+  private String submissionExerciseType;
 
   public static final String JSON_PROPERTY_RESULTS = "results";
   private List<Result> results;
@@ -220,6 +224,31 @@ public class ModelingSubmissionAllOf {
   }
 
 
+  public ModelingSubmissionAllOf submissionExerciseType(String submissionExerciseType) {
+    this.submissionExerciseType = submissionExerciseType;
+    return this;
+  }
+
+   /**
+   * Get submissionExerciseType
+   * @return submissionExerciseType
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_SUBMISSION_EXERCISE_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getSubmissionExerciseType() {
+    return submissionExerciseType;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SUBMISSION_EXERCISE_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSubmissionExerciseType(String submissionExerciseType) {
+    this.submissionExerciseType = submissionExerciseType;
+  }
+
+
    /**
    * Get results
    * @return results
@@ -252,12 +281,13 @@ public class ModelingSubmissionAllOf {
         Objects.equals(this.explanationText, modelingSubmissionAllOf.explanationText) &&
         Objects.equals(this.similarElementCounts, modelingSubmissionAllOf.similarElementCounts) &&
         Objects.equals(this.similarElements, modelingSubmissionAllOf.similarElements) &&
+        Objects.equals(this.submissionExerciseType, modelingSubmissionAllOf.submissionExerciseType) &&
         Objects.equals(this.results, modelingSubmissionAllOf.results);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(participation, model, explanationText, similarElementCounts, similarElements, results);
+    return Objects.hash(participation, model, explanationText, similarElementCounts, similarElements, submissionExerciseType, results);
   }
 
   @Override
@@ -269,6 +299,7 @@ public class ModelingSubmissionAllOf {
     sb.append("    explanationText: ").append(toIndentedString(explanationText)).append("\n");
     sb.append("    similarElementCounts: ").append(toIndentedString(similarElementCounts)).append("\n");
     sb.append("    similarElements: ").append(toIndentedString(similarElements)).append("\n");
+    sb.append("    submissionExerciseType: ").append(toIndentedString(submissionExerciseType)).append("\n");
     sb.append("    results: ").append(toIndentedString(results)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -178,6 +178,14 @@ public class CourseTest {
     }
 
     /**
+     * Test the property 'courseInformationSharingConfiguration'
+     */
+    @Test
+    public void courseInformationSharingConfigurationTest() {
+        // TODO: test courseInformationSharingConfiguration
+    }
+
+    /**
      * Test the property 'maxComplaints'
      */
     @Test
@@ -226,14 +234,6 @@ public class CourseTest {
     }
 
     /**
-     * Test the property 'postsEnabled'
-     */
-    @Test
-    public void postsEnabledTest() {
-        // TODO: test postsEnabled
-    }
-
-    /**
      * Test the property 'posts'
      */
     @Test
@@ -258,19 +258,19 @@ public class CourseTest {
     }
 
     /**
-     * Test the property 'registrationEnabled'
+     * Test the property 'enrollmentEnabled'
      */
     @Test
-    public void registrationEnabledTest() {
-        // TODO: test registrationEnabled
+    public void enrollmentEnabledTest() {
+        // TODO: test enrollmentEnabled
     }
 
     /**
-     * Test the property 'registrationConfirmationMessage'
+     * Test the property 'enrollmentConfirmationMessage'
      */
     @Test
-    public void registrationConfirmationMessageTest() {
-        // TODO: test registrationConfirmationMessage
+    public void enrollmentConfirmationMessageTest() {
+        // TODO: test enrollmentConfirmationMessage
     }
 
     /**
@@ -375,14 +375,6 @@ public class CourseTest {
     @Test
     public void complaintsEnabledTest() {
         // TODO: test complaintsEnabled
-    }
-
-    /**
-     * Test the property 'validStartAndEndDate'
-     */
-    @Test
-    public void validStartAndEndDateTest() {
-        // TODO: test validStartAndEndDate
     }
 
     /**

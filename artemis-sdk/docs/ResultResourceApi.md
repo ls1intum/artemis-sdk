@@ -4,7 +4,6 @@ All URIs are relative to *http://localhost:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**createExampleResult**](ResultResourceApi.md#createExampleResult) | **POST** /api/exercises/{exerciseId}/example-submissions/{exampleSubmissionId}/example-results |  |
 | [**createResultForExternalSubmission**](ResultResourceApi.md#createResultForExternalSubmission) | **POST** /api/exercises/{exerciseId}/external-submission-results |  |
 | [**deleteResult**](ResultResourceApi.md#deleteResult) | **DELETE** /api/participations/{participationId}/results/{resultId} |  |
 | [**getResult**](ResultResourceApi.md#getResult) | **GET** /api/participations/{participationId}/results/{resultId} |  |
@@ -12,74 +11,6 @@ All URIs are relative to *http://localhost:8080*
 | [**getResultsForExerciseWithPointsPerCriterion**](ResultResourceApi.md#getResultsForExerciseWithPointsPerCriterion) | **GET** /api/exercises/{exerciseId}/results-with-points-per-criterion |  |
 | [**processNewProgrammingExerciseResult**](ResultResourceApi.md#processNewProgrammingExerciseResult) | **POST** /api/programming-exercises/new-result |  |
 
-
-
-## createExampleResult
-
-> Result createExampleResult(exerciseId, exampleSubmissionId, isProgrammingExerciseWithFeedback)
-
-
-
-### Example
-
-```java
-// Import classes:
-import de.tum.cit.ase.artemis.sdk.ApiClient;
-import de.tum.cit.ase.artemis.sdk.ApiException;
-import de.tum.cit.ase.artemis.sdk.Configuration;
-import de.tum.cit.ase.artemis.sdk.model.*;
-import de.tum.cit.ase.artemis.sdk.api.ResultResourceApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://localhost:8080");
-
-        ResultResourceApi apiInstance = new ResultResourceApi(defaultClient);
-        Long exerciseId = 56L; // Long | 
-        Long exampleSubmissionId = 56L; // Long | 
-        Boolean isProgrammingExerciseWithFeedback = false; // Boolean | 
-        try {
-            Result result = apiInstance.createExampleResult(exerciseId, exampleSubmissionId, isProgrammingExerciseWithFeedback);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ResultResourceApi#createExampleResult");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **exerciseId** | **Long**|  | |
-| **exampleSubmissionId** | **Long**|  | |
-| **isProgrammingExerciseWithFeedback** | **Boolean**|  | [optional] [default to false] |
-
-### Return type
-
-[**Result**](Result.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: */*
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **503** | Service Unavailable |  -  |
-| **200** | OK |  -  |
 
 
 ## createResultForExternalSubmission

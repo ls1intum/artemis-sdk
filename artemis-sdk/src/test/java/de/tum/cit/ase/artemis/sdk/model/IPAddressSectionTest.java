@@ -235,14 +235,6 @@ public class IPAddressSectionTest {
     }
 
     /**
-     * Test the property 'segmentStrings'
-     */
-    @Test
-    public void segmentStringsTest() {
-        // TODO: test segmentStrings
-    }
-
-    /**
      * Test the property 'fullRange'
      */
     @Test
@@ -251,19 +243,19 @@ public class IPAddressSectionTest {
     }
 
     /**
+     * Test the property 'segmentStrings'
+     */
+    @Test
+    public void segmentStringsTest() {
+        // TODO: test segmentStrings
+    }
+
+    /**
      * Test the property 'ipv6'
      */
     @Test
     public void ipv6Test() {
         // TODO: test ipv6
-    }
-
-    /**
-     * Test the property 'hostSection'
-     */
-    @Test
-    public void hostSectionTest() {
-        // TODO: test hostSection
     }
 
     /**
@@ -296,6 +288,14 @@ public class IPAddressSectionTest {
     @Test
     public void segmentsTest() {
         // TODO: test segments
+    }
+
+    /**
+     * Test the property 'hostSection'
+     */
+    @Test
+    public void hostSectionTest() {
+        // TODO: test hostSection
     }
 
     /**

@@ -40,10 +40,11 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ProgrammingSubmissionAllOf.JSON_PROPERTY_BUILD_FAILED,
   ProgrammingSubmissionAllOf.JSON_PROPERTY_BUILD_ARTIFACT,
   ProgrammingSubmissionAllOf.JSON_PROPERTY_BUILD_LOG_ENTRIES,
+  ProgrammingSubmissionAllOf.JSON_PROPERTY_SUBMISSION_EXERCISE_TYPE,
   ProgrammingSubmissionAllOf.JSON_PROPERTY_RESULTS
 })
 @JsonTypeName("ProgrammingSubmission_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class ProgrammingSubmissionAllOf {
   public static final String JSON_PROPERTY_PARTICIPATION = "participation";
   private Participation participation;
@@ -59,6 +60,9 @@ public class ProgrammingSubmissionAllOf {
 
   public static final String JSON_PROPERTY_BUILD_LOG_ENTRIES = "buildLogEntries";
   private List<BuildLogEntry> buildLogEntries;
+
+  public static final String JSON_PROPERTY_SUBMISSION_EXERCISE_TYPE = "submissionExerciseType";
+  private String submissionExerciseType;
 
   public static final String JSON_PROPERTY_RESULTS = "results";
   private List<Result> results;
@@ -207,6 +211,31 @@ public class ProgrammingSubmissionAllOf {
   }
 
 
+  public ProgrammingSubmissionAllOf submissionExerciseType(String submissionExerciseType) {
+    this.submissionExerciseType = submissionExerciseType;
+    return this;
+  }
+
+   /**
+   * Get submissionExerciseType
+   * @return submissionExerciseType
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_SUBMISSION_EXERCISE_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getSubmissionExerciseType() {
+    return submissionExerciseType;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SUBMISSION_EXERCISE_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSubmissionExerciseType(String submissionExerciseType) {
+    this.submissionExerciseType = submissionExerciseType;
+  }
+
+
    /**
    * Get results
    * @return results
@@ -239,12 +268,13 @@ public class ProgrammingSubmissionAllOf {
         Objects.equals(this.buildFailed, programmingSubmissionAllOf.buildFailed) &&
         Objects.equals(this.buildArtifact, programmingSubmissionAllOf.buildArtifact) &&
         Objects.equals(this.buildLogEntries, programmingSubmissionAllOf.buildLogEntries) &&
+        Objects.equals(this.submissionExerciseType, programmingSubmissionAllOf.submissionExerciseType) &&
         Objects.equals(this.results, programmingSubmissionAllOf.results);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(participation, commitHash, buildFailed, buildArtifact, buildLogEntries, results);
+    return Objects.hash(participation, commitHash, buildFailed, buildArtifact, buildLogEntries, submissionExerciseType, results);
   }
 
   @Override
@@ -256,6 +286,7 @@ public class ProgrammingSubmissionAllOf {
     sb.append("    buildFailed: ").append(toIndentedString(buildFailed)).append("\n");
     sb.append("    buildArtifact: ").append(toIndentedString(buildArtifact)).append("\n");
     sb.append("    buildLogEntries: ").append(toIndentedString(buildLogEntries)).append("\n");
+    sb.append("    submissionExerciseType: ").append(toIndentedString(submissionExerciseType)).append("\n");
     sb.append("    results: ").append(toIndentedString(results)).append("\n");
     sb.append("}");
     return sb.toString();

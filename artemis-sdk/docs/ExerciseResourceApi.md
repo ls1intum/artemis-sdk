@@ -4,7 +4,6 @@ All URIs are relative to *http://localhost:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**cleanup**](ExerciseResourceApi.md#cleanup) | **DELETE** /api/exercises/{exerciseId}/cleanup |  |
 | [**getExercise**](ExerciseResourceApi.md#getExercise) | **GET** /api/exercises/{exerciseId} |  |
 | [**getExerciseDetails**](ExerciseResourceApi.md#getExerciseDetails) | **GET** /api/exercises/{exerciseId}/details |  |
 | [**getExerciseForAssessmentDashboard**](ExerciseResourceApi.md#getExerciseForAssessmentDashboard) | **GET** /api/exercises/{exerciseId}/for-assessment-dashboard |  |
@@ -12,75 +11,9 @@ All URIs are relative to *http://localhost:8080*
 | [**getExerciseTitle**](ExerciseResourceApi.md#getExerciseTitle) | **GET** /api/exercises/{exerciseId}/title |  |
 | [**getLatestDueDate**](ExerciseResourceApi.md#getLatestDueDate) | **GET** /api/exercises/{exerciseId}/latest-due-date |  |
 | [**getStatsForExerciseAssessmentDashboard**](ExerciseResourceApi.md#getStatsForExerciseAssessmentDashboard) | **GET** /api/exercises/{exerciseId}/stats-for-assessment-dashboard |  |
-| [**reset**](ExerciseResourceApi.md#reset) | **DELETE** /api/exercises/{exerciseId}/reset |  |
+| [**reset1**](ExerciseResourceApi.md#reset1) | **DELETE** /api/exercises/{exerciseId}/reset |  |
 | [**toggleSecondCorrectionEnabled**](ExerciseResourceApi.md#toggleSecondCorrectionEnabled) | **PUT** /api/exercises/{exerciseId}/toggle-second-correction |  |
 
-
-
-## cleanup
-
-> File cleanup(exerciseId, deleteRepositories)
-
-
-
-### Example
-
-```java
-// Import classes:
-import de.tum.cit.ase.artemis.sdk.ApiClient;
-import de.tum.cit.ase.artemis.sdk.ApiException;
-import de.tum.cit.ase.artemis.sdk.Configuration;
-import de.tum.cit.ase.artemis.sdk.model.*;
-import de.tum.cit.ase.artemis.sdk.api.ExerciseResourceApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://localhost:8080");
-
-        ExerciseResourceApi apiInstance = new ExerciseResourceApi(defaultClient);
-        Long exerciseId = 56L; // Long | 
-        Boolean deleteRepositories = false; // Boolean | 
-        try {
-            File result = apiInstance.cleanup(exerciseId, deleteRepositories);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ExerciseResourceApi#cleanup");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **exerciseId** | **Long**|  | |
-| **deleteRepositories** | **Boolean**|  | [optional] [default to false] |
-
-### Return type
-
-[**File**](File.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: */*
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **503** | Service Unavailable |  -  |
-| **200** | OK |  -  |
 
 
 ## getExercise
@@ -531,9 +464,9 @@ No authorization required
 | **200** | OK |  -  |
 
 
-## reset
+## reset1
 
-> reset(exerciseId)
+> reset1(exerciseId)
 
 
 
@@ -555,9 +488,9 @@ public class Example {
         ExerciseResourceApi apiInstance = new ExerciseResourceApi(defaultClient);
         Long exerciseId = 56L; // Long | 
         try {
-            apiInstance.reset(exerciseId);
+            apiInstance.reset1(exerciseId);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ExerciseResourceApi#reset");
+            System.err.println("Exception when calling ExerciseResourceApi#reset1");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());

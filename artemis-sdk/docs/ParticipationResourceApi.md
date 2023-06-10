@@ -287,7 +287,7 @@ No authorization required
 
 ## getAllParticipationsForExercise
 
-> Set&lt;StudentParticipation&gt; getAllParticipationsForExercise(exerciseId, withLatestResult)
+> Set&lt;StudentParticipation&gt; getAllParticipationsForExercise(exerciseId, withLatestResults)
 
 
 
@@ -308,9 +308,9 @@ public class Example {
 
         ParticipationResourceApi apiInstance = new ParticipationResourceApi(defaultClient);
         Long exerciseId = 56L; // Long | 
-        Boolean withLatestResult = false; // Boolean | 
+        Boolean withLatestResults = false; // Boolean | 
         try {
-            Set<StudentParticipation> result = apiInstance.getAllParticipationsForExercise(exerciseId, withLatestResult);
+            Set<StudentParticipation> result = apiInstance.getAllParticipationsForExercise(exerciseId, withLatestResults);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ParticipationResourceApi#getAllParticipationsForExercise");
@@ -329,7 +329,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **exerciseId** | **Long**|  | |
-| **withLatestResult** | **Boolean**|  | [optional] [default to false] |
+| **withLatestResults** | **Boolean**|  | [optional] [default to false] |
 
 ### Return type
 

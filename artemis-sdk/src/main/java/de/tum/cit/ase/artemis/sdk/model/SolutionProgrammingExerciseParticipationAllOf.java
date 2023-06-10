@@ -37,7 +37,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   SolutionProgrammingExerciseParticipationAllOf.JSON_PROPERTY_USER_INDEPENDENT_REPOSITORY_URL
 })
 @JsonTypeName("SolutionProgrammingExerciseParticipation_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class SolutionProgrammingExerciseParticipationAllOf {
   public static final String JSON_PROPERTY_REPOSITORY_URL = "repositoryUrl";
   private String repositoryUrl;

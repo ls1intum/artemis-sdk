@@ -7,6 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**type** | **String** |  |  [optional] |
 |**testRepositoryUrl** | **String** |  |  [optional] |
 |**auxiliaryRepositories** | [**List&lt;AuxiliaryRepository&gt;**](AuxiliaryRepository.md) |  |  [optional] |
 |**publishBuildPlanUrl** | **Boolean** |  |  [optional] |
@@ -31,9 +32,7 @@
 |**projectType** | [**ProjectTypeEnum**](#ProjectTypeEnum) |  |  [optional] |
 |**exerciseHints** | [**Set&lt;ExerciseHint&gt;**](ExerciseHint.md) |  |  [optional] |
 |**testwiseCoverageEnabled** | **Boolean** |  |  [optional] |
-|**branch** | **String** |  |  [optional] |
 |**releaseTestsWithExampleSolution** | **Boolean** |  |  [optional] |
-|**isLocalSimulation** | **Boolean** |  |  [optional] |
 |**checkoutSolutionRepository** | **Boolean** |  |  [optional] |
 
 

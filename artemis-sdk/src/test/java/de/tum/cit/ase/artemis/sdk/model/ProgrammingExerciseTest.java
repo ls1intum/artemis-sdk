@@ -324,6 +324,14 @@ public class ProgrammingExerciseTest {
     }
 
     /**
+     * Test the property 'exerciseType'
+     */
+    @Test
+    public void exerciseTypeTest() {
+        // TODO: test exerciseType
+    }
+
+    /**
      * Test the property 'numberOfAssessmentsOfCorrectionRounds'
      */
     @Test
@@ -396,14 +404,6 @@ public class ProgrammingExerciseTest {
     }
 
     /**
-     * Test the property 'exerciseType'
-     */
-    @Test
-    public void exerciseTypeTest() {
-        // TODO: test exerciseType
-    }
-
-    /**
      * Test the property 'studentAssignedTeamId'
      */
     @Test
@@ -441,14 +441,6 @@ public class ProgrammingExerciseTest {
     @Test
     public void exampleSolutionPublishedTest() {
         // TODO: test exampleSolutionPublished
-    }
-
-    /**
-     * Test the property 'released'
-     */
-    @Test
-    public void releasedTest() {
-        // TODO: test released
     }
 
     /**
@@ -676,27 +668,11 @@ public class ProgrammingExerciseTest {
     }
 
     /**
-     * Test the property 'branch'
-     */
-    @Test
-    public void branchTest() {
-        // TODO: test branch
-    }
-
-    /**
      * Test the property 'releaseTestsWithExampleSolution'
      */
     @Test
     public void releaseTestsWithExampleSolutionTest() {
         // TODO: test releaseTestsWithExampleSolution
-    }
-
-    /**
-     * Test the property 'isLocalSimulation'
-     */
-    @Test
-    public void isLocalSimulationTest() {
-        // TODO: test isLocalSimulation
     }
 
     /**

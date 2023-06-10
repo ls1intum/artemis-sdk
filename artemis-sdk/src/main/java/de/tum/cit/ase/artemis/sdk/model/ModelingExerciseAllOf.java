@@ -22,7 +22,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.time.OffsetDateTime;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import de.tum.cit.ase.artemis.sdk.JSON;
 
@@ -31,14 +30,17 @@ import de.tum.cit.ase.artemis.sdk.JSON;
  * ModelingExerciseAllOf
  */
 @JsonPropertyOrder({
+  ModelingExerciseAllOf.JSON_PROPERTY_TYPE,
   ModelingExerciseAllOf.JSON_PROPERTY_DIAGRAM_TYPE,
   ModelingExerciseAllOf.JSON_PROPERTY_EXAMPLE_SOLUTION_MODEL,
-  ModelingExerciseAllOf.JSON_PROPERTY_EXAMPLE_SOLUTION_EXPLANATION,
-  ModelingExerciseAllOf.JSON_PROPERTY_CLUSTER_BUILD_DATE
+  ModelingExerciseAllOf.JSON_PROPERTY_EXAMPLE_SOLUTION_EXPLANATION
 })
 @JsonTypeName("ModelingExercise_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class ModelingExerciseAllOf {
+  public static final String JSON_PROPERTY_TYPE = "type";
+  private String type;
+
   /**
    * Gets or Sets diagramType
    */
@@ -99,11 +101,33 @@ public class ModelingExerciseAllOf {
   public static final String JSON_PROPERTY_EXAMPLE_SOLUTION_EXPLANATION = "exampleSolutionExplanation";
   private String exampleSolutionExplanation;
 
-  public static final String JSON_PROPERTY_CLUSTER_BUILD_DATE = "clusterBuildDate";
-  private OffsetDateTime clusterBuildDate;
-
   public ModelingExerciseAllOf() { 
   }
+
+  public ModelingExerciseAllOf type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Get type
+   * @return type
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getType() {
+    return type;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setType(String type) {
+    this.type = type;
+  }
+
 
   public ModelingExerciseAllOf diagramType(DiagramTypeEnum diagramType) {
     this.diagramType = diagramType;
@@ -180,31 +204,6 @@ public class ModelingExerciseAllOf {
   }
 
 
-  public ModelingExerciseAllOf clusterBuildDate(OffsetDateTime clusterBuildDate) {
-    this.clusterBuildDate = clusterBuildDate;
-    return this;
-  }
-
-   /**
-   * Get clusterBuildDate
-   * @return clusterBuildDate
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CLUSTER_BUILD_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public OffsetDateTime getClusterBuildDate() {
-    return clusterBuildDate;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_CLUSTER_BUILD_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setClusterBuildDate(OffsetDateTime clusterBuildDate) {
-    this.clusterBuildDate = clusterBuildDate;
-  }
-
-
   /**
    * Return true if this ModelingExercise_allOf object is equal to o.
    */
@@ -217,25 +216,25 @@ public class ModelingExerciseAllOf {
       return false;
     }
     ModelingExerciseAllOf modelingExerciseAllOf = (ModelingExerciseAllOf) o;
-    return Objects.equals(this.diagramType, modelingExerciseAllOf.diagramType) &&
+    return Objects.equals(this.type, modelingExerciseAllOf.type) &&
+        Objects.equals(this.diagramType, modelingExerciseAllOf.diagramType) &&
         Objects.equals(this.exampleSolutionModel, modelingExerciseAllOf.exampleSolutionModel) &&
-        Objects.equals(this.exampleSolutionExplanation, modelingExerciseAllOf.exampleSolutionExplanation) &&
-        Objects.equals(this.clusterBuildDate, modelingExerciseAllOf.clusterBuildDate);
+        Objects.equals(this.exampleSolutionExplanation, modelingExerciseAllOf.exampleSolutionExplanation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(diagramType, exampleSolutionModel, exampleSolutionExplanation, clusterBuildDate);
+    return Objects.hash(type, diagramType, exampleSolutionModel, exampleSolutionExplanation);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelingExerciseAllOf {\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    diagramType: ").append(toIndentedString(diagramType)).append("\n");
     sb.append("    exampleSolutionModel: ").append(toIndentedString(exampleSolutionModel)).append("\n");
     sb.append("    exampleSolutionExplanation: ").append(toIndentedString(exampleSolutionExplanation)).append("\n");
-    sb.append("    clusterBuildDate: ").append(toIndentedString(clusterBuildDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

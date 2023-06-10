@@ -48,6 +48,16 @@ public class SubmissionPolicyResourceApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
+    public void getParticipationSubmissionCountTest() throws ApiException {
+        //Long participationId = null;
+        //Integer response = api.getParticipationSubmissionCount(participationId);
+        // TODO: test validations
+    }
+
+    /**
+     * @throws ApiException if the Api call fails
+     */
+    @Test
     public void getSubmissionPolicyOfExerciseTest() throws ApiException {
         //Long exerciseId = null;
         //GetSubmissionPolicyOfExercise200Response response = api.getSubmissionPolicyOfExercise(exerciseId);

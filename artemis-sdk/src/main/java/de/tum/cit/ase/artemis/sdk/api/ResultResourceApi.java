@@ -18,7 +18,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class ResultResourceApi {
   private ApiClient apiClient;
 
@@ -48,66 +48,6 @@ public class ResultResourceApi {
     this.apiClient = apiClient;
   }
 
-  /**
-   * 
-   * 
-   * @param exerciseId  (required)
-   * @param exampleSubmissionId  (required)
-   * @param isProgrammingExerciseWithFeedback  (optional, default to false)
-   * @return Result
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
-       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-   */
-  public Result createExampleResult(Long exerciseId, Long exampleSubmissionId, Boolean isProgrammingExerciseWithFeedback) throws ApiException {
-    return createExampleResultWithHttpInfo(exerciseId, exampleSubmissionId, isProgrammingExerciseWithFeedback).getData();
-  }
-
-  /**
-   * 
-   * 
-   * @param exerciseId  (required)
-   * @param exampleSubmissionId  (required)
-   * @param isProgrammingExerciseWithFeedback  (optional, default to false)
-   * @return ApiResponse&lt;Result&gt;
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 503 </td><td> Service Unavailable </td><td>  -  </td></tr>
-       <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-   */
-  public ApiResponse<Result> createExampleResultWithHttpInfo(Long exerciseId, Long exampleSubmissionId, Boolean isProgrammingExerciseWithFeedback) throws ApiException {
-    // Check required parameters
-    if (exerciseId == null) {
-      throw new ApiException(400, "Missing the required parameter 'exerciseId' when calling createExampleResult");
-    }
-    if (exampleSubmissionId == null) {
-      throw new ApiException(400, "Missing the required parameter 'exampleSubmissionId' when calling createExampleResult");
-    }
-
-    // Path parameters
-    String localVarPath = "/api/exercises/{exerciseId}/example-submissions/{exampleSubmissionId}/example-results"
-            .replaceAll("\\{exerciseId}", apiClient.escapeString(exerciseId.toString()))
-            .replaceAll("\\{exampleSubmissionId}", apiClient.escapeString(exampleSubmissionId.toString()));
-
-    // Query parameters
-    List<Pair> localVarQueryParams = new ArrayList<>(
-            apiClient.parameterToPairs("", "isProgrammingExerciseWithFeedback", isProgrammingExerciseWithFeedback)
-    );
-
-    String localVarAccept = apiClient.selectHeaderAccept("*/*");
-    String localVarContentType = apiClient.selectHeaderContentType();
-    GenericType<Result> localVarReturnType = new GenericType<Result>() {};
-    return apiClient.invokeAPI("ResultResourceApi.createExampleResult", localVarPath, "POST", localVarQueryParams, null,
-                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
-                               null, localVarReturnType, false);
-  }
   /**
    * 
    * 

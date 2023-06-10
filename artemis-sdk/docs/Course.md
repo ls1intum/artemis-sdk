@@ -33,8 +33,8 @@
 |**posts** | [**Set&lt;Post&gt;**](Post.md) |  |  [optional] |
 |**color** | **String** |  |  [optional] |
 |**courseIcon** | **String** |  |  [optional] |
-|**registrationEnabled** | **Boolean** |  |  [optional] |
-|**registrationConfirmationMessage** | **String** |  |  [optional] |
+|**enrollmentEnabled** | **Boolean** |  |  [optional] |
+|**enrollmentConfirmationMessage** | **String** |  |  [optional] |
 |**presentationScore** | **Integer** |  |  [optional] |
 |**courseArchivePath** | **String** |  |  [optional] |
 |**maxPoints** | **Integer** |  |  [optional] |
@@ -48,7 +48,6 @@
 |**tutorialGroupsConfiguration** | [**TutorialGroupsConfiguration**](TutorialGroupsConfiguration.md) |  |  [optional] |
 |**requestMoreFeedbackEnabled** | **Boolean** |  |  [optional] |
 |**complaintsEnabled** | **Boolean** |  |  [optional] |
-|**validStartAndEndDate** | **Boolean** |  |  [optional] |
 |**numberOfInstructors** | **Long** |  |  [optional] |
 |**numberOfTeachingAssistants** | **Long** |  |  [optional] |
 |**numberOfEditors** | **Long** |  |  [optional] |

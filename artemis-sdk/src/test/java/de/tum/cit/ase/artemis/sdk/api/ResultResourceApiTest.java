@@ -39,18 +39,6 @@ public class ResultResourceApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void createExampleResultTest() throws ApiException {
-        //Long exerciseId = null;
-        //Long exampleSubmissionId = null;
-        //Boolean isProgrammingExerciseWithFeedback = null;
-        //Result response = api.createExampleResult(exerciseId, exampleSubmissionId, isProgrammingExerciseWithFeedback);
-        // TODO: test validations
-    }
-
-    /**
-     * @throws ApiException if the Api call fails
-     */
-    @Test
     public void createResultForExternalSubmissionTest() throws ApiException {
         //Long exerciseId = null;
         //String studentLogin = null;
@@ -89,17 +77,6 @@ public class ResultResourceApiTest {
         //Long participationId = null;
         //Long resultId = null;
         //List<Feedback> response = api.getResultDetails(participationId, resultId);
-        // TODO: test validations
-    }
-
-    /**
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getResultsForExerciseTest() throws ApiException {
-        //Long exerciseId = null;
-        //Boolean withSubmissions = null;
-        //List<Result> response = api.getResultsForExercise(exerciseId, withSubmissions);
         // TODO: test validations
     }
 

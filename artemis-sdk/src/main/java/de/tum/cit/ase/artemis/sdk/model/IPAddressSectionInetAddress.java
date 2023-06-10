@@ -32,7 +32,6 @@ import de.tum.cit.ase.artemis.sdk.JSON;
  * IPAddressSectionInetAddress
  */
 @JsonPropertyOrder({
-  IPAddressSectionInetAddress.JSON_PROPERTY_CANONICAL_HOST_NAME,
   IPAddressSectionInetAddress.JSON_PROPERTY_HOST_ADDRESS,
   IPAddressSectionInetAddress.JSON_PROPERTY_ADDRESS,
   IPAddressSectionInetAddress.JSON_PROPERTY_HOST_NAME,
@@ -45,14 +44,12 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   IPAddressSectionInetAddress.JSON_PROPERTY_MCNODE_LOCAL,
   IPAddressSectionInetAddress.JSON_PROPERTY_MCLINK_LOCAL,
   IPAddressSectionInetAddress.JSON_PROPERTY_MCSITE_LOCAL,
-  IPAddressSectionInetAddress.JSON_PROPERTY_MCORG_LOCAL
+  IPAddressSectionInetAddress.JSON_PROPERTY_MCORG_LOCAL,
+  IPAddressSectionInetAddress.JSON_PROPERTY_CANONICAL_HOST_NAME
 })
 @JsonTypeName("IPAddressSection_inetAddress")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class IPAddressSectionInetAddress {
-  public static final String JSON_PROPERTY_CANONICAL_HOST_NAME = "canonicalHostName";
-  private String canonicalHostName;
-
   public static final String JSON_PROPERTY_HOST_ADDRESS = "hostAddress";
   private String hostAddress;
 
@@ -92,33 +89,11 @@ public class IPAddressSectionInetAddress {
   public static final String JSON_PROPERTY_MCORG_LOCAL = "mcorgLocal";
   private Boolean mcorgLocal;
 
+  public static final String JSON_PROPERTY_CANONICAL_HOST_NAME = "canonicalHostName";
+  private String canonicalHostName;
+
   public IPAddressSectionInetAddress() { 
   }
-
-  public IPAddressSectionInetAddress canonicalHostName(String canonicalHostName) {
-    this.canonicalHostName = canonicalHostName;
-    return this;
-  }
-
-   /**
-   * Get canonicalHostName
-   * @return canonicalHostName
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CANONICAL_HOST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getCanonicalHostName() {
-    return canonicalHostName;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_CANONICAL_HOST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCanonicalHostName(String canonicalHostName) {
-    this.canonicalHostName = canonicalHostName;
-  }
-
 
   public IPAddressSectionInetAddress hostAddress(String hostAddress) {
     this.hostAddress = hostAddress;
@@ -453,6 +428,31 @@ public class IPAddressSectionInetAddress {
   }
 
 
+  public IPAddressSectionInetAddress canonicalHostName(String canonicalHostName) {
+    this.canonicalHostName = canonicalHostName;
+    return this;
+  }
+
+   /**
+   * Get canonicalHostName
+   * @return canonicalHostName
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CANONICAL_HOST_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getCanonicalHostName() {
+    return canonicalHostName;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CANONICAL_HOST_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCanonicalHostName(String canonicalHostName) {
+    this.canonicalHostName = canonicalHostName;
+  }
+
+
   /**
    * Return true if this IPAddressSection_inetAddress object is equal to o.
    */
@@ -465,8 +465,7 @@ public class IPAddressSectionInetAddress {
       return false;
     }
     IPAddressSectionInetAddress ipAddressSectionInetAddress = (IPAddressSectionInetAddress) o;
-    return Objects.equals(this.canonicalHostName, ipAddressSectionInetAddress.canonicalHostName) &&
-        Objects.equals(this.hostAddress, ipAddressSectionInetAddress.hostAddress) &&
+    return Objects.equals(this.hostAddress, ipAddressSectionInetAddress.hostAddress) &&
         Objects.equals(this.address, ipAddressSectionInetAddress.address) &&
         Objects.equals(this.hostName, ipAddressSectionInetAddress.hostName) &&
         Objects.equals(this.linkLocalAddress, ipAddressSectionInetAddress.linkLocalAddress) &&
@@ -478,19 +477,19 @@ public class IPAddressSectionInetAddress {
         Objects.equals(this.mcnodeLocal, ipAddressSectionInetAddress.mcnodeLocal) &&
         Objects.equals(this.mclinkLocal, ipAddressSectionInetAddress.mclinkLocal) &&
         Objects.equals(this.mcsiteLocal, ipAddressSectionInetAddress.mcsiteLocal) &&
-        Objects.equals(this.mcorgLocal, ipAddressSectionInetAddress.mcorgLocal);
+        Objects.equals(this.mcorgLocal, ipAddressSectionInetAddress.mcorgLocal) &&
+        Objects.equals(this.canonicalHostName, ipAddressSectionInetAddress.canonicalHostName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(canonicalHostName, hostAddress, address, hostName, linkLocalAddress, multicastAddress, anyLocalAddress, loopbackAddress, siteLocalAddress, mcglobal, mcnodeLocal, mclinkLocal, mcsiteLocal, mcorgLocal);
+    return Objects.hash(hostAddress, address, hostName, linkLocalAddress, multicastAddress, anyLocalAddress, loopbackAddress, siteLocalAddress, mcglobal, mcnodeLocal, mclinkLocal, mcsiteLocal, mcorgLocal, canonicalHostName);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IPAddressSectionInetAddress {\n");
-    sb.append("    canonicalHostName: ").append(toIndentedString(canonicalHostName)).append("\n");
     sb.append("    hostAddress: ").append(toIndentedString(hostAddress)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
@@ -504,6 +503,7 @@ public class IPAddressSectionInetAddress {
     sb.append("    mclinkLocal: ").append(toIndentedString(mclinkLocal)).append("\n");
     sb.append("    mcsiteLocal: ").append(toIndentedString(mcsiteLocal)).append("\n");
     sb.append("    mcorgLocal: ").append(toIndentedString(mcorgLocal)).append("\n");
+    sb.append("    canonicalHostName: ").append(toIndentedString(canonicalHostName)).append("\n");
     sb.append("}");
     return sb.toString();
   }

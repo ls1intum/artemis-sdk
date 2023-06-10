@@ -16,6 +16,7 @@ package de.tum.cit.ase.artemis.sdk.api;
 import de.tum.cit.ase.artemis.sdk.*;
 import de.tum.cit.ase.artemis.sdk.auth.*;
 import de.tum.cit.ase.artemis.sdk.model.ConversationUserDTO;
+import de.tum.cit.ase.artemis.sdk.model.GetAllConversationsForNotifications200ResponseInner;
 import de.tum.cit.ase.artemis.sdk.model.GetConversationsOfUser200ResponseInner;
 import de.tum.cit.ase.artemis.sdk.model.Pageable;
 
@@ -51,9 +52,28 @@ public class ConversationResourceApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
+    public void getAllConversationsForNotificationsTest() throws ApiException {
+        //List<GetAllConversationsForNotifications200ResponseInner> response = api.getAllConversationsForNotifications();
+        // TODO: test validations
+    }
+
+    /**
+     * @throws ApiException if the Api call fails
+     */
+    @Test
     public void getConversationsOfUserTest() throws ApiException {
         //Long courseId = null;
         //List<GetConversationsOfUser200ResponseInner> response = api.getConversationsOfUser(courseId);
+        // TODO: test validations
+    }
+
+    /**
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void hasUnreadMessagesTest() throws ApiException {
+        //Long courseId = null;
+        //Boolean response = api.hasUnreadMessages(courseId);
         // TODO: test validations
     }
 

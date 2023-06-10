@@ -68,8 +68,8 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   Course.JSON_PROPERTY_POSTS,
   Course.JSON_PROPERTY_COLOR,
   Course.JSON_PROPERTY_COURSE_ICON,
-  Course.JSON_PROPERTY_REGISTRATION_ENABLED,
-  Course.JSON_PROPERTY_REGISTRATION_CONFIRMATION_MESSAGE,
+  Course.JSON_PROPERTY_ENROLLMENT_ENABLED,
+  Course.JSON_PROPERTY_ENROLLMENT_CONFIRMATION_MESSAGE,
   Course.JSON_PROPERTY_PRESENTATION_SCORE,
   Course.JSON_PROPERTY_COURSE_ARCHIVE_PATH,
   Course.JSON_PROPERTY_MAX_POINTS,
@@ -83,13 +83,12 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   Course.JSON_PROPERTY_TUTORIAL_GROUPS_CONFIGURATION,
   Course.JSON_PROPERTY_REQUEST_MORE_FEEDBACK_ENABLED,
   Course.JSON_PROPERTY_COMPLAINTS_ENABLED,
-  Course.JSON_PROPERTY_VALID_START_AND_END_DATE,
   Course.JSON_PROPERTY_NUMBER_OF_INSTRUCTORS,
   Course.JSON_PROPERTY_NUMBER_OF_TEACHING_ASSISTANTS,
   Course.JSON_PROPERTY_NUMBER_OF_EDITORS,
   Course.JSON_PROPERTY_NUMBER_OF_STUDENTS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-06T13:57:19.283407Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
 public class Course {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -294,11 +293,11 @@ public class Course {
   public static final String JSON_PROPERTY_COURSE_ICON = "courseIcon";
   private String courseIcon;
 
-  public static final String JSON_PROPERTY_REGISTRATION_ENABLED = "registrationEnabled";
-  private Boolean registrationEnabled;
+  public static final String JSON_PROPERTY_ENROLLMENT_ENABLED = "enrollmentEnabled";
+  private Boolean enrollmentEnabled;
 
-  public static final String JSON_PROPERTY_REGISTRATION_CONFIRMATION_MESSAGE = "registrationConfirmationMessage";
-  private String registrationConfirmationMessage;
+  public static final String JSON_PROPERTY_ENROLLMENT_CONFIRMATION_MESSAGE = "enrollmentConfirmationMessage";
+  private String enrollmentConfirmationMessage;
 
   public static final String JSON_PROPERTY_PRESENTATION_SCORE = "presentationScore";
   private Integer presentationScore;
@@ -338,9 +337,6 @@ public class Course {
 
   public static final String JSON_PROPERTY_COMPLAINTS_ENABLED = "complaintsEnabled";
   private Boolean complaintsEnabled;
-
-  public static final String JSON_PROPERTY_VALID_START_AND_END_DATE = "validStartAndEndDate";
-  private Boolean validStartAndEndDate;
 
   public static final String JSON_PROPERTY_NUMBER_OF_INSTRUCTORS = "numberOfInstructors";
   private Long numberOfInstructors;
@@ -1016,53 +1012,53 @@ public class Course {
   }
 
 
-  public Course registrationEnabled(Boolean registrationEnabled) {
-    this.registrationEnabled = registrationEnabled;
+  public Course enrollmentEnabled(Boolean enrollmentEnabled) {
+    this.enrollmentEnabled = enrollmentEnabled;
     return this;
   }
 
    /**
-   * Get registrationEnabled
-   * @return registrationEnabled
+   * Get enrollmentEnabled
+   * @return enrollmentEnabled
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_REGISTRATION_ENABLED)
+  @JsonProperty(JSON_PROPERTY_ENROLLMENT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Boolean getRegistrationEnabled() {
-    return registrationEnabled;
+  public Boolean getEnrollmentEnabled() {
+    return enrollmentEnabled;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_REGISTRATION_ENABLED)
+  @JsonProperty(JSON_PROPERTY_ENROLLMENT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRegistrationEnabled(Boolean registrationEnabled) {
-    this.registrationEnabled = registrationEnabled;
+  public void setEnrollmentEnabled(Boolean enrollmentEnabled) {
+    this.enrollmentEnabled = enrollmentEnabled;
   }
 
 
-  public Course registrationConfirmationMessage(String registrationConfirmationMessage) {
-    this.registrationConfirmationMessage = registrationConfirmationMessage;
+  public Course enrollmentConfirmationMessage(String enrollmentConfirmationMessage) {
+    this.enrollmentConfirmationMessage = enrollmentConfirmationMessage;
     return this;
   }
 
    /**
-   * Get registrationConfirmationMessage
-   * @return registrationConfirmationMessage
+   * Get enrollmentConfirmationMessage
+   * @return enrollmentConfirmationMessage
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_REGISTRATION_CONFIRMATION_MESSAGE)
+  @JsonProperty(JSON_PROPERTY_ENROLLMENT_CONFIRMATION_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getRegistrationConfirmationMessage() {
-    return registrationConfirmationMessage;
+  public String getEnrollmentConfirmationMessage() {
+    return enrollmentConfirmationMessage;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_REGISTRATION_CONFIRMATION_MESSAGE)
+  @JsonProperty(JSON_PROPERTY_ENROLLMENT_CONFIRMATION_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRegistrationConfirmationMessage(String registrationConfirmationMessage) {
-    this.registrationConfirmationMessage = registrationConfirmationMessage;
+  public void setEnrollmentConfirmationMessage(String enrollmentConfirmationMessage) {
+    this.enrollmentConfirmationMessage = enrollmentConfirmationMessage;
   }
 
 
@@ -1436,31 +1432,6 @@ public class Course {
   }
 
 
-  public Course validStartAndEndDate(Boolean validStartAndEndDate) {
-    this.validStartAndEndDate = validStartAndEndDate;
-    return this;
-  }
-
-   /**
-   * Get validStartAndEndDate
-   * @return validStartAndEndDate
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_VALID_START_AND_END_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getValidStartAndEndDate() {
-    return validStartAndEndDate;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_VALID_START_AND_END_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setValidStartAndEndDate(Boolean validStartAndEndDate) {
-    this.validStartAndEndDate = validStartAndEndDate;
-  }
-
-
   public Course numberOfInstructors(Long numberOfInstructors) {
     this.numberOfInstructors = numberOfInstructors;
     return this;
@@ -1599,8 +1570,8 @@ public class Course {
         Objects.equals(this.posts, course.posts) &&
         Objects.equals(this.color, course.color) &&
         Objects.equals(this.courseIcon, course.courseIcon) &&
-        Objects.equals(this.registrationEnabled, course.registrationEnabled) &&
-        Objects.equals(this.registrationConfirmationMessage, course.registrationConfirmationMessage) &&
+        Objects.equals(this.enrollmentEnabled, course.enrollmentEnabled) &&
+        Objects.equals(this.enrollmentConfirmationMessage, course.enrollmentConfirmationMessage) &&
         Objects.equals(this.presentationScore, course.presentationScore) &&
         Objects.equals(this.courseArchivePath, course.courseArchivePath) &&
         Objects.equals(this.maxPoints, course.maxPoints) &&
@@ -1614,7 +1585,6 @@ public class Course {
         Objects.equals(this.tutorialGroupsConfiguration, course.tutorialGroupsConfiguration) &&
         Objects.equals(this.requestMoreFeedbackEnabled, course.requestMoreFeedbackEnabled) &&
         Objects.equals(this.complaintsEnabled, course.complaintsEnabled) &&
-        Objects.equals(this.validStartAndEndDate, course.validStartAndEndDate) &&
         Objects.equals(this.numberOfInstructors, course.numberOfInstructors) &&
         Objects.equals(this.numberOfTeachingAssistants, course.numberOfTeachingAssistants) &&
         Objects.equals(this.numberOfEditors, course.numberOfEditors) &&
@@ -1623,7 +1593,7 @@ public class Course {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, title, description, shortName, studentGroupName, teachingAssistantGroupName, editorGroupName, instructorGroupName, startDate, endDate, semester, testCourse, language, defaultProgrammingLanguage, onlineCourse, onlineCourseConfiguration, courseInformationSharingConfiguration, maxComplaints, maxTeamComplaints, maxComplaintTimeDays, maxRequestMoreFeedbackTimeDays, maxComplaintTextLimit, maxComplaintResponseTextLimit, posts, color, courseIcon, registrationEnabled, registrationConfirmationMessage, presentationScore, courseArchivePath, maxPoints, accuracyOfScores, timeZone, exercises, lectures, tutorialGroups, exams, organizations, tutorialGroupsConfiguration, requestMoreFeedbackEnabled, complaintsEnabled, validStartAndEndDate, numberOfInstructors, numberOfTeachingAssistants, numberOfEditors, numberOfStudents);
+    return Objects.hash(id, title, description, shortName, studentGroupName, teachingAssistantGroupName, editorGroupName, instructorGroupName, startDate, endDate, semester, testCourse, language, defaultProgrammingLanguage, onlineCourse, onlineCourseConfiguration, courseInformationSharingConfiguration, maxComplaints, maxTeamComplaints, maxComplaintTimeDays, maxRequestMoreFeedbackTimeDays, maxComplaintTextLimit, maxComplaintResponseTextLimit, posts, color, courseIcon, enrollmentEnabled, enrollmentConfirmationMessage, presentationScore, courseArchivePath, maxPoints, accuracyOfScores, timeZone, exercises, lectures, tutorialGroups, exams, organizations, tutorialGroupsConfiguration, requestMoreFeedbackEnabled, complaintsEnabled, numberOfInstructors, numberOfTeachingAssistants, numberOfEditors, numberOfStudents);
   }
 
   @Override
@@ -1656,8 +1626,8 @@ public class Course {
     sb.append("    posts: ").append(toIndentedString(posts)).append("\n");
     sb.append("    color: ").append(toIndentedString(color)).append("\n");
     sb.append("    courseIcon: ").append(toIndentedString(courseIcon)).append("\n");
-    sb.append("    registrationEnabled: ").append(toIndentedString(registrationEnabled)).append("\n");
-    sb.append("    registrationConfirmationMessage: ").append(toIndentedString(registrationConfirmationMessage)).append("\n");
+    sb.append("    enrollmentEnabled: ").append(toIndentedString(enrollmentEnabled)).append("\n");
+    sb.append("    enrollmentConfirmationMessage: ").append(toIndentedString(enrollmentConfirmationMessage)).append("\n");
     sb.append("    presentationScore: ").append(toIndentedString(presentationScore)).append("\n");
     sb.append("    courseArchivePath: ").append(toIndentedString(courseArchivePath)).append("\n");
     sb.append("    maxPoints: ").append(toIndentedString(maxPoints)).append("\n");
@@ -1671,7 +1641,6 @@ public class Course {
     sb.append("    tutorialGroupsConfiguration: ").append(toIndentedString(tutorialGroupsConfiguration)).append("\n");
     sb.append("    requestMoreFeedbackEnabled: ").append(toIndentedString(requestMoreFeedbackEnabled)).append("\n");
     sb.append("    complaintsEnabled: ").append(toIndentedString(complaintsEnabled)).append("\n");
-    sb.append("    validStartAndEndDate: ").append(toIndentedString(validStartAndEndDate)).append("\n");
     sb.append("    numberOfInstructors: ").append(toIndentedString(numberOfInstructors)).append("\n");
     sb.append("    numberOfTeachingAssistants: ").append(toIndentedString(numberOfTeachingAssistants)).append("\n");
     sb.append("    numberOfEditors: ").append(toIndentedString(numberOfEditors)).append("\n");

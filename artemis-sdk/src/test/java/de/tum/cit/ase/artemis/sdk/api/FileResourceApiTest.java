@@ -15,6 +15,7 @@ package de.tum.cit.ase.artemis.sdk.api;
 
 import de.tum.cit.ase.artemis.sdk.*;
 import de.tum.cit.ase.artemis.sdk.auth.*;
+import java.io.File;
 import de.tum.cit.ase.artemis.sdk.model.SaveMarkdownFileRequest;
 
 import org.junit.jupiter.api.Assertions;
@@ -41,6 +42,17 @@ public class FileResourceApiTest {
         //Long attachmentUnitId = null;
         //String filename = null;
         //List<byte[]> response = api.getAttachmentUnitAttachment(attachmentUnitId, filename);
+        // TODO: test validations
+    }
+
+    /**
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getAttachmentUnitAttachmentSlideTest() throws ApiException {
+        //Long attachmentUnitId = null;
+        //String slideNumber = null;
+        //List<byte[]> response = api.getAttachmentUnitAttachmentSlide(attachmentUnitId, slideNumber);
         // TODO: test validations
     }
 
@@ -159,9 +171,8 @@ public class FileResourceApiTest {
     @Test
     public void getTemplateFile1Test() throws ApiException {
         //String language = null;
-        //String projectType = null;
         //String filename = null;
-        //List<byte[]> response = api.getTemplateFile1(language, projectType, filename);
+        //List<byte[]> response = api.getTemplateFile1(language, filename);
         // TODO: test validations
     }
 
@@ -170,10 +181,8 @@ public class FileResourceApiTest {
      */
     @Test
     public void getTemplateFile2Test() throws ApiException {
-        //String language = null;
-        //String projectType = null;
         //String filename = null;
-        //List<byte[]> response = api.getTemplateFile2(language, projectType, filename);
+        //List<byte[]> response = api.getTemplateFile2(filename);
         // TODO: test validations
     }
 
@@ -193,9 +202,9 @@ public class FileResourceApiTest {
      */
     @Test
     public void saveFileTest() throws ApiException {
+        //File _file = null;
         //Boolean keepFileName = null;
-        //SaveMarkdownFileRequest saveMarkdownFileRequest = null;
-        //String response = api.saveFile(keepFileName, saveMarkdownFileRequest);
+        //String response = api.saveFile(_file, keepFileName);
         // TODO: test validations
     }
 
