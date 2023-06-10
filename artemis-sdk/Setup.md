@@ -11,15 +11,9 @@
 couldn't resolve conflicts nicely that way.
 (TODO: think about using mustache template but not sure how to update them? Maybe a different approach then
 cherry picking works?!)
-   491d246
-   bfe34ce
-   259719f
 
-* pom.xml: jakarta.annotation no scope provided necessary
-* ApiClient.java: MediaType JSON for MultiPart document
-* ApiClient.java: allow selfsigned certificates in customizeClientBuilder
-* model/ModelingPlagiarismResult.java: PlagiarismComparisonObject instead of PlagiarismComparisonModelingSubmissionElement otherwise Error during Compilation
-* model/Submission.java: Participation instead of CleanupBuildPlan200Response and durationInMinutes not private otherwise Error during Compilation
+Check for a commit message in artemis-sdk which has this pattern: new generated sdk from COMMIT HASH FROM ARTEMIS
+Then cherry-pick everything afterwards which is applied to the artemis-sdk folder!
 
 4) build: 
 ./gradlew clean build
