@@ -6,3 +6,6 @@ export JAVA_HOME=/opt/graalvm-ce-java17-22.3.1
 export PATH=/opt/graalvm-ce-java17-22.3.1/bin:$PATH
 
 ./gradlew nativeCompile to build the executable
+
+if you just want to run the program for development purposes use:
+./gradlew run --args="--help"
