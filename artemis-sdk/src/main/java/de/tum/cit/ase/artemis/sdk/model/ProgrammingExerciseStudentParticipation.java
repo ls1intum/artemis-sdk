@@ -54,7 +54,7 @@ import de.tum.cit.ase.artemis.sdk.JSON;
   ProgrammingExerciseStudentParticipation.JSON_PROPERTY_PARTICIPANT_NAME
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-10T14:33:20.156837Z[Etc/UTC]")
-JsonTypeName("programming")
+@JsonTypeName("programming")
 
 public class ProgrammingExerciseStudentParticipation extends Participation {
   public static final String JSON_PROPERTY_PRESENTATION_SCORE = "presentationScore";
