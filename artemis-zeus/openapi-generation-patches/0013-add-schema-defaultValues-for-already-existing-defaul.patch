@@ -1,0 +1,299 @@
+From b9d15e9870d4418ef8b395000af4bcd537c31ce4 Mon Sep 17 00:00:00 2001
+From: Ludwig Pusl <ludwig.pusl@tum.de>
+Date: Fri, 21 Apr 2023 12:03:39 +0200
+Subject: [PATCH 13/13] add schema defaultValues for already existing default
+ values
+
+---
+ .../java/de/tum/in/www1/artemis/domain/Course.java    | 11 +++++++++++
+ .../java/de/tum/in/www1/artemis/domain/Exercise.java  |  3 +++
+ .../in/www1/artemis/domain/ProgrammingExercise.java   |  2 ++
+ .../tum/in/www1/artemis/domain/quiz/AnswerOption.java |  2 ++
+ .../www1/artemis/domain/quiz/DragAndDropMapping.java  |  2 ++
+ .../de/tum/in/www1/artemis/domain/quiz/DragItem.java  |  2 ++
+ .../tum/in/www1/artemis/domain/quiz/DropLocation.java |  2 ++
+ .../tum/in/www1/artemis/domain/quiz/QuizExercise.java |  2 ++
+ .../tum/in/www1/artemis/domain/quiz/QuizQuestion.java |  1 +
+ .../www1/artemis/domain/quiz/ShortAnswerQuestion.java |  3 +++
+ .../www1/artemis/domain/quiz/ShortAnswerSolution.java |  2 ++
+ 11 files changed, 32 insertions(+)
+
+diff --git a/src/main/java/de/tum/in/www1/artemis/domain/Course.java b/src/main/java/de/tum/in/www1/artemis/domain/Course.java
+index 7a0facaea7..fe48bd8141 100644
+--- a/src/main/java/de/tum/in/www1/artemis/domain/Course.java
++++ b/src/main/java/de/tum/in/www1/artemis/domain/Course.java
+@@ -30,6 +30,7 @@ import de.tum.in.www1.artemis.domain.view.QuizView;
+ import de.tum.in.www1.artemis.service.FilePathService;
+ import de.tum.in.www1.artemis.service.FileService;
+ import de.tum.in.www1.artemis.web.rest.errors.BadRequestAlertException;
++import io.swagger.v3.oas.annotations.media.Schema;
+ 
+ /**
+  * A Course.
+@@ -90,6 +91,7 @@ public class Course extends DomainObject {
+ 
+     @Column(name = "test_course", nullable = false)
+     @JsonView({ QuizView.Before.class })
++    @Schema(defaultValue = "false")
+     private boolean testCourse = false;
+ 
+     @Enumerated(EnumType.STRING)
+@@ -104,6 +106,7 @@ public class Course extends DomainObject {
+ 
+     @Column(name = "online_course")
+     @JsonView(QuizView.Before.class)
++    @Schema(defaultValue = "false")
+     private Boolean onlineCourse = false;
+ 
+     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+@@ -113,30 +116,37 @@ public class Course extends DomainObject {
+     @Enumerated(EnumType.ORDINAL)
+     @Column(name = "info_sharing_config", nullable = false)
+     @JsonView(QuizView.Before.class)
++    @Schema(defaultValue = "COMMUNICATION_AND_MESSAGING")
+     private CourseInformationSharingConfiguration courseInformationSharingConfiguration = CourseInformationSharingConfiguration.COMMUNICATION_AND_MESSAGING; // default value
+ 
+     @Column(name = "max_complaints", nullable = false)
+     @JsonView(QuizView.Before.class)
++    @Schema(defaultValue = "3")
+     private Integer maxComplaints = 3;  // default value
+ 
+     @Column(name = "max_team_complaints", nullable = false)
+     @JsonView(QuizView.Before.class)
++    @Schema(defaultValue = "3")
+     private Integer maxTeamComplaints = 3;  // default value
+ 
+     @Column(name = "max_complaint_time_days", nullable = false)
+     @JsonView(QuizView.Before.class)
++    @Schema(defaultValue = "7")
+     private int maxComplaintTimeDays = 7;   // default value
+ 
+     @Column(name = "max_request_more_feedback_time_days", nullable = false)
+     @JsonView(QuizView.Before.class)
++    @Schema(defaultValue = "7")
+     private int maxRequestMoreFeedbackTimeDays = 7;   // default value
+ 
+     @Column(name = "max_complaint_text_limit")
+     @JsonView(QuizView.Before.class)
++    @Schema(defaultValue = "2000")
+     private int maxComplaintTextLimit = 2000;
+ 
+     @Column(name = "max_complaint_response_text_limit")
+     @JsonView(QuizView.Before.class)
++    @Schema(defaultValue = "2000")
+     private int maxComplaintResponseTextLimit = 2000;
+ 
+     @OneToMany(mappedBy = "course", cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.LAZY)
+@@ -167,6 +177,7 @@ public class Course extends DomainObject {
+ 
+     @Column(name = "accuracy_of_scores", nullable = false)
+     @JsonView(QuizView.Before.class)
++    @Schema(defaultValue = "1")
+     private Integer accuracyOfScores = 1; // default value
+ 
+     /**
+diff --git a/src/main/java/de/tum/in/www1/artemis/domain/Exercise.java b/src/main/java/de/tum/in/www1/artemis/domain/Exercise.java
+index e1fc4c10cc..4c1b10a269 100644
+--- a/src/main/java/de/tum/in/www1/artemis/domain/Exercise.java
++++ b/src/main/java/de/tum/in/www1/artemis/domain/Exercise.java
+@@ -62,6 +62,7 @@ public abstract class Exercise extends BaseExercise implements LearningObject {
+ 
+     @Enumerated(EnumType.STRING)
+     @Column(name = "included_in_overall_score")
++    @Schema(defaultValue = "INCLUDED_COMPLETELY")
+     private IncludedInOverallScore includedInOverallScore = IncludedInOverallScore.INCLUDED_COMPLETELY;
+ 
+     @Column(name = "problem_statement")
+@@ -94,10 +95,12 @@ public abstract class Exercise extends BaseExercise implements LearningObject {
+ 
+     @Nullable
+     @Column(name = "presentation_score_enabled")
++    @Schema(defaultValue = "false")
+     private Boolean presentationScoreEnabled = false;
+ 
+     @Nullable
+     @Column(name = "second_correction_enabled")
++    @Schema(defaultValue = "false")
+     private Boolean secondCorrectionEnabled = false;
+ 
+     @ManyToOne
+diff --git a/src/main/java/de/tum/in/www1/artemis/domain/ProgrammingExercise.java b/src/main/java/de/tum/in/www1/artemis/domain/ProgrammingExercise.java
+index 432b13dc01..33937d958f 100644
+--- a/src/main/java/de/tum/in/www1/artemis/domain/ProgrammingExercise.java
++++ b/src/main/java/de/tum/in/www1/artemis/domain/ProgrammingExercise.java
+@@ -29,6 +29,7 @@ import de.tum.in.www1.artemis.domain.participation.TemplateProgrammingExercisePa
+ import de.tum.in.www1.artemis.domain.submissionpolicy.SubmissionPolicy;
+ import de.tum.in.www1.artemis.service.programming.ProgrammingLanguageFeature;
+ import de.tum.in.www1.artemis.web.rest.errors.BadRequestAlertException;
++import io.swagger.v3.oas.annotations.media.Schema;
+ 
+ /**
+  * A ProgrammingExercise.
+@@ -83,6 +84,7 @@ public class ProgrammingExercise extends Exercise {
+ 
+     @Nullable
+     @Column(name = "test_cases_changed", table = "programming_exercise_details")
++    @Schema(defaultValue = "false")
+     private Boolean testCasesChanged = false;   // default value
+ 
+     @Column(name = "project_key", table = "programming_exercise_details", nullable = false)
+diff --git a/src/main/java/de/tum/in/www1/artemis/domain/quiz/AnswerOption.java b/src/main/java/de/tum/in/www1/artemis/domain/quiz/AnswerOption.java
+index fc85138f73..12e88cbb61 100644
+--- a/src/main/java/de/tum/in/www1/artemis/domain/quiz/AnswerOption.java
++++ b/src/main/java/de/tum/in/www1/artemis/domain/quiz/AnswerOption.java
+@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonView;
+ 
+ import de.tum.in.www1.artemis.domain.DomainObject;
+ import de.tum.in.www1.artemis.domain.view.QuizView;
++import io.swagger.v3.oas.annotations.media.Schema;
+ 
+ /**
+  * A AnswerOption.
+@@ -39,6 +40,7 @@ public class AnswerOption extends DomainObject {
+ 
+     @Column(name = "invalid")
+     @JsonView(QuizView.Before.class)
++    @Schema(defaultValue = "false")
+     private Boolean invalid = false;
+ 
+     @ManyToOne
+diff --git a/src/main/java/de/tum/in/www1/artemis/domain/quiz/DragAndDropMapping.java b/src/main/java/de/tum/in/www1/artemis/domain/quiz/DragAndDropMapping.java
+index 26ab85d919..ee90754082 100644
+--- a/src/main/java/de/tum/in/www1/artemis/domain/quiz/DragAndDropMapping.java
++++ b/src/main/java/de/tum/in/www1/artemis/domain/quiz/DragAndDropMapping.java
+@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonView;
+ 
+ import de.tum.in.www1.artemis.domain.DomainObject;
+ import de.tum.in.www1.artemis.domain.view.QuizView;
++import io.swagger.v3.oas.annotations.media.Schema;
+ 
+ /**
+  * A DragAndDropMapping.
+@@ -31,6 +32,7 @@ public class DragAndDropMapping extends DomainObject {
+ 
+     @Column(name = "invalid")
+     @JsonView(QuizView.Before.class)
++    @Schema(defaultValue = "false")
+     private Boolean invalid = false;
+ 
+     @ManyToOne
+diff --git a/src/main/java/de/tum/in/www1/artemis/domain/quiz/DragItem.java b/src/main/java/de/tum/in/www1/artemis/domain/quiz/DragItem.java
+index 60a1885e35..bb4a4cb04b 100644
+--- a/src/main/java/de/tum/in/www1/artemis/domain/quiz/DragItem.java
++++ b/src/main/java/de/tum/in/www1/artemis/domain/quiz/DragItem.java
+@@ -17,6 +17,7 @@ import de.tum.in.www1.artemis.domain.TempIdObject;
+ import de.tum.in.www1.artemis.domain.view.QuizView;
+ import de.tum.in.www1.artemis.service.FilePathService;
+ import de.tum.in.www1.artemis.service.FileService;
++import io.swagger.v3.oas.annotations.media.Schema;
+ 
+ /**
+  * A DragItem.
+@@ -43,6 +44,7 @@ public class DragItem extends TempIdObject {
+ 
+     @Column(name = "invalid")
+     @JsonView(QuizView.Before.class)
++    @Schema(defaultValue = "false")
+     private Boolean invalid = false;
+ 
+     @ManyToOne
+diff --git a/src/main/java/de/tum/in/www1/artemis/domain/quiz/DropLocation.java b/src/main/java/de/tum/in/www1/artemis/domain/quiz/DropLocation.java
+index 86c8a90d4f..aa3cd7cfdf 100644
+--- a/src/main/java/de/tum/in/www1/artemis/domain/quiz/DropLocation.java
++++ b/src/main/java/de/tum/in/www1/artemis/domain/quiz/DropLocation.java
+@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonView;
+ 
+ import de.tum.in.www1.artemis.domain.TempIdObject;
+ import de.tum.in.www1.artemis.domain.view.QuizView;
++import io.swagger.v3.oas.annotations.media.Schema;
+ 
+ /**
+  * A DropLocation.
+@@ -42,6 +43,7 @@ public class DropLocation extends TempIdObject {
+ 
+     @Column(name = "invalid")
+     @JsonView(QuizView.Before.class)
++    @Schema(defaultValue = "false")
+     private Boolean invalid = false;
+ 
+     @ManyToOne
+diff --git a/src/main/java/de/tum/in/www1/artemis/domain/quiz/QuizExercise.java b/src/main/java/de/tum/in/www1/artemis/domain/quiz/QuizExercise.java
+index b584c1925d..8ad07e6853 100644
+--- a/src/main/java/de/tum/in/www1/artemis/domain/quiz/QuizExercise.java
++++ b/src/main/java/de/tum/in/www1/artemis/domain/quiz/QuizExercise.java
+@@ -27,6 +27,7 @@ import de.tum.in.www1.artemis.domain.participation.Participation;
+ import de.tum.in.www1.artemis.domain.participation.StudentParticipation;
+ import de.tum.in.www1.artemis.domain.view.QuizView;
+ import de.tum.in.www1.artemis.web.rest.errors.BadRequestAlertException;
++import io.swagger.v3.oas.annotations.media.Schema;
+ 
+ /**
+  * A QuizExercise contains multiple quiz quizQuestions, which can be either multiple choice, drag and drop or short answer. Artemis supports live quizzes with a start and end time
+@@ -59,6 +60,7 @@ public class QuizExercise extends Exercise {
+     @Enumerated(EnumType.STRING)
+     @Column(name = "quiz_mode", columnDefinition = "varchar(63) default 'SYNCHRONIZED'", nullable = false)
+     @JsonView(QuizView.Before.class)
++    @Schema(defaultValue = "SYNCHRONIZED")
+     private QuizMode quizMode = QuizMode.SYNCHRONIZED; // default value
+ 
+     /**
+diff --git a/src/main/java/de/tum/in/www1/artemis/domain/quiz/QuizQuestion.java b/src/main/java/de/tum/in/www1/artemis/domain/quiz/QuizQuestion.java
+index 3dbea4cdd4..b708c24765 100644
+--- a/src/main/java/de/tum/in/www1/artemis/domain/quiz/QuizQuestion.java
++++ b/src/main/java/de/tum/in/www1/artemis/domain/quiz/QuizQuestion.java
+@@ -65,6 +65,7 @@ public abstract class QuizQuestion extends DomainObject {
+ 
+     @Column(name = "invalid")
+     @JsonView(QuizView.Before.class)
++    @Schema(defaultValue = "false")
+     private Boolean invalid = false;
+ 
+     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+diff --git a/src/main/java/de/tum/in/www1/artemis/domain/quiz/ShortAnswerQuestion.java b/src/main/java/de/tum/in/www1/artemis/domain/quiz/ShortAnswerQuestion.java
+index 678576a6bc..23327cf15f 100644
+--- a/src/main/java/de/tum/in/www1/artemis/domain/quiz/ShortAnswerQuestion.java
++++ b/src/main/java/de/tum/in/www1/artemis/domain/quiz/ShortAnswerQuestion.java
+@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonView;
+ 
+ import de.tum.in.www1.artemis.domain.quiz.scoring.*;
+ import de.tum.in.www1.artemis.domain.view.QuizView;
++import io.swagger.v3.oas.annotations.media.Schema;
+ 
+ /**
+  * A ShortAnswerQuestion.
+@@ -46,10 +47,12 @@ public class ShortAnswerQuestion extends QuizQuestion {
+ 
+     @Column(name = "similarity_value")
+     @JsonView(QuizView.Before.class)
++    @Schema(defaultValue = "85")
+     private Integer similarityValue = 85;
+ 
+     @Column(name = "match_letter_case")
+     @JsonView(QuizView.Before.class)
++    @Schema(defaultValue = "false")
+     private Boolean matchLetterCase = false;
+ 
+     public ShortAnswerQuestion() {
+diff --git a/src/main/java/de/tum/in/www1/artemis/domain/quiz/ShortAnswerSolution.java b/src/main/java/de/tum/in/www1/artemis/domain/quiz/ShortAnswerSolution.java
+index 4ceafb92d0..c20d1d9793 100644
+--- a/src/main/java/de/tum/in/www1/artemis/domain/quiz/ShortAnswerSolution.java
++++ b/src/main/java/de/tum/in/www1/artemis/domain/quiz/ShortAnswerSolution.java
+@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonView;
+ 
+ import de.tum.in.www1.artemis.domain.TempIdObject;
+ import de.tum.in.www1.artemis.domain.view.QuizView;
++import io.swagger.v3.oas.annotations.media.Schema;
+ 
+ /**
+  * A ShortAnswerSolution.
+@@ -30,6 +31,7 @@ public class ShortAnswerSolution extends TempIdObject {
+ 
+     @Column(name = "invalid")
+     @JsonView(QuizView.Before.class)
++    @Schema(defaultValue = "false")
+     private Boolean invalid = false;
+ 
+     @ManyToOne
+-- 
+2.34.1
+

@@ -1,0 +1,243 @@
+From c39e372bfabf4a374652b49a2eba0bbbec641cf8 Mon Sep 17 00:00:00 2001
+From: Ludwig Pusl <ludwig.pusl@tum.de>
+Date: Mon, 27 Mar 2023 16:52:03 +0200
+Subject: [PATCH 06/13] add serialization types for exercises and quizes for
+ now
+
+---
+ .../tum/in/www1/artemis/domain/Exercise.java  | 24 +++++++++++++++++
+ .../artemis/domain/FileUploadExercise.java    |  4 +++
+ .../artemis/domain/ProgrammingExercise.java   |  4 +++
+ .../in/www1/artemis/domain/TextExercise.java  |  4 +++
+ .../domain/modeling/ModelingExercise.java     |  4 +++
+ .../domain/quiz/DragAndDropQuestion.java      |  4 +++
+ .../domain/quiz/MultipleChoiceQuestion.java   |  4 +++
+ .../artemis/domain/quiz/QuizExercise.java     |  4 +++
+ .../artemis/domain/quiz/QuizQuestion.java     | 27 +++++++++++++++++++
+ .../domain/quiz/ShortAnswerQuestion.java      |  4 +++
+ 10 files changed, 83 insertions(+)
+
+diff --git a/src/main/java/de/tum/in/www1/artemis/domain/Exercise.java b/src/main/java/de/tum/in/www1/artemis/domain/Exercise.java
+index 94c677918a..351da94a82 100644
+--- a/src/main/java/de/tum/in/www1/artemis/domain/Exercise.java
++++ b/src/main/java/de/tum/in/www1/artemis/domain/Exercise.java
+@@ -28,6 +28,8 @@ import de.tum.in.www1.artemis.domain.quiz.QuizExercise;
+ import de.tum.in.www1.artemis.domain.view.QuizView;
+ import de.tum.in.www1.artemis.web.rest.dto.DueDateStat;
+ import de.tum.in.www1.artemis.web.rest.errors.BadRequestAlertException;
++import io.swagger.v3.oas.annotations.media.DiscriminatorMapping;
++import io.swagger.v3.oas.annotations.media.Schema;
+ 
+ /**
+  * An Exercise.
+@@ -45,6 +47,11 @@ import de.tum.in.www1.artemis.web.rest.errors.BadRequestAlertException;
+         @JsonSubTypes.Type(value = QuizExercise.class, name = "quiz"), @JsonSubTypes.Type(value = TextExercise.class, name = "text"),
+         @JsonSubTypes.Type(value = FileUploadExercise.class, name = "file-upload"), })
+ @JsonInclude(JsonInclude.Include.NON_EMPTY)
++@Schema(type = "object", title = "Exercise", subTypes = { ProgrammingExercise.class, ModelingExercise.class, QuizExercise.class, TextExercise.class,
++        FileUploadExercise.class }, discriminatorMapping = { @DiscriminatorMapping(value = "programming", schema = ProgrammingExercise.class),
++                @DiscriminatorMapping(value = "modeling", schema = ModelingExercise.class), @DiscriminatorMapping(value = "quiz", schema = QuizExercise.class),
++                @DiscriminatorMapping(value = "text", schema = TextExercise.class),
++                @DiscriminatorMapping(value = "file-upload", schema = FileUploadExercise.class), }, discriminatorProperty = "type")
+ public abstract class Exercise extends BaseExercise implements LearningObject {
+ 
+     @Column(name = "allow_complaints_for_automatic_assessments")
+@@ -179,6 +186,23 @@ public abstract class Exercise extends BaseExercise implements LearningObject {
+     @Transient
+     private Long numberOfRatingsTransient;
+ 
++    @Schema(required = true)
++    @Transient
++    private ExerciseType exerciseType;
++
++    // TODO: keep the type name to stay compatible with current json in the client? otherwise quizQuestionTypeAsString might fit better
++    @Schema(required = true)
++    @Transient
++    private String type;
++
++    public Exercise() {
++    }
++
++    public Exercise(ExerciseType exerciseType) {
++        this.exerciseType = exerciseType;
++        this.type = exerciseType.name().toLowerCase().replace('_', '-');
++    }
++
+     @Override
+     public boolean isCompletedFor(User user) {
+         return this.getStudentParticipations().stream().anyMatch((participation) -> participation.getStudents().contains(user));
+diff --git a/src/main/java/de/tum/in/www1/artemis/domain/FileUploadExercise.java b/src/main/java/de/tum/in/www1/artemis/domain/FileUploadExercise.java
+index e728e0ae40..040b12eef2 100644
+--- a/src/main/java/de/tum/in/www1/artemis/domain/FileUploadExercise.java
++++ b/src/main/java/de/tum/in/www1/artemis/domain/FileUploadExercise.java
+@@ -22,6 +22,10 @@ public class FileUploadExercise extends Exercise {
+     @Column(name = "filePattern")
+     private String filePattern;
+ 
++    public FileUploadExercise() {
++        super(FILE_UPLOAD);
++    }
++
+     public String getFilePattern() {
+         return filePattern;
+     }
+diff --git a/src/main/java/de/tum/in/www1/artemis/domain/ProgrammingExercise.java b/src/main/java/de/tum/in/www1/artemis/domain/ProgrammingExercise.java
+index 4c9c6966c7..432b13dc01 100644
+--- a/src/main/java/de/tum/in/www1/artemis/domain/ProgrammingExercise.java
++++ b/src/main/java/de/tum/in/www1/artemis/domain/ProgrammingExercise.java
+@@ -148,6 +148,10 @@ public class ProgrammingExercise extends Exercise {
+     @Transient
+     private boolean checkoutSolutionRepositoryTransient = false;
+ 
++    public ProgrammingExercise() {
++        super(PROGRAMMING);
++    }
++
+     /**
+      * Convenience getter. The actual URL is stored in the {@link TemplateProgrammingExerciseParticipation}
+      *
+diff --git a/src/main/java/de/tum/in/www1/artemis/domain/TextExercise.java b/src/main/java/de/tum/in/www1/artemis/domain/TextExercise.java
+index 35203492c1..213bceaa55 100644
+--- a/src/main/java/de/tum/in/www1/artemis/domain/TextExercise.java
++++ b/src/main/java/de/tum/in/www1/artemis/domain/TextExercise.java
+@@ -33,6 +33,10 @@ public class TextExercise extends Exercise {
+     @JsonIgnore
+     private TextAssessmentKnowledge knowledge;
+ 
++    public TextExercise() {
++        super(TEXT);
++    }
++
+     public String getExampleSolution() {
+         return exampleSolution;
+     }
+diff --git a/src/main/java/de/tum/in/www1/artemis/domain/modeling/ModelingExercise.java b/src/main/java/de/tum/in/www1/artemis/domain/modeling/ModelingExercise.java
+index b807b4fc70..8006f6938b 100644
+--- a/src/main/java/de/tum/in/www1/artemis/domain/modeling/ModelingExercise.java
++++ b/src/main/java/de/tum/in/www1/artemis/domain/modeling/ModelingExercise.java
+@@ -41,6 +41,10 @@ public class ModelingExercise extends Exercise {
+     @Transient
+     private ZonedDateTime clusterBuildDate;
+ 
++    public ModelingExercise() {
++        super(MODELING);
++    }
++
+     public DiagramType getDiagramType() {
+         return diagramType;
+     }
+diff --git a/src/main/java/de/tum/in/www1/artemis/domain/quiz/DragAndDropQuestion.java b/src/main/java/de/tum/in/www1/artemis/domain/quiz/DragAndDropQuestion.java
+index 8b62ae2215..4952624763 100644
+--- a/src/main/java/de/tum/in/www1/artemis/domain/quiz/DragAndDropQuestion.java
++++ b/src/main/java/de/tum/in/www1/artemis/domain/quiz/DragAndDropQuestion.java
+@@ -57,6 +57,10 @@ public class DragAndDropQuestion extends QuizQuestion {
+     @JsonView(QuizView.After.class)
+     private List<DragAndDropMapping> correctMappings = new ArrayList<>();
+ 
++    public DragAndDropQuestion() {
++        super(QuizQuestionType.DRAG_AND_DROP);
++    }
++
+     public String getBackgroundFilePath() {
+         return backgroundFilePath;
+     }
+diff --git a/src/main/java/de/tum/in/www1/artemis/domain/quiz/MultipleChoiceQuestion.java b/src/main/java/de/tum/in/www1/artemis/domain/quiz/MultipleChoiceQuestion.java
+index 1ecd13455c..74dd25b24c 100644
+--- a/src/main/java/de/tum/in/www1/artemis/domain/quiz/MultipleChoiceQuestion.java
++++ b/src/main/java/de/tum/in/www1/artemis/domain/quiz/MultipleChoiceQuestion.java
+@@ -35,6 +35,10 @@ public class MultipleChoiceQuestion extends QuizQuestion {
+     @JsonView(QuizView.Before.class)
+     private boolean singleChoice = false;
+ 
++    public MultipleChoiceQuestion() {
++        super(QuizQuestionType.MULTIPLE_CHOICE);
++    }
++
+     public List<AnswerOption> getAnswerOptions() {
+         return answerOptions;
+     }
+diff --git a/src/main/java/de/tum/in/www1/artemis/domain/quiz/QuizExercise.java b/src/main/java/de/tum/in/www1/artemis/domain/quiz/QuizExercise.java
+index ebda35f0f1..26724deb1f 100644
+--- a/src/main/java/de/tum/in/www1/artemis/domain/quiz/QuizExercise.java
++++ b/src/main/java/de/tum/in/www1/artemis/domain/quiz/QuizExercise.java
+@@ -84,6 +84,10 @@ public class QuizExercise extends Exercise {
+     @JsonView(QuizView.Before.class)
+     private Set<QuizBatch> quizBatches = new HashSet<>();
+ 
++    public QuizExercise() {
++        super(QUIZ);
++    }
++
+     public Boolean isRandomizeQuestionOrder() {
+         return randomizeQuestionOrder;
+     }
+diff --git a/src/main/java/de/tum/in/www1/artemis/domain/quiz/QuizQuestion.java b/src/main/java/de/tum/in/www1/artemis/domain/quiz/QuizQuestion.java
+index d1a9c47fb0..3dbea4cdd4 100644
+--- a/src/main/java/de/tum/in/www1/artemis/domain/quiz/QuizQuestion.java
++++ b/src/main/java/de/tum/in/www1/artemis/domain/quiz/QuizQuestion.java
+@@ -12,6 +12,8 @@ import de.tum.in.www1.artemis.domain.DomainObject;
+ import de.tum.in.www1.artemis.domain.enumeration.ScoringType;
+ import de.tum.in.www1.artemis.domain.quiz.scoring.ScoringStrategy;
+ import de.tum.in.www1.artemis.domain.view.QuizView;
++import io.swagger.v3.oas.annotations.media.DiscriminatorMapping;
++import io.swagger.v3.oas.annotations.media.Schema;
+ 
+ /**
+  * A QuizQuestion.
+@@ -27,6 +29,9 @@ import de.tum.in.www1.artemis.domain.view.QuizView;
+ @JsonSubTypes({ @JsonSubTypes.Type(value = MultipleChoiceQuestion.class, name = "multiple-choice"), @JsonSubTypes.Type(value = DragAndDropQuestion.class, name = "drag-and-drop"),
+         @JsonSubTypes.Type(value = ShortAnswerQuestion.class, name = "short-answer") })
+ @JsonInclude(JsonInclude.Include.NON_EMPTY)
++@Schema(type = "object", title = "QuizQuestion", subTypes = { MultipleChoiceQuestion.class, DragAndDropQuestion.class, ShortAnswerQuestion.class }, discriminatorMapping = {
++        @DiscriminatorMapping(value = "multiple-choice", schema = MultipleChoiceQuestion.class), @DiscriminatorMapping(value = "drag-and-drop", schema = DragAndDropQuestion.class),
++        @DiscriminatorMapping(value = "short-answer", schema = ShortAnswerQuestion.class) }, discriminatorProperty = "type")
+ public abstract class QuizQuestion extends DomainObject {
+ 
+     @Column(name = "title")
+@@ -70,6 +75,28 @@ public abstract class QuizQuestion extends DomainObject {
+     @JsonIgnore
+     private QuizExercise exercise;
+ 
++    @Schema(required = true)
++    @Transient
++    private QuizQuestionType quizQuestionType;
++
++    // TODO: keep the type name to stay compatible with current json in the client? otherwise quizQuestionTypeAsString might fit better if this is even necessary?
++    @Schema(required = true)
++    @Transient
++    private String type;
++
++    // TODO: should this be moved to domain/enumeration to a own file?
++    public enum QuizQuestionType {
++        MULTIPLE_CHOICE, DRAG_AND_DROP, SHORT_ANSWER
++    }
++
++    public QuizQuestion() {
++    }
++
++    public QuizQuestion(QuizQuestionType quizQuestionType) {
++        this.quizQuestionType = quizQuestionType;
++        this.type = quizQuestionType.name().toLowerCase().replace('_', '-');
++    }
++
+     public String getTitle() {
+         return title;
+     }
+diff --git a/src/main/java/de/tum/in/www1/artemis/domain/quiz/ShortAnswerQuestion.java b/src/main/java/de/tum/in/www1/artemis/domain/quiz/ShortAnswerQuestion.java
+index 8f5d93e07b..678576a6bc 100644
+--- a/src/main/java/de/tum/in/www1/artemis/domain/quiz/ShortAnswerQuestion.java
++++ b/src/main/java/de/tum/in/www1/artemis/domain/quiz/ShortAnswerQuestion.java
+@@ -52,6 +52,10 @@ public class ShortAnswerQuestion extends QuizQuestion {
+     @JsonView(QuizView.Before.class)
+     private Boolean matchLetterCase = false;
+ 
++    public ShortAnswerQuestion() {
++        super(QuizQuestionType.SHORT_ANSWER);
++    }
++
+     public List<ShortAnswerSpot> getSpots() {
+         return spots;
+     }
+-- 
+2.34.1
+

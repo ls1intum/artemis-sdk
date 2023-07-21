@@ -1,0 +1,25 @@
+From 4b29e335b60a9fb0419d5a35e7c9f6b196fbe6be Mon Sep 17 00:00:00 2001
+From: Ludwig Pusl <ludwig.pusl@tum.de>
+Date: Fri, 31 Mar 2023 17:23:15 +0200
+Subject: [PATCH 08/13] add consume attribute in FileResource
+
+---
+ src/main/java/de/tum/in/www1/artemis/web/rest/FileResource.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/main/java/de/tum/in/www1/artemis/web/rest/FileResource.java b/src/main/java/de/tum/in/www1/artemis/web/rest/FileResource.java
+index 61a4bbcd41..88f9cd4ccd 100644
+--- a/src/main/java/de/tum/in/www1/artemis/web/rest/FileResource.java
++++ b/src/main/java/de/tum/in/www1/artemis/web/rest/FileResource.java
+@@ -105,7 +105,7 @@ public class FileResource {
+      *             {@link AttachmentUnitResource#updateAttachmentUnit(Long, Long, AttachmentUnit, Attachment, MultipartFile, boolean, String)}
+      */
+     @Deprecated
+-    @PostMapping("fileUpload")
++    @PostMapping(value = "fileUpload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+     @PreAuthorize("hasRole('TA')")
+     public ResponseEntity<String> saveFile(@RequestParam(value = "file") MultipartFile file, @RequestParam(defaultValue = "false") boolean keepFileName) throws URISyntaxException {
+         log.debug("REST request to upload file : {}", file.getOriginalFilename());
+-- 
+2.34.1
+

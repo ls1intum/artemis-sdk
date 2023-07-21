@@ -1,0 +1,36 @@
+From b48cfb50d52ce5c50ccade25d3e5b363d0fdf499 Mon Sep 17 00:00:00 2001
+From: Ludwig Pusl <ludwig.pusl@tum.de>
+Date: Fri, 21 Apr 2023 10:32:23 +0200
+Subject: [PATCH 12/13] add management info endpoint in SDK
+
+---
+ build.gradle                                               | 2 +-
+ src/main/resources/config/application-openapigenerator.yml | 3 +++
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+ create mode 100644 src/main/resources/config/application-openapigenerator.yml
+
+diff --git a/build.gradle b/build.gradle
+index 694368f802..c7a8d5167f 100644
+--- a/build.gradle
++++ b/build.gradle
+@@ -451,7 +451,7 @@ pitest {
+ 
+ openApi {
+     customBootRun {
+-        args = ["--spring.profiles.active=dev,artemis,scheduling,local"]
++        args = ["--spring.profiles.active=dev,artemis,scheduling,local,openapigenerator"]
+     }
+     waitTimeInSeconds = 900
+     apiDocsUrl = "http://localhost:8080/api-docs"
+diff --git a/src/main/resources/config/application-openapigenerator.yml b/src/main/resources/config/application-openapigenerator.yml
+new file mode 100644
+index 0000000000..0d107156db
+--- /dev/null
++++ b/src/main/resources/config/application-openapigenerator.yml
+@@ -0,0 +1,3 @@
++springdoc:
++    # TODO: check how far this includes the Info endpoint inside the SDK
++    show-actuator: true
+-- 
+2.34.1
+

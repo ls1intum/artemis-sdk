@@ -1,0 +1,56 @@
+From b320509fc59afab48ea5b397b830077932f5174c Mon Sep 17 00:00:00 2001
+From: Ludwig Pusl <ludwig.pusl@tum.de>
+Date: Thu, 6 Apr 2023 16:05:37 +0200
+Subject: [PATCH 09/13] openapi updated docs and participation schema for
+ deserialization
+
+---
+ docs/dev/openapi.rst                                      | 5 ++++-
+ .../www1/artemis/domain/participation/Participation.java  | 8 ++++++++
+ 2 files changed, 12 insertions(+), 1 deletion(-)
+
+diff --git a/docs/dev/openapi.rst b/docs/dev/openapi.rst
+index afe8ba2541..2ecf174cd6 100644
+--- a/docs/dev/openapi.rst
++++ b/docs/dev/openapi.rst
+@@ -9,7 +9,10 @@ Generation of the OpenAPI specification
+ ---------------------------------------
+ 
+ 1) start a DB instance for Artemis
+-2) run the following gradle command:
++2) make sure a start-able instance of Artemis is configured in your application-local.yml as the local profile is loaded
++   to generate the OpenAPI specification (so far we use an Artemis instance without any external system for the
++   generation procedure)
++3) run the following gradle command:
+    .. code::
+ 
+        gradle clean generateOpenApiDocs
+diff --git a/src/main/java/de/tum/in/www1/artemis/domain/participation/Participation.java b/src/main/java/de/tum/in/www1/artemis/domain/participation/Participation.java
+index 5649409b05..6e77654e75 100644
+--- a/src/main/java/de/tum/in/www1/artemis/domain/participation/Participation.java
++++ b/src/main/java/de/tum/in/www1/artemis/domain/participation/Participation.java
+@@ -17,6 +17,8 @@ import de.tum.in.www1.artemis.domain.*;
+ import de.tum.in.www1.artemis.domain.enumeration.InitializationState;
+ import de.tum.in.www1.artemis.domain.enumeration.SubmissionType;
+ import de.tum.in.www1.artemis.domain.view.QuizView;
++import io.swagger.v3.oas.annotations.media.DiscriminatorMapping;
++import io.swagger.v3.oas.annotations.media.Schema;
+ 
+ /**
+  * A Participation.
+@@ -35,6 +37,12 @@ import de.tum.in.www1.artemis.domain.view.QuizView;
+         @JsonSubTypes.Type(value = ProgrammingExerciseStudentParticipation.class, name = "programming"),
+         @JsonSubTypes.Type(value = TemplateProgrammingExerciseParticipation.class, name = "template"),
+         @JsonSubTypes.Type(value = SolutionProgrammingExerciseParticipation.class, name = "solution"), })
++@Schema(type = "object", title = "Participation", subTypes = { StudentParticipation.class, ProgrammingExerciseStudentParticipation.class,
++        TemplateProgrammingExerciseParticipation.class, SolutionProgrammingExerciseParticipation.class }, discriminatorMapping = {
++                @DiscriminatorMapping(value = "SP", schema = StudentParticipation.class),
++                @DiscriminatorMapping(value = "PESP", schema = ProgrammingExerciseStudentParticipation.class),
++                @DiscriminatorMapping(value = "TPEP", schema = TemplateProgrammingExerciseParticipation.class),
++                @DiscriminatorMapping(value = "SPEP", schema = SolutionProgrammingExerciseParticipation.class) }, discriminatorProperty = "type")
+ @JsonInclude(JsonInclude.Include.NON_EMPTY)
+ public abstract class Participation extends DomainObject implements ParticipationInterface {
+ 
+-- 
+2.34.1
+

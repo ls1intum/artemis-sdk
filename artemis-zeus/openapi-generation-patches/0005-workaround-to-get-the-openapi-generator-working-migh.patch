@@ -1,0 +1,56 @@
+From 1e8b47b3fb3ed1625ebe517ed7dae6e86756f7cb Mon Sep 17 00:00:00 2001
+From: Ludwig Pusl <ludwig.pusl@tum.de>
+Date: Thu, 2 Mar 2023 15:17:24 +0100
+Subject: [PATCH 05/13] workaround to get the openapi generator working (might
+ be a prod bug or just weird usage?)
+
+---
+ .../artemis/web/rest/metis/ConversationMessageResource.java    | 3 ++-
+ .../de/tum/in/www1/artemis/web/rest/metis/PostResource.java    | 3 ++-
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/src/main/java/de/tum/in/www1/artemis/web/rest/metis/ConversationMessageResource.java b/src/main/java/de/tum/in/www1/artemis/web/rest/metis/ConversationMessageResource.java
+index 02da01fe00..8b184a2abb 100644
+--- a/src/main/java/de/tum/in/www1/artemis/web/rest/metis/ConversationMessageResource.java
++++ b/src/main/java/de/tum/in/www1/artemis/web/rest/metis/ConversationMessageResource.java
+@@ -50,6 +50,7 @@ public class ConversationMessageResource {
+         return ResponseEntity.created(new URI("/api/courses/" + courseId + "/messages/" + createdMessage.getId())).body(createdMessage);
+     }
+ 
++    // TODO: check why courseId is not used or where it's used. for now just added the pathVariable as workaround to get OpenAPI generation working
+     /**
+      * GET /courses/{courseId}/posts : Get all message posts for a conversation by its id
+      *
+@@ -60,7 +61,7 @@ public class ConversationMessageResource {
+      */
+     @GetMapping("courses/{courseId}/messages")
+     @PreAuthorize("hasRole('USER')")
+-    public ResponseEntity<List<Post>> getMessages(@ApiParam Pageable pageable, PostContextFilter postContextFilter) {
++    public ResponseEntity<List<Post>> getMessages(@ApiParam Pageable pageable, PostContextFilter postContextFilter, @PathVariable Long courseId) {
+ 
+         Page<Post> coursePosts = conversationMessagingService.getMessages(pageable, postContextFilter);
+         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), coursePosts);
+diff --git a/src/main/java/de/tum/in/www1/artemis/web/rest/metis/PostResource.java b/src/main/java/de/tum/in/www1/artemis/web/rest/metis/PostResource.java
+index d08eba5d0e..cdfa0941d7 100644
+--- a/src/main/java/de/tum/in/www1/artemis/web/rest/metis/PostResource.java
++++ b/src/main/java/de/tum/in/www1/artemis/web/rest/metis/PostResource.java
+@@ -101,6 +101,7 @@ public class PostResource {
+         return new ResponseEntity<>(tags, null, HttpStatus.OK);
+     }
+ 
++    // TODO: check why courseId is not used or where it's used. for now just added the pathVariable as workaround to get OpenAPI generation working
+     /**
+      * GET /courses/{courseId}/posts : Get all posts for a course by its id
+      *
+@@ -113,7 +114,7 @@ public class PostResource {
+     @GetMapping("courses/{courseId}/posts")
+     @PreAuthorize("hasRole('USER')")
+     public ResponseEntity<List<Post>> getPostsInCourse(@ApiParam Pageable pageable, @RequestParam(defaultValue = "false") boolean pagingEnabled,
+-            PostContextFilter postContextFilter) {
++            PostContextFilter postContextFilter, @PathVariable Long courseId) {
+ 
+         Page<Post> coursePosts = postService.getPostsInCourse(pagingEnabled, pageable, postContextFilter);
+         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), coursePosts);
+-- 
+2.34.1
+

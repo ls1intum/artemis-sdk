@@ -1,0 +1,37 @@
+From 9468577157eb9aafd49091cc45b537284402eec4 Mon Sep 17 00:00:00 2001
+From: Ludwig Pusl <ludwig.pusl@tum.de>
+Date: Fri, 31 Mar 2023 15:21:06 +0200
+Subject: [PATCH 07/13] add least add generated classes by using the schema
+
+---
+ .../in/www1/artemis/domain/quiz/QuizQuestionStatistic.java | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/src/main/java/de/tum/in/www1/artemis/domain/quiz/QuizQuestionStatistic.java b/src/main/java/de/tum/in/www1/artemis/domain/quiz/QuizQuestionStatistic.java
+index e4a5dc7fd9..f61f483d75 100644
+--- a/src/main/java/de/tum/in/www1/artemis/domain/quiz/QuizQuestionStatistic.java
++++ b/src/main/java/de/tum/in/www1/artemis/domain/quiz/QuizQuestionStatistic.java
+@@ -6,6 +6,9 @@ import org.hibernate.annotations.DiscriminatorOptions;
+ 
+ import com.fasterxml.jackson.annotation.*;
+ 
++import io.swagger.v3.oas.annotations.media.DiscriminatorMapping;
++import io.swagger.v3.oas.annotations.media.Schema;
++
+ @Entity
+ @DiscriminatorValue(value = "Q")
+ @DiscriminatorOptions(force = true)
+@@ -14,6 +17,10 @@ import com.fasterxml.jackson.annotation.*;
+         @JsonSubTypes.Type(value = DragAndDropQuestionStatistic.class, name = "drag-and-drop"),
+         @JsonSubTypes.Type(value = ShortAnswerQuestionStatistic.class, name = "short-answer") })
+ @JsonInclude(JsonInclude.Include.NON_EMPTY)
++@Schema(type = "object", title = "QuizQuestionStatistic", subTypes = { MultipleChoiceQuestionStatistic.class, DragAndDropQuestionStatistic.class,
++        ShortAnswerQuestionStatistic.class }, discriminatorMapping = { @DiscriminatorMapping(value = "MC", schema = MultipleChoiceQuestionStatistic.class),
++                @DiscriminatorMapping(value = "DD", schema = DragAndDropQuestionStatistic.class),
++                @DiscriminatorMapping(value = "SA", schema = ShortAnswerQuestionStatistic.class) }, discriminatorProperty = "type")
+ public abstract class QuizQuestionStatistic extends QuizStatistic {
+ 
+     @Column(name = "rated_correct_counter")
+-- 
+2.34.1
+

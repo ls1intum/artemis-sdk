@@ -1,0 +1,36 @@
+From b61db9c6d23143b5acf09e7fafde5e81f17738cf Mon Sep 17 00:00:00 2001
+From: Ludwig Pusl <ludwig.pusl@tum.de>
+Date: Thu, 2 Mar 2023 09:18:43 +0100
+Subject: [PATCH 10/13] enable bamboo docker builds when running artemis with a
+ dev profile
+
+---
+ .../service/connectors/bamboo/BambooBuildPlanService.java     | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+diff --git a/src/main/java/de/tum/in/www1/artemis/service/connectors/bamboo/BambooBuildPlanService.java b/src/main/java/de/tum/in/www1/artemis/service/connectors/bamboo/BambooBuildPlanService.java
+index 521642d52b..46972ec2fb 100644
+--- a/src/main/java/de/tum/in/www1/artemis/service/connectors/bamboo/BambooBuildPlanService.java
++++ b/src/main/java/de/tum/in/www1/artemis/service/connectors/bamboo/BambooBuildPlanService.java
+@@ -58,7 +58,6 @@ import de.tum.in.www1.artemis.exception.ContinuousIntegrationBuildPlanException;
+ import de.tum.in.www1.artemis.service.ResourceLoaderService;
+ import de.tum.in.www1.artemis.service.connectors.ci.ContinuousIntegrationService.RepositoryCheckoutPath;
+ import de.tum.in.www1.artemis.service.connectors.vcs.VersionControlService;
+-import tech.jhipster.config.JHipsterConstants;
+ 
+ @Service
+ @Profile("bamboo")
+@@ -172,9 +171,8 @@ public class BambooBuildPlanService {
+          */
+         Collection<String> activeProfiles = Arrays.asList(env.getActiveProfiles());
+ 
+-        // Do not run the builds in extra docker containers if the dev-profile is active
+         // Xcode has no dockerfile, it only runs on agents (e.g. sb2-agent-0050562fddde)
+-        if (!activeProfiles.contains(JHipsterConstants.SPRING_PROFILE_DEVELOPMENT) && !ProjectType.XCODE.equals(projectType)) {
++        if (!ProjectType.XCODE.equals(projectType)) {
+             defaultJob.dockerConfiguration(dockerConfigurationFor(programmingLanguage, Optional.ofNullable(projectType)));
+         }
+         switch (programmingLanguage) {
+-- 
+2.34.1
+

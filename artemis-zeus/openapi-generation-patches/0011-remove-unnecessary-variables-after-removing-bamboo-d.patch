@@ -1,0 +1,29 @@
+From 7402d35d61e9ac78489ad6078d82064abda41fe3 Mon Sep 17 00:00:00 2001
+From: Ludwig Pusl <ludwig.pusl@tum.de>
+Date: Fri, 3 Mar 2023 09:26:40 +0100
+Subject: [PATCH 11/13] remove unnecessary variables after removing bamboo dev
+ profile check
+
+---
+ .../service/connectors/bamboo/BambooBuildPlanService.java    | 5 -----
+ 1 file changed, 5 deletions(-)
+
+diff --git a/src/main/java/de/tum/in/www1/artemis/service/connectors/bamboo/BambooBuildPlanService.java b/src/main/java/de/tum/in/www1/artemis/service/connectors/bamboo/BambooBuildPlanService.java
+index 46972ec2fb..f395e8220d 100644
+--- a/src/main/java/de/tum/in/www1/artemis/service/connectors/bamboo/BambooBuildPlanService.java
++++ b/src/main/java/de/tum/in/www1/artemis/service/connectors/bamboo/BambooBuildPlanService.java
+@@ -166,11 +166,6 @@ public class BambooBuildPlanService {
+         Stage defaultStage = new Stage("Default Stage");
+         Job defaultJob = new Job("Default Job", new BambooKey("JOB1")).cleanWorkingDirectory(true);
+ 
+-        /*
+-         * We need the profiles to not run the jobs within Docker containers in the dev-setup as the Bamboo server itself runs in a Docker container when developing.
+-         */
+-        Collection<String> activeProfiles = Arrays.asList(env.getActiveProfiles());
+-
+         // Xcode has no dockerfile, it only runs on agents (e.g. sb2-agent-0050562fddde)
+         if (!ProjectType.XCODE.equals(projectType)) {
+             defaultJob.dockerConfiguration(dockerConfigurationFor(programmingLanguage, Optional.ofNullable(projectType)));
+-- 
+2.34.1
+

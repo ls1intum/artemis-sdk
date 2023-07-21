@@ -1,0 +1,25 @@
+From 3d6a478eb4529ee28a792cb0415c49bf61e30339 Mon Sep 17 00:00:00 2001
+From: Ludwig Pusl <ludwig.pusl@tum.de>
+Date: Wed, 1 Mar 2023 20:49:31 +0100
+Subject: [PATCH 04/13] set swagger to WARN loglevel as otherwise openapi
+ generation takes forever
+
+---
+ src/main/resources/logback-spring.xml | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/main/resources/logback-spring.xml b/src/main/resources/logback-spring.xml
+index cc16735322..e0aa58ad68 100644
+--- a/src/main/resources/logback-spring.xml
++++ b/src/main/resources/logback-spring.xml
+@@ -76,6 +76,7 @@
+     <logger name="springfox.documentation.schema.property" level="ERROR"/>
+     <logger name="sun.rmi.transport" level="WARN"/>
+     <logger name="org.glassfish.jersey.client.ClientExecutorProvidersConfigurator" level="INFO"/>
++    <logger name="io.swagger" level="WARN"/>
+ 
+     <!-- https://logback.qos.ch/manual/configuration.html#shutdownHook and https://jira.qos.ch/browse/LOGBACK-1090 -->
+     <shutdownHook class="ch.qos.logback.core.hook.DelayingShutdownHook"/>
+-- 
+2.34.1
+
